@@ -127,65 +127,7 @@ PATHBUBBLES.Bubble.prototype = {
             }
         });
         $menuBarbubble.find('#ungroup').on('click',function(){
-            if(!_this.GROUP)
-            {
-                alert("It is not Grouped, right now!");
-            }
-            else
-            {
-                var group = _this.parent;
-                _this.GROUP = false;
-                var tempdata = [];
-                for(var i=0; i<group.children.length; ++i)
-                {
-                    if(group.children[i].id!==_this.id)
-                    {
-                        var a =group.children[i];
-                        a.parent = undefined;
-                        tempdata.push(a);
-                    }
-                }
-//                var nodes =[];
-//                for(var i=0; i<tempdata.length; ++i)
-//                {
-//                    tempdata[i].setId = i;
-//                    nodes.push(tempdata[i].setId);
-//                }
-//                var unionFind = new PATHBUBBLES.Algorithm.UnionFind(nodes);
-//                for(var i=0; i<unionFind.groupCount-1; ++i)
-//                {
-//                    for(var j=i+1; j<unionFind.groupCount; ++j )
-//                    {
-//                        var data1=null, data2=null;
-//                         for(var k=0;k <tempdata.length; ++k)
-//                         {
-//                             if(tempdata[k].setId == unionFind.nodes[j])
-//                             {
-//                                 data1 = tempdata[k];
-//                             }
-//                             if(tempdata[k].setId == unionFind.nodes[j+1])
-//                             {
-//                                 data2 = tempdata[k];
-//                             }
-//                         }
-//                        if(data1 && data2 &&_this.detectEqual(data1,data2))
-//                        {
-//                           unionFind.union(unionFind.nodes[j],unionFind.nodes[j+1] );
-//                        }
-//                    }
-//                }
-                _this.parent = undefined;     //just has one set
-                group.tempPoints.length =0;
-                group.arranged.length =0;
-                group.children.length =0;
-                for(var i=tempdata.length-1; i>=0; i--)
-                {
-                    group.RESET = true;
-                    group.addToGroup(tempdata[i]);
-                }
-                group.RESET = false;
-                scene.addObject(group);
-            }
+            _this.ungroup();
         });
         $menuBarbubble.find('#colorpickerField').ColorPicker({
             color: '#0000ff',
@@ -201,6 +143,38 @@ PATHBUBBLES.Bubble.prototype = {
                 $menuBarbubble.find('#colorpickerField').css('backgroundColor', '#' + hex);
             }
         });
+    },
+    ungroup: function(){
+        if(!this.GROUP)
+        {
+            alert("It is not Grouped, right now!");
+        }
+        else
+        {
+            var group = this.parent;
+            this.GROUP = false;
+            var tempdata = [];
+            for(var i=0; i<group.children.length; ++i)
+            {
+                if(group.children[i].id!==this.id)
+                {
+                    var a =group.children[i];
+                    a.parent = undefined;
+                    tempdata.push(a);
+                }
+            }
+            this.parent = undefined;     //just has one set
+            group.tempPoints.length =0;
+            group.arranged.length =0;
+            group.children.length =0;
+            for(var i=tempdata.length-1; i>=0; i--)
+            {
+                group.RESET = true;
+                group.addToGroup(tempdata[i]);
+            }
+            group.RESET = false;
+            scene.addObject(group);
+        }
     },
     detectEqual: function (object1, object2) {
         return (object1.x == object2.x + object2.w ||

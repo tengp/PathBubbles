@@ -4,7 +4,6 @@
  * @time        9/23/2014
  * @name        PathBubble_interaction
  */
-
 //Select, Drag, Resize
 PATHBUBBLES.Interaction = function(renderer)
 {
@@ -267,37 +266,37 @@ PATHBUBBLES.Interaction = function(renderer)
                        }
                    }
                }
-                for(var i=0; i<_this.selection[0].parent.tempPoints.length; ++i)
-                {
-                    if(_this.selection[0].parent.tempPoints[i].id === id)
-                    {
-                        var x = _this.selection[0].x - _this.selection[0].parent.offsetX;
-                        var y = _this.selection[0].y - _this.selection[0].parent.offsetY;
-                        if(_this.selection[0].parent.tempPoints[i].pos == "left")
-                        {
-                            _this.selection[0].parent.tempPoints[i].x = x;
-                            _this.selection[0].parent.tempPoints[i].y = y;
-                            continue;
-                        }
-                        if(_this.selection[0].parent.tempPoints[i].pos == "right")
-                        {
-                            _this.selection[0].parent.tempPoints[i].x = x + _this.selection[0].w;
-                            _this.selection[0].parent.tempPoints[i].y = y;
-                            continue;
-                        }
-                        if(_this.selection[0].parent.tempPoints[i].pos == "bleft")
-                        {
-                            _this.selection[0].parent.tempPoints[i].x = x;
-                            _this.selection[0].parent.tempPoints[i].y = y + _this.selection[0].h;
-                            continue;
-                        }
-                        if(_this.selection[0].parent.tempPoints[i].pos == "bright")
-                        {
-                            _this.selection[0].parent.tempPoints[i].x = x + _this.selection[0].w;
-                            _this.selection[0].parent.tempPoints[i].y = y + _this.selection[0].h;
-                        }
-                    }
-                }
+//                for(var i=0; i<_this.selection[0].parent.tempPoints.length; ++i)
+//                {
+//                    if(_this.selection[0].parent.tempPoints[i].id === id)
+//                    {
+//                        var x = _this.selection[0].x - _this.selection[0].parent.offsetX;
+//                        var y = _this.selection[0].y - _this.selection[0].parent.offsetY;
+//                        if(_this.selection[0].parent.tempPoints[i].pos == "left")
+//                        {
+//                            _this.selection[0].parent.tempPoints[i].x = x;
+//                            _this.selection[0].parent.tempPoints[i].y = y;
+//                            continue;
+//                        }
+//                        if(_this.selection[0].parent.tempPoints[i].pos == "right")
+//                        {
+//                            _this.selection[0].parent.tempPoints[i].x = x + _this.selection[0].w;
+//                            _this.selection[0].parent.tempPoints[i].y = y;
+//                            continue;
+//                        }
+//                        if(_this.selection[0].parent.tempPoints[i].pos == "bleft")
+//                        {
+//                            _this.selection[0].parent.tempPoints[i].x = x;
+//                            _this.selection[0].parent.tempPoints[i].y = y + _this.selection[0].h;
+//                            continue;
+//                        }
+//                        if(_this.selection[0].parent.tempPoints[i].pos == "bright")
+//                        {
+//                            _this.selection[0].parent.tempPoints[i].x = x + _this.selection[0].w;
+//                            _this.selection[0].parent.tempPoints[i].y = y + _this.selection[0].h;
+//                        }
+//                    }
+//                }
 
                 _this.groupResize = true;
             }
@@ -382,7 +381,14 @@ PATHBUBBLES.Interaction = function(renderer)
                             {
                                 if(PATHBUBBLES.objects[i].parent instanceof PATHBUBBLES.Groups)
                                 {
-                                    PATHBUBBLES.objects[i].parent.addToGroup(_this.selection[0]);
+                                    if(PATHBUBBLES.objects[i].parent == _this.selection[0].parent)
+                                    {
+                                        var object = _this.selection[0];
+                                        _this.selection[0].ungroup();
+                                        PATHBUBBLES.objects[i].parent.addToGroup(object);
+                                    }
+                                    else
+                                        PATHBUBBLES.objects[i].parent.addToGroup(_this.selection[0]);
                                 }
                             }
                             else
