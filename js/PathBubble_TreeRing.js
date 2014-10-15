@@ -1,47 +1,182 @@
 /**
  * @author      Yongnan
  * @version     1.0
- * @time        9/16/2014
- * @name        PathBubble_Bubble
+ * @time        10/10/2014
+ * @name        PathBubble_TreeRing
  */
 
-PATHBUBBLES.Bubble = function (x, y, w, h, strokeColor, fillColor, cornerRadius, text) {
+PATHBUBBLES.TreeRing = function (x, y, w, h, data) {
     PATHBUBBLES.Object2D.call(this);
-    this.type = "Bubble";
+    this.type = "TreeRing";
     this.x = x || 0;
     this.y = y || 0;
     this.w = w || 500;
     this.h = h || 500;
-    this.strokeColor = strokeColor || "#00ffff";
-    this.fillColor = fillColor || "#ffffff";
-    this.cornerRadius = cornerRadius || 20;
+    this.strokeColor = "#00ffff";
+    this.fillColor = "#ffffff";
+    this.cornerRadius = 20;
     this.lineWidth = 10;
 
     this.shape = new PATHBUBBLES.Shape.Rectangle(this, this.x, this.y, this.w, this.h, this.strokeColor, this.fillColor, this.lineWidth, this.cornerRadius);
     this.menu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2, this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1) || null;
-    this.bubbleView = null;
     this.menuBar = new PATHBUBBLES.Menu(this);
     var button = new PATHBUBBLES.Button(this.menuBar);   //Button 0 for file selection
     var tmp = '';
     tmp += '<input type="file" id=file style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
-    tmp += '<input type="button" id=load value= "Load" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
-    tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y + 55 + ' px; "></div>';
-    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 80 + 'px; ">';
-    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
+    tmp += '<input type="button" id=load value= "Load" style="position: absolute; left:' + this.x + ' px; top:' + this.y+25 + 'px; ">';
+    tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y+55 + ' px; "></div>';
+    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y+80 + 'px; ">';
+    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y+105 + 'px; ">';
     button.addButton(tmp);
 
-    this.name = text;
+    this.name = "ring";
     this.__objectsAdded = [];
     this.__objectsRemoved = [];
     this.center = {x: this.x + this.w / 2, y: this.y + this.h / 2};
     this.GROUP = false;
     this.selected_file = null;
+    this.data = data||null;
 };
 
-PATHBUBBLES.Bubble.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
+PATHBUBBLES.TreeRing.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
 
-PATHBUBBLES.Bubble.prototype = {
-    constructor: PATHBUBBLES.Bubble,
+PATHBUBBLES.TreeRing.prototype = {
+    constructor: PATHBUBBLES.TreeRing,
+    addHtml: function(){
+        this.setOffset();
+        var tmp = '';
+        tmp += '<div id= svg'+ this.id+' style="position: absolute; width:'+ (this.w + 5)+'px; ' + 'height:'+ (this.h +5) + 'px; left:' + (this.shape.x + this.offsetX) + ' px; top:' + (this.shape.y+this.offsetY) + 'px; "> </div>';
+        $("#bubble").append( $(tmp) );
+        this.treeRing =  new PATHBUBBLES.D3Ring(this, Math.max(this.w,this.h)-30, this.data);
+        this.treeRing.init();
+    },
+    addObject: function (object) {
+        var index = this.children.indexOf(object);
+        if (index > -1) {
+            this.children.splice(index, 1);
+        }
+        this.children.push(object);
+    },
+    removeObject: function (object) {
+        d3.select('#svg'+ this.id).remove();
+        var index = PATHBUBBLES.objects.indexOf(object);
+        if (index !== -1) {
+            PATHBUBBLES.objects.splice(index, 1);
+        }
+
+        var index = this.children.indexOf(object);
+        if (index !== -1) {
+            this.children.splice(index, 1);
+        }
+    },
+    menuOperation: function(){
+        var _this=this;
+        var $menuBarbubble = $('#menuView'+ this.id);
+        $menuBarbubble.find('#load').on('click', function(){
+            _this.selected_file = $menuBarbubble.find('#file').get(0).files[0];
+            if ( !_this.selected_file) {
+                alert("Please select data file!");
+            }
+            else
+            {
+                _this.bubbleView = null;
+                _this.children.length =0;
+                var localFileLoader = new PATHBUBBLES.LocalFileLoader(_this);
+
+                localFileLoader.load(_this.selected_file);
+            }
+        });
+        $menuBarbubble.find('#delete').on('click',function(){
+            if(!_this.GROUP)
+                _this.deleteBubble();
+            else
+            {
+                var id = _this.id;
+                var group = _this.parent;
+                _this.GROUP = false;
+                var tempdata = [];
+                for(var i=0; i<group.children.length; ++i)
+                {
+                    if(group.children[i].id!==_this.id)
+                    {
+                        var a =group.children[i];
+                        a.parent = undefined;
+                        tempdata.push(a);
+                    }
+                }
+                _this.parent = undefined;
+                _this.deleteBubble();
+                group.tempPoints.length =0;
+                group.arranged.length =0;
+                group.children.length =0;
+                for(var i=0; i<tempdata.length; ++i)
+                {
+                    group.RESET = true;
+                    group.addToGroup(tempdata[i]);
+                }
+                group.RESET = false;
+                scene.addObject(group);
+
+            }
+        });
+        $menuBarbubble.find('#ungroup').on('click',function(){
+            _this.ungroup();
+        });
+        $menuBarbubble.find('#colorpickerField').ColorPicker({
+            color: '#0000ff',
+            onShow: function (colpkr) {
+                $(colpkr).fadeIn(500);
+                return false;
+            },
+            onHide: function (colpkr) {
+                $(colpkr).fadeOut(500);
+                return false;
+            },
+            onChange: function (hsb, hex, rgb) {
+                $menuBarbubble.find('#colorpickerField').css('backgroundColor', '#' + hex);
+            }
+        });
+    },
+    ungroup: function(){
+        if(!this.GROUP)
+        {
+            alert("It is not Grouped, right now!");
+        }
+        else
+        {
+            var group = this.parent;
+            this.GROUP = false;
+            var tempdata = [];
+            for(var i=0; i<group.children.length; ++i)
+            {
+                if(group.children[i].id!==this.id)
+                {
+                    var a =group.children[i];
+                    a.parent = undefined;
+                    tempdata.push(a);
+                }
+            }
+            this.parent = undefined;     //just has one set
+            group.tempPoints.length =0;
+            group.arranged.length =0;
+            group.children.length =0;
+            for(var i=tempdata.length-1; i>=0; i--)
+            {
+                group.RESET = true;
+                group.addToGroup(tempdata[i]);
+            }
+            group.RESET = false;
+            scene.addObject(group);
+        }
+    },
+    deleteBubble: function(){
+
+        if(this.menuBar.button)
+        {
+            this.menuBar.button.remove();
+        }
+        scene.removeObject(this);
+    },
     updateMenu: function () {
         var $menuBarbubble = $('#menuView' + this.id);
         $menuBarbubble.find('#file').css({
@@ -70,160 +205,20 @@ PATHBUBBLES.Bubble.prototype = {
             width: 180
         });
     },
-    addObject: function (object) {
-//        object.parent = this;
-//        object.shape.parent = this;
-
-        var index = this.children.indexOf(object);
-        if (index > -1) {
-            this.children.splice(index, 1);
-        }
-        this.children.push(object);
-//        if (PATHBUBBLES.objects.indexOf(object) == -1)
-//            PATHBUBBLES.objects.push(object);
-//        this.__objectsAdded.push(object);
-        // check if previously removed
-//        var i = this.__objectsRemoved.indexOf(object);
-//        if (i !== -1) {
-//            this.__objectsRemoved.splice(i, 1);
-//        }
-//        for (var c = 0; c < object.children.length; c++) {
-//            this.addObject(object.children[ c ]);
-//        }
-    },
-    removeObject: function (object) {
-//        this.__objectsRemoved.push(object);
-        var index = PATHBUBBLES.objects.indexOf(object);
-        if (index !== -1) {
-            PATHBUBBLES.objects.splice(index, 1);
-        }
-        var index = this.children.indexOf(object);
-        if (index !== -1) {
-            this.children.splice(index, 1);
-        }
-//        var i = this.__objectsAdded.indexOf(object);
-//        if (i !== -1) {
-//            this.__objectsAdded.splice(i, 1);
-//        }
-//        for (var c = 0; c < object.children.length; c++) {
-//            this.removeObject(object.children[ c ]);
-//        }
-    },
-    menuOperation: function () {
-        var _this = this;
-        var $menuBarbubble = $('#menuView' + this.id);
-        $menuBarbubble.find('#load').on('click', function () {
-            _this.selected_file = $menuBarbubble.find('#file').get(0).files[0];
-            if (!_this.selected_file) {
-                alert("Please select data file!");
-            }
-            else {
-                _this.bubbleView = null;
-                _this.children.length = 0;
-                var localFileLoader = new PATHBUBBLES.LocalFileLoader(_this);
-
-                localFileLoader.load(_this.selected_file);
-            }
-        });
-        $menuBarbubble.find('#delete').on('click', function () {
-            if (!_this.GROUP)
-                _this.deleteBubble();
-            else {
-                var id = _this.id;
-                var group = _this.parent;
-                _this.GROUP = false;
-                var tempdata = [];
-                for (var i = 0; i < group.children.length; ++i) {
-                    if (group.children[i].id !== _this.id) {
-                        var a = group.children[i];
-                        a.parent = undefined;
-                        tempdata.push(a);
-                    }
-                }
-                _this.parent = undefined;
-                _this.deleteBubble();
-                group.tempPoints.length = 0;
-                group.arranged.length = 0;
-                group.children.length = 0;
-                for (var i = 0; i < tempdata.length; ++i) {
-                    group.RESET = true;
-                    group.addToGroup(tempdata[i]);
-                }
-                group.RESET = false;
-                scene.addObject(group);
-
-            }
-        });
-        $menuBarbubble.find('#ungroup').on('click', function () {
-            _this.ungroup();
-        });
-        $menuBarbubble.find('#colorpickerField').ColorPicker({
-            color: '#0000ff',
-            onShow: function (colpkr) {
-                $(colpkr).fadeIn(500);
-                return false;
-            },
-            onHide: function (colpkr) {
-                $(colpkr).fadeOut(500);
-                return false;
-            },
-            onChange: function (hsb, hex, rgb) {
-                $menuBarbubble.find('#colorpickerField').css('backgroundColor', '#' + hex);
-            }
-        });
-    },
-    ungroup: function () {
-        if (!this.GROUP) {
-            alert("It is not Grouped, right now!");
-        }
-        else {
-            var group = this.parent;
-            this.GROUP = false;
-            var tempdata = [];
-            for (var i = 0; i < group.children.length; ++i) {
-                if (group.children[i].id !== this.id) {
-                    var a = group.children[i];
-                    a.parent = undefined;
-                    tempdata.push(a);
-                }
-            }
-            this.parent = undefined;     //just has one set
-            group.tempPoints.length = 0;
-            group.arranged.length = 0;
-            group.children.length = 0;
-            for (var i = tempdata.length - 1; i >= 0; i--) {
-                group.RESET = true;
-                group.addToGroup(tempdata[i]);
-            }
-            group.RESET = false;
-            scene.addObject(group);
-        }
-    },
-    detectEqual: function (object1, object2) {
-        return (object1.x == object2.x + object2.w ||
-            object1.x + object1.w == object2.x ||
-            object1.y == object2.y + object2.h ||
-            object1.h + object1.y == object2.y) ||
-            (object2.x == object1.x + object1.w ||
-                object2.x + object2.w == object1.x ||
-                object2.y == object1.y + object1.h ||
-                object2.h + object2.y == object1.y);
-    },
-    deleteBubble: function () {
-        if (this.menuBar.button) {
-            this.menuBar.button.remove();
-        }
-        scene.removeObject(this);
-    },
     draw: function (ctx, scale) {
         this.setOffset();
 
         ctx.save();
         this.shape.draw(ctx, scale);
-        if (this.bubbleView)
-            if (this.bubbleView.compartments.length != 0)
-                this.bubbleView.draw(ctx, scale);
-        this.shape.drawStrokeAgain(ctx, scale);
+        var space = 6;
+        $('#svg'+ this.id).css({
+            width: this.w-10-space,      //leve 6 space for tree ring
+            height: this.h-10-space,
+            left: this.x +  this.w /2 - this.treeRing.defaultRadius/2-10+space/2,
+            top: this.y +  this.h/2 - this.treeRing.defaultRadius/2+50-10+space/2
+        });
+        //
+        this.shape.drawStrokeAgain(ctx,scale);
         ctx.restore();
         ctx.save();
         if (this.menu && scale == 1) {
@@ -235,24 +230,16 @@ PATHBUBBLES.Bubble.prototype = {
         if (this.menu.HighLight_State) {
             this.updateMenu();
             this.menuBar.button.show();
-//            for (var i = 0; i < this.menuBar.buttons.length; ++i) {
-//                this.menuBar.buttons[i].update();
-//                this.menuBar.buttons[i].show();
-//            }
         }
         else {
             this.updateMenu();
             this.menuBar.button.hide();
-//            for (var i = 0; i < this.menuBar.buttons.length; ++i) {
-//                this.menuBar.buttons[i].update();
-//                this.menuBar.buttons[i].hide();
-//            }
         }
         ctx.restore();
+
         if (this.shape.HighLight_State) {
             ctx.save();
             this.shape.drawStroke(ctx, scale);
-            this.drawSelection(ctx, scale);
             ctx.restore();
         }
 
@@ -383,16 +370,6 @@ PATHBUBBLES.Bubble.prototype = {
         bubble.offsetX = this.offsetX;
         bubble.offsetY = this.offsetY;
 
-
-        for (var i = 0, il = this.__objectsAdded.length; i < il; i++) {
-            var a = this.__objectsAdded[ i ];
-            bubble.__objectsAdded.push(a);
-        }
-        for (var i = 0, il = this.__objectsRemoved.length; i < il; i++) {
-            var a = this.__objectsRemoved[ i ];
-            bubble.__objectsRemoved.push(a);
-        }
-        bubble.__objectsRemoved = this.__objectsRemoved;
         bubble.center = this.center;
         bubble.GROUP = this.GROUP;
         return bubble;

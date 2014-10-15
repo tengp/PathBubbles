@@ -24,14 +24,13 @@ $(document).ready(function (){
     interection = new PATHBUBBLES.Interaction(renderer);
 
     function render() {
-        var reqAnimFrame = window.mozRequestAnimationFrame    ||
-            window.webkitRequestAnimationFrame ||
-            window.msRequestAnimationFrame     ||
-            window.oRequestAnimationFrame
-        ;
-
-        reqAnimFrame(render);
-        //requestAnimationFrame(render);
+//        var reqAnimFrame = window.mozRequestAnimationFrame    ||
+//            window.webkitRequestAnimationFrame ||
+//            window.msRequestAnimationFrame     ||
+//            window.oRequestAnimationFrame
+//        ;
+//        reqAnimFrame(render);
+        requestAnimationFrame(render);
         renderer.render();
     }
     render();
@@ -55,6 +54,12 @@ $(document).ready(function (){
                 }
                 scene.addObject(bubble4);
             }
+            else if (key === 'Open_TreeRing') {
+                var bubble5 = new PATHBUBBLES.TreeRing(mousePosX, mousePosY,730,730, null);
+                bubble5.addHtml();
+                bubble5.menuOperation();
+                scene.addObject(bubble5);
+            }
             else if(key === 'Delete_All')
             {
                 PATHBUBBLES.objects.length =0;
@@ -68,6 +73,7 @@ $(document).ready(function (){
         },
         items: {
             "Open_Bubble": {name: "Open_bubble", enabled: false},
+            "Open_TreeRing": {name: "Open_treeRing", enabled: false},
 //            "Open_VC_Menu": {name: "Open_vc_menu", enabled: false},
 //            "Compare": {name: "Compare", enabled: false},
             "sep1": "---------",

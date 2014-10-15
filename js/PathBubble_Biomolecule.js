@@ -237,8 +237,8 @@ PATHBUBBLES.Biomolecule.Compartment.prototype = {
     },
     drawSelection: function(ctx,scale) {
         var i, cur, half;
-        var x = this.shape.offsetX + this.shape.x;
-        var y = this.shape.offsetY + this.shape.y;
+        var x = this.x + this.offsetX;
+        var y = this.y + this.offsetY;
 
         var w = this.shape.w;
         var h = this.shape.h;
@@ -284,7 +284,7 @@ PATHBUBBLES.Biomolecule.Compartment.prototype = {
         for (i = 0; i < 8; i += 1) {
             cur = PATHBUBBLES.selectionHandles[i];
 //            ctx.save();	// save the context so we don't mess up others
-            ctx.fillStyle = "#ff0000";
+            ctx.fillStyle = "#ff00ff";
             ctx.fillRect(cur.x * scale, cur.y * scale, PATHBUBBLES.selectionBoxSize * scale, PATHBUBBLES.selectionBoxSize * scale);
 //            ctx.restore();
         }
@@ -302,10 +302,7 @@ PATHBUBBLES.Biomolecule.Compartment.prototype = {
                 this.textObj.draw(ctx, this.shape.x + this.w/2+this.offsetX, this.shape.y + this.h+this.offsetY);
         }
         if (this.shape.HighLight_State) {
-//            ctx.save();
-//            this.shape.drawStroke(ctx, scale);
-            this.drawSelection(ctx, scale);
-//            ctx.restore();
+//            this.drawSelection(ctx, scale);
         }
     },
     setOffset: function(){
@@ -327,7 +324,7 @@ PATHBUBBLES.Biomolecule.Compartment.prototype = {
     },
     contains : function(mx, my)
     {
-        this.setOffset();
+        //this.setOffset();
         return this.shape.contains(mx,my);
     }
 };

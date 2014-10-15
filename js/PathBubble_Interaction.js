@@ -64,7 +64,7 @@ PATHBUBBLES.Interaction = function(renderer)
         {
             if(PATHBUBBLES.objects[i] === null)
                 continue;
-            if( PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble && PATHBUBBLES.objects[i].containsInHalo(mx, my))
+            if( (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing) && PATHBUBBLES.objects[i].containsInHalo(mx, my))
             {
                 oldMouseX = mx;
                 oldMouseY = my;
@@ -72,10 +72,11 @@ PATHBUBBLES.Interaction = function(renderer)
                 _this.selection[0] = PATHBUBBLES.objects[i];
                 _this.selection[0].shape.HighLight_State = true;
                 _this.dragging = true;
+                scene.moveObjectToFront(_this.selection[0]);
                 renderer.valid = false;
                 return;
             }
-            else if( PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble && PATHBUBBLES.objects[i].containsInMenu(mx, my))
+            else if( (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble ||PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing) && PATHBUBBLES.objects[i].containsInMenu(mx, my))
             {
                 oldMouseX = mx;
                 oldMouseY = my;
@@ -88,7 +89,7 @@ PATHBUBBLES.Interaction = function(renderer)
                 renderer.valid = false;
                 return;
             }
-            else if(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble && PATHBUBBLES.objects[i].containsInsideBubble(mx, my))
+            else if((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble ) && PATHBUBBLES.objects[i].containsInsideBubble(mx, my))
             {
                 var flag = false;
                 for(var ii = 0; ii<PATHBUBBLES.objects[i].children.length; ii++)
@@ -124,7 +125,7 @@ PATHBUBBLES.Interaction = function(renderer)
                 return;
             }
 
-            else if ( !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble) && !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Groups) && PATHBUBBLES.objects[i].type != "" && PATHBUBBLES.objects[i].contains(mx, my))
+            else if ( (!_this.selection[0] instanceof PATHBUBBLES.Biomolecule.Compartment)&& !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble) && !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Groups) && PATHBUBBLES.objects[i].type != "" && PATHBUBBLES.objects[i].contains(mx, my))
             {
                 oldMouseX = mx;
                 oldMouseY = my;
@@ -158,28 +159,30 @@ PATHBUBBLES.Interaction = function(renderer)
                 _this.selection[0].bubbleView.y += offsetY;
             }
         }
-        if(_this.moleculeDrag)
+        else if(_this.moleculeDrag)
         {
             _this.selection[0].x += offsetX;
             _this.selection[0].y += offsetY;
         }
-        if (_this.dragging) {
-
-            if(!_this.selection[0].GROUP)
+        else if (_this.dragging ) {
+            if((_this.selection[0] instanceof PATHBUBBLES.Bubble || _this.selection[0] instanceof PATHBUBBLES.TreeRing) || _this.selection[0] instanceof PATHBUBBLES.Groups)
             {
-                _this.selection[0].x += offsetX;
-                _this.selection[0].y += offsetY;
-            }
-            if(_this.selection[0].GROUP)
-            {
+                if(!_this.selection[0].GROUP )
+                {
+                    _this.selection[0].x += offsetX;
+                    _this.selection[0].y += offsetY;
+                }
+                if(_this.selection[0].GROUP)
+                {
 //                _this.selection[0].x += offsetX;
 //                _this.selection[0].y += offsetY;
-                _this.selection[0].parent.offsetX += offsetX;
-                _this.selection[0].parent.offsetY += offsetY;
-                for(var i=0; i<_this.selection[0].parent.children.length; ++i)
-                {
-                    _this.selection[0].parent.children[i].x += offsetX;
-                    _this.selection[0].parent.children[i].y += offsetY;
+                    _this.selection[0].parent.offsetX += offsetX;
+                    _this.selection[0].parent.offsetY += offsetY;
+                    for(var i=0; i<_this.selection[0].parent.children.length; ++i)
+                    {
+                        _this.selection[0].parent.children[i].x += offsetX;
+                        _this.selection[0].parent.children[i].y += offsetY;
+                    }
                 }
             }
             this.style.cursor = 'move';
@@ -187,8 +190,16 @@ PATHBUBBLES.Interaction = function(renderer)
         }
         else if (_this.resizeDragging ) {
 
-            oldx = _this.selection[0].shape.x; //resize is just the relative position,, not absolute position
-            oldy = _this.selection[0].shape.y;
+            if(_this.selection[0] instanceof PATHBUBBLES.Biomolecule.Compartment)
+            {
+                mx -= _this.selection[0].offsetX;
+                my -= _this.selection[0].offsetY;
+            }
+
+            oldx = _this.selection[0].x; //resize is just the relative position,, not absolute position
+            oldy = _this.selection[0].y;
+
+
             // 0  1  2
             // 3     4
             // 5  6  7
@@ -231,6 +242,7 @@ PATHBUBBLES.Interaction = function(renderer)
                     _this.selection[0].h = my - oldy;
                     break;
             }
+
             if(_this.selection[0].GROUP)
             {
                var id = _this.selection[0].id;
@@ -371,11 +383,11 @@ PATHBUBBLES.Interaction = function(renderer)
             {
                 if((_this.selection[0]!== PATHBUBBLES.objects[i])
                     && (_this.selection[0] instanceof PATHBUBBLES.Bubble
-                    ||_this.selection[0].parent instanceof PATHBUBBLES.Groups))
+                    ||_this.selection[0].parent instanceof PATHBUBBLES.Groups||_this.selection[0] instanceof PATHBUBBLES.TreeRing))
                 {
                     if(_this.detectOverlap(_this.selection[0], PATHBUBBLES.objects[i]) )
                     {
-                        if(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble)
+                        if(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble||_this.selection[0] instanceof PATHBUBBLES.TreeRing)
                         {
                             if(PATHBUBBLES.objects[i].GROUP)
                             {

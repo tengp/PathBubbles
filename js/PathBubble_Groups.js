@@ -57,8 +57,6 @@ PATHBUBBLES.Groups.prototype = {
         if (object) {
             object.GROUP = true;
             object.parent = this;
-
-
             if (this.children.indexOf(object) == -1 || this.RESET) {
                 scene.addObject(object);
                 if (this.children.indexOf(object) == -1)
@@ -339,12 +337,9 @@ PATHBUBBLES.Groups.prototype = {
                     this.tempPoints[i].x -= this.offsetX;
                     this.tempPoints[i].y -= this.offsetY;
                 }
-//                var point = new PATHBUBBLES.Shape.PathPoint(this.tempPoints[i].id, this.tempPoints[i].pos, this.tempPoints[i].x, this.tempPoints[i].y, "LT");
-//                if (this.shape.points.indexOf(point) == -1)
-//                    this.shape.points.push(point);
 
                 for (var ii = 0; ii < PATHBUBBLES.objects.length; ++ii) {
-                    if (PATHBUBBLES.objects[ii] instanceof  PATHBUBBLES.Bubble && PATHBUBBLES.objects[ii].id == this.tempPoints[i].id && this.tempPoints.pos == "left") {
+                    if ( (PATHBUBBLES.objects[ii] instanceof  PATHBUBBLES.Bubble || PATHBUBBLES.objects[ii] instanceof  PATHBUBBLES.TreeRing) && PATHBUBBLES.objects[ii].id == this.tempPoints[i].id && this.tempPoints.pos == "left") {
                         PATHBUBBLES.objects[ii].x = this.tempPoints[i].x;
                         PATHBUBBLES.objects[ii].y = this.tempPoints[i].y;
                         break;
@@ -416,22 +411,6 @@ PATHBUBBLES.Groups.prototype = {
         down.type = "down";
         objects.push(down);
         return objects;
-//        var index=-1;
-//        var distance= Infinity;
-//        for (var i = 0; i < objects.length; ++i) {
-//            if(objects[i].flag !== false && objects[i].moveDistance <distance)
-//            {
-//                distance = objects[i].moveDistance;
-//                index = i;
-//            }
-//        }
-//        if(index !=-1)
-//        {
-//            return objects[index];
-//        }
-//        else
-//            return null;
-
     },
     detectOverlap: function (object1, object2) {
         return (object1.x < object2.x + object2.w &&

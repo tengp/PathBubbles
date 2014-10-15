@@ -48,12 +48,6 @@ PATHBUBBLES.Scene.prototype ={
         }
     },
     removeObject : function(object){
-//        this.__objectsRemoved.push( object );
-
-//        var i = this.__objectsAdded.indexOf( object );
-//        if ( i !== - 1 ) {
-//            this.__objectsAdded.splice( i, 1 );
-//        }
         if(object instanceof PATHBUBBLES.Groups)
         {
             for ( var c = 0; c < object.children.length; c ++ ) {
@@ -66,6 +60,10 @@ PATHBUBBLES.Scene.prototype ={
                 object.menuBar.button.hide();
             object.menu.HighLight_State = false;
             object.bubbleView = null;
+        }
+        else if(object instanceof PATHBUBBLES.TreeRing)
+        {
+            object.removeObject(object);
         }
         var index = PATHBUBBLES.objects.indexOf(object);
         if(index !== -1)
