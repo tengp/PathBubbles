@@ -1,0 +1,1 @@
+{"dbId":"917937","name":"Iron uptake and transport","children":[{"dbId":"917977","name":"Transferrin endocytosis and recycling","children":[],"size":1,"ups":["ATP6V1G3","TFRC","STEAP2"],"downs":["ATP6V0A4"]}],"ups":["ABCG2","TFRC","ATP6V1G3","SLC40A1","STEAP2"],"downs":["ATP6V0A4","HMOX1"]}

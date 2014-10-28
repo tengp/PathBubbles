@@ -64,7 +64,27 @@ PATHBUBBLES.Interaction = function(renderer)
         {
             if(PATHBUBBLES.objects[i] === null)
                 continue;
-            if( (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing) && PATHBUBBLES.objects[i].containsInHalo(mx, my))
+            if( (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
+            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+            ||PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
+            && PATHBUBBLES.objects[i].containsInMenu(mx, my))
+            {
+                oldMouseX = mx;
+                oldMouseY = my;
+
+                _this.selection[0] = PATHBUBBLES.objects[i];
+    //                _this.selection[0].menu.HighLight_State = true;
+                _this.selection[0].menu.HighLight_State = !_this.selection[0].menu.HighLight_State;
+    //                _this.menu = true;
+                scene.moveObjectToFront(_this.selection[0]);
+                renderer.valid = false;
+                return;
+            }
+
+            else if( (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
+                && PATHBUBBLES.objects[i].containsInHalo(mx, my))
             {
                 oldMouseX = mx;
                 oldMouseY = my;
@@ -72,19 +92,6 @@ PATHBUBBLES.Interaction = function(renderer)
                 _this.selection[0] = PATHBUBBLES.objects[i];
                 _this.selection[0].shape.HighLight_State = true;
                 _this.dragging = true;
-                scene.moveObjectToFront(_this.selection[0]);
-                renderer.valid = false;
-                return;
-            }
-            else if( (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble ||PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing) && PATHBUBBLES.objects[i].containsInMenu(mx, my))
-            {
-                oldMouseX = mx;
-                oldMouseY = my;
-
-                _this.selection[0] = PATHBUBBLES.objects[i];
-//                _this.selection[0].menu.HighLight_State = true;
-                _this.selection[0].menu.HighLight_State = !_this.selection[0].menu.HighLight_State;
-//                _this.menu = true;
                 scene.moveObjectToFront(_this.selection[0]);
                 renderer.valid = false;
                 return;
@@ -125,7 +132,7 @@ PATHBUBBLES.Interaction = function(renderer)
                 return;
             }
 
-            else if ( (!_this.selection[0] instanceof PATHBUBBLES.Biomolecule.Compartment)&& !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble) && !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Groups) && PATHBUBBLES.objects[i].type != "" && PATHBUBBLES.objects[i].contains(mx, my))
+            else if ( (!PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Biomolecule.Compartment)&& !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble) && !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Groups) && PATHBUBBLES.objects[i].type != "" && PATHBUBBLES.objects[i].contains(mx, my))
             {
                 oldMouseX = mx;
                 oldMouseY = my;
@@ -165,7 +172,10 @@ PATHBUBBLES.Interaction = function(renderer)
             _this.selection[0].y += offsetY;
         }
         else if (_this.dragging ) {
-            if((_this.selection[0] instanceof PATHBUBBLES.Bubble || _this.selection[0] instanceof PATHBUBBLES.TreeRing) || _this.selection[0] instanceof PATHBUBBLES.Groups)
+            if((_this.selection[0] instanceof PATHBUBBLES.Bubble
+                || _this.selection[0] instanceof PATHBUBBLES.Table
+                || _this.selection[0] instanceof PATHBUBBLES.TreeRing)
+                || _this.selection[0] instanceof PATHBUBBLES.Groups)
             {
                 if(!_this.selection[0].GROUP )
                 {
@@ -383,11 +393,15 @@ PATHBUBBLES.Interaction = function(renderer)
             {
                 if((_this.selection[0]!== PATHBUBBLES.objects[i])
                     && (_this.selection[0] instanceof PATHBUBBLES.Bubble
-                    ||_this.selection[0].parent instanceof PATHBUBBLES.Groups||_this.selection[0] instanceof PATHBUBBLES.TreeRing))
+                    ||_this.selection[0].parent instanceof PATHBUBBLES.Groups
+                        || _this.selection[0] instanceof PATHBUBBLES.Table
+                        ||_this.selection[0] instanceof PATHBUBBLES.TreeRing))
                 {
                     if(_this.detectOverlap(_this.selection[0], PATHBUBBLES.objects[i]) )
                     {
-                        if(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble||_this.selection[0] instanceof PATHBUBBLES.TreeRing)
+                        if(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
+                            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+                            ||PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
                         {
                             if(PATHBUBBLES.objects[i].GROUP)
                             {

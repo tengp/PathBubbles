@@ -1,0 +1,1 @@
+{"dbId":"1606322","name":"DAI mediated induction of type I IFNs","children":[{"dbId":"1606341","name":"IRF3 mediated activation of type 1 IFN","children":[],"size":1,"ups":["DEFB1","DEFB1","DEFB1"],"downs":[]},{"dbId":"1810476","name":"RIP-mediated NFkB activation via DAI","children":[],"size":1,"ups":["HMGB1"],"downs":[]}],"ups":["HMGB1"],"downs":[]}

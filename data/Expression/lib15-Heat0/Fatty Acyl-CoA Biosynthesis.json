@@ -1,0 +1,1 @@
+{"dbId":"75105","name":"Fatty Acyl-CoA Biosynthesis","children":[{"dbId":"75876","name":"Synthesis of very long-chain fatty acyl-CoAs","children":[],"size":1,"ups":["ELOVL5","TECR","ACSL1","ACSL5","ELOVL2"],"downs":["ELOVL3","TECRL"]}],"ups":["ELOVL5","TECR","ACSL1","ACSL5","ELOVL2"],"downs":["ELOVL3","TECRL"]}

@@ -43,7 +43,12 @@ PATHBUBBLES.NavInteraction = function(renderer)
                 oldMouseX = mouse.x;
                 _this.selection.x += offsetX;
                 for(var i=0; i<scene.children.length; ++i)
-                {   if(scene.children[i] instanceof PATHBUBBLES.Bubble)
+                {
+                    if(scene.children[i] instanceof PATHBUBBLES.Bubble)
+                        scene.children[i].x -= offsetX*window.innerHeight/50;
+                    if(scene.children[i] instanceof PATHBUBBLES.TreeRing)
+                        scene.children[i].x -= offsetX*window.innerHeight/50;
+                    if(scene.children[i] instanceof PATHBUBBLES.Table)
                         scene.children[i].x -= offsetX*window.innerHeight/50;
                     if(scene.children[i] instanceof PATHBUBBLES.Groups)
                         scene.children[i].offsetX -= offsetX*window.innerHeight/50;

@@ -1,0 +1,1 @@
+{"dbId":"189445","name":"Metabolism of porphyrins","children":[{"dbId":"189451","name":"Heme biosynthesis","children":[],"size":1,"ups":["ALAS1","UROD"],"downs":[]},{"dbId":"189483","name":"Heme degradation","children":[],"size":1,"ups":["ALAS1","UROD"],"downs":[]}],"ups":["ALAS1","BLVRA","UGT1A1","UROD"],"downs":["HMOX1"]}

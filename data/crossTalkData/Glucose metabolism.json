@@ -1,0 +1,1 @@
+[{"name":"Glycolysis","imports":["Gluconeogenesis"]},{"name":"Gluconeogenesis","imports":[]},{"name":"Glycogen synthesis","imports":[]},{"name":"Glycogen breakdown (glycogenolysis)","imports":["Glycogen synthesis"]}]

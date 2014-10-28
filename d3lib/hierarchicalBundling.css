@@ -1,3 +1,7 @@
+path {
+    stroke: #fff;
+    fill-rule: evenodd;
+}
 .node {
     font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
     fill: #bbb;
@@ -22,12 +26,10 @@
 
 .node--source {
     fill: #2ca02c;
-    cursor  : pointer;
 }
 
 .node--target {
     fill: #d62728;
-    cursor  : pointer;
 }
 
 .link--source,
@@ -42,4 +44,18 @@
 
 .link--target {
     stroke: #2ca02c;
+}
+
+svg .colorScaleBar {
+    xborder:1px solid red;
+}
+.axis text {
+    font: 10px sans-serif;
+}
+
+.axis line,
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }

@@ -1,0 +1,1 @@
+{"dbId":"209968","name":"Thyroxine biosynthesis","children":[{"dbId":"350864","name":"Regulation of thyroid hormone activity","children":[],"size":1,"ups":["DIO2"],"downs":[]}],"ups":["CGA","DIO2"],"downs":["IYD"]}

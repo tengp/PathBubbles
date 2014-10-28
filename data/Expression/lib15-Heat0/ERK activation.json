@@ -1,0 +1,1 @@
+{"dbId":"112409","name":"ERK activation","children":[{"dbId":"110056","name":"ERK1 activation","children":[],"size":1,"ups":[],"downs":["IL6"]},{"dbId":"112411","name":"ERK2 activation","children":[],"size":1,"ups":[],"downs":["IL6"]}],"ups":[],"downs":["IL6"]}

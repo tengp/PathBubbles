@@ -1,0 +1,1 @@
+{"dbId":"68882","name":"Mitotic Anaphase","children":[{"dbId":"2467813","name":"Separation of Sister Chromatids","children":[],"size":1,"ups":["PTTG1","CDC20","PTTG1"],"downs":[]},{"dbId":"2995410","name":"Nuclear Envelope Reassembly","children":[],"size":1,"ups":[],"downs":[]}],"ups":["PTTG1","CDC20","PTTG1"],"downs":[]}

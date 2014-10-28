@@ -1,24 +1,1198 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b1ac370-d672-41b3-a628-bc307ae2cdb4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring_backup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/d3lib/hierarchicalBundling.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/d3lib/pathwayHierarchy.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/d3lib/pathwayHierarchy1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/d3lib/pathwayHierarchy11.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/d3lib/readme-flare-imports.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Biomolecule.js" afterPath="$PROJECT_DIR$/js/PathBubble_Biomolecule.js" />
+    <list default="true" id="6b1ac370-d672-41b3-a628-bc307ae2cdb4" name="Default" comment="artment">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/2-LTR circle formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/2-LTR circle formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/ARMS-mediated activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/ARMS-mediated activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Abacavir metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Abacavir metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Acetylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Acetylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Activated TLR4 signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Activated TLR4 signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Activation of AMPA receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Activation of AMPA receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Activation of BH3-only proteins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Activation of BH3-only proteins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Activation of C3 and C5.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Activation of C3 and C5.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Activation of GABAB receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Activation of GABAB receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Activation of Genes by ATF4.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Activation of Genes by ATF4.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Activation of RAS in B Cells.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Activation of RAS in B Cells.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Activation of Rac.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Activation of Rac.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Activation of TRKA receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Activation of TRKA receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Acyl chain remodeling of CL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Acyl chain remodeling of CL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Acyl chain remodelling of PC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Acyl chain remodelling of PC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Acyl chain remodelling of PE.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Acyl chain remodelling of PE.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Acyl chain remodelling of PG.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Acyl chain remodelling of PG.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Acyl chain remodelling of PI.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Acyl chain remodelling of PI.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Acyl chain remodelling of PS.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Acyl chain remodelling of PS.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Adaptive Immune System.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Adaptive Immune System.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Adenosine P1 receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Adenosine P1 receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Adherens junctions interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Adherens junctions interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Adrenoceptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Adrenoceptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Agmatine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Agmatine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Alpha-defensins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Alpha-defensins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Alpha-oxidation of phytanate.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Alpha-oxidation of phytanate.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Amine Oxidase reactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Amine Oxidase reactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Amine ligand-binding receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Amine ligand-binding receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Amine-derived hormones.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Amine-derived hormones.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Amino Acid conjugation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Amino Acid conjugation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Amyloids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Amyloids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Anchoring fibril formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Anchoring fibril formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Androgen biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Androgen biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Apoptosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Apoptosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Apoptotic execution  phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Apoptotic execution  phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Aquaporin-mediated transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Aquaporin-mediated transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Arachidonic acid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Arachidonic acid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Assembly of HIV virion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Assembly of HIV virion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Axon guidance.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Axon guidance.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Axonal growth stimulation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Axonal growth stimulation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Base Excision Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Base Excision Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Basigin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Basigin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Beta defensins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Beta defensins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Bicarbonate transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Bicarbonate transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Binding and entry of HIV virion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Binding and entry of HIV virion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Biological oxidations.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Biological oxidations.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Biotin transport and metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Biotin transport and metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Botulinum neurotoxicity.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Botulinum neurotoxicity.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Breakdown of the nuclear lamina.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Breakdown of the nuclear lamina.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Budding.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Budding.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/C6 deamination of adenosine.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/C6 deamination of adenosine.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CD28 co-stimulation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CD28 co-stimulation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CD28 dependent Vav1 pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CD28 dependent Vav1 pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CDO in myogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CDO in myogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CHL1 interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CHL1 interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/COPI Mediated Transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/COPI Mediated Transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/COX reactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/COX reactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CREB phosphorylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CREB phosphorylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CRMPs in Sema3A signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CRMPs in Sema3A signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CSDS degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CSDS degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CTLA4 inhibitory signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CTLA4 inhibitory signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CYP2E1 reactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CYP2E1 reactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ca-dependent events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Ca-dependent events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ca2+ activated K+ channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Ca2+ activated K+ channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/CaM pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/CaM pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Calmodulin induced events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Calmodulin induced events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Calnexincalreticulin cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Calnexincalreticulin cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cam-PDE 1 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cam-PDE 1 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Carnitine synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Carnitine synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Caspase-8 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Caspase-8 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Catecholamine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Catecholamine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cell Cycle Checkpoints.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cell Cycle Checkpoints.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cell Cycle Mitotic.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cell Cycle Mitotic.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cell Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cell Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cell junction organization.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cell junction organization.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cell redox homeostasis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cell redox homeostasis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cell-Cell communication.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cell-Cell communication.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cell-cell junction organization.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cell-cell junction organization.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cellular response to hypoxia.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cellular response to hypoxia.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cellular responses to stress.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cellular responses to stress.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Centrosome maturation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Centrosome maturation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ceramide signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Ceramide signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cholesterol biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cholesterol biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Chromosome Maintenance.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Chromosome Maintenance.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Circadian Clock.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Circadian Clock.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Citric acid cycle (TCA cycle).json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Citric acid cycle (TCA cycle).json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Class II GLUTs.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Class II GLUTs.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Classical Kir channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Classical Kir channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cleavage of the damaged purine.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cleavage of the damaged purine.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Coenzyme A biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Coenzyme A biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cohesin Loading onto Chromatin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cohesin Loading onto Chromatin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Collagen formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Collagen formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Common Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Common Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Complement cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Complement cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Conjugation of carboxylic acids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Conjugation of carboxylic acids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Creatine metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Creatine metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cyclin B2 mediated events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cyclin B2 mediated events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cytosolic tRNA aminoacylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Cytosolic tRNA aminoacylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DAG and IP3 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DAG and IP3 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DAP12 interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DAP12 interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DAP12 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DAP12 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DARPP-32 events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DARPP-32 events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DNA Damage Bypass.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DNA Damage Bypass.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DNA Damage Reversal.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DNA Damage Reversal.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DNA Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DNA Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DNA Replication Pre-Initiation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DNA Replication Pre-Initiation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DNA Replication.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DNA Replication.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DNA replication initiation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DNA replication initiation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DNA strand elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DNA strand elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/DSCAM interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/DSCAM interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Deadenylation of mRNA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Deadenylation of mRNA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Death Receptor  Signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Death Receptor  Signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Defensins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Defensins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Degradation of GABA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Degradation of GABA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Degradation of collagen.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Degradation of collagen.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Depurination.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Depurination.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Depyrimidination.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Depyrimidination.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Dermatan sulfate biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Dermatan sulfate biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Destabilization of mRNA by KSRP.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Destabilization of mRNA by KSRP.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Developmental Biology.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Developmental Biology.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Digestion of dietary lipid.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Digestion of dietary lipid.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Dimerization of procaspase-8.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Dimerization of procaspase-8.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Disease.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Disease.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Dissolution of Fibrin Clot.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Dissolution of Fibrin Clot.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Dopamine receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Dopamine receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Double-Strand Break Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Double-Strand Break Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Downstream TCR signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Downstream TCR signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Downstream signal transduction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Downstream signal transduction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/EGFR Transactivation by Gastrin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/EGFR Transactivation by Gastrin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/EGFR downregulation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/EGFR downregulation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/ER to Golgi Transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/ER to Golgi Transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/ER-Phagosome pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/ER-Phagosome pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/ERK activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/ERK activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/ERK1 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/ERK1 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/ERK2 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/ERK2 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/ERKMAPK targets.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/ERKMAPK targets.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/ERKs are inactivated.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/ERKs are inactivated.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Early Phase of HIV Life Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Early Phase of HIV Life Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Effects of PIP2 hydrolysis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Effects of PIP2 hydrolysis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Eicosanoids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Eicosanoids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Elastic fibre formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Elastic fibre formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Endogenous sterols.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Endogenous sterols.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/EndosomalVacuolar pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/EndosomalVacuolar pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Estrogen biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Estrogen biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ethanol oxidation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Ethanol oxidation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Extension of Telomeres.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Extension of Telomeres.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Extrinsic Pathway for Apoptosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Extrinsic Pathway for Apoptosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Extrinsic Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Extrinsic Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/FCGR activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/FCGR activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/FMO oxidizes nucleophiles.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/FMO oxidizes nucleophiles.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/FRS2-mediated cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/FRS2-mediated cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Fanconi Anemia pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Fanconi Anemia pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/FasL CD95L signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/FasL CD95L signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Fatty Acyl-CoA Biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Fatty Acyl-CoA Biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Fatty acids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Fatty acids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Fibronectin matrix formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Fibronectin matrix formation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Folding of actin by CCTTriC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Folding of actin by CCTTriC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Formation of PAPS.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Formation of PAPS.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Formation of apoptosome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Formation of apoptosome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Formation of the Editosome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Formation of the Editosome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Free fatty acid receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Free fatty acid receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Frs2-mediated activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Frs2-mediated activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Fructose catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Fructose catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G alpha (i) signalling events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G alpha (i) signalling events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G alpha (q) signalling events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G alpha (q) signalling events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G alpha (s) signalling events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G alpha (s) signalling events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G alpha (z) signalling events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G alpha (z) signalling events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G-protein activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G-protein activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G-protein betagamma signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G-protein betagamma signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G-protein mediated events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G-protein mediated events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G0 and Early G1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G0 and Early G1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G1 Phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G1 Phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G1S DNA Damage Checkpoints.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G1S DNA Damage Checkpoints.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G1S Transition.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G1S Transition.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G1S-Specific Transcription.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G1S-Specific Transcription.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G2 Phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G2 Phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G2M Checkpoints.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G2M Checkpoints.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G2M DNA damage checkpoint.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G2M DNA damage checkpoint.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G2M DNA replication checkpoint.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G2M DNA replication checkpoint.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/G2M Transition.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/G2M Transition.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GAB1 signalosome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GAB1 signalosome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GABA A receptor activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GABA A receptor activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GABA B receptor activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GABA B receptor activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GABA receptor activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GABA receptor activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GABA synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GABA synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GP1b-IX-V activation signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GP1b-IX-V activation signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GPCR downstream signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GPCR downstream signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GPCR ligand binding.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GPCR ligand binding.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GRB2 events in EGFR signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GRB2 events in EGFR signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GRB2 events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GRB2 events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/GRB7 events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/GRB7 events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Galactose catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Galactose catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Gap junction assembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Gap junction assembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Gap junction degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Gap junction degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Gap junction trafficking.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Gap junction trafficking.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Gene Expression.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Gene Expression.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Generic Transcription Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Generic Transcription Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Global Genomic NER (GG-NER).json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Global Genomic NER (GG-NER).json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glucagon-type ligand receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glucagon-type ligand receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glucocorticoid biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glucocorticoid biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Gluconeogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Gluconeogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glucose metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glucose metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glucose transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glucose transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glucuronidation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glucuronidation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glutathione conjugation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glutathione conjugation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glycogen synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glycogen synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glycolysis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glycolysis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glycoprotein hormones.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glycoprotein hormones.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glycosaminoglycan metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glycosaminoglycan metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glycosphingolipid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glycosphingolipid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Glyoxylate metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Glyoxylate metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HCN channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/HCN channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HDL-mediated lipid transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/HDL-mediated lipid transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV Infection.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/HIV Infection.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV Life Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/HIV Life Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV-1 Transcription Elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/HIV-1 Transcription Elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV-1 Transcription Initiation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/HIV-1 Transcription Initiation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV-1 Transcription Termination.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/HIV-1 Transcription Termination.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HS-GAG biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/HS-GAG biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HS-GAG degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/HS-GAG degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Heme biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Heme biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Heme degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Heme degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Hemostasis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Hemostasis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Hexose transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Hexose transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Histamine receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Histamine receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Histidine catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Histidine catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Homologous Recombination Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Homologous Recombination Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Hyaluronan metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Hyaluronan metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Hydrolysis of LPC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Hydrolysis of LPC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Hydrolysis of LPE.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Hydrolysis of LPE.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IGF1R signaling cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/IGF1R signaling cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IRAK1 recruits IKK complex.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/IRAK1 recruits IKK complex.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IRS activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/IRS activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IRS-mediated signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/IRS-mediated signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IRS-related events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/IRS-related events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/ISG15 antiviral mechanism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/ISG15 antiviral mechanism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Immune System.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Immune System.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Inactivation of Cdc42 and Rac.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Inactivation of Cdc42 and Rac.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Inflammasomes.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Inflammasomes.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Influenza Infection.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Influenza Infection.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Influenza Life Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Influenza Life Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Inhibition of IFN-beta.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Inhibition of IFN-beta.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Inhibition of PKR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Inhibition of PKR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Innate Immune System.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Innate Immune System.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Inositol phosphate metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Inositol phosphate metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Inositol transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Inositol transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Insulin Processing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Insulin Processing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Insulin receptor recycling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Insulin receptor recycling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Integration of provirus.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Integration of provirus.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Interconversion of polyamines.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Interconversion of polyamines.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Interferon Signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Interferon Signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Interferon alphabeta signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Interferon alphabeta signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Interferon gamma signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Interferon gamma signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Interleukin-1 processing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Interleukin-1 processing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Interleukin-1 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Interleukin-1 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Interleukin-2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Interleukin-2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Interleukin-6 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Interleukin-6 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Interleukin-7 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Interleukin-7 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Intrinsic Pathway for Apoptosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Intrinsic Pathway for Apoptosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Intrinsic Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Intrinsic Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Inwardly rectifying K+ channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Inwardly rectifying K+ channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ion channel transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Ion channel transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ion transport by P-type ATPases.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Ion transport by P-type ATPases.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Iron uptake and transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Iron uptake and transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Keratan sulfate biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Keratan sulfate biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Keratan sulfate degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Keratan sulfate degradation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ketone body metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Ketone body metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Kinesins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Kinesins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Klotho-mediated ligand binding.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Klotho-mediated ligand binding.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/L1CAM interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/L1CAM interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/LDL-mediated lipid transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/LDL-mediated lipid transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Lagging Strand Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Lagging Strand Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Late Phase of HIV Life Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Late Phase of HIV Life Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Leading Strand Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Leading Strand Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Leukotriene receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Leukotriene receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Linoleic acid (LA) metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Linoleic acid (LA) metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Lipoprotein metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Lipoprotein metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Lysine catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Lysine catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Lysosome Vesicle Biogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Lysosome Vesicle Biogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/M Phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/M Phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MEK activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MEK activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MG1 Transition.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MG1 Transition.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MPS I - Hurler syndrome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MPS I - Hurler syndrome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MPS II - Hunter syndrome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MPS II - Hunter syndrome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MPS IV - Morquio syndrome A.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MPS IV - Morquio syndrome A.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MPS IV - Morquio syndrome B.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MPS IV - Morquio syndrome B.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MPS IX - Natowicz syndrome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MPS IX - Natowicz syndrome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MPS VII - Sly syndrome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MPS VII - Sly syndrome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Meiosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Meiosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Meiotic Recombination.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Meiotic Recombination.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Meiotic Synapsis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Meiotic Synapsis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Membrane Trafficking.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Membrane Trafficking.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metabolism of carbohydrates.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metabolism of carbohydrates.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metabolism of nitric oxide.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metabolism of nitric oxide.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metabolism of non-coding RNA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metabolism of non-coding RNA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metabolism of nucleotides.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metabolism of nucleotides.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metabolism of polyamines.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metabolism of polyamines.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metabolism of porphyrins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metabolism of porphyrins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metabolism of proteins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metabolism of proteins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metabolism of serotonin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metabolism of serotonin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Metal ion SLC transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Metal ion SLC transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Methionine salvage pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Methionine salvage pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Methylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Methylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MicroRNA (miRNA) Biogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MicroRNA (miRNA) Biogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mineralocorticoid biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mineralocorticoid biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Minus-strand DNA synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Minus-strand DNA synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Miscellaneous substrates.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Miscellaneous substrates.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitochondrial ABC transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitochondrial ABC transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitochondrial Protein Import.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitochondrial Protein Import.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Anaphase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitotic Anaphase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic G1-G1S phases.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitotic G1-G1S phases.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic G2-G2M phases.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitotic G2-G2M phases.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Metaphase and Anaphase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitotic Metaphase and Anaphase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Metaphase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitotic Metaphase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Prometaphase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitotic Prometaphase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Prophase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitotic Prophase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Spindle Checkpoint.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitotic Spindle Checkpoint.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic TelophaseCytokinesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mitotic TelophaseCytokinesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mucopolysaccharidoses.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Mucopolysaccharidoses.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Muscle contraction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Muscle contraction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/MyD88-independent cascade .json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/MyD88-independent cascade .json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Myogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Myogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/N-Glycan antennae elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/N-Glycan antennae elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NADE modulates death signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NADE modulates death signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NADPH regeneration.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NADPH regeneration.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NCAM1 interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NCAM1 interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NFG and proNGF binds to p75NTR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NFG and proNGF binds to p75NTR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NGF processing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NGF processing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NGF-independant TRKA activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NGF-independant TRKA activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NOD12 Signaling Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NOD12 Signaling Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NOSIP mediated eNOS trafficking.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NOSIP mediated eNOS trafficking.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NRAGE signals death through JNK.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NRAGE signals death through JNK.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nef and signal transduction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nef and signal transduction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nephrin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nephrin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Netrin-1 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Netrin-1 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Neurofascin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Neurofascin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Neuronal System.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Neuronal System.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Neurotransmitter Release Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Neurotransmitter Release Cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nicotinamide salvaging.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nicotinamide salvaging.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nicotinate metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nicotinate metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nonsense-Mediated Decay.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nonsense-Mediated Decay.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Notch-HLH transcription pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Notch-HLH transcription pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/NrCAM interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/NrCAM interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nuclear Envelope Breakdown.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nuclear Envelope Breakdown.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nuclear Envelope Reassembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nuclear Envelope Reassembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nuclear import of Rev protein.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nuclear import of Rev protein.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nuclear signaling by ERBB4.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nuclear signaling by ERBB4.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nucleosome assembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nucleosome assembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Nucleotide Excision Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Nucleotide Excision Repair.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/O2CO2 exchange in erythrocytes.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/O2CO2 exchange in erythrocytes.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Olfactory Signaling Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Olfactory Signaling Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Opioid Signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Opioid Signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Opsins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Opsins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Orc1 removal from chromatin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Orc1 removal from chromatin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Organic anion transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Organic anion transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Organic anion transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Organic anion transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Organic cation transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Organic cation transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Other semaphorin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Other semaphorin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/P2Y receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/P2Y receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PD-1 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PD-1 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PECAM1 interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PECAM1 interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PERK regulated gene expression.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PERK regulated gene expression.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PI Metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PI Metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PI-3K cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PI-3K cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PI3K Cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PI3K Cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PI3K events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PI3K events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PI3K events in ERBB4 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PI3K events in ERBB4 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PI3KAKT Signaling in Cancer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PI3KAKT Signaling in Cancer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PI3KAKT activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PI3KAKT activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PIP3 activates AKT signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PIP3 activates AKT signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PKA activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PKA activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PLC beta mediated events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PLC beta mediated events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PLC-gamma1 signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PLC-gamma1 signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PLCG1 events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PLCG1 events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/POLRMT chain elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/POLRMT chain elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PPARA Activates Gene Expression.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/PPARA Activates Gene Expression.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Packaging Of Telomere Ends.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Packaging Of Telomere Ends.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Packaging of Eight RNA Segments.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Packaging of Eight RNA Segments.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Passive Transport by Aquaporins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Passive Transport by Aquaporins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring_backup(Old).js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/PathBubble_D3Table.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/PathBubble_SvgToCanvas.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/PathBubble_Table.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/PathBubble_Title.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Peptide chain elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Peptide chain elongation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Peptide hormone biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Peptide hormone biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Peptide hormone metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Peptide hormone metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Peroxisomal lipid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Peroxisomal lipid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Phase II conjugation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Phase II conjugation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Phospholipid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Phospholipid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Phosphorylation of Emi1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Phosphorylation of Emi1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Phosphorylation of the APCC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Phosphorylation of the APCC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Plasmalogen biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Plasmalogen biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Platelet calcium homeostasis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Platelet calcium homeostasis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Platelet degranulation .json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Platelet degranulation .json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Platelet homeostasis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Platelet homeostasis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Platelet sensitization by LDL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Platelet sensitization by LDL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Plus-strand DNA synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Plus-strand DNA synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Polymerase switching.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Polymerase switching.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Potassium Channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Potassium Channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Potassium transport channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Potassium transport channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Pre-NOTCH Processing in Golgi.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Pre-NOTCH Processing in Golgi.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Pregnenolone biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Pregnenolone biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Prolactin receptor signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Prolactin receptor signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Proline catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Proline catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Prolonged ERK activation events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Prolonged ERK activation events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Propionyl-CoA catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Propionyl-CoA catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Prostanoid ligand receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Prostanoid ligand receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Protein folding.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Protein folding.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Purine catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Purine catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Purine metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Purine metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Purine salvage.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Purine salvage.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Pyrimidine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Pyrimidine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Pyrimidine catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Pyrimidine catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Pyrimidine metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Pyrimidine metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Pyrimidine salvage reactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Pyrimidine salvage reactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Pyruvate metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Pyruvate metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/RAF activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/RAF activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/RAF phosphorylates MEK.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/RAF phosphorylates MEK.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/RAFMAP kinase cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/RAFMAP kinase cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/RNA Polymerase I Transcription.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/RNA Polymerase I Transcription.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/RNA Polymerase II Transcription.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/RNA Polymerase II Transcription.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Rap1 signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Rap1 signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Recycling of eIF2GDP.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Recycling of eIF2GDP.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Recycling pathway of L1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Recycling pathway of L1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Regulated proteolysis of p75NTR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Regulated proteolysis of p75NTR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Regulation of Apoptosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Regulation of Apoptosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Regulation of DNA replication.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Regulation of DNA replication.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Regulation of IFNA signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Regulation of IFNA signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Regulation of IFNG signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Regulation of IFNG signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Regulation of Insulin Secretion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Regulation of Insulin Secretion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Regulation of KIT signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Regulation of KIT signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Regulation of signaling by CBL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Regulation of signaling by CBL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Regulatory RNA pathways.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Regulatory RNA pathways.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Relaxin receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Relaxin receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Release.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Release.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Resolution of D-loop structures.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Resolution of D-loop structures.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Respiratory electron transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Respiratory electron transport.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Response of Mtb to phagocytosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Response of Mtb to phagocytosis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Retinoid cycle disease events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Retinoid cycle disease events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Reuptake of GABA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Reuptake of GABA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Rho GTPase cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Rho GTPase cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/S Phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/S Phase.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SHC activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SHC activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SHC-mediated cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SHC-mediated cascade.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SHC-mediated signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SHC-mediated signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SHC-related events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SHC-related events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SHC1 events in EGFR signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SHC1 events in EGFR signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SHC1 events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SHC1 events in ERBB2 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SHC1 events in ERBB4 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SHC1 events in ERBB4 signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SMAC binds to IAPs .json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SMAC binds to IAPs .json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SOS-mediated signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SOS-mediated signalling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Scavenging of Heme from Plasma.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Scavenging of Heme from Plasma.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Sema4D in semaphorin signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Sema4D in semaphorin signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Semaphorin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Semaphorin interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Separation of Sister Chromatids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Separation of Sister Chromatids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Serine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Serine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Serotonin receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Serotonin receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signal Transduction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signal Transduction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signal amplification.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signal amplification.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signal attenuation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signal attenuation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signal transduction by L1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signal transduction by L1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by Activin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by Activin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by BMP.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by BMP.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by EGFR in Cancer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by EGFR in Cancer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by EGFR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by EGFR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by ERBB2.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by ERBB2.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by ERBB4.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by ERBB4.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by FGFR in disease.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by FGFR in disease.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by FGFR mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by FGFR mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by FGFR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by FGFR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by FGFR1 mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by FGFR1 mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by FGFR2 mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by FGFR2 mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by FGFR3 mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by FGFR3 mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by FGFR4 mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by FGFR4 mutants.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by GPCR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by GPCR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by Hippo.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by Hippo.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by Insulin receptor.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by Insulin receptor.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by Interleukins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by Interleukins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by NODAL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by NODAL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by NOTCH.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by NOTCH.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by NOTCH1 in Cancer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by NOTCH1 in Cancer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by NOTCH1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by NOTCH1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by NOTCH2.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by NOTCH2.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by NOTCH3.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by NOTCH3.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by NOTCH4.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by NOTCH4.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by PDGF.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by PDGF.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by Rho GTPases.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by Rho GTPases.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by Robo receptor.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by Robo receptor.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by SCF-KIT.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by SCF-KIT.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by VEGF.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by VEGF.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signaling by Wnt.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signaling by Wnt.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signalling by NGF.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signalling by NGF.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signalling to ERK5.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signalling to ERK5.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signalling to ERKs.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signalling to ERKs.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signalling to RAS.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signalling to RAS.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Signalling to STAT3.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Signalling to STAT3.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Smooth Muscle Contraction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Smooth Muscle Contraction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SodiumCalcium exchangers.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SodiumCalcium exchangers.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/SodiumProton exchangers.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/SodiumProton exchangers.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Sphingolipid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Sphingolipid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Stabilization of mRNA by HuR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Stabilization of mRNA by HuR.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Stabilization of p53.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Stabilization of p53.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Stimuli-sensing channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Stimuli-sensing channels.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Striated Muscle Contraction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Striated Muscle Contraction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Sulfide oxidation to sulfate.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Sulfide oxidation to sulfate.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Sulfur amino acid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Sulfur amino acid metabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of BMP.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of BMP.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of CL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of CL.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of DNA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of DNA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of Dolichyl-phosphate.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of Dolichyl-phosphate.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of GDP-mannose.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of GDP-mannose.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of IPs in the nucleus.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of IPs in the nucleus.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of Ketone Bodies.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of Ketone Bodies.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of Lipoxins (LX).json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of Lipoxins (LX).json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of PA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of PA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of PC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of PC.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of PE.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of PE.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of PG.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of PG.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of PI.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of PI.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of PS.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Synthesis of PS.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/TCR signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/TCR signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/TGF0expression.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/TNF signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/TNF signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/TRAF6 mediated IRF7 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/TRAF6 mediated IRF7 activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/TRAIL  signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/TRAIL  signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/TRKA activation by NGF.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/TRKA activation by NGF.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Telomere Maintenance.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Telomere Maintenance.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Terminal pathway of complement.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Terminal pathway of complement.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/The AIM2 inflammasome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/The AIM2 inflammasome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/The IPAF inflammasome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/The IPAF inflammasome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/The NLRP1 inflammasome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/The NLRP1 inflammasome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/The NLRP3 inflammasome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/The NLRP3 inflammasome.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/The fatty acid cycling model.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/The fatty acid cycling model.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/The proton buffering model.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/The proton buffering model.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Thyroxine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Thyroxine biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Tie2 Signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Tie2 Signaling.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Tight junction interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Tight junction interactions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Toll-Like Receptors Cascades.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Toll-Like Receptors Cascades.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Trafficking of AMPA receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Trafficking of AMPA receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Trafficking of dietary sterols.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Trafficking of dietary sterols.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Translation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Translation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Translesion synthesis by HREV1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Translesion synthesis by HREV1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Transport of fatty acids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Transport of fatty acids.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Transport of nucleotide sugars.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Transport of nucleotide sugars.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Transport of organic anions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Transport of organic anions.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Triglyceride Biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Triglyceride Biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Tryptophan catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Tryptophan catabolism.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Type I hemidesmosome assembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Type I hemidesmosome assembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Type II Na+Pi cotransporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Type II Na+Pi cotransporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ubiquinol biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Ubiquinol biosynthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Uncoating of the HIV Virion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Uncoating of the HIV Virion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Unfolded Protein Response.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Unfolded Protein Response.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Unwinding of DNA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Unwinding of DNA.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Urea cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Urea cycle.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Utilization of Ketone Bodies.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Utilization of Ketone Bodies.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Vasopressin-like receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Vasopressin-like receptors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Viral Messenger RNA Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Viral Messenger RNA Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Viral mRNA Translation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Viral mRNA Translation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Virus Assembly and Release.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Virus Assembly and Release.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Visual phototransduction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Visual phototransduction.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Vitamins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Vitamins.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Xenobiotics.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Xenobiotics.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Zinc transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/Zinc transporters.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/cGMP effects.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/cGMP effects.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/cRNA Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/cRNA Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/eNOS activation and regulation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/eNOS activation and regulation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/eNOS activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/eNOS activation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/hierarchyAlligator_ortholog.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/hierarchyCrosstalk.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/hierarchyGallus_ortholog.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/hierarchyTurtle_ortholog.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/homo sapiens.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/homo sapiens.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/lib15-Heat0Expression.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA 3-end processing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/mRNA 3-end processing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA Capping.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/mRNA Capping.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA Editing A to I Conversion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/mRNA Editing A to I Conversion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA Editing C to U Conversion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/mRNA Editing C to U Conversion.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA Editing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/mRNA Editing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA Splicing - Major Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/mRNA Splicing - Major Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA Splicing - Minor Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/mRNA Splicing - Minor Pathway.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA Splicing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/mRNA Splicing.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/mysqlConfig.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/p38MAPK events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/p38MAPK events.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/p75NTR regulates axonogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/p75NTR regulates axonogenesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/p75NTR signals via NF-kB.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/p75NTR signals via NF-kB.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/queryData.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/snRNP Assembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/snRNP Assembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/tRNA Aminoacylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/tRNA Aminoacylation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/vRNA Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/vRNA Synthesis.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/vRNP Assembly.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/crossTalkData/vRNP Assembly.json" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\data\readme-flare-imports.json" afterPath="" />
+      <change type="MOVED" beforePath="C:\wamp\www\PathBubbles\d3lib\pathwayHierarchy.json" afterPath="$PROJECT_DIR$/data/pathwayHierarchy.json" />
+      <change type="MOVED" beforePath="C:\wamp\www\PathBubbles\d3lib\pathwayHierarchy1.json" afterPath="$PROJECT_DIR$/data/pathwayHierarchy1.json" />
+      <change type="MOVED" beforePath="C:\wamp\www\PathBubbles\d3lib\pathwayHierarchy11.json" afterPath="$PROJECT_DIR$/data/pathwayHierarchy11.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Bubble.js" afterPath="$PROJECT_DIR$/js/PathBubble_Bubble.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Button.js" afterPath="$PROJECT_DIR$/js/PathBubble_Button.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Groups.js" afterPath="$PROJECT_DIR$/js/PathBubble_Groups.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Ring.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Ring_backup.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring_backup.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Interaction.js" afterPath="$PROJECT_DIR$/js/PathBubble_Interaction.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_LocalFileLoader.js" afterPath="$PROJECT_DIR$/js/PathBubble_LocalFileLoader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_NavInteraction.js" afterPath="$PROJECT_DIR$/js/PathBubble_NavInteraction.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Renderer.js" afterPath="$PROJECT_DIR$/js/PathBubble_Renderer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Scene.js" afterPath="$PROJECT_DIR$/js/PathBubble_Scene.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Text.js" afterPath="$PROJECT_DIR$/js/PathBubble_Text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" afterPath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/d3lib/hierarchicalBundling.css" afterPath="$PROJECT_DIR$/d3lib/hierarchicalBundling.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/visualization.css" afterPath="$PROJECT_DIR$/css/visualization.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PathBubbles.iws" />
@@ -42,126 +1216,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PathBubble_Interaction.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/PathBubble_Interaction.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.44" vertical-offset="2837" max-vertical-offset="11304">
-              <caret line="127" column="76" selection-start-line="127" selection-start-column="76" selection-end-line="127" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathBubble_Groups.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/PathBubble_Groups.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10752">
-              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathBubble_D3Ring.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PathBubble_D3Ring.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2111" max-vertical-offset="3552">
-              <caret line="105" column="123" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathBubble_Bubble.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/PathBubble_Bubble.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.8" vertical-offset="1200" max-vertical-offset="7344">
-              <caret line="92" column="21" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.33233082" vertical-offset="7555" max-vertical-offset="11064">
+              <caret line="486" column="0" selection-start-line="486" selection-start-column="0" selection-end-line="486" selection-end-column="0" />
               <folding>
-                <element signature="e#2115#3208#0" expanded="false" />
-                <element signature="e#3243#3946#0" expanded="false" />
-                <element signature="e#3984#4584#0" expanded="false" />
-                <element signature="e#6954#7858#0" expanded="false" />
-                <element signature="e#7905#8329#0" expanded="false" />
+                <element signature="e#997#2900#0" expanded="false" />
+                <element signature="e#9289#10977#0" expanded="false" />
+                <element signature="e#15458#19130#0" expanded="false" />
+                <element signature="e#16738#19112#0" expanded="false" />
+                <element signature="e#18363#18634#0" expanded="false" />
+                <element signature="e#18664#19039#0" expanded="false" />
+                <element signature="e#20052#20133#0" expanded="false" />
+                <element signature="e#21629#24983#0" expanded="false" />
+                <element signature="e#25230#25976#0" expanded="false" />
+                <element signature="e#26016#26312#0" expanded="false" />
+                <element signature="e#26382#30067#0" expanded="false" />
+                <element signature="e#30109#31501#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathBubble_Menu.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/PathBubble_Menu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1104">
-              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-              <folding>
-                <element signature="e#1157#1207#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathBubble_Button.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/PathBubble_Button.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.88" vertical-offset="216" max-vertical-offset="1128">
-              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathBubble_TreeRing.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="876" max-vertical-offset="1752">
-              <caret line="170" column="32" selection-start-line="170" selection-start-column="6" selection-end-line="170" selection-end-column="6" />
-              <folding>
-                <element signature="e#2519#2693#0" expanded="false" />
-                <element signature="e#2731#3062#0" expanded="false" />
-                <element signature="e#3093#5450#0" expanded="false" />
-                <element signature="e#5475#6415#0" expanded="false" />
-                <element signature="e#6445#6581#0" expanded="false" />
-                <element signature="e#6611#7704#0" expanded="false" />
-                <element signature="e#7738#8859#0" expanded="false" />
-                <element signature="e#8888#9442#0" expanded="false" />
-                <element signature="e#9485#11347#0" expanded="false" />
-                <element signature="e#11381#11432#0" expanded="false" />
-                <element signature="e#11480#11561#0" expanded="false" />
-                <element signature="e#11601#11738#0" expanded="false" />
-                <element signature="e#11778#12248#0" expanded="false" />
-                <element signature="e#12294#12533#0" expanded="false" />
-                <element signature="e#12558#13508#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathBubble_shape.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/PathBubble_shape.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5612" max-vertical-offset="17688">
-              <caret line="261" column="18" selection-start-line="261" selection-start-column="18" selection-end-line="261" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29813665" vertical-offset="432" max-vertical-offset="1536">
-              <caret line="26" column="101" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.32" vertical-offset="1008" max-vertical-offset="2136">
-              <caret line="59" column="19" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="40" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -180,19 +1253,33 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/js/PathBubble_Biomolecule.js" />
-        <option value="$PROJECT_DIR$/js/PathBubble_Renderer.js" />
-        <option value="$PROJECT_DIR$/d3lib/hierarchicalBundling.css" />
-        <option value="$PROJECT_DIR$/js/PathBubble_Scene.js" />
         <option value="$PROJECT_DIR$/d3lib/pathwayHierarchy11.json" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/PATHBUBBLES.SubTreeRing.js" />
         <option value="$PROJECT_DIR$/js/PathBubble_Groups.js" />
-        <option value="$PROJECT_DIR$/js/PathBubble_Interaction.js" />
-        <option value="$PROJECT_DIR$/js/PathBubble_Button.js" />
         <option value="$PROJECT_DIR$/js/PathBubble_Menu.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_SvgToCanvas.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_Renderer.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_NavInteraction.js" />
+        <option value="$PROJECT_DIR$/css/visualization.css" />
+        <option value="$PROJECT_DIR$/js/PathBubble_LocalFileLoader.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_Text.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_Title.js" />
+        <option value="$PROJECT_DIR$/data/hierarchyAlligator_ortholog.json" />
+        <option value="$PROJECT_DIR$/d3lib/hierarchicalBundling.css" />
+        <option value="$PROJECT_DIR$/js/PathBubble_Button.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_Scene.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_Interaction.js" />
         <option value="$PROJECT_DIR$/js/PathBubble_Bubble.js" />
-        <option value="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_Table.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_D3Table.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_D3Ring_backup.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/data/Ortholog/Gallus/Disease.json" />
+        <option value="$PROJECT_DIR$/data/Ortholog/Gallus/Chondroitin sulfatedermatan sulfate metabolism.json" />
+        <option value="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/data/data.json" />
+        <option value="$PROJECT_DIR$/data/crossTalkData/homo sapiens.json" />
         <option value="$PROJECT_DIR$/js/PathBubble_D3Ring.js" />
       </list>
     </option>
@@ -202,6 +1289,22 @@
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -261,6 +1364,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -270,16 +1387,23 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProcessingData" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\PathBubbles\d3lib" />
       <recent name="C:\wamp\www\PathBubbles\js" />
+      <recent name="C:\wamp\www\PathBubbles\data" />
+      <recent name="C:\wamp\www\PathBubbles\php" />
+      <recent name="C:\wamp\www\PathBubbles\d3lib" />
       <recent name="C:\Users\Yongnan\Documents\PathBubbles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\PathBubbles\data" />
       <recent name="C:\wamp\www\PathBubbles\d3lib" />
     </key>
   </component>
@@ -385,10 +1509,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39822024" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2085308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24432433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15113218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.189099" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -419,411 +1543,353 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="153" />
+      <option name="time" value="353" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Scene.js">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="973" max-vertical-offset="2088">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-          <folding />
+        <state vertical-scroll-proportion="0.33282444" vertical-offset="2086" max-vertical-offset="22488">
+          <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Renderer.js">
+    <entry file="file://$PROJECT_DIR$/../studentStudy/tasks.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1536">
-          <caret line="43" column="97" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.19905214" vertical-offset="144" max-vertical-offset="1704">
+          <caret line="13" column="115" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/data/hierarchyCrosstalk.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="1392">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="831">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="893904" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Bubble.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/15869_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4848" max-vertical-offset="9240">
-          <caret line="202" column="30" selection-start-line="202" selection-start-column="30" selection-end-line="202" selection-end-column="30" />
-          <folding />
+        <state vertical-scroll-proportion="0.26415095" vertical-offset="1784" max-vertical-offset="2208">
+          <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Viewpoint.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/68827_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1056">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1800">
+          <caret line="6" column="118" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/68875_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1992">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1807" max-vertical-offset="2256">
+          <caret line="64" column="62" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_shape.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/68879_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="553" max-vertical-offset="17688">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="1392">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Bubble.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4848" max-vertical-offset="9240">
-          <caret line="202" column="30" selection-start-line="202" selection-start-column="30" selection-end-line="202" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Viewpoint.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1056">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1992">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_shape.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="553" max-vertical-offset="17688">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1392">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Bubble.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4848" max-vertical-offset="9240">
-          <caret line="202" column="30" selection-start-line="202" selection-start-column="30" selection-end-line="202" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Viewpoint.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="309" max-vertical-offset="1056">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_shape.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="553" max-vertical-offset="17688">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1392">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1992">
-          <caret line="17" column="81" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Renderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1010" max-vertical-offset="1536">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Interaction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2344" max-vertical-offset="8976">
-          <caret line="109" column="53" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Biomolecule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7008" max-vertical-offset="18888">
-          <caret line="292" column="37" selection-start-line="292" selection-start-column="25" selection-end-line="292" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Groups.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11256">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="449">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Scene.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/83936_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="2136">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.39252338" vertical-offset="0" max-vertical-offset="428">
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Bubble.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/109581_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3072" max-vertical-offset="9240">
-          <caret line="128" column="63" selection-start-line="128" selection-start-column="62" selection-end-line="128" selection-end-column="62" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7368">
+          <caret line="4" column="94" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_LocalFileLoader.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/68616_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13320">
+        <state vertical-scroll-proportion="0.36923078" vertical-offset="0" max-vertical-offset="390">
+          <caret line="6" column="85" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/83667_7protein.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="449">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_BubbleView.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/68689_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2697" max-vertical-offset="3600">
-          <caret line="125" column="36" selection-start-line="125" selection-start-column="36" selection-end-line="125" selection-end-column="36" />
+        <state vertical-scroll-proportion="-5.76" vertical-offset="0" max-vertical-offset="408">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Text.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/68867_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="223" max-vertical-offset="1176">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1440" max-vertical-offset="2016">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Biomolecule.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/83572_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6757" max-vertical-offset="18504">
-          <caret line="300" column="34" selection-start-line="300" selection-start-column="25" selection-end-line="300" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.053452116" vertical-offset="0" max-vertical-offset="449">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Viewpoint.js">
+    <entry file="file://$PROJECT_DIR$/data/lib15-Heat0Expression.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1056">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7076167" vertical-offset="5832" max-vertical-offset="345768">
+          <caret line="255" column="26" selection-start-line="255" selection-start-column="26" selection-end-line="255" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Object2D.js">
+    <entry file="file://$PROJECT_DIR$/data/pathFiles/75944_7protein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3000">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jqueryLib/jquery-1.10.2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3322034" vertical-offset="144596" max-vertical-offset="234792">
-          <caret line="6045" column="4" selection-start-line="6045" selection-start-column="4" selection-end-line="6045" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/d3lib/pathwayHierarchy11.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.062068965" vertical-offset="13578" max-vertical-offset="16488">
-          <caret line="568" column="53" selection-start-line="568" selection-start-column="14" selection-end-line="568" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/d3lib/pathwayHierarchy1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="232032">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="449">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/d3lib/readme-flare-imports.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33267328" vertical-offset="0" max-vertical-offset="5448">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Renderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="637" max-vertical-offset="1536">
-          <caret line="30" column="39" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/d3lib/pathwayHierarchy.json">
+    <entry file="file://$PROJECT_DIR$/data/pathwayHierarchy.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="259368">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="14" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/d3lib/hierarchicalBundling.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.643299" vertical-offset="0" max-vertical-offset="1224">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding />
+        <state vertical-scroll-proportion="0.61276597" vertical-offset="0" max-vertical-offset="1608">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring_backup.js">
+    <entry file="file://$PROJECT_DIR$/data/hierarchyGallus_ortholog.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40618557" vertical-offset="1507" max-vertical-offset="2496">
-          <caret line="92" column="43" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
-          <folding>
-            <element signature="e#2397#3055#0" expanded="false" />
-            <element signature="e#3088#3328#0" expanded="false" />
-            <element signature="e#4291#4819#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.046875" vertical-offset="7872" max-vertical-offset="516840">
+          <caret line="329" column="32" selection-start-line="329" selection-start-column="29" selection-end-line="329" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Scene.js">
+    <entry file="file://$PROJECT_DIR$/jqueryLib/jquery.contextMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="973" max-vertical-offset="2088">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/d3lib/d3.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="3" column="20312" selection-start-line="3" selection-start-column="20312" selection-end-line="3" selection-end-column="20312" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_shape.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5612" max-vertical-offset="17688">
-          <caret line="261" column="18" selection-start-line="261" selection-start-column="18" selection-end-line="261" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.55452865" vertical-offset="8316" max-vertical-offset="40320">
+          <caret line="371" column="76" selection-start-line="371" selection-start-column="55" selection-end-line="371" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_Button.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.88" vertical-offset="216" max-vertical-offset="1128">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="366" max-vertical-offset="1248">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_Scene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44821092" vertical-offset="1394" max-vertical-offset="2328">
+          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_shape.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37258688" vertical-offset="6071" max-vertical-offset="17688">
+          <caret line="261" column="18" selection-start-line="261" selection-start-column="18" selection-end-line="261" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jqueryLib/jquery-1.10.2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="208495" max-vertical-offset="234792">
+          <caret line="8705" column="12" selection-start-line="8705" selection-start-column="12" selection-end-line="8705" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring_backup(Old).js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30379745" vertical-offset="72" max-vertical-offset="18000">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Ortholog/Gallus/Disease.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18871595" vertical-offset="89015" max-vertical-offset="95760">
+          <caret line="4254" column="50" selection-start-line="4254" selection-start-column="46" selection-end-line="4254" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Ortholog/Gallus/Chondroitin sulfatedermatan sulfate metabolism.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5214008" vertical-offset="830" max-vertical-offset="1344">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_Interaction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.44" vertical-offset="2837" max-vertical-offset="11304">
-          <caret line="127" column="76" selection-start-line="127" selection-start-column="76" selection-end-line="127" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Groups.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10752">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1508" max-vertical-offset="11640">
+          <caret line="91" column="60" selection-start-line="91" selection-start-column="60" selection-end-line="91" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_Bubble.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.8" vertical-offset="1200" max-vertical-offset="7344">
-          <caret line="92" column="21" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="6" />
-          <folding>
-            <element signature="e#2115#3208#0" expanded="false" />
-            <element signature="e#3243#3946#0" expanded="false" />
-            <element signature="e#3984#4584#0" expanded="false" />
-            <element signature="e#6954#7858#0" expanded="false" />
-            <element signature="e#7905#8329#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="6860" max-vertical-offset="8544">
+          <caret line="346" column="39" selection-start-line="346" selection-start-column="39" selection-end-line="346" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Menu.js">
+    <entry file="file://$PROJECT_DIR$/d3lib/d3.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1104">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <element signature="e#1157#1207#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.32" vertical-offset="1008" max-vertical-offset="2136">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.09815951" vertical-offset="0" max-vertical-offset="489">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="876" max-vertical-offset="1752">
-          <caret line="170" column="32" selection-start-line="170" selection-start-column="6" selection-end-line="170" selection-end-column="6" />
+        <state vertical-scroll-proportion="-0.55010223" vertical-offset="437" max-vertical-offset="10968">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding>
-            <element signature="e#2519#2693#0" expanded="false" />
-            <element signature="e#2731#3062#0" expanded="false" />
-            <element signature="e#3093#5450#0" expanded="false" />
-            <element signature="e#5475#6415#0" expanded="false" />
-            <element signature="e#6445#6581#0" expanded="false" />
-            <element signature="e#6611#7704#0" expanded="false" />
-            <element signature="e#7738#8859#0" expanded="false" />
-            <element signature="e#8888#9442#0" expanded="false" />
-            <element signature="e#9485#11347#0" expanded="false" />
-            <element signature="e#11381#11432#0" expanded="false" />
-            <element signature="e#11480#11561#0" expanded="false" />
-            <element signature="e#11601#11738#0" expanded="false" />
-            <element signature="e#11778#12248#0" expanded="false" />
-            <element signature="e#12294#12533#0" expanded="false" />
-            <element signature="e#12558#13508#0" expanded="false" />
+            <element signature="e#18501#19450#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring.js">
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_SvgToCanvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2111" max-vertical-offset="3552">
-          <caret line="105" column="123" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.8553459" vertical-offset="360" max-vertical-offset="6672">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16551724" vertical-offset="0" max-vertical-offset="71184">
+          <caret line="3873" column="21" selection-start-line="3873" selection-start-column="5" selection-end-line="3873" selection-end-column="5" />
+          <folding>
+            <element signature="e#6#45542#0" expanded="false" />
+            <element signature="e#45548#193307#0" expanded="false" />
+            <element signature="e#402671#613500#0" expanded="false" />
+            <element signature="e#613506#738155#0" expanded="false" />
+            <element signature="e#738161#793036#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring_backup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="18960">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/hierarchyAlligator_ortholog.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.515885" vertical-offset="65117" max-vertical-offset="516552">
+          <caret line="2699" column="41" selection-start-line="2699" selection-start-column="10" selection-end-line="2699" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13655761" vertical-offset="432" max-vertical-offset="3936">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#4932#4997#0" expanded="false" />
+            <element signature="e#5053#5155#0" expanded="false" />
+            <element signature="e#5470#5538#0" expanded="false" />
+            <element signature="e#5594#5687#0" expanded="false" />
+            <element signature="e#6429#7223#0" expanded="false" />
+            <element signature="e#7275#7889#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_Table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="1872">
+          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+          <folding>
+            <element signature="e#2530#2704#0" expanded="false" />
+            <element signature="e#2742#3197#0" expanded="false" />
+            <element signature="e#3228#5181#0" expanded="false" />
+            <element signature="e#5206#6146#0" expanded="false" />
+            <element signature="e#6176#6384#0" expanded="false" />
+            <element signature="e#6414#7179#0" expanded="false" />
+            <element signature="e#7213#8426#0" expanded="false" />
+            <element signature="e#8455#9009#0" expanded="false" />
+            <element signature="e#9052#10914#0" expanded="false" />
+            <element signature="e#10573#10908#0" expanded="false" />
+            <element signature="e#10948#10999#0" expanded="false" />
+            <element signature="e#11047#11128#0" expanded="false" />
+            <element signature="e#11168#11323#0" expanded="false" />
+            <element signature="e#11363#11833#0" expanded="false" />
+            <element signature="e#11879#12118#0" expanded="false" />
+            <element signature="e#12143#13093#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5151515" vertical-offset="716" max-vertical-offset="2544">
+          <caret line="59" column="73" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29813665" vertical-offset="432" max-vertical-offset="1536">
-          <caret line="26" column="101" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
-          <folding />
+        <state vertical-scroll-proportion="0.77598155" vertical-offset="504" max-vertical-offset="1584">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33233082" vertical-offset="7555" max-vertical-offset="11064">
+          <caret line="486" column="0" selection-start-line="486" selection-start-column="0" selection-end-line="486" selection-end-column="0" />
+          <folding>
+            <element signature="e#997#2900#0" expanded="false" />
+            <element signature="e#9289#10977#0" expanded="false" />
+            <element signature="e#15458#19130#0" expanded="false" />
+            <element signature="e#16738#19112#0" expanded="false" />
+            <element signature="e#18363#18634#0" expanded="false" />
+            <element signature="e#18664#19039#0" expanded="false" />
+            <element signature="e#20052#20133#0" expanded="false" />
+            <element signature="e#21629#24983#0" expanded="false" />
+            <element signature="e#25230#25976#0" expanded="false" />
+            <element signature="e#26016#26312#0" expanded="false" />
+            <element signature="e#26382#30067#0" expanded="false" />
+            <element signature="e#30109#31501#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

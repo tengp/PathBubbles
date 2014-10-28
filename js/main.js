@@ -24,12 +24,6 @@ $(document).ready(function (){
     interection = new PATHBUBBLES.Interaction(renderer);
 
     function render() {
-//        var reqAnimFrame = window.mozRequestAnimationFrame    ||
-//            window.webkitRequestAnimationFrame ||
-//            window.msRequestAnimationFrame     ||
-//            window.oRequestAnimationFrame
-//        ;
-//        reqAnimFrame(render);
         requestAnimationFrame(render);
         renderer.render();
     }
@@ -55,29 +49,52 @@ $(document).ready(function (){
                 scene.addObject(bubble4);
             }
             else if (key === 'Open_TreeRing') {
-                var bubble5 = new PATHBUBBLES.TreeRing(mousePosX, mousePosY,730,730, null);
+                var bubble5 = new PATHBUBBLES.TreeRing(mousePosX, mousePosY,700,760, "homo sapiens");
                 bubble5.addHtml();
                 bubble5.menuOperation();
+                if(viewpoint)
+                {
+                    bubble5.offsetX = viewpoint.x;
+                    bubble5.offsetY = viewpoint.y;
+                }
                 scene.addObject(bubble5);
+            }
+            else if (key === 'Open_Table') {
+                var bubble6 = new PATHBUBBLES.Table(mousePosX, mousePosY,500,500,1643713);
+                bubble6.addHtml();
+                bubble6.menuOperation();
+                if(viewpoint)
+                {
+                    bubble6.offsetX = viewpoint.x;
+                    bubble6.offsetY = viewpoint.y;
+                }
+                scene.addObject(bubble6);
             }
             else if(key === 'Delete_All')
             {
-                PATHBUBBLES.objects.length =0;
                 for(var i= 0, l=scene.children.length;i<l; ++i)
                 {
                     if(scene.children[i])
                         scene.removeObject(scene.children[i]);
                 }
                 scene.children.length =0;
+                for(var i= 0, l=PATHBUBBLES.objects.length; i <l; i++)
+                {
+                    if(PATHBUBBLES.objects[i])
+                        delete PATHBUBBLES.objects[i];
+                }
+                PATHBUBBLES.objects.length =0;
+
+                $('svg').parent().remove();
+                $('.menu').remove();
             }
         },
         items: {
-            "Open_Bubble": {name: "Open_bubble", enabled: false},
-            "Open_TreeRing": {name: "Open_treeRing", enabled: false},
-//            "Open_VC_Menu": {name: "Open_vc_menu", enabled: false},
-//            "Compare": {name: "Compare", enabled: false},
+            "Open_Bubble": {name: "Open_bubble"},
+            "Open_TreeRing": {name: "Open_treeRing"},
+            "Open_Table": {name: "Open_table"},
             "sep1": "---------",
-            "Delete_All": {name: "Delete_all", enabled: false}
+            "Delete_All": {name: "Delete_all"}
         }
     });
 });

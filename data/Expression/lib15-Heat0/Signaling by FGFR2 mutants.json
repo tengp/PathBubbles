@@ -1,0 +1,1 @@
+{"dbId":"1839126","name":"Signaling by FGFR2 mutants","children":[{"dbId":"2033519","name":"Activated point mutants of FGFR2","children":[],"size":1,"ups":["FGF5","FGF23"],"downs":["FGF9","FGF16"]},{"dbId":"2023837","name":"Signaling by FGFR2 amplification mutants","children":[],"size":1,"ups":[],"downs":[]}],"ups":["FGF5","FGF23"],"downs":["FGF9","FGF16"]}

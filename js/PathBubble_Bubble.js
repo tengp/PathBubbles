@@ -20,17 +20,19 @@ PATHBUBBLES.Bubble = function (x, y, w, h, strokeColor, fillColor, cornerRadius,
     this.shape = new PATHBUBBLES.Shape.Rectangle(this, this.x, this.y, this.w, this.h, this.strokeColor, this.fillColor, this.lineWidth, this.cornerRadius);
     this.menu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2, this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1) || null;
     this.bubbleView = null;
-    this.menuBar = new PATHBUBBLES.Menu(this);
-    var button = new PATHBUBBLES.Button(this.menuBar);   //Button 0 for file selection
+
+
+    this.button = new PATHBUBBLES.Button(this);   //Button 0 for file selection
     var tmp = '';
     tmp += '<input type="file" id=file style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
     tmp += '<input type="button" id=load value= "Load" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y + 55 + ' px; "></div>';
     tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 80 + 'px; ">';
     tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
-    button.addButton(tmp);
+    this.button.addButton(tmp);
 
     this.name = text;
+    this.title = new PATHBUBBLES.Title(this,this.name);
     this.__objectsAdded = [];
     this.__objectsRemoved = [];
     this.center = {x: this.x + this.w / 2, y: this.y + this.h / 2};
@@ -44,29 +46,35 @@ PATHBUBBLES.Bubble.prototype = {
     constructor: PATHBUBBLES.Bubble,
     updateMenu: function () {
         var $menuBarbubble = $('#menuView' + this.id);
-        $menuBarbubble.find('#file').css({
+        $menuBarbubble.css({
             left: this.x + this.offsetX + this.w + 10,
-            top: this.y + this.offsetY + this.cornerRadius / 2 + 90,
+            top: this.y + this.offsetY + this.cornerRadius / 2 + 40,
+            width: 200,
+            height: 215
+        });
+        $menuBarbubble.find('#file').css({
+            left: 10,
+            top: 45,
             width: 180
         });
         $menuBarbubble.find('#load').css({
-            left: this.x + this.offsetX + this.w + 10,
-            top: this.y + this.offsetY + this.cornerRadius / 2 + 115,
+            left: 10,
+            top: 70,
             width: 180
         });
         $menuBarbubble.find('#colorpickerField').css({
-            left: this.x + this.offsetX + this.w + 10,
-            top: this.y + this.offsetY + this.cornerRadius / 2 + 145,
+            left: 10,
+            top: 95,
             width: 180
         });
         $menuBarbubble.find('#ungroup').css({
-            left: this.x + this.offsetX + this.w + 10,
-            top: this.y + this.offsetY + this.cornerRadius / 2 + 170,
+            left: 10,
+            top: 120,
             width: 180
         });
         $menuBarbubble.find('#delete').css({
-            left: this.x + this.offsetX + this.w + 10,
-            top: this.y + this.offsetY + this.cornerRadius / 2 + 195,
+            left: 10,
+            top: 145,
             width: 180
         });
     },
@@ -123,6 +131,7 @@ PATHBUBBLES.Bubble.prototype = {
                 var localFileLoader = new PATHBUBBLES.LocalFileLoader(_this);
 
                 localFileLoader.load(_this.selected_file);
+                _this.title.name =  localFileLoader.fileName;
             }
         });
         $menuBarbubble.find('#delete').on('click', function () {
@@ -210,9 +219,10 @@ PATHBUBBLES.Bubble.prototype = {
                 object2.h + object2.y == object1.y);
     },
     deleteBubble: function () {
-        if (this.menuBar.button) {
-            this.menuBar.button.remove();
-        }
+//        if (this.menuBar.button) {
+//            this.menuBar.button.remove();
+//        }
+        this.button.remove();
         scene.removeObject(this);
     },
     draw: function (ctx, scale) {
@@ -225,28 +235,22 @@ PATHBUBBLES.Bubble.prototype = {
                 this.bubbleView.draw(ctx, scale);
         this.shape.drawStrokeAgain(ctx, scale);
         ctx.restore();
+        if(this.title!==undefined)
+            this.title.draw(ctx, scale);
         ctx.save();
         if (this.menu && scale == 1) {
             this.menu.draw(ctx, scale);
         }
         if (this.menu.HighLight_State && scale == 1) {
-            this.menuBar.draw(ctx, scale);
+//            this.menuBar.draw(ctx, scale);
         }
         if (this.menu.HighLight_State) {
             this.updateMenu();
-            this.menuBar.button.show();
-//            for (var i = 0; i < this.menuBar.buttons.length; ++i) {
-//                this.menuBar.buttons[i].update();
-//                this.menuBar.buttons[i].show();
-//            }
+            this.button.show();
         }
         else {
             this.updateMenu();
-            this.menuBar.button.hide();
-//            for (var i = 0; i < this.menuBar.buttons.length; ++i) {
-//                this.menuBar.buttons[i].update();
-//                this.menuBar.buttons[i].hide();
-//            }
+            this.button.hide();
         }
         ctx.restore();
         if (this.shape.HighLight_State) {
@@ -338,7 +342,7 @@ PATHBUBBLES.Bubble.prototype = {
     containsInMenu: function (mx, my) {
         var x = this.menu.x;
         var y = this.menu.y;
-        return  (x - mx ) * (x - mx) + (y - my ) * (y - my) <= 10 * 10;
+        return  (x - mx ) * (x - mx) + (y - my ) * (y - my) <= this.menu.r * this.menu.r;
     },
     containsInHalo: function (mx, my) {
         var x = this.shape.offsetX + this.shape.x + 5;

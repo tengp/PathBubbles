@@ -1,0 +1,1 @@
+{"dbId":"2428933","name":"SHC-related events triggered by IGF1R","children":[{"dbId":"112410","name":"SHC-mediated signalling","children":[{"dbId":"109869","name":"RAFMAP kinase cascade","children":[],"size":1,"ups":[],"downs":[]}],"ups":["SHC2","GRB2"],"downs":[]}],"ups":["SHC2","GRB2"],"downs":[]}

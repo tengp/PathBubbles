@@ -1,0 +1,1 @@
+{"dbId":"76042","name":"RNA Polymerase II Transcription Initiation And Promoter Clearance","children":[{"dbId":"75953","name":"RNA Polymerase II Transcription Initiation","children":[],"size":1,"ups":[],"downs":["POLR2K"]},{"dbId":"73776","name":"RNA Polymerase II Promoter Escape","children":[],"size":1,"ups":[],"downs":["POLR2K"]}],"ups":[],"downs":["POLR2K"]}

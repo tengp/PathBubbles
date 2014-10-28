@@ -1,0 +1,1 @@
+[{"name":"Nucleosome assembly","imports":["Meiotic Synapsis","Telomere Maintenance"]},{"name":"Telomere Maintenance","imports":["Meiotic Synapsis","Nucleosome assembly"]},{"name":"Meiotic Synapsis","imports":[]}]

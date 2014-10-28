@@ -11,6 +11,7 @@ PATHBUBBLES.Text = function(object, text)
     this.y = 0;
     this.fillColor = '#0000ff';
     this.text = text;
+
     this.font = '20pt Calibri';
     this.textAlign = 'center';   //
     this.textBaseline= 'middle';   //bottom

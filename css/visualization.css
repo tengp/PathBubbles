@@ -2,14 +2,14 @@
  * Created by Yongnanzhu on 5/3/2014.
  */
 * { margin:0; padding:0 }
-html { height:100%; color:#aaa; }
-body { font-family:"Helvetica Neue", Arial, Helvetica, sans-serif; background:#111; color:#aaaaaa;margin: 0;
+html { height:100%;  }
+body { font-family: sans-serif; background:#111; margin: 0;
     overflow: hidden; }
 
 #navigationBar canvas {margin:0 0 -5px 0; z-index:300;background:#666699}    /*background:#666699*/
 
-.bubble { border:solid 0 red; background:#5a5353; float:left; margin:0;}
-.compare { border:solid 0 red; background:#5a5353; float:left; margin:0;}
+.bubble { border:solid 0 red; float:left; margin:0;}
+.compare { border:solid 0 red; float:left; margin:0;}
 
 #bubble canvas { margin:0 0 -5px 0; }
 #bgCanvas {cursor:auto;z-index:-10}
@@ -23,7 +23,7 @@ body { font-family:"Helvetica Neue", Arial, Helvetica, sans-serif; background:#1
     font-weight: bold;
     text-shadow: 1px 1px 0 #fff;
 }
-.dragheader { background:transparent; color:#fff; font-weight:bold; font-size:0.9em;letter-spacing:1px;text-align: left;
+.dragheader { color:#fff; font-weight:bold; font-size:0.9em;letter-spacing:1px;text-align: left;
     padding:5px 0 5px 0.5em; cursor:move; position:relative; bottom:0px; margin:0 0 0 0; }
 
 .dragheader:hover {color:red z-index:120;}
@@ -44,14 +44,14 @@ body { font-family:"Helvetica Neue", Arial, Helvetica, sans-serif; background:#1
 .widget .close_para { color:#222; font-size:0.7em; text-align: center; position:relative; top:-1em; left:1em; margin:0 0 -1em 0; padding:0;cursor:pointer; }
 .widget .close_para:hover { color:red }
 
-.button { display:inline; cursor:pointer; color:#555; background:transparent; font-size:0.9em; padding:0.5em 0.25em; position:relative; margin:-20px 0 0 0 }
+.button { display:inline; cursor:pointer; color:#555; font-size:0.9em; padding:0.5em 0.25em; position:relative; margin:-20px 0 0 0 }
 .on { color:#aaa }
 
 .shadow { box-shadow:0px 3px 15px #333333; /*rgba(0,0,0,1)*/}
 .clr { clear:both }
 
 .para_header {
-    background:transparent;
+    /*background:transparent;*/
     color:#fff;
     font-weight:normal;
     font-size:1.2em;
@@ -69,7 +69,7 @@ body { font-family:"Helvetica Neue", Arial, Helvetica, sans-serif; background:#1
     position:relative;
 }
 #para_items {
-    background:transparent;
+    /*background:transparent;*/
     color:#fff;
     text-align:left;
     top:1px;
@@ -103,20 +103,3 @@ body { font-family:"Helvetica Neue", Arial, Helvetica, sans-serif; background:#1
     word-wrap: break-word;
     overflow: hidden;
 }
-/*
-.sliceContainer {
-    margin-left: auto;
-    margin-right: auto;
-    width: 606px;
-}
-.sliceContainer div {
-    float: left;
-}
-.sliceXY, .sliceYZ, .sliceXZ{
-    width: 200px;
-    height: 200px;
-    position: relative;
-    border: 1px solid red;
-    float:left;
-}
-*/

@@ -1,0 +1,1 @@
+{"dbId":"72172","name":"mRNA Splicing","children":[{"dbId":"72163","name":"mRNA Splicing - Major Pathway","children":[],"size":1,"ups":[],"downs":["POLR2K"]},{"dbId":"72165","name":"mRNA Splicing - Minor Pathway","children":[],"size":1,"ups":[],"downs":["POLR2K"]}],"ups":["HNRNPD","PABPN1"],"downs":["POLR2K"]}

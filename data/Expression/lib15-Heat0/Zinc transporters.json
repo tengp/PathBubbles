@@ -1,0 +1,1 @@
+{"dbId":"435354","name":"Zinc transporters","children":[{"dbId":"435368","name":"Zinc efflux and compartmentalization by the SLC30 family","children":[],"size":1,"ups":[],"downs":["SLC30A8"]},{"dbId":"442380","name":"Zinc influx into cells by the SLC39 gene family","children":[],"size":1,"ups":["SLC39A8"],"downs":[]}],"ups":["SLC39A8"],"downs":["SLC30A8"]}

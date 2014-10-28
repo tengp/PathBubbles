@@ -1,0 +1,1 @@
+{"dbId":"1980145","name":"Signaling by NOTCH2","children":[{"dbId":"2979096","name":"NOTCH2 Activation and Transmission of Signal to the Nucleus","children":[],"size":1,"ups":["DLL4","ITCH","HDAC9","HES5","HEYL"],"downs":["DLL1","DTX4","DNER","KAT2A","TLE3","TLE4","HEY2"]}],"ups":["HES5","DLL4"],"downs":["DLL1","MDK"]}

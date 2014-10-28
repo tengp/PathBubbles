@@ -1,0 +1,1 @@
+{"dbId":"418360","name":"Platelet calcium homeostasis","children":[{"dbId":"139853","name":"Elevation of cytosolic Ca2+ levels","children":[],"size":1,"ups":["ORAI1","TRPC7","TRPC6"],"downs":[]},{"dbId":"418359","name":"Reduction of cytosolic Ca++ levels","children":[],"size":1,"ups":[],"downs":["ATP2A3"]}],"ups":["ORAI1","TRPC7","TRPC6"],"downs":["ATP2A3"]}

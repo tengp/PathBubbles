@@ -1,0 +1,1 @@
+{"dbId":"68877","name":"Mitotic Prometaphase","children":[{"dbId":"2500257","name":"Resolution of Sister Chromatid Cohesion","children":[],"size":1,"ups":["CDC20"],"downs":[]},{"dbId":"2514853","name":"Condensation of Prometaphase Chromosomes","children":[],"size":1,"ups":[],"downs":[]}],"ups":["CDC20"],"downs":[]}

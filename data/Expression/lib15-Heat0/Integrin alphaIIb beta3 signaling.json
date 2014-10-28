@@ -1,0 +1,1 @@
+{"dbId":"354192","name":"Integrin alphaIIb beta3 signaling","children":[{"dbId":"354194","name":"GRB2SOS provides linkage to MAPK signaling for Intergrins ","children":[],"size":1,"ups":["FGG"],"downs":[]},{"dbId":"372708","name":"p130Cas linkage to MAPK signaling for integrins","children":[],"size":1,"ups":["FGG"],"downs":[]}],"ups":["FGG","RASGRP1","RAPGEF4"],"downs":[]}

@@ -57,13 +57,23 @@ PATHBUBBLES.Scene.prototype ={
         else if(object instanceof PATHBUBBLES.Bubble)
         {
             if(object.menu.HighLight_State)
-                object.menuBar.button.hide();
+                object.button.hide();
             object.menu.HighLight_State = false;
             object.bubbleView = null;
         }
         else if(object instanceof PATHBUBBLES.TreeRing)
         {
-            object.removeObject(object);
+            if(object.menu.HighLight_State)
+                object.button.hide();
+            object.menu.HighLight_State = false;
+            object.deleteBubble();
+        }
+        else if(object instanceof PATHBUBBLES.Table)
+        {
+            if(object.menu.HighLight_State)
+                object.button.hide();
+            object.menu.HighLight_State = false;
+            object.deleteBubble();
         }
         var index = PATHBUBBLES.objects.indexOf(object);
         if(index !== -1)

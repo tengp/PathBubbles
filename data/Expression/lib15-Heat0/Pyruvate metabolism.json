@@ -1,0 +1,1 @@
+{"dbId":"70268","name":"Pyruvate metabolism","children":[{"dbId":"204174","name":"Regulation of pyruvate dehydrogenase (PDH) complex","children":[],"size":1,"ups":["PDK4"],"downs":["PDP1"]}],"ups":["PDK4","SLC16A8"],"downs":["LDHB","PDP1"]}
