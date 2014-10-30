@@ -1,1 +1,0 @@
-[{"name":"Golgi Associated Vesicle Biogenesis","imports":[]},{"name":"Lysosome Vesicle Biogenesis","imports":["Golgi Associated Vesicle Biogenesis"]}]

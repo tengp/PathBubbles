@@ -1,1 +1,1 @@
-{"dbId":"168305","name":"Inhibition of Interferon Synthesis","children":[{"dbId":"168888","name":"Inhibition of IFN-beta","children":[],"size":1,"simbols":["NS"],"gallusOrth":{"yesNum":0,"noNum":0,"type":"Part"}}],"simbols":["NS"],"gallusOrth":{"yesNum":0,"noNum":0,"type":"Part"}}
+{"dbId":"168305","name":"Inhibition of Interferon Synthesis","children":[{"dbId":"168888","name":"Inhibition of IFN-beta","children":[],"size":1,"simbols":["NS"],"gallusOrth":{"type":"Empty","count":0}}],"simbols":["NS"],"gallusOrth":{"type":"Empty","count":0}}

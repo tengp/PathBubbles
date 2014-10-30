@@ -1,1 +1,0 @@
-[{"name":"G protein gated Potassium channels","imports":[]},{"name":"Potassium transport channels","imports":["G protein gated Potassium channels"]},{"name":"ATP sensitive Potassium channels","imports":[]},{"name":"Classical Kir channels","imports":[]}]

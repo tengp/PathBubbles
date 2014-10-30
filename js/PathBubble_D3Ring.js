@@ -20,7 +20,6 @@ PATHBUBBLES.D3Ring.prototype = {
         var width = this.defaultRadius,
             height = this.defaultRadius,
             radius = Math.min(width, height) / 2;
-//        var ShowLevel = 1;
         var x = d3.scale.linear()
             .range([0, 2 * Math.PI]);
 
@@ -153,12 +152,15 @@ PATHBUBBLES.D3Ring.prototype = {
                         nodeData[i].gallusOrth = {};
                         if (count === nodeData[i].simbols.length) {
                             nodeData[i].gallusOrth.type = "Complete";
+                            nodeData[i].gallusOrth.count = count;
                         }
                         else if (count === 0) {
                             nodeData[i].gallusOrth.type = "Empty";
+                            nodeData[i].gallusOrth.count = count;
                         }
                         else {
                             nodeData[i].gallusOrth.type = "Part";
+                            nodeData[i].gallusOrth.count = count;
                         }
                     }
                     operation(nodeData);
@@ -168,7 +170,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         maxLevel = 6;
                         var tmpString = "";
                         for (var i = 1; i <= maxLevel; ++i) {
-                            tmpString += '<option value=' + i + '>' + i + '</option>';
+                            tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                         }
                         $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
                         _this.parent.name = root.name + " " + _this.parent.name;
@@ -184,7 +186,7 @@ PATHBUBBLES.D3Ring.prototype = {
                 maxLevel = 6 - _this.selectedData.depth;
                 var tmpString = "";
                 for (var i = 1; i <= maxLevel; ++i) {
-                    tmpString += '<option value=' + i + '>' + i + '</option>';
+                    tmpString += '<option value=' + i + '>'  + "crossTalkLevel " + i +  '</option>';
                 }
                 $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
                 _this.parent.name = _this.selectedData.name + " " + _this.parent.name;

@@ -1,1 +1,0 @@
-[{"name":"Extrinsic Pathway","imports":["Common Pathway","Intrinsic Pathway"]},{"name":"Intrinsic Pathway","imports":["Common Pathway","Extrinsic Pathway"]},{"name":"Common Pathway","imports":["Extrinsic Pathway","Intrinsic Pathway"]}]

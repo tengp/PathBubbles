@@ -1,1 +1,0 @@
-[{"name":"MG1 Transition","imports":["Regulation of DNA replication","Synthesis of DNA"]},{"name":"Synthesis of DNA","imports":["MG1 Transition","Regulation of DNA replication"]},{"name":"Regulation of DNA replication","imports":["MG1 Transition","Synthesis of DNA"]}]

@@ -343,7 +343,12 @@ PATHBUBBLES.TreeRing.prototype = {
             width: 200,
             height: 215
         });
-        $menuBarbubble.find('#type').css({
+//        $menuBarbubble.find('#type').css({
+//            left: 10,
+//            top: 25,
+//            width: 180
+//        });
+        $menuBarbubble.find('#crossTalkLevel').css({
             left: 10,
             top: 25,
             width: 180
@@ -378,11 +383,11 @@ PATHBUBBLES.TreeRing.prototype = {
             top: 155,
             width: 180
         });
-        $menuBarbubble.find('#crossTalkLevel').css({
-            left: 10,
-            top: 180,
-            width: 180
-        });
+//        $menuBarbubble.find('#crossTalkLevel').css({
+//            left: 10,
+//            top: 180,
+//            width: 180
+//        });
     },
     draw: function (ctx, scale) {
         this.setOffset();
