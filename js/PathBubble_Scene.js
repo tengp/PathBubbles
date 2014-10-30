@@ -47,6 +47,44 @@ PATHBUBBLES.Scene.prototype ={
             PATHBUBBLES.objects.splice(0, 0, object);
         }
     },
+    removeBasicObject : function(object){        //fix a bug
+        if(object instanceof PATHBUBBLES.Groups)
+        {
+            for ( var c = 0; c < object.children.length; c ++ ) {
+                this.removeBasicObject( object.children[ c ] );
+            }
+        }
+        else if(object instanceof PATHBUBBLES.Bubble)
+        {
+            if(object.menu.HighLight_State)
+                object.button.hide();
+            object.menu.HighLight_State = false;
+            object.bubbleView = null;
+        }
+        else if(object instanceof PATHBUBBLES.TreeRing)
+        {
+            if(object.menu.HighLight_State)
+                object.button.hide();
+            object.menu.HighLight_State = false;
+        }
+        else if(object instanceof PATHBUBBLES.Table)
+        {
+            if(object.menu.HighLight_State)
+                object.button.hide();
+            object.menu.HighLight_State = false;
+        }
+        var index = PATHBUBBLES.objects.indexOf(object);
+        if(index !== -1)
+        {
+            PATHBUBBLES.objects.splice(index, 1);
+        }
+
+        var index = this.children.indexOf(object);
+        if(index !== -1)
+        {
+            this.children.splice(index, 1);
+        }
+    },
     removeObject : function(object){
         if(object instanceof PATHBUBBLES.Groups)
         {

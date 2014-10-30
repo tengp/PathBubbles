@@ -132,7 +132,11 @@ PATHBUBBLES.Interaction = function(renderer)
                 return;
             }
 
-            else if ( (!PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Biomolecule.Compartment)&& !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble) && !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Groups) && PATHBUBBLES.objects[i].type != "" && PATHBUBBLES.objects[i].contains(mx, my))
+            else if ( (!PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Biomolecule.Compartment)
+                && !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble)
+                && !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Groups)
+                && PATHBUBBLES.objects[i].type != ""
+                && PATHBUBBLES.objects[i].contains(mx, my))
             {
                 oldMouseX = mx;
                 oldMouseY = my;
@@ -400,7 +404,8 @@ PATHBUBBLES.Interaction = function(renderer)
                     if(_this.detectOverlap(_this.selection[0], PATHBUBBLES.objects[i]) )
                     {
                         if(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
-                            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+                            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table||
+                            PATHBUBBLES.objects[i]  instanceof PATHBUBBLES.Groups
                             ||PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
                         {
                             if(PATHBUBBLES.objects[i].GROUP)

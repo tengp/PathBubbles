@@ -1,1 +1,1 @@
-{"dbId":"210990","name":"PECAM1 interactions","children":[],"size":1,"simbols":["ANGPT1","GRB2","SOS1","HRAS","KRAS","NRAS","SHC1","DOK2","ANGPT2","ANGPT4","TEK","PTPN11","GRB7","GRB14","TEK","PIK3CA","PIK3CB","PIK3R1","PIK3R2"],"gallusOrth":{"yesNum":19,"noNum":0,"type":"Complete"}}
+{"dbId":"210990","name":"PECAM1 interactions","children":[],"size":1,"simbols":["PECAM1","LCK","INPP5D","PTPN11","PLCG1","PTPN6","ITGB3","ITGAV","PECAM1","FYN","LYN","YES1","SRC"],"gallusOrth":{"yesNum":13,"noNum":0,"type":"Complete"}}

@@ -69,7 +69,10 @@ PATHBUBBLES.D3Table.prototype = {
                             var unis = arrays[2].split(":");
                             var uniSymbols = unis[1].split(" ");
                             obj.UniProtID =uniSymbols[0];
-                            obj.displaySimbol =uniSymbols[1];
+                            if(uniSymbols.length==2)
+                                obj.displaySimbol =uniSymbols[1].toUpperCase();
+                            else
+                                obj.displaySimbol ="";
                             var reactome = arrays[3].split(":");
                             obj.reactomeId =reactome[1];
                             obj.compartmentName =arrays[4];
@@ -129,7 +132,9 @@ PATHBUBBLES.D3Table.prototype = {
                     });
 
                 // select cells
-                var cells = rows.selectAll("g.cell").data(function(d){return d3.values(d);});
+                var cells = rows.selectAll("g.cell").data(function(d){
+                    return d3.values(d);
+                });
 
                 // create cells
                 var cellsEnter = cells.enter().append("svg:g")

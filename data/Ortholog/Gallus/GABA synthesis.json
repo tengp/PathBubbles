@@ -1,1 +1,1 @@
-{"dbId":"888568","name":"GABA synthesis","children":[],"size":1,"simbols":["SLC5A7","CPLX1","SNAP25","SLC18A3","RAB3A","VAMP2","SYT1","CHAT","VAMP2","SLC18A3","SYT1","RAB3A","RIMS1","STX1A","STXBP1"],"gallusOrth":{"yesNum":15,"noNum":0,"type":"Complete"}}
+{"dbId":"888568","name":"GABA synthesis","children":[],"size":1,"simbols":["GAD1","GAD2"],"gallusOrth":{"yesNum":2,"noNum":0,"type":"Complete"}}

@@ -43,7 +43,7 @@ PATHBUBBLES.Groups.prototype = {
                 a.offsetY = 0;
                 childrenObjs.push(a);
             }
-            scene.removeObject(temp);
+            scene.removeBasicObject(temp);   //removeObject     //fix a bug
             for (var i = 0; i < childrenObjs.length; ++i) {
                 this.objectAddToGroup(childrenObjs[i]);
             }

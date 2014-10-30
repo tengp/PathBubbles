@@ -1,1 +1,1 @@
-{"dbId":"389513","name":"CTLA4 inhibitory signaling","children":[],"size":1,"simbols":["CD80","RAC1","CDC42","PAK1","PAK2","CD86","CD28","FYN","LCK","GRB2","VAV1","VAV1"],"gallusOrth":{"yesNum":12,"noNum":0,"type":"Complete"}}
+{"dbId":"389513","name":"CTLA4 inhibitory signaling","children":[],"size":1,"simbols":["PPP2R5D","PPP2R5C","PPP2R5E","CTLA4","CD80","CD86","FYN","LYN","YES1","PPP2CA","SRC","LCK","CTLA4","PTPN11","PDPK1","AKT1","AKT2","AKT3","PPP2CB","AKT1","AKT2","AKT3","PPP2R1A","PPP2R1B","PPP2R5A","PPP2R5B"],"gallusOrth":{"yesNum":26,"noNum":0,"type":"Complete"}}

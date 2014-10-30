@@ -1,1 +1,1 @@
-{"dbId":"69416","name":"Dimerization of procaspase-8","children":[],"size":1,"simbols":["TNF","CASP8","TNF","ADAM17","TNFRSF1A","RIPK1","TRADD","TRAF2","E6","FADD"],"gallusOrth":{"yesNum":9,"noNum":0,"type":"Part"}}
+{"dbId":"69416","name":"Dimerization of procaspase-8","children":[],"size":1,"simbols":["FASLG","TRAF2","FAS","FADD","CASP8","CFLAR","TNFSF10","TNFRSF10B","RIPK1","TRADD"],"gallusOrth":{"yesNum":10,"noNum":0,"type":"Complete"}}

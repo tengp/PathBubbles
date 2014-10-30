@@ -5,7 +5,7 @@
  * @name        PathBubble_TreeRing
  */
 
-PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, functionType, dataType) {
+PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, functionType, dataType, selectedData) {
     PATHBUBBLES.Object2D.call(this);
     this.type = "TreeRing";
     this.x = x || 0;
@@ -35,8 +35,12 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, functionType, dataType) {
     tmp += '<option value="lib15-Heat0">lib15-Heat0</option>';
     tmp += '<option value="TGF0">TGF0</option>';
     tmp += '</select>';
+    tmp += '<input type="file" id=customOrth style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
+    tmp += '<input type="button" id=loadOrth value= "Load" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y+50 + 'px; ">';
     tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y+75 + 'px; ">';
+    tmp += '<select id="crossTalkLevel" style="position: absolute; left:' + this.x + ' px; top:' + this.y+25 + 'px; ">';
+    tmp += '</select>';
     this.button.addButton(tmp);
 
     this.pre = "(Ortholog) Human VS ";
@@ -50,6 +54,7 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, functionType, dataType) {
     this.dataName = dataName||null;
     this.functionType = functionType||"Ortholog";
     this.dataType = dataType||null;
+    this.selectedData = selectedData||null;
 };
 
 PATHBUBBLES.TreeRing.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
@@ -63,6 +68,7 @@ PATHBUBBLES.TreeRing.prototype = {
         $("#bubble").append( $(tmp) );
         var $menuBarbubble = $('#menuView'+ this.id);
         $menuBarbubble.children('#type').val(this.functionType);
+
 
         if(this.functionType == "Ortholog")
         {
@@ -83,6 +89,10 @@ PATHBUBBLES.TreeRing.prototype = {
             this.name = "(Expression) "+ this.dataType;
         }
         this.treeRing =  new PATHBUBBLES.D3Ring(this, Math.min(this.w,this.h)-30, this.functionType, this.dataType, this.dataName);
+        if(this.selectedData!== undefined && this.selectedData!==null)
+        {
+            this.treeRing.selectedData = this.selectedData;
+        }
         this.treeRing.init(this.functionType);
     },
     addObject: function (object) {
@@ -115,7 +125,10 @@ PATHBUBBLES.TreeRing.prototype = {
             if(val == "Expression")
             {
                 $menuBarbubble.children('#file').hide();
+                $menuBarbubble.children('#customOrth').hide();
+                $menuBarbubble.children('#loadOrth').hide();
                 $menuBarbubble.children('#expressionFile').show();
+
                 d3.select('#svg'+ _this.id).remove();
                 var tmp = '';
                 tmp += '<div id= svg'+ _this.id+' style="position: absolute; width:'+ (_this.w + 5)+'px; ' + 'height:'+ (_this.h +5) + 'px; left:' +
@@ -136,6 +149,8 @@ PATHBUBBLES.TreeRing.prototype = {
             else if(val == "Ortholog")
             {
                 $menuBarbubble.children('#file').show();
+                $menuBarbubble.children('#customOrth').show();
+                $menuBarbubble.children('#loadOrth').show();
                 $menuBarbubble.children('#expressionFile').hide();
                 var value = $menuBarbubble.children('#file').val();
                 if(value==undefined)
@@ -196,6 +211,29 @@ PATHBUBBLES.TreeRing.prototype = {
             _this.name = _this.pre + val;
             _this.treeRing.init(functionType);
         });
+        $menuBarbubble.children('#crossTalkLevel').change(function() {
+            var val = $(this).val();
+
+            if(val==undefined)
+                return;
+            d3.select('#svg'+ _this.id).remove();
+            var tmp = '';
+            tmp += '<div id= svg'+ _this.id+' style="position: absolute; width:'+ (_this.w + 5)+'px; ' + 'height:'+ (_this.h +5) + 'px; left:' +
+                (_this.x +  _this.w /2 - (Math.min(_this.w,_this.h)-30)/2-10) + ' px; top:' +
+                (_this.y +  _this.h/2 - (Math.min(_this.w,_this.h)-30)/2+50-15) + 'px; "> </div>';
+            $("#bubble").append( $(tmp) );
+            _this.treeRing=null;
+
+            var functionType =$('#menuView'+ _this.id).children('#type').val();
+            var fileVal =$('#menuView'+ _this.id).children('#file').val();
+            _this.treeRing =  new PATHBUBBLES.D3Ring(_this, Math.min(_this.w,_this.h)-30, functionType, fileVal, _this.dataName);
+            _this.treeRing.ChangeLevel = true;
+            _this.treeRing.showCrossTalkLevel = val;
+            _this.treeRing.file = "./data/" + functionType+"/" +fileVal+"/"+_this.dataName+ ".json";
+//            _this.name = _this.pre + val;
+            _this.treeRing.init(functionType);
+        });
+
         $menuBarbubble.find('#delete').on('click',function(){
             if(!_this.GROUP)
                 _this.deleteBubble();
@@ -230,6 +268,32 @@ PATHBUBBLES.TreeRing.prototype = {
         });
         $menuBarbubble.find('#ungroup').on('click',function(){
             _this.ungroup();
+        });
+        $menuBarbubble.find('#loadOrth').on('click', function () {
+            _this.selected_file = $menuBarbubble.find('#customOrth').get(0).files[0];
+            if (!_this.selected_file) {
+                alert("Please select data file!");
+            }
+            else {
+                var localFileLoader = new PATHBUBBLES.FileLoader();
+                localFileLoader.load(_this.selected_file, function(orthlogData){
+
+                    d3.select('#svg'+ _this.id).remove();
+                    var tmp = '';
+                    tmp += '<div id= svg'+ _this.id+' style="position: absolute; width:'+ (_this.w + 5)+'px; ' + 'height:'+ (_this.h +5) + 'px; left:' +
+                        (_this.x +  _this.w /2 - (Math.min(_this.w,_this.h)-30)/2-10) + ' px; top:' +
+                        (_this.y +  _this.h/2 - (Math.min(_this.w,_this.h)-30)/2+50-15) + 'px; "> </div>';
+                    $("#bubble").append( $(tmp) );
+                    _this.treeRing=null;
+                    var val = $menuBarbubble.children('#file').val();
+                    var functionType =$menuBarbubble.children('#type').val();
+                    _this.treeRing =  new PATHBUBBLES.D3Ring(_this, Math.min(_this.w,_this.h)-30, functionType, val, _this.dataName);
+                    _this.treeRing.file = "./data/" + functionType+"/" +val+"/"+_this.dataName+ ".json";
+                    _this.treeRing.customOrtholog =  orthlogData;
+                    _this.name = _this.pre + "custom";
+                    _this.treeRing.init(functionType);
+                });
+            }
         });
     },
     ungroup: function(){
@@ -281,27 +345,42 @@ PATHBUBBLES.TreeRing.prototype = {
         });
         $menuBarbubble.find('#type').css({
             left: 10,
-            top: 45,
+            top: 25,
             width: 180
         });
         $menuBarbubble.find('#ungroup').css({
             left: 10,
-            top: 70,
+            top: 50,
             width: 180
         });
         $menuBarbubble.find('#delete').css({
             left: 10,
-            top: 95,
+            top: 75,
             width: 180
         });
         $menuBarbubble.find('#file').css({
             left: 10,
-            top: 115,
+            top: 95,
             width: 180
         });
         $menuBarbubble.find('#expressionFile').css({
             left: 10,
-            top: 115,
+            top: 95,
+            width: 180
+        });
+        $menuBarbubble.find('#customOrth').css({
+            left: 10,
+            top: 125,
+            width: 180
+        });
+        $menuBarbubble.find('#loadOrth').css({
+            left: 10,
+            top: 155,
+            width: 180
+        });
+        $menuBarbubble.find('#crossTalkLevel').css({
+            left: 10,
+            top: 180,
             width: 180
         });
     },

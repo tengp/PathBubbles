@@ -1,1 +1,1 @@
-{"dbId":"426486","name":"Small Interfering RNA (siRNA) Biogenesis","children":[],"size":1,"simbols":["DROSHA","AGO2","AGO1","AGO3","AGO4","DGCR8","RAN","XPO5","XPO5","RAN","PRKRA","TARBP2","DICER1"],"gallusOrth":{"yesNum":12,"noNum":0,"type":"Part"}}
+{"dbId":"426486","name":"Small Interfering RNA (siRNA) Biogenesis","children":[],"size":1,"simbols":["PRKRA","TARBP2","DICER1","AGO2","AGO1","AGO3","AGO4"],"gallusOrth":{"yesNum":6,"noNum":0,"type":"Part"}}
