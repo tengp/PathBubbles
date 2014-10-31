@@ -1,1 +1,0 @@
-{"dbId":"512988","name":"Interleukin-3 5 and GM-CSF signaling","children":[{"dbId":"912526","name":"Interleukin receptor SHC signaling","children":[],"size":1,"ups":["GRB2"],"downs":[]},{"dbId":"912631","name":"Regulation of signaling by CBL","children":[],"size":1,"ups":["GRB2"],"downs":[]}],"ups":["GRB2"],"downs":[]}

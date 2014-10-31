@@ -1,1 +1,0 @@
-{"dbId":"1655829","name":"Regulation of Cholesterol Biosynthesis by SREBP (SREBF)","children":[{"dbId":"2426168","name":"Activation of Gene Expression by SREBP (SREBF)","children":[],"size":1,"ups":["SMARCD3"],"downs":["NFYA"]}],"ups":["MBTPS2","SMARCD3"],"downs":["NFYA"]}

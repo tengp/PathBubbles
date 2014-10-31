@@ -1,1 +1,0 @@
-{"dbId":"140342","name":"Apoptosis induced DNA fragmentation","children":[{"dbId":"211227","name":"Activation of DNA fragmentation factor","children":[],"size":1,"ups":["HMGB1","HMGB2"],"downs":["HIST1H1C"]}],"ups":["HMGB1","HMGB2"],"downs":["HIST1H1C"]}

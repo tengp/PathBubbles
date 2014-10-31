@@ -1,1 +1,0 @@
-{"dbId":"211976","name":"Endogenous sterols","children":[{"dbId":"211994","name":"Sterols are 12-hydroxylated by CYP8B1","children":[],"size":1,"ups":["CYP8B1"],"downs":[]}],"ups":["CYP1B1","CYP7A1","CYP8B1"],"downs":["CYP19A1"]}

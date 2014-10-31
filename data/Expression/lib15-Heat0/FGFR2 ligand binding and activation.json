@@ -1,1 +1,0 @@
-{"dbId":"190241","name":"FGFR2 ligand binding and activation","children":[{"dbId":"190377","name":"FGFR2b ligand binding and activation","children":[],"size":1,"ups":[],"downs":[]},{"dbId":"190375","name":"FGFR2c ligand binding and activation","children":[],"size":1,"ups":["FGF23","FGF5"],"downs":["FGF9","FGF16"]}],"ups":["FGF5","FGF23"],"downs":["FGF9","FGF16"]}

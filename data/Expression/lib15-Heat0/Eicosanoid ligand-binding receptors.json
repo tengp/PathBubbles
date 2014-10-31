@@ -1,1 +1,0 @@
-{"dbId":"391903","name":"Eicosanoid ligand-binding receptors","children":[{"dbId":"391908","name":"Prostanoid ligand receptors","children":[],"size":1,"ups":["PTGFR"],"downs":["PTGER3"]},{"dbId":"391906","name":"Leukotriene receptors","children":[],"size":1,"ups":["GPR17"],"downs":["LTB4R","CYSLTR1"]}],"ups":["GPR17","PTGFR"],"downs":["LTB4R","CYSLTR1","PTGER3"]}

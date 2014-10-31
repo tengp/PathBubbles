@@ -1,1 +1,0 @@
-{"dbId":"194315","name":"Signaling by Rho GTPases","children":[{"dbId":"194840","name":"Rho GTPase cycle","children":[],"size":1,"ups":["RHOA","RHOA","RAC3","CDC42","RAC3","CDC42"],"downs":["RAC2","RAC2"]}],"ups":["RHOA","RHOA","RAC3","CDC42","RAC3","CDC42"],"downs":["RAC2","RAC2"]}

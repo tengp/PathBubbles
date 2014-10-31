@@ -23,6 +23,13 @@ body { font-family: sans-serif; background:#111; margin: 0;
     font-weight: bold;
     text-shadow: 1px 1px 0 #fff;
 }
+
+#minMaxRatio{
+    font-size: 11px;
+}
+.inlineinput div {
+    display: inline;
+}
 .dragheader { color:#fff; font-weight:bold; font-size:0.9em;letter-spacing:1px;text-align: left;
     padding:5px 0 5px 0.5em; cursor:move; position:relative; bottom:0px; margin:0 0 0 0; }
 

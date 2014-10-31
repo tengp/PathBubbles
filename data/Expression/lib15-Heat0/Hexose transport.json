@@ -1,1 +1,0 @@
-{"dbId":"189200","name":"Hexose transport","children":[{"dbId":"70153","name":"Glucose transport","children":[{"dbId":"170822","name":"Regulation of Glucokinase by Glucokinase Regulatory Protein","children":[],"size":1,"ups":["NUP160","NUP85","NUP210"],"downs":[]}],"ups":["NUP160","NUP85","NUP210"],"downs":[]}],"ups":["NUP210","NUP160","NUP85"],"downs":["SLC2A5"]}

@@ -13,7 +13,7 @@ PATHBUBBLES.Menu= function(bubble)
     this.y = this.bubble.y+20;
     this.flag = false;
     this.w = 200;
-    this.h = 215;
+    this.h = 245;
     this.text = new PATHBUBBLES.Text(this, "Menu");
     this.shape = new PATHBUBBLES.Shape.Rectangle(this, this.x, this.y, this.w ,this.h, "#666666", "#282525", 2, 0);
 };

@@ -10,7 +10,7 @@ PATHBUBBLES.Button = function (parent)
     this.x = this.parent.x + this.parent.w+5;
     this.y = this.parent.y+20;
     this.w = 200;
-    this.h = 215;
+    this.h = 245;
 };
 PATHBUBBLES.Button.prototype = {
     constructor: PATHBUBBLES.Button,

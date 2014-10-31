@@ -1,1 +1,0 @@
-{"dbId":"1480926","name":"O2CO2 exchange in erythrocytes","children":[{"dbId":"1237044","name":"Uptake of Carbon Dioxide and Release of Oxygen by Erythrocytes","children":[],"size":1,"ups":[],"downs":[]},{"dbId":"1247673","name":"Uptake of Oxygen and Release of Carbon Dioxide by Erythrocytes","children":[],"size":1,"ups":["AQP1"],"downs":["CA2"]}],"ups":["AQP1"],"downs":["CA2"]}

@@ -1,1 +1,0 @@
-{"dbId":"77388","name":"SHC-related events","children":[{"dbId":"74744","name":"SHC activation","children":[],"size":1,"ups":[],"downs":[]},{"dbId":"112410","name":"SHC-mediated signalling","children":[{"dbId":"109869","name":"RAFMAP kinase cascade","children":[],"size":1,"ups":[],"downs":[]}],"ups":[],"downs":["IL6"]}],"ups":[],"downs":["IL6","SHC2"]}

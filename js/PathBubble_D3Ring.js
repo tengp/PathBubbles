@@ -4,19 +4,20 @@
  * @time        10/10/2014
  * @name        PathBubble_D3Ring
  */
-PATHBUBBLES.D3Ring = function (parent, defaultRadius, functionType, dataType, name) {
+PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
     this.parent = parent;
     this.defaultRadius = defaultRadius;
     this.name = name || null;
-    this.file = "./data/" + functionType + "/" + dataType + "/" + name + ".json";
+    this.file = "./data/Ortholog/" + dataType + "/" + name + ".json";
     this.customOrtholog = null;
     this.selectedData = null;
     this.showCrossTalkLevel = 1;
     this.ChangeLevel = false;
+    this.customExpression = null;
 };
 PATHBUBBLES.D3Ring.prototype = {
     constructor: PATHBUBBLES.D3Ring,
-    init: function (type) {
+    init: function () {
         var width = this.defaultRadius,
             height = this.defaultRadius,
             radius = Math.min(width, height) / 2;
@@ -31,7 +32,7 @@ PATHBUBBLES.D3Ring.prototype = {
         var svg = d3.select("#svg" + this.parent.id).append("svg")
             .attr("width", width)
             .attr("height", this.parent.h);
-        if (type !== "Expression") {
+        if (this.customExpression == null) {     //Color Bar for ortholog
             var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
 
             var symbol = svg.append("g")
@@ -129,9 +130,11 @@ PATHBUBBLES.D3Ring.prototype = {
         var _this = this;
 //        var crossTalkFileName;
         var maxLevel=1;
+        var minRatio ;
+        var maxRatio ;
         if (_this.selectedData == null) {
             d3.json(_this.file, function (error, root) {
-                if (_this.customOrtholog) {
+                if (_this.customOrtholog && !_this.customExpression) {
                     nodeData = partition.nodes(root);
                     for (var i = 0; i < nodeData.length; ++i)  //every pathway
                     {
@@ -161,6 +164,50 @@ PATHBUBBLES.D3Ring.prototype = {
                         else {
                             nodeData[i].gallusOrth.type = "Part";
                             nodeData[i].gallusOrth.count = count;
+                        }
+                    }
+                    operation(nodeData);
+                }
+                else if(_this.customExpression && !_this.customOrtholog)
+                {
+                    var $menuBarbubble = $('#menuView'+ _this.parent.id);
+                    var minRatio = $menuBarbubble.find('#minRatio').val();
+                    var maxRatio = $menuBarbubble.find('#maxRatio').val();
+                    if(minRatio == "")
+                        minRatio="0.5";
+                    if(maxRatio=="")
+                        maxRatio="2.0";
+                    minRatio = parseFloat(minRatio);
+                    maxRatio = parseFloat(maxRatio);
+                    nodeData = partition.nodes(root);
+                    for (var i = 0; i < nodeData.length; ++i)  //every pathway
+                    {
+                        if (nodeData[i].simbols == undefined) {
+                            continue;
+                        }
+                        nodeData[i].expression = {};
+                        nodeData[i].expression.ups = [];
+                        nodeData[i].expression.downs = [];
+                        nodeData[i].expression.unchanges = [];
+                        for (var k = 0; k < nodeData[i].simbols.length; ++k) {
+                            for (var j = 0; j < _this.customExpression.length; ++j) {
+                                if (nodeData[i].simbols[k] == _this.customExpression[j].simbol) {
+                                    if (parseFloat(_this.customExpression[j].ratio)>=maxRatio) {
+                                        nodeData[i].expression.ups.push(_this.customExpression[j]);
+                                        break;
+                                    }
+                                    else if(parseFloat(_this.customExpression[j].ratio)<=minRatio)
+                                    {
+                                        nodeData[i].expression.downs.push(_this.customExpression[j]);
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        nodeData[i].expression.unchanges.push(_this.customExpression[j]);
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     }
                     operation(nodeData);
@@ -216,14 +263,11 @@ PATHBUBBLES.D3Ring.prototype = {
 //                var g = svg.selectAll("g")
 //                    .data(nodeData)
 //                    .enter().append("g");
-                if (type == "Expression") {
-                    var sum = 0;
+                if (_this.customExpression) {
                     var max = d3.max(nodeData, function (d) {
-                        if (d.name == "homo sapiens")
-                            return;
-                        var temp = d.downs.length + d.ups.length;
-                        sum += temp;
-                        return temp;
+                        if (d.name == "homo sapiens"|| d.expression == undefined || d.gallusOrth==undefined)
+                            return 0;
+                        return (d.expression.downs.length + d.expression.ups.length)/ d.gallusOrth.count;
                     });
                     var divisions = 20;
 
@@ -253,11 +297,11 @@ PATHBUBBLES.D3Ring.prototype = {
 //                    .attr("transform", "rotate(-90)");
 
                     var xScale = d3.scale.linear()
-                        .domain([0, max / sum])
+                        .domain([0, max])
                         .range([0, scaleWidth]);
 
                     var colorRange = d3.scale.linear()
-                        .domain([0, max / sum])
+                        .domain([0, max])
                         .interpolate(d3.interpolateRgb)
                         .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
 
@@ -301,7 +345,7 @@ PATHBUBBLES.D3Ring.prototype = {
                     .style("fill", function (d, i) {
                         if (i == 0)
                             return "#fff";
-                        if (type != "Expression") {
+                        if (!_this.customExpression) {
                             if (d.children !== undefined)
                                 var gallusOrth = (d.children ? d : d.parent).gallusOrth;
                             else
@@ -321,18 +365,16 @@ PATHBUBBLES.D3Ring.prototype = {
                                 return "#fff";
                             }
                         }
-                        else if (type == "Expression") {
-                            if (d.downs == undefined)
+                        else if (_this.customExpression) {
+                            if (d.name == "homo sapiens"|| d.expression == undefined || d.gallusOrth==undefined)
                                 return "#fff";
-                            else {
-                                if (sum !== 0) {
-                                    return colorRange((d.downs.length + d.ups.length) / sum);
-                                }
-                                else {
-                                    return colorRange(0);
-                                }
+                            else if(d.gallusOrth.count==0)
+                            {
+                                return colorRange(0);
                             }
-
+                            else {
+                                return colorRange((d.expression.downs.length + d.expression.ups.length) / d.gallusOrth.count);
+                            }
                         }
                     })
                     .style("cursor", "pointer")
@@ -395,7 +437,6 @@ PATHBUBBLES.D3Ring.prototype = {
                             .style("opacity", 0.9);
                     });
 
-
                 function computeTextRotation(d, i) {
                     if (i == 0)
                         return 0;
@@ -406,7 +447,7 @@ PATHBUBBLES.D3Ring.prototype = {
                 {
                     var objects = processLinks(nodeData, classes);
                     var links = objects.imports;
-                    if (type != "Expression") {
+                    if (!_this.customExpression) {
                         var simbol_max = d3.max(objects.nodes, function (d) {
                             var temp = 0;
                             if (d.simbols !== undefined)
@@ -414,18 +455,17 @@ PATHBUBBLES.D3Ring.prototype = {
                             return temp;
                         });
                     }
-                    else if (type == "Expression") {
-                        var up_max = d3.max(objects.nodes, function (d) {
-                            var temp = 0;
-                            if (d.ups !== undefined)
-                                temp = d.ups.length;
-                            return temp;
-                        });
-                        var down_max = d3.max(objects.nodes, function (d) {
-                            var temp = 0;
-                            if (d.downs !== undefined)
-                                temp = d.downs.length;
-                            return temp;
+                    else if (_this.customExpression) {
+                        var upDownMax = d3.max(objects.nodes, function (d) {
+                            if (d.expression !== undefined)
+                            {
+                                return d.expression.ups.length+d.expression.downs.length;
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+
                         });
                     }
 
@@ -441,7 +481,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         })
                         .attr("class", "link")
                         .attr("d", diagonal);
-                    if (type != "Expression") {
+                    if (!_this.customExpression) {
                         node = node
                             .data(_nodes)
                             .attr("id", function (d, i) {
@@ -460,7 +500,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                 var temp = 0;
                                 if (d.simbols !== undefined)
                                     temp = d.simbols.length;
-                                return Math.floor(maxLevel/6*temp / simbol_max * 40 + 7);
+                                return Math.floor(maxLevel/6*temp / simbol_max * 40 + 3);
                             })
                             .attr("transform", function (d, i) {
                                 return "rotate(" + computeRotation(d, i) + ")";
@@ -517,24 +557,6 @@ PATHBUBBLES.D3Ring.prototype = {
                         }
                     }
                     else {
-//                    node = node
-//                        .data(_nodes)
-//                        .attr("id", function(d,i){
-//
-//                            return "node" + d.dbId;
-//                        })
-//                        .enter().append("circle")
-//                        .attr("class", "node")
-//                        .attr("r", 5)
-//                        .attr("cx", function(d) {
-//                            return d.x;
-//                        })
-//                        .attr("cy", function(d) {
-//                            return d.y;
-//                        })
-//                        .style("fill",   "#f00")
-//                        .on("mouseover", mouseovered)
-//                        .on("mouseout", mouseouted);
 
                         node = node
                             .data(_nodes)
@@ -551,19 +573,9 @@ PATHBUBBLES.D3Ring.prototype = {
                             })
                             .attr("height", Math.floor(maxLevel/6*8+2))
                             .attr("width", function (d) {
-                                if (d.ups == undefined)
+                                if(d.expression==undefined ||d.gallusOrth==undefined)
                                     return 3;
-                                else {
-                                    var temp = 0;
-                                    if (up_max !== 0) {
-                                        temp = d.ups.length;
-                                        return Math.floor(maxLevel/6*temp / up_max * 40 + 7);
-                                    }
-                                    else {
-                                        return 3;
-                                    }
-                                }
-
+                                return Math.floor(maxLevel/6*(d.expression.downs.length + d.expression.ups.length) / upDownMax * 40 + 3 );
                             })
                             .attr("transform", function (d, i) {
                                 return "rotate(" + computeRotation(d, i) + ")";
@@ -574,21 +586,26 @@ PATHBUBBLES.D3Ring.prototype = {
                             .on("mouseout", mouseouted);
 
                         function expressionBarClick() {
-                            var ups = d3.select(this).datum().ups;
-                            var downs = d3.select(this).datum().downs;
+                            if(d3.select(this).datum().expression==undefined)
+                                return;
+                            var ups = d3.select(this).datum().expression.ups;
+                            var downs = d3.select(this).datum().expression.downs;
                             var _simbols = [];
                             for (var i = 0; i < ups.length; ++i) {
                                 var simbolObj = {};
                                 for (var j = 0; j < _simbols.length; ++j) {
-                                    if (_simbols[j].SimbolName == ups[i] && _simbols[j].type == "Up") {
+                                    if (_simbols[j].SimbolName == ups[i].simbol && _simbols[j].regulation == "Up") {
                                         _simbols[j].count++;
                                         break;
                                     }
                                 }
                                 if (j >= _simbols.length) {
-                                    simbolObj.SimbolName = ups[i];
+
+                                    simbolObj.gene_id = ups[i].gene_id;
+                                    simbolObj.SimbolName = ups[i].simbol;
                                     simbolObj.count = 1;
-                                    simbolObj.type = "Up";
+                                    simbolObj.ratio = parseFloat(ups[i].ratio).toFixed(5);
+                                    simbolObj.regulation = "Up";
                                     _simbols.push(simbolObj);
                                 }
                             }
@@ -596,19 +613,21 @@ PATHBUBBLES.D3Ring.prototype = {
                             for (var i = 0; i < downs.length; ++i) {
                                 var simbolObj = {};
                                 for (var j = upLength; j < _simbols.length; ++j) {
-                                    if (_simbols[j].SimbolName == downs[i] && _simbols[j].type == "Down") {
+                                    if (_simbols[j].SimbolName == downs[i].simbol && _simbols[j].regulation == "Down") {
                                         _simbols[j].count++;
                                         break;
                                     }
                                 }
                                 if (j >= _simbols.length) {
-                                    simbolObj.SimbolName = downs[i];
+                                    simbolObj.gene_id = downs[i].gene_id;
+                                    simbolObj.SimbolName = downs[i].simbol;
                                     simbolObj.count = 1;
-                                    simbolObj.type = "Down";
+                                    simbolObj.ratio = parseFloat(downs[i].ratio).toFixed(5);
+                                    simbolObj.regulation = "Down";
                                     _simbols.push(simbolObj);
                                 }
                             }
-                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 320, 500, null, _simbols);
+                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 500, 500, null, _simbols);
                             bubble.name = "(Expression) " + d3.select(this).datum().name;
                             bubble.addHtml();
                             bubble.menuOperation();
@@ -703,21 +722,17 @@ PATHBUBBLES.D3Ring.prototype = {
                             temp.name = nodes[i].name;
                             temp.parent = nodes[i].parent;
                             temp.depth = nodes[i].depth;
+                            temp.dbId = nodes[i].dbId;
                             temp.children = nodes[i].children;
-                            if (type != "Expression") {
-                                temp.dx = nodes[i].x;
-                                temp.dy = nodes[i].y;
-                                temp.d_dx = nodes[i].dx;
-                                temp.d_dy = nodes[i].dy;
-                                temp.simbols = nodes[i].simbols;
-                            }
-                            else if (type == "Expression") {
-                                temp.dx = nodes[i].x;
-                                temp.dy = nodes[i].y;
-                                temp.d_dx = nodes[i].dx;
-                                temp.d_dy = nodes[i].dy;
-                                temp.downs = nodes[i].downs;
-                                temp.ups = nodes[i].ups;
+
+                            temp.dx = nodes[i].x;
+                            temp.dy = nodes[i].y;
+                            temp.d_dx = nodes[i].dx;
+                            temp.d_dy = nodes[i].dy;
+                            temp.simbols = nodes[i].simbols;
+                            temp.gallusOrth = nodes[i].gallusOrth;
+                            if (_this.customExpression) {
+                                temp.expression = nodes[i].expression;
                             }
 
                             _nodes.push(temp);
@@ -782,21 +797,33 @@ PATHBUBBLES.D3Ring.prototype = {
                         return;
                     var selectedData = d3.select(this).datum();
                     var name = selectedData.name;
-                    type = $('#menuView' + _this.parent.id).children('#type').val();
-                    if (type == "Expression") {
-                        var dataType = $('#menuView' + _this.parent.id).children('#expressionFile').val();
-                    }
-                    else if (type == "Ortholog") {
-                        var dataType = $('#menuView' + _this.parent.id).children('#file').val();
-                    }
+//                    type = $('#menuView' + _this.parent.id).children('#type').val();
+//                    if (type == "Expression") {
+//                        var dataType = $('#menuView' + _this.parent.id).children('#expressionFile').val();
+//                    }
+//                    else
+//                    if (type == "Ortholog") {
+                     var dataType = $('#menuView' + _this.parent.id).children('#file').val();
+//                    }
                     var RingWidth = _this.parent.w;
                     var RingHeight = _this.parent.h;
                     if (d3.select(this).datum().depth >= 1) {
                         RingWidth = RingWidth * 0.8;
                         RingHeight = RingHeight * 0.8;
                     }
-                    var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, name, type, dataType, selectedData);
+                    var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, name, dataType, selectedData);
                     bubble5.addHtml();
+                    if(_this.customOrtholog)
+                        bubble5.treeRing.customOrtholog = true;
+                    if(_this.customExpression)
+                    {
+                        bubble5.treeRing.customExpression = true;
+                        $('#menuView' + bubble5.id).children("#minRatio").val(minRatio);
+                        $('#menuView' + bubble5.id).children("#maxRatio").val(maxRatio);
+//                        $('#menuView' + bubble5.id).children("#crossTalkLevel")
+                    }
+
+
                     bubble5.menuOperation();
                     if (viewpoint) {
                         bubble5.offsetX = viewpoint.x;
@@ -818,28 +845,28 @@ PATHBUBBLES.D3Ring.prototype = {
                     }
                 }
 
-                function doubleClick(d) {
-                    path.transition()
-                        .duration(1500)
-                        .attrTween("d", arcTween(d))
-                        .each("end", function (e, i) {
-                            // check if the animated element's data e lies within the visible angle span given in d
-                            if (e.x >= d.x && e.x < (d.x + d.dx)) {
-                                // get a selection of the associated text element
-                                var arcText = d3.select(this.parentNode).select("text");
-                                // fade in the text element and recalculate positions
-                                arcText.transition().duration(750)
-                                    .attr("opacity", 1)
-                                    .attr("transform", function () {
-                                        return "rotate(" + computeTextRotation(e) + ")"
-                                    })
-                                    .attr("x", function (d) {
-                                        return y(d.y);
-                                    });
-                            }
-                        });
-
-                }
+//                function doubleClick(d) {
+//                    path.transition()
+//                        .duration(1500)
+//                        .attrTween("d", arcTween(d))
+//                        .each("end", function (e, i) {
+//                            // check if the animated element's data e lies within the visible angle span given in d
+//                            if (e.x >= d.x && e.x < (d.x + d.dx)) {
+//                                // get a selection of the associated text element
+//                                var arcText = d3.select(this.parentNode).select("text");
+//                                // fade in the text element and recalculate positions
+//                                arcText.transition().duration(750)
+//                                    .attr("opacity", 1)
+//                                    .attr("transform", function () {
+//                                        return "rotate(" + computeTextRotation(e) + ")"
+//                                    })
+//                                    .attr("x", function (d) {
+//                                        return y(d.y);
+//                                    });
+//                            }
+//                        });
+//
+//                }
             });
         }
 

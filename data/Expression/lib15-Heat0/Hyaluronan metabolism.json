@@ -1,1 +1,0 @@
-{"dbId":"2142845","name":"Hyaluronan metabolism","children":[{"dbId":"2142850","name":"Hyaluronan biosynthesis and export","children":[],"size":1,"ups":[],"downs":["HAS2"]},{"dbId":"2160916","name":"Hyaluronan uptake and degradation","children":[],"size":1,"ups":["HMMR","LYVE1"],"downs":[]}],"ups":["HMMR","LYVE1"],"downs":["HAS2"]}

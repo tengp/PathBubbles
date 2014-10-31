@@ -1,1 +1,0 @@
-{"dbId":"397795","name":"G-protein betagamma signalling","children":[{"dbId":"392451","name":"G betagamma signalling through PI3Kgamma","children":[],"size":1,"ups":["GNB5"],"downs":["GNG2","PIK3R5"]},{"dbId":"418217","name":"G betagamma signalling through PLC beta","children":[],"size":1,"ups":["GNB5"],"downs":["GNG2"]}],"ups":["GNB5"],"downs":["GNG2"]}

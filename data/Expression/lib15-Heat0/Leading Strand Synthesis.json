@@ -1,1 +1,0 @@
-{"dbId":"69109","name":"Leading Strand Synthesis","children":[{"dbId":"69091","name":"Polymerase switching","children":[],"size":1,"ups":["MCM5"],"downs":["GINS1"]}],"ups":["PCNA","POLA1","RFC2","RFC4"],"downs":[]}
