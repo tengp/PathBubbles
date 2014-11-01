@@ -163,6 +163,7 @@ PATHBUBBLES.D3Table.prototype = {
 
                 // select cells
                 var cells = rows.selectAll("g.cell").data(function(d){
+
                     return d3.values(d);
                 });
 

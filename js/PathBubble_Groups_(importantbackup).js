@@ -3,7 +3,6 @@
  * @version     1.0
  * @time        9/17/2014
  * @name        PathBubble_groups
- *              Attemp to put the bubbles from left to right
  */
 PATHBUBBLES.Groups = function () {
     PATHBUBBLES.Object2D.call(this);
@@ -64,13 +63,13 @@ PATHBUBBLES.Groups.prototype = {
                     this.children.push(object);
                 if (this.arranged.length == 0) {
                     this.tempPoints.length = 0;
-//                    var left = {};
-//                    left.x = object.x;
-//                    left.y = object.y;
-//                    left.type = "QCT";
-//                    left.id = object.id;
-//                    left.pos = "left";
-//                    this.tempPoints.push(left);
+                    var left = {};
+                    left.x = object.x;
+                    left.y = object.y;
+                    left.type = "QCT";
+                    left.id = object.id;
+                    left.pos = "left";
+                    this.tempPoints.push(left);
 
                     var right = {};
                     right.x = object.x + object.w;
@@ -80,21 +79,21 @@ PATHBUBBLES.Groups.prototype = {
                     right.pos = "right";
                     this.tempPoints.push(right);
 
-//                    var bright = {};
-//                    bright.x = object.x + object.w;
-//                    bright.y = object.y + object.h;
-//                    bright.id = object.id;
-//                    bright.pos = "bright";
-//                    bright.type = "QCT";
-//                    this.tempPoints.push(bright);
-//
-//                    var bleft = {};
-//                    bleft.x = object.x;
-//                    bleft.y = object.y + object.h;
-//                    bleft.type = "QCT";
-//                    bleft.id = object.id;
-//                    bleft.pos = "bleft";
-//                    this.tempPoints.push(bleft);
+                    var bright = {};
+                    bright.x = object.x + object.w;
+                    bright.y = object.y + object.h;
+                    bright.id = object.id;
+                    bright.pos = "bright";
+                    bright.type = "QCT";
+                    this.tempPoints.push(bright);
+
+                    var bleft = {};
+                    bleft.x = object.x;
+                    bleft.y = object.y + object.h;
+                    bleft.type = "QCT";
+                    bleft.id = object.id;
+                    bleft.pos = "bleft";
+                    this.tempPoints.push(bleft);
                     this.arranged.push(object);
                 }
                 if (this.tempPoints.length !== 0 || !this.RESET) {
@@ -356,19 +355,19 @@ PATHBUBBLES.Groups.prototype = {
         var right = {};
         var up = {};
         var down = {};
-//        left.x = object.x - target.w;
-//        left.y = target.y;
-//        left.w = target.w;
-//        left.h = target.h;
-//        left.flag = true;
-//        left.moveDistance = Math.abs(target.x - left.x);
-//        for (var i = 0; i < this.arranged.length; ++i) {
-//            if (this.detectOverlap(this.arranged[i], left)) {
-//                left.flag = false;
-//            }
-//        }
-//        left.type = "left";
-//        objects.push(left);
+        left.x = object.x - target.w;
+        left.y = target.y;
+        left.w = target.w;
+        left.h = target.h;
+        left.flag = true;
+        left.moveDistance = Math.abs(target.x - left.x);
+        for (var i = 0; i < this.arranged.length; ++i) {
+            if (this.detectOverlap(this.arranged[i], left)) {
+                left.flag = false;
+            }
+        }
+        left.type = "left";
+        objects.push(left);
 
         right.x = object.x + object.w;
         right.y = target.y;
@@ -384,33 +383,33 @@ PATHBUBBLES.Groups.prototype = {
         right.type = "right";
         objects.push(right);
 
-//        up.x = target.x;
-//        up.y = object.y - target.h;
-//        up.w = target.w;
-//        up.h = target.h;
-//        up.flag = true;
-//        up.moveDistance = Math.abs(target.y - up.y);
-//        for (var i = 0; i < this.arranged.length; ++i) {
-//            if (this.detectOverlap(this.arranged[i], up)) {
-//                up.flag = false;
-//            }
-//        }
-//        up.type = "up";
-//        objects.push(up);
-//
-//        down.x = target.x;
-//        down.y = object.y + object.h;
-//        down.w = target.w;
-//        down.h = target.h;
-//        down.flag = true;
-//        down.moveDistance = Math.abs(down.y - target.y);
-//        for (var i = 0; i < this.arranged.length; ++i) {
-//            if (this.detectOverlap(this.arranged[i], down)) {
-//                down.flag = false;
-//            }
-//        }
-//        down.type = "down";
-//        objects.push(down);
+        up.x = target.x;
+        up.y = object.y - target.h;
+        up.w = target.w;
+        up.h = target.h;
+        up.flag = true;
+        up.moveDistance = Math.abs(target.y - up.y);
+        for (var i = 0; i < this.arranged.length; ++i) {
+            if (this.detectOverlap(this.arranged[i], up)) {
+                up.flag = false;
+            }
+        }
+        up.type = "up";
+        objects.push(up);
+
+        down.x = target.x;
+        down.y = object.y + object.h;
+        down.w = target.w;
+        down.h = target.h;
+        down.flag = true;
+        down.moveDistance = Math.abs(down.y - target.y);
+        for (var i = 0; i < this.arranged.length; ++i) {
+            if (this.detectOverlap(this.arranged[i], down)) {
+                down.flag = false;
+            }
+        }
+        down.type = "down";
+        objects.push(down);
         return objects;
     },
     detectOverlap: function (object1, object2) {
