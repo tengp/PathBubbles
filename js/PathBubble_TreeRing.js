@@ -250,15 +250,33 @@ PATHBUBBLES.TreeRing.prototype = {
                 (_this.x +  _this.w /2 - (Math.min(_this.w,_this.h)-30)/2-10) + ' px; top:' +
                 (_this.y +  _this.h/2 - (Math.min(_this.w,_this.h)-30)/2+50-15) + 'px; "> </div>';
             $("#bubble").append( $(tmp) );
+            var orthlogData=null, expressionData=null;
+            if(_this.treeRing.customOrtholog)
+            {
+                orthlogData=_this.treeRing.customOrtholog;
+            }
+            if(_this.treeRing.customExpression)
+            {
+                expressionData=_this.treeRing.customExpression;
+            }
             _this.treeRing=null;
 
 //            var functionType =$('#menuView'+ _this.id).children('#type').val();
 //            var functionType = "Ortholog";
             var fileVal =$('#menuView'+ _this.id).children('#file').val();
             _this.treeRing =  new PATHBUBBLES.D3Ring(_this, Math.min(_this.w,_this.h)-30, fileVal, _this.dataName);
+
             _this.treeRing.ChangeLevel = true;
             _this.treeRing.showCrossTalkLevel = val;
             _this.treeRing.file = "./data/Ortholog/" +fileVal+"/"+_this.dataName+ ".json";
+            if(orthlogData)
+            {
+                _this.treeRing.customOrtholog=orthlogData;
+            }
+            if(expressionData)
+            {
+                _this.treeRing.customExpression = expressionData;
+            }
 
            if ($menuBarbubble.find('#customOrth'+_this.id).get(0).files[0]!==undefined) {
                var localFileLoader = new PATHBUBBLES.FileLoader("Ortholog");
@@ -341,6 +359,7 @@ PATHBUBBLES.TreeRing.prototype = {
 //                    var functionType = "Ortholog";
                     _this.treeRing =  new PATHBUBBLES.D3Ring(_this, Math.min(_this.w,_this.h)-30, val, _this.dataName);
                     _this.treeRing.file = "./data/Ortholog/" +val+"/"+_this.dataName+ ".json";
+                    _this.treeRing.showCrossTalkLevel = parseInt($menuBarbubble.children('#crossTalkLevel').val());
                     _this.treeRing.customOrtholog =  orthlogData;
 //                    _this.selectedFileData = orthlogData;
                     _this.treeRing.customExpression = null;
@@ -383,7 +402,7 @@ PATHBUBBLES.TreeRing.prototype = {
                     _this.treeRing =  new PATHBUBBLES.D3Ring(_this, Math.min(_this.w,_this.h)-30, orthologyFile, _this.dataName);
                     _this.treeRing.file = "./data/Ortholog/" +orthologyFile+"/"+_this.dataName+ ".json";
                     _this.treeRing.customExpression =  expressionData;
-//                    _this.selectedFileData = expressionData;
+                    _this.treeRing.showCrossTalkLevel = parseInt($menuBarbubble.children('#crossTalkLevel').val());
                     _this.treeRing.customOrtholog = null;
                     _this.name = "(Expression) "+ _this.selected_file.name;
 //                    _this.name = _this.pre + "custom";

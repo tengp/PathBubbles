@@ -10,13 +10,15 @@ PATHBUBBLES.D3Table = function(parent, w, h){
     this.w = w;
     this.h = h;
     this.data = null;
+    this.dbId = null;
 };
 
 PATHBUBBLES.D3Table.prototype = {
     constructor: PATHBUBBLES.D3Table,
-    init: function(dbId){
+    init: function(dbId, querySymbol){
+        this.dbId = dbId;
         var _this =this;
-        var margin = {top: 20, right: 10, bottom: 20, left: 10},
+        var margin = {top: 20, right: 10, bottom: 20, left: 3},
             width = this.w - margin.left - margin.right,
             height = this.h - margin.top - margin.bottom;
         d3.select("#svg"+this.parent.id)
@@ -51,48 +53,76 @@ PATHBUBBLES.D3Table.prototype = {
             var fieldWidth = 90;
             if(_this.data==null)
             {
-                $.ajax({
-                    type: "GET",
-                    url: "./data/pathFiles/" + dbId +"_7protein.txt",
-                    dataType: "text",
-                    success: function (txt) {
-                        var jsonData = [];
-                        txt = txt.split("\t\n");
-                        for(var i=0; i<txt.length; ++i)
-                        {
-                            var arrays=txt[i].split("\t");
-                            if(arrays.length !== 5)
-                                continue;
-                            var obj = {};
-                            obj.proteinName =arrays[1];
-
-                            var unis = arrays[2].split(":");
-                            var uniSymbols = unis[1].split(" ");
-                            obj.UniProtID =uniSymbols[0];
-                            if(uniSymbols.length==2)
-                                obj.displaySimbol =uniSymbols[1].toUpperCase();
-                            else
-                                obj.displaySimbol ="";
-                            var reactome = arrays[3].split(":");
-                            obj.reactomeId =reactome[1];
-                            obj.compartmentName =arrays[4];
-                            jsonData.push(obj);
+//                $.ajax({
+//                    type: "GET",
+//                    url: "./data/pathFiles/" + dbId +"_7protein.txt",
+//                    dataType: "text",
+//                    success: function (txt) {
+//                        var jsonData = [];
+//                        txt = txt.split("\t\n");
+//                        for(var i=0; i<txt.length; ++i)
+//                        {
+//                            var arrays=txt[i].split("\t");
+//                            if(arrays.length !== 5)
+//                                continue;
+//                            var obj = {};
+//                            obj.proteinName =arrays[1];
+//
+//                            var unis = arrays[2].split(":");
+//                            var uniSymbols = unis[1].split(" ");
+//                            obj.UniProtID =uniSymbols[0];
+//                            if(uniSymbols.length==2)
+//                                obj.displaySimbol =uniSymbols[1].toUpperCase();
+//                            else
+//                                obj.displaySimbol ="";
+//                            var reactome = arrays[3].split(":");
+//                            obj.reactomeId =reactome[1];
+//                            obj.compartmentName =arrays[4];
+//                            jsonData.push(obj);
+//                        }          if(
+                if(querySymbol!==null && querySymbol!==undefined)
+                {
+                    $.ajax({
+                        url: "./php/querybyPathwayIdSymbol.php",
+                        type: "GET",
+                        data: {
+                            pathwaydbId: dbId,
+                            symbol: querySymbol
+                        },
+                        dataType: "json",
+                        success: function (jsonData) {
+                            operation(jsonData);
+                        },
+                        error: function () {
                         }
-                        operation(jsonData);
-                    },
-                    error: function () {
-                    }
-                });
+                    });
+                }
+                else
+                {
+                    $.ajax({
+                        url: "./php/querybyPathwayId.php",
+                        type: "GET",
+                        data: {
+                            pathwaydbId: dbId
+                        },
+                        dataType: "json",
+                        success: function (jsonData) {
+                            operation(jsonData);
+                        },
+                        error: function () {
+                        }
+                    });
+                }
             }
             else
             {
-//                _this.parent.name = "(Shared protein) "+ _this.parent.name;
                 operation(_this.data);
             }
 
             function operation(jsonData)
             {
                 $("#svg"+_this.parent.id).children("svg").css({
+                    width: Math.max((fieldWidth+1) * d3.keys(jsonData[0]).length + 2*(margin.left + margin.right), width + margin.left + margin.right),
                     height: Math.max((fieldHeight+1) * jsonData.length + 2*(margin.top + margin.bottom), height + margin.top + margin.bottom)
                 });
                 // create the table header
@@ -161,6 +191,35 @@ PATHBUBBLES.D3Table.prototype = {
                     .style("font-size", "10px" )
                     .style("text-anchor", "middle" )
                     .text(String);
+                cells.on("contextmenu", function (d,i) {
+                     if( d==String(d))
+                     {
+                         var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 230, 500, null, null,{dbId: _this.dbId, symbol:d});
+                         bubble.name = "(Query protein) " + d;
+                         bubble.addHtml();
+                         bubble.menuOperation();
+                         if (viewpoint) {
+                             bubble.offsetX = viewpoint.x;
+                             bubble.offsetY = viewpoint.y;
+                         }
+                         scene.addObject(bubble);
+                         if (!_this.parent.GROUP) {
+                             var group = new PATHBUBBLES.Groups();
+                             group.objectAddToGroup(_this.parent);
+                             group.objectAddToGroup(bubble);
+                             scene.addObject(group);
+                         }
+                         else {
+                             if (_this.parent.parent instanceof  PATHBUBBLES.Groups) {
+                                 _this.parent.parent.objectAddToGroup(_this.parent);
+                                 _this.parent.parent.objectAddToGroup(bubble);
+                                 scene.addObject(_this.parent.parent);
+                             }
+                         }
+                         d3.event.preventDefault();
+                     }
+
+                });
 
                 //update if not in initialisation
                 if(sortOn !== null) {

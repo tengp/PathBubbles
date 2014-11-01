@@ -4,7 +4,7 @@
  * @time        10/18/2014
  * @name        PathBubble_Table
  */
-PATHBUBBLES.Table = function (x, y, w, h, dbId,data) {
+PATHBUBBLES.Table = function (x, y, w, h, dbId,data,queryObject) {
     PATHBUBBLES.Object2D.call(this);
     this.type = "Table";
     this.x = x || 0;
@@ -36,6 +36,7 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId,data) {
     this.GROUP = false;
     this.selected_file = null;
     this.data = data ||null;
+    this.queryObject = queryObject||null;
 };
 
 PATHBUBBLES.Table.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
@@ -52,7 +53,14 @@ PATHBUBBLES.Table.prototype = {
         {
             this.table.data = this.data;
         }
-        this.table.init(this.dbId);
+        if(this.queryObject!==undefined &&this.queryObject!==null)
+        {
+            this.table.init(this.queryObject.dbId,this.queryObject.symbol);
+        }
+        else
+        {
+            this.table.init(this.dbId);
+        }
     },
     addObject: function (object) {
         var index = this.children.indexOf(object);

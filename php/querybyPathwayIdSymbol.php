@@ -5,9 +5,12 @@ error_reporting(E_ALL ^ E_DEPRECATED);
     // connect to the database
     @mysql_select_db($database) or die( "Unable to select database");
     //Query
+    //variable
+    $pathwayId = $_GET["pathwaydbId"];
+    $symbol = $_GET["symbol"];
     $myquery = "
-        SELECT `pathwayID`, `symbol` FROM `protein`
-    ";
+        SELECT `pathwayID`, `proteinID`, `uniprotID`, `symbol`, `displaySymbol`,
+         `reactomeID`, `cellularLocation` FROM `protein` WHERE pathwayID='$pathwayId' && symbol='$symbol'";
 
     $result = mysql_query($myquery);
     if ( ! $result ) {

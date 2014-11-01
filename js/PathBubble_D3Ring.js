@@ -18,6 +18,7 @@ PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
 PATHBUBBLES.D3Ring.prototype = {
     constructor: PATHBUBBLES.D3Ring,
     init: function () {
+        var _this=this;
         var width = this.defaultRadius,
             height = this.defaultRadius,
             radius = Math.min(width, height) / 2;
@@ -32,8 +33,8 @@ PATHBUBBLES.D3Ring.prototype = {
         var svg = d3.select("#svg" + this.parent.id).append("svg")
             .attr("width", width)
             .attr("height", this.parent.h);
-        if (this.customExpression == null) {     //Color Bar for ortholog
-            var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
+        var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
+        if (!_this.customExpression) {     //Color Bar for ortholog
 
             var symbol = svg.append("g")
                 .attr("class", "symbol")
@@ -531,7 +532,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                     _simbols[j].count++;
                                 }
                             }
-                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 230, 500, null, _simbols);
+                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 230, 500, d3.select(this).datum().dbId, _simbols);
                             bubble.name = "(Shared protein) " + d3.select(this).datum().name;
                             bubble.addHtml();
                             bubble.menuOperation();
@@ -573,7 +574,7 @@ PATHBUBBLES.D3Ring.prototype = {
                             })
                             .attr("height", Math.floor(maxLevel/6*8+2))
                             .attr("width", function (d) {
-                                if(d.expression==undefined ||d.gallusOrth==undefined)
+                                if(d.expression==undefined ||d.gallusOrth==undefined||upDownMax==0)
                                     return 3;
                                 return Math.floor(maxLevel/6*(d.expression.downs.length + d.expression.ups.length) / upDownMax * 40 + 3 );
                             })
@@ -627,7 +628,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                     _simbols.push(simbolObj);
                                 }
                             }
-                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 500, 500, null, _simbols);
+                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 500, 500, d3.select(this).datum().dbId, _simbols);
                             bubble.name = "(Expression) " + d3.select(this).datum().name;
                             bubble.addHtml();
                             bubble.menuOperation();
@@ -813,14 +814,21 @@ PATHBUBBLES.D3Ring.prototype = {
                     }
                     var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, name, dataType, selectedData);
                     bubble5.addHtml();
+
                     if(_this.customOrtholog)
-                        bubble5.treeRing.customOrtholog = true;
+                    {
+                        bubble5.treeRing.customOrtholog = _this.customOrtholog;
+                        $('#menuView' + bubble5.id).find("#minRatio").val($('#menuView' + _this.parent.id).find("#minRatio").val());
+                        $('#menuView' + bubble5.id).find("#maxRatio").val($('#menuView' + _this.parent.id).find("#maxRatio").val());
+                        $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).children("#crossTalkLevel").val());
+                    }
                     if(_this.customExpression)
                     {
-                        bubble5.treeRing.customExpression = true;
-                        $('#menuView' + bubble5.id).children("#minRatio").val(minRatio);
-                        $('#menuView' + bubble5.id).children("#maxRatio").val(maxRatio);
-//                        $('#menuView' + bubble5.id).children("#crossTalkLevel")
+                        d3.select("#svg" + bubble5.id).selectAll(".symbol").remove();
+                        bubble5.treeRing.customExpression = _this.customExpression;
+                        $('#menuView' + bubble5.id).find("#minRatio").val($('#menuView' + _this.parent.id).find("#minRatio").val());
+                        $('#menuView' + bubble5.id).find("#maxRatio").val($('#menuView' + _this.parent.id).find("#maxRatio").val());
+                        $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).children("#crossTalkLevel").val());
                     }
 
 
