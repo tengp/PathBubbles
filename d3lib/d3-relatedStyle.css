@@ -59,3 +59,15 @@ svg .colorScaleBar {
     stroke: #000;
     shape-rendering: crispEdges;
 }
+
+.hyper {
+    fill: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hyper:hover {
+    fill: red;
+    text-decoration: none;
+    cursor: hand;
+}

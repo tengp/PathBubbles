@@ -59,17 +59,18 @@ $(document).ready(function (){
                 }
                 scene.addObject(bubble5);
             }
-            else if (key === 'Open_Table') {
-                var bubble6 = new PATHBUBBLES.Table(mousePosX, mousePosY,500,500,1643713);
-                bubble6.addHtml();
-                bubble6.menuOperation();
-                if(viewpoint)
-                {
-                    bubble6.offsetX = viewpoint.x;
-                    bubble6.offsetY = viewpoint.y;
-                }
-                scene.addObject(bubble6);
-            }
+//            else if (key === 'Open_Table') {
+//                var bubble6 = new PATHBUBBLES.Table(mousePosX, mousePosY,500,500,1643713);
+//                bubble6.addHtml();
+//                bubble6.table.keepQuery = false;
+//                bubble6.menuOperation();
+//                if(viewpoint)
+//                {
+//                    bubble6.offsetX = viewpoint.x;
+//                    bubble6.offsetY = viewpoint.y;
+//                }
+//                scene.addObject(bubble6);
+//            }
             else if(key === 'Delete_All')
             {
                 for(var i= 0, l=scene.children.length;i<l; ++i)
@@ -92,7 +93,7 @@ $(document).ready(function (){
         items: {
             "Open_Bubble": {name: "Open_bubble"},
             "Open_TreeRing": {name: "Open_treeRing"},
-            "Open_Table": {name: "Open_table"},
+//            "Open_Table": {name: "Open_table"},
             "sep1": "---------",
             "Delete_All": {name: "Delete_all"}
         }

@@ -14,7 +14,6 @@ PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
     this.showCrossTalkLevel = 1;
     this.ChangeLevel = false;
     this.customExpression = null;
-    this.expressionScaleMax = null;
 };
 PATHBUBBLES.D3Ring.prototype = {
     constructor: PATHBUBBLES.D3Ring,
@@ -83,7 +82,7 @@ PATHBUBBLES.D3Ring.prototype = {
                 .text("Empty");
         }
 
-        var mainSvg = svg.append("g")
+        svg = svg.append("g")
             .attr("transform", "translate(" + width / 2 + "," + (height / 2 ) + ")");
 
         var partition = d3.layout.partition()
@@ -251,37 +250,28 @@ PATHBUBBLES.D3Ring.prototype = {
             d3.json(crossTalkFileName, function (error, crossTalkData) {
                 var classes = crossTalkData[_this.showCrossTalkLevel - 1];
 
-                var gGroup = mainSvg.append("g").attr("class", "graphGroup");
+                var gGroup = svg.append("g").attr("class", "graphGroup");
                 var pathG = gGroup.append("g").selectAll(".path");
 //                var bundleGroup = svg.append("g").attr("class", "bundleGroup");
                 var link = gGroup.append("g").selectAll(".link");
                 var node = gGroup.append("g").selectAll(".node");
                 var textG = gGroup.append("g").selectAll(".text");
                 if (_this.customExpression) {
-                    var max;
-                    if(!_this.expressionScaleMax)
-                    {
-                        max = d3.max(nodeData, function (d) {
-                            if (d.name == "homo sapiens"|| d.expression == undefined || d.gallusOrth==undefined)
-                                return 0;
-                            return (d.expression.downs.length + d.expression.ups.length)/ d.gallusOrth.count;
-                        });
-                    }
-                    else
-                    {
-                        max = _this.expressionScaleMax;
-                    }
-
+                    var max = d3.max(nodeData, function (d) {
+                        if (d.name == "homo sapiens"|| d.expression == undefined || d.gallusOrth==undefined)
+                            return 0;
+                        return (d.expression.downs.length + d.expression.ups.length)/ d.gallusOrth.count;
+                    });
                     var divisions = 10;
 
                     var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
-                        scaleWidth = 30 - scaleMargin.left - scaleMargin.right,
-                        scaleHeight = 170 - scaleMargin.top - scaleMargin.bottom;
+                        scaleWidth = 170 - scaleMargin.left - scaleMargin.right,
+                        scaleHeight = 30 - scaleMargin.top - scaleMargin.bottom;
 
                     var newData = [];
-                    var sectionHeight = Math.floor(scaleHeight / divisions);
+                    var sectionWidth = Math.floor(scaleWidth / divisions);
 
-                    for (var i = 0, j=0; i < scaleHeight && j<=max; i += sectionHeight, j += max/9) {
+                    for (var i = 0, j=0; i < scaleWidth && j<=max; i += sectionWidth, j += max/9) {
                         var obj= {};
                         obj.data = i;
                         obj.text = parseFloat(j).toFixed(3);
@@ -300,31 +290,34 @@ PATHBUBBLES.D3Ring.prototype = {
                     var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
 
 
-//                    var colorBar = svg.append("g")
-//                        .attr("transform", "translate(" + (width / 2-2*scaleHeight) + "," + ((height/2-70)  ) + ")");
-//                    console.log(scaleHeight);
-//                    console.log(scaleWidth);
-                    var colorScaleBar = svg.append("g")
+                    var colorBar = svg.append("g")
+                        .attr("transform", "translate(" + (width / 2-2*scaleHeight) + "," + ((height/2-70)  ) + ")");
+                    console.log(scaleHeight);
+                    console.log(scaleWidth);
+                    var colorScaleBar = colorBar.append("g")
                         .attr("class", "colorScaleBar")
-                        .attr("transform", "translate(" + (width -2*scaleWidth) + "," + ( height+40 - 10 * sectionHeight  ) + ")")
+                        .attr("transform", "rotate(90)")
                         .attr("width", BarWidth)
                         .attr("height", BarHeight);
+
 
                     var colorRange = d3.scale.linear()
                         .domain([0, max])
                         .interpolate(d3.interpolateRgb)
                         .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
 
+
+
                     colorScaleBar.selectAll('rect')
                         .data(newData)
                         .enter()
                         .append('rect')
-                        .attr("x", 0)
-                        .attr("y", function (d) {
+                        .attr("x", function (d) {
                             return d.data;
                         })
-                        .attr("height", sectionHeight)
-                        .attr("width", scaleWidth)
+                        .attr("y", 0)
+                        .attr("height", scaleHeight)
+                        .attr("width", sectionWidth)
 
                         .attr('fill', function (d, i) {
                             return colorScaleLin(i)
@@ -333,12 +326,12 @@ PATHBUBBLES.D3Ring.prototype = {
                         .data(newData)
                         .enter().append("text")
                         .style("font-size", 10)
-                        .attr("transform", "translate(" + (scaleWidth/2+10) +"," + (sectionHeight) + ")")
+                        .attr("transform", "translate(" + sectionWidth/2 +"," + (scaleHeight + 3) + ")")
                         .attr("y", function (d,i) {
-                            return d.data-5;
+                            return d.data+10;
                         })
                         .attr("dy", ".1em")
-//                        .attr("transform", "rotate(270)")
+                        .attr("transform", "rotate(270)")
                         .style("text-anchor", "start")
                         .text(function(d,i){
                             return d.text;
@@ -509,22 +502,15 @@ PATHBUBBLES.D3Ring.prototype = {
                             .attr("x", function (d) {
                                 return y(d.dy);
                             })
-
-                            .attr("height", function(d){
-                                var thea=Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
-                                var r=Math.max(0, y(d.dy));
-                                return Math.min(r*thea,Math.floor(maxLevel+4));
+                            .attr("y", function (d) {
+                                return -5;
                             })
-                            .attr("y", function(d){
-                                var thea=Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
-                                var r=Math.max(0, y(d.dy));
-                                return -(Math.min(r*thea,Math.floor(maxLevel+4)))/2;
-                            })
+                            .attr("height", Math.floor(maxLevel+4))
                             .attr("width", function (d) {
                                 var temp = 0;
                                 if (d.simbols !== undefined)
                                     temp = d.simbols.length;
-                                return Math.floor(maxLevel/6*temp / simbol_max * ( Math.max(0, y(d.dy + d.d_dy)) -Math.max(0, y(d.dy )) ) + 3);
+                                return Math.floor(maxLevel/6*temp / simbol_max * 40 + 3);
                             })
                             .attr("transform", function (d, i) {
                                 return "rotate(" + computeRotation(d, i) + ")";
@@ -593,21 +579,14 @@ PATHBUBBLES.D3Ring.prototype = {
                             .attr("x", function (d) {
                                 return y(d.dy);
                             })
-                            .attr("height", function(d){
-                                var thea=Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
-                                var r=Math.max(0, y(d.dy));
-                                return Math.min(r*thea,Math.floor(maxLevel+4));
+                            .attr("y", function (d) {
+                                return -5;
                             })
-                            .attr("y", function(d){
-                                var thea=Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
-                                var r=Math.max(0, y(d.dy));
-                                return -(Math.min(r*thea,Math.floor(maxLevel+4)))/2;
-                            })
+                            .attr("height", Math.floor(maxLevel/6*8+2))
                             .attr("width", function (d) {
                                 if(d.expression==undefined ||d.gallusOrth==undefined||upDownMax==0)
                                     return 3;
-                                return Math.floor(maxLevel/6*(d.expression.downs.length + d.expression.ups.length) / upDownMax * ( Math.max(0, y(d.dy + d.d_dy)) -Math.max(0, y(d.dy )) ) + 3 );
-//                                return Math.floor(maxLevel/6*temp / simbol_max * ( Math.max(0, y(d.dy + d.d_dy)) -Math.max(0, y(d.dy )) ) + 3);
+                                return Math.floor(maxLevel/6*(d.expression.downs.length + d.expression.ups.length) / upDownMax * 40 + 3 );
                             })
                             .attr("transform", function (d, i) {
                                 return "rotate(" + computeRotation(d, i) + ")";
@@ -826,9 +805,7 @@ PATHBUBBLES.D3Ring.prototype = {
                 }
 
                 function click(d, i) {
-                    if (i == 0|| d.children==undefined)
-                        return;
-                    if(d.children.length ==0)
+                    if (i == 0)
                         return;
                     var selectedData = d3.select(this).datum();
                     var name = selectedData.name;
@@ -860,7 +837,6 @@ PATHBUBBLES.D3Ring.prototype = {
                     {
                         d3.select("#svg" + bubble5.id).selectAll(".symbol").remove();
                         bubble5.treeRing.customExpression = _this.customExpression;
-                        bubble5.treeRing.expressionScaleMax = max;
                         $('#menuView' + bubble5.id).find("#minRatio").val($('#menuView' + _this.parent.id).find("#minRatio").val());
                         $('#menuView' + bubble5.id).find("#maxRatio").val($('#menuView' + _this.parent.id).find("#maxRatio").val());
                         $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).children("#crossTalkLevel").val());
