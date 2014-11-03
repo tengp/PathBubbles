@@ -46,7 +46,7 @@ PATHBUBBLES.FileLoader.prototype = {
                         }
                         var obj ={};
                         var temps = orthology[j].split("\t");
-                        obj.simbol = temps[0];
+                        obj.symbol = temps[0];
                         obj.dbId = temps[1];
                         result.push(obj);
                     }
@@ -68,7 +68,7 @@ PATHBUBBLES.FileLoader.prototype = {
                         }
                         var obj ={};
                         obj.gene_id = temps[0];
-                        obj.simbol = temps[1];
+                        obj.symbol = temps[1];
                         obj.ratio = temps[2];
                         result.push(obj);
                     }

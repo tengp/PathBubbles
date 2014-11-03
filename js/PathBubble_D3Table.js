@@ -182,7 +182,7 @@ PATHBUBBLES.D3Table.prototype = {
                      if( d.value==String(d.value))
                      {
                          var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 530, 500, null, null,{dbId: _this.dbId, symbol: d.value});
-                         bubble.name = "(Query protein) " + d.value;
+//                         bubble.name = "(Query protein) " + d.value;
                          bubble.addHtml();
                          bubble.table.keepQuery = false;
                          bubble.menuOperation();

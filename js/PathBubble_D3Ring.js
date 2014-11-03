@@ -140,13 +140,13 @@ PATHBUBBLES.D3Ring.prototype = {
                     nodeData = partition.nodes(root);
                     for (var i = 0; i < nodeData.length; ++i)  //every pathway
                     {
-                        if (nodeData[i].simbols == undefined) {
+                        if (nodeData[i].symbols == undefined) {
                             continue;
                         }
                         var count = 0;
-                        for (var k = 0; k < nodeData[i].simbols.length; ++k) {
+                        for (var k = 0; k < nodeData[i].symbols.length; ++k) {
                             for (var j = 0; j < _this.customOrtholog.length; ++j) {
-                                if (nodeData[i].simbols[k] == _this.customOrtholog[j].simbol) {
+                                if (nodeData[i].symbols[k] == _this.customOrtholog[j].symbol) {
                                     if (_this.customOrtholog[j].dbId !== "\N") {
                                         count++;
                                         break;
@@ -155,7 +155,7 @@ PATHBUBBLES.D3Ring.prototype = {
                             }
                         }
                         nodeData[i].gallusOrth = {};
-                        if (count === nodeData[i].simbols.length) {
+                        if (count === nodeData[i].symbols.length) {
                             nodeData[i].gallusOrth.type = "Complete";
                             nodeData[i].gallusOrth.count = count;
                         }
@@ -184,16 +184,16 @@ PATHBUBBLES.D3Ring.prototype = {
                     nodeData = partition.nodes(root);
                     for (var i = 0; i < nodeData.length; ++i)  //every pathway
                     {
-                        if (nodeData[i].simbols == undefined) {
+                        if (nodeData[i].symbols == undefined) {
                             continue;
                         }
                         nodeData[i].expression = {};
                         nodeData[i].expression.ups = [];
                         nodeData[i].expression.downs = [];
                         nodeData[i].expression.unchanges = [];
-                        for (var k = 0; k < nodeData[i].simbols.length; ++k) {
+                        for (var k = 0; k < nodeData[i].symbols.length; ++k) {
                             for (var j = 0; j < _this.customExpression.length; ++j) {
-                                if (nodeData[i].simbols[k] == _this.customExpression[j].simbol) {
+                                if (nodeData[i].symbols[k] == _this.customExpression[j].symbol) {
                                     if (parseFloat(_this.customExpression[j].ratio)>=maxRatio) {
                                         nodeData[i].expression.ups.push(_this.customExpression[j]);
                                         break;
@@ -423,7 +423,8 @@ PATHBUBBLES.D3Ring.prototype = {
                     }))
                     .enter().append("text")
                     .attr("text-anchor", function(d) {
-                        return x(d.x + d.dx / 2) > Math.PI ? "end" : "start";
+                          return "middle";
+//                        return x(d.x + d.dx / 2) > Math.PI ? "end" : "start";
                     })
                     .attr("transform", function(d,i) {
                         if(i==0)
@@ -465,10 +466,10 @@ PATHBUBBLES.D3Ring.prototype = {
                     var objects = processLinks(nodeData, classes);
                     var links = objects.imports;
                     if (!_this.customExpression) {
-                        var simbol_max = d3.max(objects.nodes, function (d) {
+                        var symbol_max = d3.max(objects.nodes, function (d) {
                             var temp = 0;
-                            if (d.simbols !== undefined)
-                                temp = d.simbols.length;
+                            if (d.symbols !== undefined)
+                                temp = d.symbols.length;
                             return temp;
                         });
                     }
@@ -522,9 +523,9 @@ PATHBUBBLES.D3Ring.prototype = {
                             })
                             .attr("width", function (d) {
                                 var temp = 0;
-                                if (d.simbols !== undefined)
-                                    temp = d.simbols.length;
-                                return Math.floor(maxLevel/6*temp / simbol_max * ( Math.max(0, y(d.dy + d.d_dy)) -Math.max(0, y(d.dy )) ) + 3);
+                                if (d.symbols !== undefined)
+                                    temp = d.symbols.length;
+                                return Math.floor(maxLevel/6*temp / symbol_max * ( Math.max(0, y(d.dy + d.d_dy)) -Math.max(0, y(d.dy )) ) + 3);
                             })
                             .attr("transform", function (d, i) {
                                 return "rotate(" + computeRotation(d, i) + ")";
@@ -535,30 +536,30 @@ PATHBUBBLES.D3Ring.prototype = {
                             .on("mouseout", mouseouted);
 
                         function barClick() {
-                            var simbols = d3.select(this).datum().simbols;
-                            var _simbols = [];
-                            for (var i = 0; i < simbols.length; ++i) {
-                                if(simbols[i]==null)
+                            var symbols = d3.select(this).datum().symbols;
+                            var _symbols = [];
+                            for (var i = 0; i < symbols.length; ++i) {
+                                if(symbols[i]==null)
                                     continue;
-                                var simbolObj = {};
-                                for (var j = 0; j < _simbols.length; ++j) {
-                                    if (_simbols[j].symbol.toUpperCase() == simbols[i].toUpperCase()) {
+                                var symbolObj = {};
+                                for (var j = 0; j < _symbols.length; ++j) {
+                                    if (_symbols[j].symbol.toUpperCase() == symbols[i].toUpperCase()) {
                                         break;
                                     }
                                 }
-                                if (j >= _simbols.length) {
-                                    simbolObj.symbol = simbols[i].toUpperCase();
-                                    simbolObj.count = 1;
-                                    _simbols.push(simbolObj);
+                                if (j >= _symbols.length) {
+                                    symbolObj.symbol = symbols[i].toUpperCase();
+                                    symbolObj.count = 1;
+                                    _symbols.push(symbolObj);
                                 }
                                 else {
-                                    _simbols[j].count++;
+                                    _symbols[j].count++;
                                 }
                             }
-                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 230, 500, d3.select(this).datum().dbId, _simbols);
+                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 230, 500, d3.select(this).datum().dbId, _symbols);
                             bubble.name = "(Shared protein) " + d3.select(this).datum().name;
                             bubble.addHtml();
-
+                            bubble.table.keepQuery = true;
                             bubble.menuOperation();
                             if (viewpoint) {
                                 bubble.offsetX = viewpoint.x;
@@ -607,7 +608,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                 if(d.expression==undefined ||d.gallusOrth==undefined||upDownMax==0)
                                     return 3;
                                 return Math.floor(maxLevel/6*(d.expression.downs.length + d.expression.ups.length) / upDownMax * ( Math.max(0, y(d.dy + d.d_dy)) -Math.max(0, y(d.dy )) ) + 3 );
-//                                return Math.floor(maxLevel/6*temp / simbol_max * ( Math.max(0, y(d.dy + d.d_dy)) -Math.max(0, y(d.dy )) ) + 3);
+//                                return Math.floor(maxLevel/6*temp / symbol_max * ( Math.max(0, y(d.dy + d.d_dy)) -Math.max(0, y(d.dy )) ) + 3);
                             })
                             .attr("transform", function (d, i) {
                                 return "rotate(" + computeRotation(d, i) + ")";
@@ -622,46 +623,47 @@ PATHBUBBLES.D3Ring.prototype = {
                                 return;
                             var ups = d3.select(this).datum().expression.ups;
                             var downs = d3.select(this).datum().expression.downs;
-                            var _simbols = [];
+                            var _symbols = [];
                             for (var i = 0; i < ups.length; ++i) {
-                                var simbolObj = {};
-                                for (var j = 0; j < _simbols.length; ++j) {
-                                    if (_simbols[j].SimbolName == ups[i].simbol && _simbols[j].regulation == "Up") {
-                                        _simbols[j].count++;
+                                var symbolObj = {};
+                                for (var j = 0; j < _symbols.length; ++j) {
+                                    if (_symbols[j].symbol == ups[i].symbol && _symbols[j].regulation == "Up") {
+                                        _symbols[j].count++;
                                         break;
                                     }
                                 }
-                                if (j >= _simbols.length) {
+                                if (j >= _symbols.length) {
 
-                                    simbolObj.gene_id = ups[i].gene_id;
-                                    simbolObj.SimbolName = ups[i].simbol;
-                                    simbolObj.count = 1;
-                                    simbolObj.ratio = parseFloat(ups[i].ratio).toFixed(5);
-                                    simbolObj.regulation = "Up";
-                                    _simbols.push(simbolObj);
+                                    symbolObj.gene_id = ups[i].gene_id;
+                                    symbolObj.symbol = ups[i].symbol;
+                                    symbolObj.count = 1;
+                                    symbolObj.ratio = parseFloat(ups[i].ratio).toFixed(5);
+                                    symbolObj.regulation = "Up";
+                                    _symbols.push(symbolObj);
                                 }
                             }
-                            var upLength = _simbols.length;
+                            var upLength = _symbols.length;
                             for (var i = 0; i < downs.length; ++i) {
-                                var simbolObj = {};
-                                for (var j = upLength; j < _simbols.length; ++j) {
-                                    if (_simbols[j].SimbolName == downs[i].simbol && _simbols[j].regulation == "Down") {
-                                        _simbols[j].count++;
+                                var symbolObj = {};
+                                for (var j = upLength; j < _symbols.length; ++j) {
+                                    if (_symbols[j].symbol == downs[i].symbol && _symbols[j].regulation == "Down") {
+                                        _symbols[j].count++;
                                         break;
                                     }
                                 }
-                                if (j >= _simbols.length) {
-                                    simbolObj.gene_id = downs[i].gene_id;
-                                    simbolObj.SimbolName = downs[i].simbol;
-                                    simbolObj.count = 1;
-                                    simbolObj.ratio = parseFloat(downs[i].ratio).toFixed(5);
-                                    simbolObj.regulation = "Down";
-                                    _simbols.push(simbolObj);
+                                if (j >= _symbols.length) {
+                                    symbolObj.gene_id = downs[i].gene_id;
+                                    symbolObj.symbol = downs[i].symbol;
+                                    symbolObj.count = 1;
+                                    symbolObj.ratio = parseFloat(downs[i].ratio).toFixed(5);
+                                    symbolObj.regulation = "Down";
+                                    _symbols.push(symbolObj);
                                 }
                             }
-                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 500, 500, d3.select(this).datum().dbId, _simbols);
+                            var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 500, 500, d3.select(this).datum().dbId, _symbols);
                             bubble.name = "(Expression) " + d3.select(this).datum().name;
                             bubble.addHtml();
+                            bubble.table.keepQuery = true;
                             bubble.menuOperation();
                             if (viewpoint) {
                                 bubble.offsetX = viewpoint.x;
@@ -761,7 +763,7 @@ PATHBUBBLES.D3Ring.prototype = {
                             temp.dy = nodes[i].y;
                             temp.d_dx = nodes[i].dx;
                             temp.d_dy = nodes[i].dy;
-                            temp.simbols = nodes[i].simbols;
+                            temp.symbols = nodes[i].symbols;
                             temp.gallusOrth = nodes[i].gallusOrth;
                             if (_this.customExpression) {
                                 temp.expression = nodes[i].expression;
