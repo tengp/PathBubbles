@@ -24,13 +24,13 @@ path {
     font-weight: 700;
 }
 
-.node--source {
-    fill: #2ca02c;
-}
+/*.node--source {*/
+    /*fill: #2ca02c;*/
+/*}*/
 
-.node--target {
-    fill: #d62728;
-}
+/*.node--target {*/
+    /*fill: #d62728;*/
+/*}*/
 
 .link--source,
 .link--target {
@@ -39,7 +39,7 @@ path {
 }
 
 .link--source {
-    stroke: #d62728;
+    stroke: #2ca02c;
 }
 
 .link--target {

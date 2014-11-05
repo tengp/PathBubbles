@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46d8664-0904-406d-a48f-8bfbc76ab03c" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\data\Ortholog\alligator_ortholog.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\data\Ortholog\gallus_gallus_ortholog.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\data\Ortholog\turtle_ortholog.txt" afterPath="" />
+    <list default="true" id="0a747944-896e-45c6-8c8c-0631b06779d2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/sample/TGF0expression.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/sample/customeOrtholog.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/sample/lib15-Heat0expression.txt" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\data\Ortholog\hierarchyAlligator_ortholog.json" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\data\Ortholog\hierarchyGallus_ortholog.json" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\data\Ortholog\hierarchyTurtle_ortholog.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/2-LTR circle formation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/2-LTR circle formation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/2-LTR circle formation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/2-LTR circle formation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/2-LTR circle formation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/2-LTR circle formation.json" />
@@ -587,6 +590,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Cap-dependent Translation Initiation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Cap-dependent Translation Initiation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Cap-dependent Translation Initiation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cap-dependent Translation Initiation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Cap-dependent Translation Initiation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Cap-dependent Translation Initiation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Cap-independent Translation Initiation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Cap-independent Translation Initiation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Cap-independent Translation Initiation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Cap-independent Translation Initiation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Cap-independent Translation Initiation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Cap-independent Translation Initiation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Carnitine synthesis.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Carnitine synthesis.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Carnitine synthesis.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Carnitine synthesis.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Carnitine synthesis.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Carnitine synthesis.json" />
@@ -1262,6 +1268,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Fcgamma receptor (FCGR) dependent phagocytosis.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Fcgamma receptor (FCGR) dependent phagocytosis.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Fcgamma receptor (FCGR) dependent phagocytosis.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Fcgamma receptor (FCGR) dependent phagocytosis.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Fcgamma receptor (FCGR) dependent phagocytosis.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Fcgamma receptor (FCGR) dependent phagocytosis.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Feedback control in the MAPK signaling module.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Feedback control in the MAPK signaling module.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Feedback control in the MAPK signaling module.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Feedback control in the MAPK signaling module.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Feedback control in the MAPK signaling module.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Feedback control in the MAPK signaling module.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Fertilization.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Fertilization.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Fertilization.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Fertilization.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Fertilization.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Fertilization.json" />
@@ -1577,6 +1586,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/HIV Transcription Initiation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/HIV Transcription Initiation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV Transcription Initiation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV Transcription Initiation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/HIV Transcription Initiation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/HIV Transcription Initiation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/HIV Transcription Termination.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/HIV Transcription Termination.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV Transcription Termination.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV Transcription Termination.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/HIV Transcription Termination.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/HIV Transcription Termination.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/HIV elongation arrest and recovery.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/HIV elongation arrest and recovery.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV elongation arrest and recovery.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/HIV elongation arrest and recovery.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/HIV elongation arrest and recovery.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/HIV elongation arrest and recovery.json" />
@@ -1613,6 +1625,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Homologous Recombination Repair.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Homologous Recombination Repair.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Homologous Recombination Repair.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Homologous Recombination Repair.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Homologous Recombination Repair.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Homologous Recombination Repair.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Homologous recombination repair of replication-dependent double-strand breaks.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Homologous recombination repair of replication-dependent double-strand breaks.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Homologous recombination repair of replication-dependent double-strand breaks.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Homologous recombination repair of replication-dependent double-strand breaks.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Homologous recombination repair of replication-dependent double-strand breaks.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Homologous recombination repair of replication-dependent double-strand breaks.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Homologous recombination repair of replication-independent double-strand breaks.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Homologous recombination repair of replication-independent double-strand breaks.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Homologous recombination repair of replication-independent double-strand breaks.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Homologous recombination repair of replication-independent double-strand breaks.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Homologous recombination repair of replication-independent double-strand breaks.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Homologous recombination repair of replication-independent double-strand breaks.json" />
@@ -1652,6 +1667,27 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/IGF1R signaling cascade.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/IGF1R signaling cascade.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/IGF1R signaling cascade.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IGF1R signaling cascade.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/IGF1R signaling cascade.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/IGF1R signaling cascade.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/IP3 and IP4 transport between cytosol and nucleus.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/IP3 and IP4 transport between cytosol and nucleus.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/IP3 and IP4 transport between cytosol and nucleus.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IP3 and IP4 transport between cytosol and nucleus.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/IP3 and IP4 transport between cytosol and nucleus.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/IP3 and IP4 transport between cytosol and nucleus.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/IP6 and IP7 transport between cytosol and nucleus.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/IP6 and IP7 transport between cytosol and nucleus.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/IP6 and IP7 transport between cytosol and nucleus.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IP6 and IP7 transport between cytosol and nucleus.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/IP6 and IP7 transport between cytosol and nucleus.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/IP6 and IP7 transport between cytosol and nucleus.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between ER lumen and cytosol.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between ER lumen and cytosol.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between ER lumen and cytosol.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between ER lumen and cytosol.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between ER lumen and cytosol.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between ER lumen and cytosol.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between ER lumen and nucleus.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between ER lumen and nucleus.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between ER lumen and nucleus.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between ER lumen and nucleus.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between ER lumen and nucleus.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between ER lumen and nucleus.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between cytosol and ER lumen.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between cytosol and ER lumen.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between cytosol and ER lumen.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between cytosol and ER lumen.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between cytosol and ER lumen.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between cytosol and ER lumen.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between nucleus and ER lumen.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between nucleus and ER lumen.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between nucleus and ER lumen.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between nucleus and ER lumen.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between nucleus and ER lumen.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between nucleus and ER lumen.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between nucleus and cytosol.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/IPs transport between nucleus and cytosol.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between nucleus and cytosol.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IPs transport between nucleus and cytosol.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between nucleus and cytosol.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/IPs transport between nucleus and cytosol.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/IRAK1 recruits IKK complex.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/IRAK1 recruits IKK complex.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/IRAK1 recruits IKK complex.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/IRAK1 recruits IKK complex.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/IRAK1 recruits IKK complex.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/IRAK1 recruits IKK complex.json" />
@@ -2117,6 +2153,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Mitotic Metaphase and Anaphase.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Mitotic Metaphase and Anaphase.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Metaphase and Anaphase.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Metaphase and Anaphase.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Mitotic Metaphase and Anaphase.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Mitotic Metaphase and Anaphase.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Mitotic Metaphase.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Mitotic Metaphase.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Metaphase.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic Metaphase.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Mitotic Metaphase.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Mitotic Metaphase.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Mitotic MetaphaseAnaphase Transition.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Mitotic MetaphaseAnaphase Transition.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic MetaphaseAnaphase Transition.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Mitotic MetaphaseAnaphase Transition.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Mitotic MetaphaseAnaphase Transition.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Mitotic MetaphaseAnaphase Transition.json" />
@@ -2465,6 +2504,21 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/PIP3 activates AKT signaling.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/PIP3 activates AKT signaling.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/PIP3 activates AKT signaling.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PIP3 activates AKT signaling.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/PIP3 activates AKT signaling.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/PIP3 activates AKT signaling.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between Golgi and plasma membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between Golgi and plasma membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between Golgi and plasma membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between Golgi and plasma membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between Golgi and plasma membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between Golgi and plasma membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between early and late endosome membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between early and late endosome membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between early and late endosome membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between early and late endosome membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between early and late endosome membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between early and late endosome membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between early endosome and Golgi membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between early endosome and Golgi membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between early endosome and Golgi membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between early endosome and Golgi membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between early endosome and Golgi membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between early endosome and Golgi membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between late endosome and Golgi membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between late endosome and Golgi membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between late endosome and Golgi membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between late endosome and Golgi membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between late endosome and Golgi membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between late endosome and Golgi membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between plasma and early endosome membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/PIPs transport between plasma and early endosome membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between plasma and early endosome membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PIPs transport between plasma and early endosome membranes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between plasma and early endosome membranes.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/PIPs transport between plasma and early endosome membranes.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/PKA activation in glucagon signalling.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/PKA activation in glucagon signalling.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/PKA activation in glucagon signalling.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PKA activation in glucagon signalling.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/PKA activation in glucagon signalling.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/PKA activation in glucagon signalling.json" />
@@ -2486,6 +2540,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/PLCG1 events in ERBB2 signaling.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/PLCG1 events in ERBB2 signaling.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/PLCG1 events in ERBB2 signaling.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PLCG1 events in ERBB2 signaling.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/PLCG1 events in ERBB2 signaling.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/PLCG1 events in ERBB2 signaling.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/POLRMT chain elongation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/POLRMT chain elongation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/POLRMT chain elongation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/POLRMT chain elongation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/POLRMT chain elongation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/POLRMT chain elongation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/PP2A-mediated dephosphorylation of key metabolic factors.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/PP2A-mediated dephosphorylation of key metabolic factors.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/PP2A-mediated dephosphorylation of key metabolic factors.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/PP2A-mediated dephosphorylation of key metabolic factors.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/PP2A-mediated dephosphorylation of key metabolic factors.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/PP2A-mediated dephosphorylation of key metabolic factors.json" />
@@ -2504,9 +2561,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Passive Transport by Aquaporins.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Passive Transport by Aquaporins.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Passive Transport by Aquaporins.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Passive Transport by Aquaporins.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Passive Transport by Aquaporins.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Passive Transport by Aquaporins.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Bubble.js" afterPath="$PROJECT_DIR$/js/PathBubble_Bubble.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Ring.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Table.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Interaction.js" afterPath="$PROJECT_DIR$/js/PathBubble_Interaction.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Loader.js" afterPath="$PROJECT_DIR$/js/PathBubble_Loader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Table.js" afterPath="$PROJECT_DIR$/js/PathBubble_Table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Text.js" afterPath="$PROJECT_DIR$/js/PathBubble_Text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" afterPath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Pausing and recovery of HIV elongation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Pausing and recovery of HIV elongation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Pausing and recovery of HIV elongation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Pausing and recovery of HIV elongation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Pausing and recovery of HIV elongation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Pausing and recovery of HIV elongation.json" />
@@ -2528,6 +2589,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Peptide ligand-binding receptors.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Peptide ligand-binding receptors.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Peptide ligand-binding receptors.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Peptide ligand-binding receptors.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Peptide ligand-binding receptors.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Peptide ligand-binding receptors.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Permeabilization of mitochondria.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Permeabilization of mitochondria.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Permeabilization of mitochondria.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Permeabilization of mitochondria.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Permeabilization of mitochondria.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Permeabilization of mitochondria.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Peroxisomal lipid metabolism.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Peroxisomal lipid metabolism.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Peroxisomal lipid metabolism.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Peroxisomal lipid metabolism.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Peroxisomal lipid metabolism.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Peroxisomal lipid metabolism.json" />
@@ -3053,6 +3117,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Resolution of D-loop structures through Holliday junction intermediates.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Resolution of D-loop structures through Holliday junction intermediates.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Resolution of D-loop structures through Holliday junction intermediates.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Resolution of D-loop structures through Holliday junction intermediates.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Resolution of D-loop structures through Holliday junction intermediates.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Resolution of D-loop structures through Holliday junction intermediates.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Resolution of D-loop structures through synthesis-dependent strand-annealing.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Resolution of D-loop structures through synthesis-dependent strand-annealing.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Resolution of D-loop structures through synthesis-dependent strand-annealing.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Resolution of D-loop structures through synthesis-dependent strand-annealing.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Resolution of D-loop structures through synthesis-dependent strand-annealing.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Resolution of D-loop structures through synthesis-dependent strand-annealing.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Resolution of D-loop structures.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Resolution of D-loop structures.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Resolution of D-loop structures.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Resolution of D-loop structures.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Resolution of D-loop structures.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Resolution of D-loop structures.json" />
@@ -3512,6 +3579,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Synthesis of 5-eicosatetraenoic acids.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Synthesis of 5-eicosatetraenoic acids.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of 5-eicosatetraenoic acids.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of 5-eicosatetraenoic acids.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Synthesis of 5-eicosatetraenoic acids.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Synthesis of 5-eicosatetraenoic acids.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Synthesis of BMP.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Synthesis of BMP.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of BMP.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of BMP.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Synthesis of BMP.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Synthesis of BMP.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Synthesis of CL.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Synthesis of CL.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of CL.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Synthesis of CL.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Synthesis of CL.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Synthesis of CL.json" />
@@ -3632,7 +3702,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition).json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition).json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition).json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition).json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition).json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition).json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Expression/TGF0expression.txt" afterPath="$PROJECT_DIR$/data/Expression/TGF0expression.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/TGFBR1 KD Mutants in Cancer.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/TGFBR1 KD Mutants in Cancer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/TGFBR1 KD Mutants in Cancer.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/TGFBR1 KD Mutants in Cancer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/TGFBR1 KD Mutants in Cancer.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/TGFBR1 KD Mutants in Cancer.json" />
@@ -3966,6 +4035,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Ubiquitin Mediated Degradation of Phosphorylated Cdc25A.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Ubiquitin Mediated Degradation of Phosphorylated Cdc25A.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Ubiquitin Mediated Degradation of Phosphorylated Cdc25A.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ubiquitin Mediated Degradation of Phosphorylated Cdc25A.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Ubiquitin Mediated Degradation of Phosphorylated Cdc25A.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Ubiquitin Mediated Degradation of Phosphorylated Cdc25A.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Ubiquitin-Dependent Degradation of Cyclin E.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Ubiquitin-Dependent Degradation of Cyclin E.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Ubiquitin-Dependent Degradation of Cyclin E.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ubiquitin-Dependent Degradation of Cyclin E.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Ubiquitin-Dependent Degradation of Cyclin E.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Ubiquitin-Dependent Degradation of Cyclin E.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/Ubiquitin-dependent degradation of Cyclin D.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/Ubiquitin-dependent degradation of Cyclin D.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/Ubiquitin-dependent degradation of Cyclin D.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/Ubiquitin-dependent degradation of Cyclin D.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/Ubiquitin-dependent degradation of Cyclin D.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/Ubiquitin-dependent degradation of Cyclin D.json" />
@@ -4092,9 +4164,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/c-src mediated regulation of Cx43 function and closure of gap junctions.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/c-src mediated regulation of Cx43 function and closure of gap junctions.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/c-src mediated regulation of Cx43 function and closure of gap junctions.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/c-src mediated regulation of Cx43 function and closure of gap junctions.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/c-src mediated regulation of Cx43 function and closure of gap junctions.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/c-src mediated regulation of Cx43 function and closure of gap junctions.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/cGMP effects.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/cGMP effects.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/cGMP effects.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/cGMP effects.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/cGMP effects.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/cGMP effects.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/cRNA Synthesis.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/cRNA Synthesis.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/cRNA Synthesis.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/cRNA Synthesis.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/cRNA Synthesis.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/cRNA Synthesis.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/d3lib/d3-relatedStyle.css" afterPath="$PROJECT_DIR$/d3lib/d3-relatedStyle.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/eNOS activation and regulation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/eNOS activation and regulation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/eNOS activation and regulation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/eNOS activation and regulation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/eNOS activation and regulation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/eNOS activation and regulation.json" />
@@ -4104,7 +4180,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/homo sapiens.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/homo sapiens.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/homo sapiens.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/homo sapiens.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/homo sapiens.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/homo sapiens.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Expression/lib15-Heat0expression.txt" afterPath="$PROJECT_DIR$/data/Expression/lib15-Heat0expression.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/mRNA 3-end processing.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/mRNA 3-end processing.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA 3-end processing.json" afterPath="$PROJECT_DIR$/data/Ortholog/Gallus/mRNA 3-end processing.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Turtle/mRNA 3-end processing.json" afterPath="$PROJECT_DIR$/data/Ortholog/Turtle/mRNA 3-end processing.json" />
@@ -4215,25 +4291,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="24" max-vertical-offset="1560">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.18248175" vertical-offset="716" max-vertical-offset="1560">
+              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PathBubble_D3Ring.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring.js">
+      <file leaf-file-name="PathBubble_Interaction.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/PathBubble_Interaction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29791668" vertical-offset="6961" max-vertical-offset="19728">
-              <caret line="418" column="31" selection-start-line="418" selection-start-column="31" selection-end-line="418" selection-end-column="31" />
-              <folding>
-                <element signature="e#11291#15320#0" expanded="false" />
-                <element signature="e#15615#17330#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="2136" max-vertical-offset="10992">
+              <caret line="106" column="15" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2184" max-vertical-offset="2568">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -4251,16 +4334,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/PathBubble_D3Table.js" />
+        <option value="$PROJECT_DIR$/data/Ortholog/Alligator/homo sapiens.json" />
         <option value="$PROJECT_DIR$/js/PathBubble_D3Ring.js" />
+        <option value="$PROJECT_DIR$/data/sample/TGF0expression.txt" />
+        <option value="$PROJECT_DIR$/data/sample/customeOrtholog.txt" />
+        <option value="$PROJECT_DIR$/js/PathBubble_Loader.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_Interaction.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="253" />
-    <option name="y" value="466" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1034" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -4288,7 +4376,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -4321,16 +4408,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="d3lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\PathBubbles\data\sample" />
+    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" uri="http://localhost/PathBubbles/index.html">
@@ -4394,22 +4528,22 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f46d8664-0904-406d-a48f-8bfbc76ab03c" name="Default" comment="" />
-      <created>1415038287829</created>
-      <updated>1415038287829</updated>
+      <changelist id="0a747944-896e-45c6-8c8c-0631b06779d2" name="Default" comment="" />
+      <created>1415140243775</created>
+      <updated>1415140243775</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="253" y="466" width="1936" height="1034" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1569247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4082098" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1269089" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16240267" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -4441,102 +4575,253 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/PathBubble_Interaction.js</url>
+          <line>64</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/PathBubble_Interaction.js</url>
+          <line>65</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="46" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1608">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1608">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3154" max-vertical-offset="19608">
-          <caret line="149" column="41" selection-start-line="149" selection-start-column="41" selection-end-line="149" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="8568" max-vertical-offset="24168">
+          <caret line="357" column="14" selection-start-line="357" selection-start-column="12" selection-end-line="357" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2613" max-vertical-offset="11784">
+          <caret line="149" column="87" selection-start-line="149" selection-start-column="71" selection-end-line="149" selection-end-column="71" />
           <folding>
-            <element signature="e#11291#15320#0" expanded="false" />
-            <element signature="e#15615#17330#0" expanded="false" />
+            <element signature="e#7922#10688#0" expanded="false" />
+            <element signature="e#10751#11821#0" expanded="false" />
+            <element signature="e#11885#11925#0" expanded="false" />
+            <element signature="e#14472#16897#0" expanded="false" />
+            <element signature="e#16974#17177#0" expanded="false" />
+            <marker date="1415196571633" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2184" max-vertical-offset="2568">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1608">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1608">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11281" max-vertical-offset="22632">
-          <caret line="522" column="30" selection-start-line="522" selection-start-column="30" selection-end-line="522" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="8568" max-vertical-offset="24168">
+          <caret line="357" column="14" selection-start-line="357" selection-start-column="12" selection-end-line="357" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2613" max-vertical-offset="11784">
+          <caret line="149" column="87" selection-start-line="149" selection-start-column="71" selection-end-line="149" selection-end-column="71" />
           <folding>
-            <element signature="e#11291#15320#0" expanded="false" />
-            <element signature="e#15615#17330#0" expanded="false" />
+            <element signature="e#7922#10688#0" expanded="false" />
+            <element signature="e#10751#11821#0" expanded="false" />
+            <element signature="e#11885#11925#0" expanded="false" />
+            <element signature="e#14472#16897#0" expanded="false" />
+            <element signature="e#16974#17177#0" expanded="false" />
+            <marker date="1415196571633" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/Ortholog/Gallus/Hemostasis.json">
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1975" max-vertical-offset="2568">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Ortholog/Gallus/Abacavir metabolism.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="831">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Ortholog/Gallus/ABH2 mediated Reversal of Alkylation Damage.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="501">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/Ortholog/Gallus/homo sapiens.json">
+    <entry file="file://$PROJECT_DIR$/d3lib/d3.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40254238" vertical-offset="2" max-vertical-offset="544680">
-          <caret line="447" column="40" selection-start-line="447" selection-start-column="24" selection-end-line="447" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.20960699" vertical-offset="0" max-vertical-offset="458">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/Ortholog/Gallus/Abacavir metabolism.json">
+    <entry file="file://$PROJECT_DIR$/jqueryLib/jquery-1.10.2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="514">
+        <state vertical-scroll-proportion="0.33187774" vertical-offset="136672" max-vertical-offset="234792">
+          <caret line="5713" column="0" selection-start-line="5713" selection-start-column="0" selection-end-line="5713" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jqueryLib/jquery.contextMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4213974" vertical-offset="17351" max-vertical-offset="40320">
+          <caret line="743" column="0" selection-start-line="743" selection-start-column="0" selection-end-line="743" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Ortholog/Alligator/homo sapiens.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49199083" vertical-offset="1" max-vertical-offset="594864">
+          <caret line="489" column="31" selection-start-line="489" selection-start-column="26" selection-end-line="489" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1975" max-vertical-offset="2568">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/sample/TGF0expression.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9347079" vertical-offset="0" max-vertical-offset="1152">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/d3lib/d3-relatedStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.607978" vertical-offset="1169" max-vertical-offset="1896">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Table.js">
+    <entry file="file://$PROJECT_DIR$/css/visualization.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73333335" vertical-offset="4088" max-vertical-offset="6216">
-          <caret line="185" column="54" selection-start-line="185" selection-start-column="42" selection-end-line="185" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_Table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0223124" vertical-offset="504" max-vertical-offset="9336">
+        <state vertical-scroll-proportion="-0.9903714" vertical-offset="720" max-vertical-offset="2832">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/data/sample/customeOrtholog.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="1608">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.09903714" vertical-offset="0" max-vertical-offset="727">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_Loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59422284" vertical-offset="792" max-vertical-offset="2232">
+          <caret line="51" column="60" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8563135" vertical-offset="922" max-vertical-offset="12192">
+          <caret line="63" column="100" selection-start-line="63" selection-start-column="100" selection-end-line="63" selection-end-column="100" />
+          <folding>
+            <element signature="e#7922#10688#0" expanded="false" />
+            <element signature="e#10751#11821#0" expanded="false" />
+            <element signature="e#11885#11925#0" expanded="false" />
+            <element signature="e#14472#16897#0" expanded="false" />
+            <element signature="e#16974#17177#0" expanded="false" />
+            <marker date="1415196571633" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415196571633" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_Interaction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2136" max-vertical-offset="10992">
+          <caret line="106" column="15" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29791668" vertical-offset="6961" max-vertical-offset="19728">
-          <caret line="418" column="31" selection-start-line="418" selection-start-column="31" selection-end-line="418" selection-end-column="31" />
-          <folding>
-            <element signature="e#11291#15320#0" expanded="false" />
-            <element signature="e#15615#17330#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="12.403361" vertical-offset="0" max-vertical-offset="24168">
+          <caret line="369" column="66" selection-start-line="369" selection-start-column="49" selection-end-line="369" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18248175" vertical-offset="716" max-vertical-offset="1560">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

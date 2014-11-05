@@ -46,6 +46,10 @@ PATHBUBBLES.FileLoader.prototype = {
                         }
                         var obj ={};
                         var temps = orthology[j].split("\t");
+                        if(temps[0]=="symbol"&& temps[1] =="dbId")
+                        {
+                            continue;
+                        }
                         obj.symbol = temps[0];
                         obj.dbId = temps[1];
                         result.push(obj);

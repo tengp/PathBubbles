@@ -236,7 +236,24 @@ PATHBUBBLES.Bubble.prototype = {
         this.shape.drawStrokeAgain(ctx, scale);
         ctx.restore();
         if(this.title!==undefined)
+        {
+            var num=12;
+            while(num>6)
+            {
+                if( this.title.text.getTextWidth(num, ctx)<this.title.w)
+                {
+                    break;
+                }
+                else
+                {
+                    num--
+                }
+            }
+            this.title.text.setFontSize(num);
+            this.title.name = this.name;
             this.title.draw(ctx, scale);
+        }
+
         ctx.save();
         if (this.menu && scale == 1) {
             this.menu.draw(ctx, scale);

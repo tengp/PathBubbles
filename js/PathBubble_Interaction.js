@@ -292,38 +292,6 @@ PATHBUBBLES.Interaction = function(renderer)
                        }
                    }
                }
-//                for(var i=0; i<_this.selection[0].parent.tempPoints.length; ++i)
-//                {
-//                    if(_this.selection[0].parent.tempPoints[i].id === id)
-//                    {
-//                        var x = _this.selection[0].x - _this.selection[0].parent.offsetX;
-//                        var y = _this.selection[0].y - _this.selection[0].parent.offsetY;
-//                        if(_this.selection[0].parent.tempPoints[i].pos == "left")
-//                        {
-//                            _this.selection[0].parent.tempPoints[i].x = x;
-//                            _this.selection[0].parent.tempPoints[i].y = y;
-//                            continue;
-//                        }
-//                        if(_this.selection[0].parent.tempPoints[i].pos == "right")
-//                        {
-//                            _this.selection[0].parent.tempPoints[i].x = x + _this.selection[0].w;
-//                            _this.selection[0].parent.tempPoints[i].y = y;
-//                            continue;
-//                        }
-//                        if(_this.selection[0].parent.tempPoints[i].pos == "bleft")
-//                        {
-//                            _this.selection[0].parent.tempPoints[i].x = x;
-//                            _this.selection[0].parent.tempPoints[i].y = y + _this.selection[0].h;
-//                            continue;
-//                        }
-//                        if(_this.selection[0].parent.tempPoints[i].pos == "bright")
-//                        {
-//                            _this.selection[0].parent.tempPoints[i].x = x + _this.selection[0].w;
-//                            _this.selection[0].parent.tempPoints[i].y = y + _this.selection[0].h;
-//                        }
-//                    }
-//                }
-
                 _this.groupResize = true;
             }
             renderer.valid = false;

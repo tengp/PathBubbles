@@ -18,7 +18,10 @@ PATHBUBBLES.Text = function(object, text)
 };
 PATHBUBBLES.Text.prototype ={
     constructor: PATHBUBBLES.Text,
-
+    setFontSize: function(num)
+    {
+        this.font = num + 'pt Calibri';
+    },
     draw : function(ctx,x,y)
     {
 //        ctx.save();	// save the context so we don't mess up others
@@ -34,9 +37,9 @@ PATHBUBBLES.Text.prototype ={
     getTextHeight : function() {
         return 15;
     },
-    getTextWidth : function(ctx) {
+    getTextWidth : function(num, ctx) {
 //        ctx.save();
-        ctx.font = this.font;
+        ctx.font = num + 'pt Calibri';
 //        var width = ctx.measureText(this.text).width;
 //        ctx.restore();
         return ctx.measureText(this.text).width;
