@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a747944-896e-45c6-8c8c-0631b06779d2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Activation.js" afterPath="$PROJECT_DIR$/js/PathBubble_Activation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Biomolecule.js" afterPath="$PROJECT_DIR$/js/PathBubble_Biomolecule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Bubble.js" afterPath="$PROJECT_DIR$/js/PathBubble_Bubble.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_BubbleView.js" afterPath="$PROJECT_DIR$/js/PathBubble_BubbleView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Button.js" afterPath="$PROJECT_DIR$/js/PathBubble_Button.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Check.js" afterPath="$PROJECT_DIR$/js/PathBubble_Check.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Ring.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Ring113.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring113.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Ring_backup(Old).js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring_backup(Old).js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Ring_backup.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ring_backup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Ringbackup.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Ringbackup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Table.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Table.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Groups.js" afterPath="$PROJECT_DIR$/js/PathBubble_Groups.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Groups_(importantbackup).js" afterPath="$PROJECT_DIR$/js/PathBubble_Groups_(importantbackup).js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Interaction.js" afterPath="$PROJECT_DIR$/js/PathBubble_Interaction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Layout.js" afterPath="$PROJECT_DIR$/js/PathBubble_Layout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Loader.js" afterPath="$PROJECT_DIR$/js/PathBubble_Loader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_LocalFileLoader.js" afterPath="$PROJECT_DIR$/js/PathBubble_LocalFileLoader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Menu.js" afterPath="$PROJECT_DIR$/js/PathBubble_Menu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_NavInteraction.js" afterPath="$PROJECT_DIR$/js/PathBubble_NavInteraction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Object2D.js" afterPath="$PROJECT_DIR$/js/PathBubble_Object2D.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Renderer.js" afterPath="$PROJECT_DIR$/js/PathBubble_Renderer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Scene.js" afterPath="$PROJECT_DIR$/js/PathBubble_Scene.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Table.js" afterPath="$PROJECT_DIR$/js/PathBubble_Table.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Text.js" afterPath="$PROJECT_DIR$/js/PathBubble_Text.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Title.js" afterPath="$PROJECT_DIR$/js/PathBubble_Title.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" afterPath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Viewpoint.js" afterPath="$PROJECT_DIR$/js/PathBubble_Viewpoint.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_shape.js" afterPath="$PROJECT_DIR$/js/PathBubble_shape.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubbles.js" afterPath="$PROJECT_DIR$/js/PathBubbles.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/RequestAnimationFrame.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PathBubbles.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,11 +27,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.896552" vertical-offset="212" max-vertical-offset="1608">
+              <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PathBubble_D3Ring.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2610688" vertical-offset="2640" max-vertical-offset="23904">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.913828" vertical-offset="12872" max-vertical-offset="23904">
+              <caret line="351" column="17" selection-start-line="351" selection-start-column="17" selection-end-line="351" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PathBubble_Renderer.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/PathBubble_Renderer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1560">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -70,6 +64,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="4612" max-vertical-offset="9336">
               <caret line="217" column="37" selection-start-line="217" selection-start-column="25" selection-end-line="217" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="2472">
+              <caret line="24" column="4" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,7 +117,6 @@
         <option value="$PROJECT_DIR$/data/sample/TGF0expression.txt" />
         <option value="$PROJECT_DIR$/data/sample/customeOrtholog.txt" />
         <option value="$PROJECT_DIR$/js/PathBubble_Loader.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/PathBubble_Interaction.js" />
         <option value="$PROJECT_DIR$/js/PathBubble_D3Table.js" />
         <option value="$PROJECT_DIR$/js/PathBubble_Title.js" />
@@ -121,14 +124,17 @@
         <option value="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
         <option value="$PROJECT_DIR$/js/PathBubble_Table.js" />
         <option value="$PROJECT_DIR$/js/PathBubble_Bubble.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/js/RequestAnimationFrame.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="260" />
+    <option name="y" value="146" />
+    <option name="width" value="1179" />
+    <option name="height" value="880" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -137,7 +143,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -274,15 +280,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="260" y="146" width="1179" height="880" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.209584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22803114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3485114" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22683264" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -498,16 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.413794" vertical-offset="428" max-vertical-offset="1608">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_Interaction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2198473" vertical-offset="8455" max-vertical-offset="9672">
@@ -554,14 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28143713" vertical-offset="28" max-vertical-offset="1632">
           <caret line="9" column="46" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2934132" vertical-offset="1224" max-vertical-offset="2472">
-          <caret line="87" column="44" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -633,10 +621,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_Renderer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="33235" max-vertical-offset="52488">
+          <caret line="1394" column="17" selection-start-line="1394" selection-start-column="17" selection-end-line="1394" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/RequestAnimationFrame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25339368" vertical-offset="0" max-vertical-offset="663">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="2472">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.896552" vertical-offset="212" max-vertical-offset="1608">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Ring.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2610688" vertical-offset="2640" max-vertical-offset="23904">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.913828" vertical-offset="12872" max-vertical-offset="23904">
+          <caret line="351" column="17" selection-start-line="351" selection-start-column="17" selection-end-line="351" selection-end-column="17" />
           <folding />
         </state>
       </provider>
