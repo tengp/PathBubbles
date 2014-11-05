@@ -188,10 +188,8 @@ PATHBUBBLES.Interaction = function(renderer)
                 }
                 if(_this.selection[0].GROUP)
                 {
-//                _this.selection[0].x += offsetX;
-//                _this.selection[0].y += offsetY;
-                    _this.selection[0].parent.offsetX += offsetX;
-                    _this.selection[0].parent.offsetY += offsetY;
+//                    _this.selection[0].parent.offsetX += offsetX;       //11.5 2014 comment it, still do not find where is the bug
+//                    _this.selection[0].parent.offsetY += offsetY;
                     for(var i=0; i<_this.selection[0].parent.children.length; ++i)
                     {
                         _this.selection[0].parent.children[i].x += offsetX;
@@ -353,12 +351,6 @@ PATHBUBBLES.Interaction = function(renderer)
     }, true);
     canvas.addEventListener('mouseup',function(e) {
         this.style.cursor = 'auto';
-//        if(_this.selection[0]&&  _this.menu)
-//        {
-//            _this.menu = false;
-//            _this.selection[0].menu.HighLight_State = false;
-//
-//        }
         if(_this.selection[0]&&  !_this.groupResize)
         {
             for(var i=0; i<PATHBUBBLES.objects.length; ++i)
@@ -371,6 +363,10 @@ PATHBUBBLES.Interaction = function(renderer)
                 {
                     if(_this.detectOverlap(_this.selection[0], PATHBUBBLES.objects[i]) )
                     {
+                        if(_this.selection[0].GROUP && PATHBUBBLES.objects[i].GROUP && _this.selection[0].parent == PATHBUBBLES.objects[i].parent)   //By adding this code fix a bug 11.5 2014
+                        {
+                            continue;
+                        }
                         if(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
                             || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table||
                             PATHBUBBLES.objects[i]  instanceof PATHBUBBLES.Groups
