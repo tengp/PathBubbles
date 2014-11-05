@@ -11,8 +11,8 @@ PATHBUBBLES.Object2D = function () {
     this.children = [];
     this.offsetX = 0;
     this.offsetY = 0;
-    this.x =0;
-    this.y =0;
+    this.x = 0;
+    this.y = 0;
 };
 PATHBUBBLES.Object2D.prototype = {
 
@@ -30,8 +30,7 @@ PATHBUBBLES.Object2D.prototype = {
             return this;
         }
 
-        if (object)
-        {
+        if (object) {
             if (object.parent !== undefined) {
                 object.parent.remove(object);
             }
@@ -54,61 +53,62 @@ PATHBUBBLES.Object2D.prototype = {
         }
         return this;
     },
-    remove: function ( object ) {
-        if ( arguments.length > 1 ) {
-            for ( var i = 0; i < arguments.length; i++ ) {
-                this.remove( arguments[ i ] );
+    remove: function (object) {
+        if (arguments.length > 1) {
+            for (var i = 0; i < arguments.length; i++) {
+                this.remove(arguments[ i ]);
             }
-        };
-        var index = this.children.indexOf( object );
-        if ( index !== - 1 ) {
+        }
+        ;
+        var index = this.children.indexOf(object);
+        if (index !== -1) {
             object.parent = undefined;
-            this.children.splice( index, 1 );
+            this.children.splice(index, 1);
             // remove from scene
             var scene = this;
-            while ( scene.parent !== undefined ) {
+            while (scene.parent !== undefined) {
                 scene = scene.parent;
             }
-            if ( scene !== undefined && scene instanceof PATHBUBBLES.Scene ) {
-                scene.removeObject( object );
+            if (scene !== undefined && scene instanceof PATHBUBBLES.Scene) {
+                scene.removeObject(object);
             }
         }
     },
-    traverse: function ( callback ) {
-        callback( this );
-        for ( var i = 0, l = this.children.length; i < l; i ++ ) {
-            this.children[ i ].traverse( callback );
+    traverse: function (callback) {
+        callback(this);
+        for (var i = 0, l = this.children.length; i < l; i++) {
+            this.children[ i ].traverse(callback);
         }
     },
 
-    getObjectById: function ( id, recursive ) {
+    getObjectById: function (id, recursive) {
 
-        for ( var i = 0, l = this.children.length; i < l; i ++ ) {
+        for (var i = 0, l = this.children.length; i < l; i++) {
             var child = this.children[ i ];
-            if ( child.id === id ) {
+            if (child.id === id) {
                 return child;
             }
 
-            if ( recursive === true ) {
-                child = child.getObjectById( id, recursive );
-                if ( child !== undefined ) {
+            if (recursive === true) {
+                child = child.getObjectById(id, recursive);
+                if (child !== undefined) {
                     return child;
                 }
             }
         }
         return undefined;
     },
-    getObjectByName: function ( name, recursive ) {
+    getObjectByName: function (name, recursive) {
 
-        for ( var i = 0, l = this.children.length; i < l; i ++ ) {
+        for (var i = 0, l = this.children.length; i < l; i++) {
             var child = this.children[ i ];
-            if ( child.name === name ) {
+            if (child.name === name) {
                 return child;
             }
 
-            if ( recursive === true ) {
-                child = child.getObjectByName( name, recursive );
-                if ( child !== undefined ) {
+            if (recursive === true) {
+                child = child.getObjectByName(name, recursive);
+                if (child !== undefined) {
                     return child;
                 }
             }

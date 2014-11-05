@@ -129,7 +129,7 @@ PATHBUBBLES.D3Ring.prototype = {
             });
         var _this = this;
 //        var crossTalkFileName;
-        var maxLevel=1;
+        var maxLevel = 1;
         if (_this.selectedData == null) {
             d3.json(_this.file, function (error, root) {
                 if (_this.customOrtholog) {
@@ -400,8 +400,8 @@ PATHBUBBLES.D3Ring.prototype = {
                     var angle = x(d.x + d.dx / 2) - Math.PI / 2;
                     return angle / Math.PI * 180;
                 }
-                if(classes.length>0)
-                {
+
+                if (classes.length > 0) {
 
                 }
                 var objects = processLinks(nodeData, classes);
@@ -455,12 +455,12 @@ PATHBUBBLES.D3Ring.prototype = {
                         .attr("y", function (d) {
                             return -5;
                         })
-                        .attr("height", Math.floor(maxLevel+4))
+                        .attr("height", Math.floor(maxLevel + 4))
                         .attr("width", function (d) {
                             var temp = 0;
                             if (d.simbols !== undefined)
                                 temp = d.simbols.length;
-                            return Math.floor(maxLevel/6*temp / simbol_max * 40 + 7);
+                            return Math.floor(maxLevel / 6 * temp / simbol_max * 40 + 7);
                         })
                         .attr("transform", function (d, i) {
                             return "rotate(" + computeRotation(d, i) + ")";
@@ -547,7 +547,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         .attr("y", function (d) {
                             return -5;
                         })
-                        .attr("height", Math.floor(maxLevel/6*8+2))
+                        .attr("height", Math.floor(maxLevel / 6 * 8 + 2))
                         .attr("width", function (d) {
                             if (d.ups == undefined)
                                 return 3;
@@ -555,7 +555,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                 var temp = 0;
                                 if (up_max !== 0) {
                                     temp = d.ups.length;
-                                    return Math.floor(maxLevel/6*temp / up_max * 40 + 7);
+                                    return Math.floor(maxLevel / 6 * temp / up_max * 40 + 7);
                                 }
                                 else {
                                     return 3;

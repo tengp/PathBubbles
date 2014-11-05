@@ -5,8 +5,7 @@
  * @name        PathBubble_interaction
  */
 //Select, Drag, Resize
-PATHBUBBLES.Interaction = function(renderer)
-{
+PATHBUBBLES.Interaction = function (renderer) {
     this.dragging = false; // Keep track of when we are dragging
     this.resizeDragging = false; // Keep track of resize
     this.expectResize = -1; // save the # of the selection handle
@@ -41,7 +40,7 @@ PATHBUBBLES.Interaction = function(renderer)
 //    },true);
     var oldMouseX;
     var oldMouseY;
-    canvas.addEventListener('mousedown',function(e){
+    canvas.addEventListener('mousedown', function (e) {
         if (_this.expectResize !== -1) {
             _this.resizeDragging = true;
             return;
@@ -50,42 +49,37 @@ PATHBUBBLES.Interaction = function(renderer)
         var mx = mouse.x;
         var my = mouse.y;
         renderer.valid = false;
-        if(_this.selection[0])
-        {
-            if(_this.selection[0].shape.HighLight_State)
+        if (_this.selection[0]) {
+            if (_this.selection[0].shape.HighLight_State)
                 _this.selection[0].shape.HighLight_State = false;
-            if(_this.selection[0].bubbleView && _this.selection[0] instanceof PATHBUBBLES.Bubble)
-            {
+            if (_this.selection[0].bubbleView && _this.selection[0] instanceof PATHBUBBLES.Bubble) {
                 _this.selection[0].bubbleView.HighLight_State = false;
             }
         }
 
-        for(i=PATHBUBBLES.objects.length -1; i>=0; i--)
-        {
-            if(PATHBUBBLES.objects[i] === null)
+        for (i = PATHBUBBLES.objects.length - 1; i >= 0; i--) {
+            if (PATHBUBBLES.objects[i] === null)
                 continue;
-            if( (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
-            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
-            ||PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
-            && PATHBUBBLES.objects[i].containsInMenu(mx, my))
-            {
+            if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
+                && PATHBUBBLES.objects[i].containsInMenu(mx, my)) {
                 oldMouseX = mx;
                 oldMouseY = my;
 
                 _this.selection[0] = PATHBUBBLES.objects[i];
-    //                _this.selection[0].menu.HighLight_State = true;
+                //                _this.selection[0].menu.HighLight_State = true;
                 _this.selection[0].menu.HighLight_State = !_this.selection[0].menu.HighLight_State;
-    //                _this.menu = true;
+                //                _this.menu = true;
                 scene.moveObjectToFront(_this.selection[0]);
                 renderer.valid = false;
                 return;
             }
 
-            else if( (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
+            else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
-                && PATHBUBBLES.objects[i].containsInHalo(mx, my))
-            {
+                && PATHBUBBLES.objects[i].containsInHalo(mx, my)) {
                 oldMouseX = mx;
                 oldMouseY = my;
 
@@ -96,16 +90,13 @@ PATHBUBBLES.Interaction = function(renderer)
                 renderer.valid = false;
                 return;
             }
-            else if((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble ) && PATHBUBBLES.objects[i].containsInsideBubble(mx, my))
-            {
+            else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble ) && PATHBUBBLES.objects[i].containsInsideBubble(mx, my)) {
                 var flag = false;
-                for(var ii = 0; ii<PATHBUBBLES.objects[i].children.length; ii++)
-                {
-                    if( !(PATHBUBBLES.objects[i].children[ii] instanceof PATHBUBBLES.Arrow)
+                for (var ii = 0; ii < PATHBUBBLES.objects[i].children.length; ii++) {
+                    if (!(PATHBUBBLES.objects[i].children[ii] instanceof PATHBUBBLES.Arrow)
                         && !(PATHBUBBLES.objects[i].children[ii] instanceof PATHBUBBLES.Activation)
                         && !(PATHBUBBLES.objects[i].children[ii] instanceof PATHBUBBLES.Inhibition)
-                        && (PATHBUBBLES.objects[i].children[ii].contains(mx, my)))
-                    {
+                        && (PATHBUBBLES.objects[i].children[ii].contains(mx, my))) {
                         oldMouseX = mx;
                         oldMouseY = my;
 
@@ -116,14 +107,12 @@ PATHBUBBLES.Interaction = function(renderer)
                         break;
                     }
                 }
-                if(!flag)
-                {
+                if (!flag) {
                     oldMouseX = mx;
                     oldMouseY = my;
 
                     _this.selection[0] = PATHBUBBLES.objects[i];
-                    if( _this.selection[0].bubbleView)
-                    {
+                    if (_this.selection[0].bubbleView) {
                         _this.selection[0].bubbleView.shape.HighLight_State = true;
                         _this.bubbleViewDrag = true;
                     }
@@ -132,12 +121,11 @@ PATHBUBBLES.Interaction = function(renderer)
                 return;
             }
 
-            else if ( (!PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Biomolecule.Compartment)
+            else if ((!PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Biomolecule.Compartment)
                 && !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble)
                 && !(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Groups)
                 && PATHBUBBLES.objects[i].type != ""
-                && PATHBUBBLES.objects[i].contains(mx, my))
-            {
+                && PATHBUBBLES.objects[i].contains(mx, my)) {
                 oldMouseX = mx;
                 oldMouseY = my;
                 _this.selection[0] = PATHBUBBLES.objects[i];
@@ -150,7 +138,7 @@ PATHBUBBLES.Interaction = function(renderer)
 
         }
         this.style.cursor = 'auto';
-    },true);
+    }, true);
     canvas.addEventListener('mousemove', function (e) {
         var mouse = _this.getMouse(e),
             mx = mouse.x,
@@ -163,35 +151,29 @@ PATHBUBBLES.Interaction = function(renderer)
         offsetY = mouse.y - oldMouseY;
         oldMouseX = mouse.x;
         oldMouseY = mouse.y;
-        if(_this.bubbleViewDrag)
-        {
+        if (_this.bubbleViewDrag) {
             if (_this.selection[0].bubbleView) {
                 _this.selection[0].bubbleView.x += offsetX;
                 _this.selection[0].bubbleView.y += offsetY;
             }
         }
-        else if(_this.moleculeDrag)
-        {
+        else if (_this.moleculeDrag) {
             _this.selection[0].x += offsetX;
             _this.selection[0].y += offsetY;
         }
-        else if (_this.dragging ) {
-            if((_this.selection[0] instanceof PATHBUBBLES.Bubble
+        else if (_this.dragging) {
+            if ((_this.selection[0] instanceof PATHBUBBLES.Bubble
                 || _this.selection[0] instanceof PATHBUBBLES.Table
                 || _this.selection[0] instanceof PATHBUBBLES.TreeRing)
-                || _this.selection[0] instanceof PATHBUBBLES.Groups)
-            {
-                if(!_this.selection[0].GROUP )
-                {
+                || _this.selection[0] instanceof PATHBUBBLES.Groups) {
+                if (!_this.selection[0].GROUP) {
                     _this.selection[0].x += offsetX;
                     _this.selection[0].y += offsetY;
                 }
-                if(_this.selection[0].GROUP)
-                {
+                if (_this.selection[0].GROUP) {
 //                    _this.selection[0].parent.offsetX += offsetX;       //11.5 2014 comment it, still do not find where is the bug
 //                    _this.selection[0].parent.offsetY += offsetY;
-                    for(var i=0; i<_this.selection[0].parent.children.length; ++i)
-                    {
+                    for (var i = 0; i < _this.selection[0].parent.children.length; ++i) {
                         _this.selection[0].parent.children[i].x += offsetX;
                         _this.selection[0].parent.children[i].y += offsetY;
                     }
@@ -200,10 +182,9 @@ PATHBUBBLES.Interaction = function(renderer)
             this.style.cursor = 'move';
             renderer.valid = false; // Something's dragging so we must redraw
         }
-        else if (_this.resizeDragging ) {
+        else if (_this.resizeDragging) {
 
-            if(_this.selection[0] instanceof PATHBUBBLES.Biomolecule.Compartment)
-            {
+            if (_this.selection[0] instanceof PATHBUBBLES.Biomolecule.Compartment) {
                 mx -= _this.selection[0].offsetX;
                 my -= _this.selection[0].offsetY;
             }
@@ -255,48 +236,41 @@ PATHBUBBLES.Interaction = function(renderer)
                     break;
             }
 
-            if(_this.selection[0].GROUP)
-            {
-               var id = _this.selection[0].id;
+            if (_this.selection[0].GROUP) {
+                var id = _this.selection[0].id;
 
-               for(var i=0; i<_this.selection[0].parent.shape.points.length; ++i)
-               {
-                   if(_this.selection[0].parent.shape.points[i].bubbleId === id)
-                   {
-                       var x = _this.selection[0].x - _this.selection[0].parent.offsetX;
-                       var y = _this.selection[0].y - _this.selection[0].parent.offsetY;
-                       if(_this.selection[0].parent.shape.points[i].bubblePos == "left")
-                       {
-                           _this.selection[0].parent.shape.points[i].x = x;
-                           _this.selection[0].parent.shape.points[i].y = y;
-                           continue;
-                       }
-                       if(_this.selection[0].parent.shape.points[i].bubblePos == "right")
-                       {
-                           _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
-                           _this.selection[0].parent.shape.points[i].y = y;
-                           continue;
-                       }
-                       if(_this.selection[0].parent.shape.points[i].bubblePos == "bleft")
-                       {
-                           _this.selection[0].parent.shape.points[i].x = x;
-                           _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
-                           continue;
-                       }
-                       if(_this.selection[0].parent.shape.points[i].bubblePos == "bright")
-                       {
-                           _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
-                           _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
-                       }
-                   }
-               }
+                for (var i = 0; i < _this.selection[0].parent.shape.points.length; ++i) {
+                    if (_this.selection[0].parent.shape.points[i].bubbleId === id) {
+                        var x = _this.selection[0].x - _this.selection[0].parent.offsetX;
+                        var y = _this.selection[0].y - _this.selection[0].parent.offsetY;
+                        if (_this.selection[0].parent.shape.points[i].bubblePos == "left") {
+                            _this.selection[0].parent.shape.points[i].x = x;
+                            _this.selection[0].parent.shape.points[i].y = y;
+                            continue;
+                        }
+                        if (_this.selection[0].parent.shape.points[i].bubblePos == "right") {
+                            _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
+                            _this.selection[0].parent.shape.points[i].y = y;
+                            continue;
+                        }
+                        if (_this.selection[0].parent.shape.points[i].bubblePos == "bleft") {
+                            _this.selection[0].parent.shape.points[i].x = x;
+                            _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
+                            continue;
+                        }
+                        if (_this.selection[0].parent.shape.points[i].bubblePos == "bright") {
+                            _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
+                            _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
+                        }
+                    }
+                }
                 _this.groupResize = true;
             }
             renderer.valid = false;
         }
 
         // if there's a selection see if we grabbed one of the selection handles
-        if (_this.selection[0] !== undefined && !_this.resizeDragging ) {
+        if (_this.selection[0] !== undefined && !_this.resizeDragging) {
             for (i = 0; i < 8; i += 1) {
                 // 0  1  2
                 // 3     4
@@ -349,35 +323,27 @@ PATHBUBBLES.Interaction = function(renderer)
 
         }
     }, true);
-    canvas.addEventListener('mouseup',function(e) {
+    canvas.addEventListener('mouseup', function (e) {
         this.style.cursor = 'auto';
-        if(_this.selection[0]&&  !_this.groupResize)
-        {
-            for(var i=0; i<PATHBUBBLES.objects.length; ++i)
-            {
-                if((_this.selection[0]!== PATHBUBBLES.objects[i])
+        if (_this.selection[0] && !_this.groupResize) {
+            for (var i = 0; i < PATHBUBBLES.objects.length; ++i) {
+                if ((_this.selection[0] !== PATHBUBBLES.objects[i])
                     && (_this.selection[0] instanceof PATHBUBBLES.Bubble
-                    ||_this.selection[0].parent instanceof PATHBUBBLES.Groups
+                        || _this.selection[0].parent instanceof PATHBUBBLES.Groups
                         || _this.selection[0] instanceof PATHBUBBLES.Table
-                        ||_this.selection[0] instanceof PATHBUBBLES.TreeRing))
-                {
-                    if(_this.detectOverlap(_this.selection[0], PATHBUBBLES.objects[i]) )
-                    {
-                        if(_this.selection[0].GROUP && PATHBUBBLES.objects[i].GROUP && _this.selection[0].parent == PATHBUBBLES.objects[i].parent)   //By adding this code fix a bug 11.5 2014
+                        || _this.selection[0] instanceof PATHBUBBLES.TreeRing)) {
+                    if (_this.detectOverlap(_this.selection[0], PATHBUBBLES.objects[i])) {
+                        if (_this.selection[0].GROUP && PATHBUBBLES.objects[i].GROUP && _this.selection[0].parent == PATHBUBBLES.objects[i].parent)   //By adding this code fix a bug 11.5 2014
                         {
                             continue;
                         }
-                        if(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
-                            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table||
+                        if (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
+                            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table ||
                             PATHBUBBLES.objects[i]  instanceof PATHBUBBLES.Groups
-                            ||PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
-                        {
-                            if(PATHBUBBLES.objects[i].GROUP)
-                            {
-                                if(PATHBUBBLES.objects[i].parent instanceof PATHBUBBLES.Groups)
-                                {
-                                    if(PATHBUBBLES.objects[i].parent == _this.selection[0].parent)
-                                    {
+                            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing) {
+                            if (PATHBUBBLES.objects[i].GROUP) {
+                                if (PATHBUBBLES.objects[i].parent instanceof PATHBUBBLES.Groups) {
+                                    if (PATHBUBBLES.objects[i].parent == _this.selection[0].parent) {
                                         var object = _this.selection[0];
                                         _this.selection[0].ungroup();
                                         PATHBUBBLES.objects[i].parent.addToGroup(object);
@@ -386,9 +352,8 @@ PATHBUBBLES.Interaction = function(renderer)
                                         PATHBUBBLES.objects[i].parent.addToGroup(_this.selection[0]);
                                 }
                             }
-                            else
-                            {
-                                var group= new PATHBUBBLES.Groups();
+                            else {
+                                var group = new PATHBUBBLES.Groups();
                                 group.addToGroup(PATHBUBBLES.objects[i]);
                                 group.addToGroup(_this.selection[0]);
                                 scene.addObject(group);
@@ -403,7 +368,7 @@ PATHBUBBLES.Interaction = function(renderer)
         _this.moleculeDrag = false;
         _this.resizeDragging = false;
         _this.expectResize = -1;
-        _this.groupResize= false;
+        _this.groupResize = false;
         //renderer.valid = false;
     }, true);
     canvas.addEventListener('mousewheel', mousewheel, false);
@@ -418,9 +383,10 @@ PATHBUBBLES.Interaction = function(renderer)
         }
         renderer.valid = false;
     }
+
     this.selectionBoxSize = PATHBUBBLES.selectionBoxSize;
 };
-PATHBUBBLES.Interaction.prototype ={
+PATHBUBBLES.Interaction.prototype = {
     detectOverlap: function (object1, object2) {
         return (object1.x < object2.x + object2.w &&
             object1.x + object1.w > object2.x &&

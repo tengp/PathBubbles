@@ -3,8 +3,8 @@
  * Part of code modified from https://github.com/xtk/X/blob/master/io/loader.js
  */
 
-PATHBUBBLES.Check = function() {
-    this.extensions = ["JSON","XML"];
+PATHBUBBLES.Check = function () {
+    this.extensions = ["JSON", "XML"];
 };
 PATHBUBBLES.Check.prototype = {
     constructor: PATHBUBBLES.Check,

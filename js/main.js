@@ -7,17 +7,17 @@
 var scene;
 var canvas;
 var navCanvas;
-var viewpoint=null;
+var viewpoint = null;
 var navInterection;
 var interection;
-$(document).ready(function (){
+$(document).ready(function () {
     scene = new PATHBUBBLES.Scene();
     viewpoint = new PATHBUBBLES.ViewPoint();
     canvas = $("#bgCanvas")[0];
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     navCanvas = $("#navCanvas")[0];
-    navCanvas.height =50;
+    navCanvas.height = 50;
     navCanvas.width = window.innerWidth;
     var renderer = new PATHBUBBLES.Renderer();
     navInterection = new PATHBUBBLES.NavInteraction(renderer);
@@ -27,6 +27,7 @@ $(document).ready(function (){
         requestAnimationFrame(render);
         renderer.render();
     }
+
     render();
 
     var mousePosX, mousePosY;
@@ -41,19 +42,17 @@ $(document).ready(function (){
             if (key === 'Open_Bubble') {
                 var bubble4 = new PATHBUBBLES.Bubble(mousePosX, mousePosY);
                 bubble4.menuOperation();
-                if(viewpoint)
-                {
+                if (viewpoint) {
                     bubble4.offsetX = viewpoint.x;
                     bubble4.offsetY = viewpoint.y;
                 }
                 scene.addObject(bubble4);
             }
             else if (key === 'Open_TreeRing') {
-                var bubble5 = new PATHBUBBLES.TreeRing(mousePosX, mousePosY,700,760, "homo sapiens");
+                var bubble5 = new PATHBUBBLES.TreeRing(mousePosX, mousePosY, 700, 760, "homo sapiens");
                 bubble5.addHtml();
                 bubble5.menuOperation();
-                if(viewpoint)
-                {
+                if (viewpoint) {
                     bubble5.offsetX = viewpoint.x;
                     bubble5.offsetY = viewpoint.y;
                 }
@@ -71,20 +70,17 @@ $(document).ready(function (){
 //                }
 //                scene.addObject(bubble6);
 //            }
-            else if(key === 'Delete_All')
-            {
-                for(var i= 0, l=scene.children.length;i<l; ++i)
-                {
-                    if(scene.children[i])
+            else if (key === 'Delete_All') {
+                for (var i = 0, l = scene.children.length; i < l; ++i) {
+                    if (scene.children[i])
                         scene.removeObject(scene.children[i]);
                 }
-                scene.children.length =0;
-                for(var i= 0, l=PATHBUBBLES.objects.length; i <l; i++)
-                {
-                    if(PATHBUBBLES.objects[i])
+                scene.children.length = 0;
+                for (var i = 0, l = PATHBUBBLES.objects.length; i < l; i++) {
+                    if (PATHBUBBLES.objects[i])
                         delete PATHBUBBLES.objects[i];
                 }
-                PATHBUBBLES.objects.length =0;
+                PATHBUBBLES.objects.length = 0;
 
                 $('svg').parent().remove();
                 $('.menu').remove();

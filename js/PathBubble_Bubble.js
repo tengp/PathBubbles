@@ -32,7 +32,7 @@ PATHBUBBLES.Bubble = function (x, y, w, h, strokeColor, fillColor, cornerRadius,
     this.button.addButton(tmp);
 
     this.name = text;
-    this.title = new PATHBUBBLES.Title(this,this.name);
+    this.title = new PATHBUBBLES.Title(this, this.name);
     this.__objectsAdded = [];
     this.__objectsRemoved = [];
     this.center = {x: this.x + this.w / 2, y: this.y + this.h / 2};
@@ -131,7 +131,7 @@ PATHBUBBLES.Bubble.prototype = {
                 var localFileLoader = new PATHBUBBLES.LocalFileLoader(_this);
 
                 localFileLoader.load(_this.selected_file);
-                _this.title.name =  localFileLoader.fileName;
+                _this.title.name = localFileLoader.fileName;
             }
         });
         $menuBarbubble.find('#delete').on('click', function () {
@@ -235,22 +235,22 @@ PATHBUBBLES.Bubble.prototype = {
                 this.bubbleView.draw(ctx, scale);
         this.shape.drawStrokeAgain(ctx, scale);
         ctx.restore();
-        if(this.title!==undefined)
-        {
-            var num=12;
-            while(num>6)
-            {
-                if( this.title.text.getTextWidth(num, ctx)<this.title.w)
-                {
+        if (this.title !== undefined) {
+            var num = 12;
+            while (num > 6) {
+                if (this.title.text.getTextWidth(num, ctx) < this.title.w) {
                     break;
                 }
-                else
-                {
+                else {
                     num--
                 }
             }
             this.title.text.setFontSize(num);
             this.title.name = this.name;
+            if (this.title.text.getTextWidth(num, ctx) > this.title.w)
+            {
+                this.title.WrapText= true;
+            }
             this.title.draw(ctx, scale);
         }
 

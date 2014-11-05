@@ -4,7 +4,7 @@
  * @time        9/29/2014
  * @name        PathBubbles_Avtivation
  */
-PATHBUBBLES.Activation = function(id, beginNode, endNode ){
+PATHBUBBLES.Activation = function (id, beginNode, endNode) {
     this.type = "A";    //  ACTIVATION  =======>   A
     this.id = id || 0;
     this.beginNode = beginNode;

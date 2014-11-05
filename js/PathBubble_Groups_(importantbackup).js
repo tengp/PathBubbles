@@ -339,7 +339,7 @@ PATHBUBBLES.Groups.prototype = {
                 }
 
                 for (var ii = 0; ii < PATHBUBBLES.objects.length; ++ii) {
-                    if ( (PATHBUBBLES.objects[ii] instanceof  PATHBUBBLES.Bubble || PATHBUBBLES.objects[ii] instanceof  PATHBUBBLES.TreeRing) && PATHBUBBLES.objects[ii].id == this.tempPoints[i].id && this.tempPoints.pos == "left") {
+                    if ((PATHBUBBLES.objects[ii] instanceof  PATHBUBBLES.Bubble || PATHBUBBLES.objects[ii] instanceof  PATHBUBBLES.TreeRing) && PATHBUBBLES.objects[ii].id == this.tempPoints[i].id && this.tempPoints.pos == "left") {
                         PATHBUBBLES.objects[ii].x = this.tempPoints[i].x;
                         PATHBUBBLES.objects[ii].y = this.tempPoints[i].y;
                         break;

@@ -4,7 +4,7 @@
  * @time        10/18/2014
  * @name        PathBubble_Table
  */
-PATHBUBBLES.Table = function (x, y, w, h, dbId,data,queryObject) {
+PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
     PATHBUBBLES.Object2D.call(this);
     this.type = "Table";
     this.x = x || 0;
@@ -22,43 +22,40 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId,data,queryObject) {
     this.button = new PATHBUBBLES.Button(this);   //Button 0 for file selection
     var tmp = '';
     tmp += '<input type="text" id=file style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
-    tmp += '<input type="button" id=load value= "Load" style="position: absolute; left:' + this.x + ' px; top:' + this.y+25 + 'px; ">';
-    tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y+55 + ' px; "></div>';
-    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y+80 + 'px; ">';
-    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y+105 + 'px; ">';
+    tmp += '<input type="button" id=load value= "Load" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
+    tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y + 55 + ' px; "></div>';
+    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 80 + 'px; ">';
+    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
     this.button.addButton(tmp);
 
     this.name = "table";
-    this.title = new PATHBUBBLES.Title(this,this.name);
+    this.title = new PATHBUBBLES.Title(this, this.name);
     this.__objectsAdded = [];
     this.__objectsRemoved = [];
     this.center = {x: this.x + this.w / 2, y: this.y + this.h / 2};
     this.GROUP = false;
     this.selected_file = null;
-    this.data = data ||null;
-    this.queryObject = queryObject||null;
+    this.data = data || null;
+    this.queryObject = queryObject || null;
 };
 
 PATHBUBBLES.Table.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
 
 PATHBUBBLES.Table.prototype = {
     constructor: PATHBUBBLES.Table,
-    addHtml: function(){
+    addHtml: function () {
         this.setOffset();
         var tmp = '';
-        tmp += '<div id= svg'+ this.id+' style="position: absolute;"> </div>';
-        $("#bubble").append( $(tmp) );
-        this.table =  new PATHBUBBLES.D3Table(this, this.w,this.h);
-        if(this.data !==undefined && this.data !== null)
-        {
+        tmp += '<div id= svg' + this.id + ' style="position: absolute;"> </div>';
+        $("#bubble").append($(tmp));
+        this.table = new PATHBUBBLES.D3Table(this, this.w, this.h);
+        if (this.data !== undefined && this.data !== null) {
             this.table.data = this.data;
         }
-        if(this.queryObject!==undefined &&this.queryObject!==null)
-        {
-            this.table.init(this.queryObject.dbId,this.queryObject.symbol);
+        if (this.queryObject !== undefined && this.queryObject !== null) {
+            this.table.init(this.queryObject.dbId, this.queryObject.symbol);
         }
-        else
-        {
+        else {
             this.table.init(this.dbId);
         }
     },
@@ -70,10 +67,10 @@ PATHBUBBLES.Table.prototype = {
         this.children.push(object);
     },
     removeObject: function (object) {
-        if($('#svg'+ this.id).length)
-            $('#svg'+ this.id).remove();
-        if($('#menuView'+ this.id).length)
-            $('#menuView'+ this.id).remove();
+        if ($('#svg' + this.id).length)
+            $('#svg' + this.id).remove();
+        if ($('#menuView' + this.id).length)
+            $('#menuView' + this.id).remove();
         var index = PATHBUBBLES.objects.indexOf(object);
         if (index !== -1) {
             PATHBUBBLES.objects.splice(index, 1);
@@ -83,50 +80,45 @@ PATHBUBBLES.Table.prototype = {
             scene.children.splice(index, 1);
         }
     },
-    menuOperation: function(){
-        var _this=this;
-        var $menuBarbubble = $('#menuView'+ this.id);
-        $menuBarbubble.find('#load').on('click', function(){
+    menuOperation: function () {
+        var _this = this;
+        var $menuBarbubble = $('#menuView' + this.id);
+        $menuBarbubble.find('#load').on('click', function () {
             var dbId = $menuBarbubble.find('#file').val();
             _this.dbId = dbId;
-            if ( !dbId) {
+            if (!dbId) {
                 alert("Please input database Id!");
             }
-            else
-            {
-                $("#svg"+ _this.id).remove();
+            else {
+                $("#svg" + _this.id).remove();
                 var tmp = '';
-                tmp += '<div id= svg'+ _this.id+' style="position: absolute;"> </div>';
-                $("#bubble").append( $(tmp) );
-                _this.table =  new PATHBUBBLES.D3Table(_this, _this.w,_this.h);
+                tmp += '<div id= svg' + _this.id + ' style="position: absolute;"> </div>';
+                $("#bubble").append($(tmp));
+                _this.table = new PATHBUBBLES.D3Table(_this, _this.w, _this.h);
                 _this.table.init(dbId);
             }
         });
-        $menuBarbubble.find('#delete').on('click',function(){
-            if(!_this.GROUP)
+        $menuBarbubble.find('#delete').on('click', function () {
+            if (!_this.GROUP)
                 _this.deleteBubble();
-            else
-            {
+            else {
                 var id = _this.id;
                 var group = _this.parent;
                 _this.GROUP = false;
                 var tempdata = [];
-                for(var i=0; i<group.children.length; ++i)
-                {
-                    if(group.children[i].id!==_this.id)
-                    {
-                        var a =group.children[i];
+                for (var i = 0; i < group.children.length; ++i) {
+                    if (group.children[i].id !== _this.id) {
+                        var a = group.children[i];
                         a.parent = undefined;
                         tempdata.push(a);
                     }
                 }
                 _this.parent = undefined;
                 _this.deleteBubble();
-                group.tempPoints.length =0;
-                group.arranged.length =0;
-                group.children.length =0;
-                for(var i=0; i<tempdata.length; ++i)
-                {
+                group.tempPoints.length = 0;
+                group.arranged.length = 0;
+                group.children.length = 0;
+                for (var i = 0; i < tempdata.length; ++i) {
                     group.RESET = true;
                     group.addToGroup(tempdata[i]);
                 }
@@ -134,35 +126,30 @@ PATHBUBBLES.Table.prototype = {
                 scene.addObject(group);
             }
         });
-        $menuBarbubble.find('#ungroup').on('click',function(){
+        $menuBarbubble.find('#ungroup').on('click', function () {
             _this.ungroup();
         });
     },
-    ungroup: function(){
-        if(!this.GROUP)
-        {
+    ungroup: function () {
+        if (!this.GROUP) {
             alert("It is not Grouped, right now!");
         }
-        else
-        {
+        else {
             var group = this.parent;
             this.GROUP = false;
             var tempdata = [];
-            for(var i=0; i<group.children.length; ++i)
-            {
-                if(group.children[i].id!==this.id)
-                {
-                    var a =group.children[i];
+            for (var i = 0; i < group.children.length; ++i) {
+                if (group.children[i].id !== this.id) {
+                    var a = group.children[i];
                     a.parent = undefined;
                     tempdata.push(a);
                 }
             }
             this.parent = undefined;     //just has one set
-            group.tempPoints.length =0;
-            group.arranged.length =0;
-            group.children.length =0;
-            for(var i=tempdata.length-1; i>=0; i--)
-            {
+            group.tempPoints.length = 0;
+            group.arranged.length = 0;
+            group.children.length = 0;
+            for (var i = tempdata.length - 1; i >= 0; i--) {
                 group.RESET = true;
                 group.addToGroup(tempdata[i]);
             }
@@ -170,11 +157,11 @@ PATHBUBBLES.Table.prototype = {
             scene.addObject(group);
         }
     },
-    deleteBubble: function(){
-        if($('#svg'+ this.id).length)
-            $('#svg'+ this.id).remove();
-        if($('#menuView'+ this.id).length)
-            $('#menuView'+ this.id).remove();
+    deleteBubble: function () {
+        if ($('#svg' + this.id).length)
+            $('#svg' + this.id).remove();
+        if ($('#menuView' + this.id).length)
+            $('#menuView' + this.id).remove();
         this.removeObject(this);
     },
     updateMenu: function () {
@@ -212,31 +199,31 @@ PATHBUBBLES.Table.prototype = {
         ctx.save();
         this.shape.draw(ctx, scale);
         var space = 6;
-        $('#svg'+ this.id).css({
-            width: this.w-15-space,      //leve 6 space for tree ring
-            height: this.h-20-space,
-            left: this.x +  this.w /2 - this.table.w/2+5+space/2,
-            top: this.y +  this.h/2 - this.table.h/2+50+10+space/2
+        $('#svg' + this.id).css({
+            width: this.w - 15 - space,      //leve 6 space for tree ring
+            height: this.h - 20 - space,
+            left: this.x + this.w / 2 - this.table.w / 2 + 5 + space / 2,
+            top: this.y + this.h / 2 - this.table.h / 2 + 50 + 10 + space / 2
         });
         //
-        this.shape.drawStrokeAgain(ctx,scale);
+        this.shape.drawStrokeAgain(ctx, scale);
         ctx.restore();
-        if(this.title!==undefined)
-        {
-            var num=12;
-            while(num>6)
-            {
-                if( this.title.text.getTextWidth(num, ctx)<this.title.w)
-                {
+        if (this.title !== undefined) {
+            var num = 12;
+            while (num > 6) {
+                if (this.title.text.getTextWidth(num, ctx) < this.title.w) {
                     break;
                 }
-                else
-                {
+                else {
                     num--
                 }
             }
             this.title.text.setFontSize(num);
             this.title.name = this.name;
+            if (this.title.text.getTextWidth(num, ctx) > this.title.w)
+            {
+                this.title.WrapText= true;
+            }
             this.title.draw(ctx, scale);
         }
         ctx.save();

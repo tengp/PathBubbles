@@ -4,29 +4,28 @@
  * @time        9/29/2014
  * @name        PathBubbles_LocalFileLoader
  */
-PATHBUBBLES.LocalFileLoader = function(bubble){
-  this.bubble = bubble;
+PATHBUBBLES.LocalFileLoader = function (bubble) {
+    this.bubble = bubble;
 };
-PATHBUBBLES.LocalFileLoader.prototype ={
-    constructor:PATHBUBBLES.LocalFileLoader,
+PATHBUBBLES.LocalFileLoader.prototype = {
+    constructor: PATHBUBBLES.LocalFileLoader,
     load: function (url) {
         var _this = this;
 
         var check = new PATHBUBBLES.Check();
-        if(typeof url === 'undefined')
-        {
+        if (typeof url === 'undefined') {
             alert("Please Choose the data which needs to load!");
             return;
         }
 
         var format = check.checkFileFormat(url.name);
-        if(format ==="")
+        if (format === "")
             return;
 
         var reader = new FileReader();
         this.statusDomElement = this.addStatusElement();
         $("#bubble")[0].appendChild(this.statusDomElement);
-        reader.readAsText(url,"UTF-8");
+        reader.readAsText(url, "UTF-8");
         var fileName = url.name;
         if (fileName.lastIndexOf('.') !== -1)
             fileName = fileName.substr(0, fileName.lastIndexOf('.'));
@@ -42,8 +41,7 @@ PATHBUBBLES.LocalFileLoader.prototype ={
             var tempdata = "";
             tempdata = reader.result;
             if (tempdata != null) {
-                if(format === "XML")
-                {
+                if (format === "XML") {
                     if (typeof tempdata == 'string' || tempdata instanceof String) {
                         tempdata = tempdata.replace(/\\'/g, "'"); //dataType: "text",    ^"\r\n
                         tempdata = tempdata.replace(/\\"/g, '"'); //dataType: "text",
@@ -55,19 +53,18 @@ PATHBUBBLES.LocalFileLoader.prototype ={
             }
         };
     },
-    parse: function($this){
+    parse: function ($this) {
         var canvasSize = $this.find("Canvas");
         var size = canvasSize.find("Size").text()
             .replace("(", "")   //remove the right bracket
             .replace(")", "") //remove the left bracket;
             .split(",");
-        var w,h;
-        if(size.length ===2)
-        {
-            w = parseInt( size[0]);
-            h = parseInt( size[1]);
+        var w, h;
+        if (size.length === 2) {
+            w = parseInt(size[0]);
+            h = parseInt(size[1]);
         }
-        this.bubble.bubbleView = new PATHBUBBLES.BubbleView(this.bubble,w, h, this.bubble.cornerRadius);
+        this.bubble.bubbleView = new PATHBUBBLES.BubbleView(this.bubble, w, h, this.bubble.cornerRadius);
 
         var compartmentBlock = $this.find("compartmentBlock");
         this.complexBlock = $this.find("complexBlock");
@@ -84,51 +81,46 @@ PATHBUBBLES.LocalFileLoader.prototype ={
         function updateProgress() {
             $("#status")[0].style.display = 'none';
         }
-        for(var i=this.bubble.bubbleView.compartments.length - 1; i>=0; i--)
-        {
-             var compartment = this.bubble.bubbleView.compartments[i];
-             this.bubble.bubbleView.compartments[i].Left = compartment.x;
-             this.bubble.bubbleView.compartments[i].Top = compartment.y;
-             this.bubble.bubbleView.compartments[i].Bottom = compartment.y + compartment.h ;
-             this.bubble.bubbleView.compartments[i].Right = compartment.x + compartment.w;
-             this.bubble.addObject(this.bubble.bubbleView.compartments[i]);
-        }
-        var Left = Infinity, Right=-Infinity, Top = Infinity, Bottom= -Infinity;
-        for(var i=this.bubble.bubbleView.compartments.length - 1; i>=0; i--) {
+
+        for (var i = this.bubble.bubbleView.compartments.length - 1; i >= 0; i--) {
             var compartment = this.bubble.bubbleView.compartments[i];
-            if(compartment.Left <= Left)
-            {
+            this.bubble.bubbleView.compartments[i].Left = compartment.x;
+            this.bubble.bubbleView.compartments[i].Top = compartment.y;
+            this.bubble.bubbleView.compartments[i].Bottom = compartment.y + compartment.h;
+            this.bubble.bubbleView.compartments[i].Right = compartment.x + compartment.w;
+            this.bubble.addObject(this.bubble.bubbleView.compartments[i]);
+        }
+        var Left = Infinity, Right = -Infinity, Top = Infinity, Bottom = -Infinity;
+        for (var i = this.bubble.bubbleView.compartments.length - 1; i >= 0; i--) {
+            var compartment = this.bubble.bubbleView.compartments[i];
+            if (compartment.Left <= Left) {
                 Left = compartment.Left;
             }
-            if(compartment.Top <= Top)
-            {
+            if (compartment.Top <= Top) {
                 Top = compartment.Top;
             }
-            if(compartment.Bottom >=Bottom)
-            {
-                Bottom =compartment.Bottom;
+            if (compartment.Bottom >= Bottom) {
+                Bottom = compartment.Bottom;
             }
-            if(compartment.Right >=Right)
-            {
-                Right =compartment.Right;
+            if (compartment.Right >= Right) {
+                Right = compartment.Right;
             }
         }
-        this.bubble.bubbleView.setCenterCoordinate(Left, Top, Right-Left, Bottom - Top);
+        this.bubble.bubbleView.setCenterCoordinate(Left, Top, Right - Left, Bottom - Top);
         return;
     },
     addStatusElement: function () {
         var e = document.getElementById('status');
-        if(e === null)
-        {
-            e = document.createElement( "div" );
+        if (e === null) {
+            e = document.createElement("div");
             e.id = 'status';
         }
         else
             e.style.display = 'block';
         e.style.position = "absolute";
         e.style.fontWeight = 'bold';
-        e.style.left = this.bubble.x + this.bubble.w /2 + this.bubble.lineWidth/2;
-        e.style.top = this.bubble.y + this.bubble.h/2 + this.bubble.lineWidth/2;
+        e.style.left = this.bubble.x + this.bubble.w / 2 + this.bubble.lineWidth / 2;
+        e.style.top = this.bubble.y + this.bubble.h / 2 + this.bubble.lineWidth / 2;
         e.style.fontSize = "1.2em";
         e.style.textAlign = "center";
         e.style.color = "#f00";
@@ -137,23 +129,22 @@ PATHBUBBLES.LocalFileLoader.prototype ={
         e.innerHTML = "Loading ...";
         return e;
     },
-    updateProgress: function ( progress ) {
+    updateProgress: function (progress) {
         var message = "Loaded ";
-        if ( progress.total ) {
+        if (progress.total) {
             message += ( 100 * progress.loaded / progress.total ).toFixed(0) + "%";
         } else {
             message += ( progress.loaded / 1024 ).toFixed(2) + " KB";
         }
         this.statusDomElement.innerHTML = message;
-        if( progress.loaded === progress.total  )
-        {
+        if (progress.loaded === progress.total) {
             this.statusDomElement.style.display = 'none';
         }
     },
     parseEdges: function () {
         var length = this.edgeBlock.children().length;
         var t = this.edgeBlock.attr('Num');
-        length = Math.max(length,t)+1;
+        length = Math.max(length, t) + 1;
         for (var i = 0; i < length; ++i) {
             var currentEdge = this.edgeBlock.find('edge[j="' + i + '"]');
             var type = currentEdge.find("Name").text();
@@ -165,77 +156,65 @@ PATHBUBBLES.LocalFileLoader.prototype ={
             var beginIndex = parseInt(ends[1]);
             var endType = ends[2];
             var endIndex = parseInt(ends[3]);
-            this.addEdges(type,i,beginType,beginIndex,endType,endIndex);
+            this.addEdges(type, i, beginType, beginIndex, endType, endIndex);
         }
     },
     addEdges: function (type, index, beginType, beginIndex, endType, endIndex) {
-        if(beginIndex<0 ||endIndex<0)
-            return ;
-        var flag =0;
+        if (beginIndex < 0 || endIndex < 0)
+            return;
+        var flag = 0;
         var beginNode;
         var endNode;
         switch (type) {
             case "J":  //Arrow (Black)
             {
-                flag =0;
+                flag = 0;
                 for (var i = 0; i < this.bubble.children.length; i++) {
-                    if(beginType === "R")
-                    {
+                    if (beginType === "R") {
                         if (this.bubble.children[i].dataId === beginIndex)
-                            if(this.bubble.children[i].type === "T"|| this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
+                            if (this.bubble.children[i].type === "T" || this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
                                 beginNode = this.bubble.children[i];
-                                flag ++;
+                                flag++;
                             }
                     }
-                    else
-                    {
+                    else {
                         if (this.bubble.children[i].dataId === beginIndex && this.bubble.children[i].type === beginType) {
                             beginNode = this.bubble.children[i];
-                            flag ++;
+                            flag++;
                         }
                     }
-                    if(endType === "R") {
+                    if (endType === "R") {
                         if (this.bubble.children[i].dataId === endIndex)
-                            if(this.bubble.children[i].type === "T"|| this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
+                            if (this.bubble.children[i].type === "T" || this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
                                 endNode = this.bubble.children[i];
-                                flag ++;
+                                flag++;
                             }
                     }
-                    else
-                    {
+                    else {
                         if (this.bubble.children[i].dataId === endIndex && this.bubble.children[i].type === endType) {
                             endNode = this.bubble.children[i];
-                            flag ++;
+                            flag++;
                         }
                     }
-                    if(flag ===2)
-                    {
-                        flag =0;
-                        if(beginType === "R" && endType !== "R")
-                        {
-                            for(var j=0; j<beginNode.connections.length; ++j)
-                            {
-                                if(beginNode.connections[j] === endNode)
-                                {
+                    if (flag === 2) {
+                        flag = 0;
+                        if (beginType === "R" && endType !== "R") {
+                            for (var j = 0; j < beginNode.connections.length; ++j) {
+                                if (beginNode.connections[j] === endNode) {
                                     break;
                                 }
                             }
-                            if(j>=beginNode.connections.length)
-                            {
+                            if (j >= beginNode.connections.length) {
                                 beginNode.connections.push(endNode);
                             }
                         }
-                        if(beginType !== "R" && endType === "R")
-                        {
-                            for(var j=0; j<endNode.connections.length; ++j)
-                            {
-                                if(endNode.connections[j] === beginNode)
-                                {
+                        if (beginType !== "R" && endType === "R") {
+                            for (var j = 0; j < endNode.connections.length; ++j) {
+                                if (endNode.connections[j] === beginNode) {
                                     break;
                                 }
                             }
-                            if(j>=endNode.connections.length)
-                            {
+                            if (j >= endNode.connections.length) {
                                 endNode.connections.push(beginNode);
                             }
                         }
@@ -246,65 +225,53 @@ PATHBUBBLES.LocalFileLoader.prototype ={
                 break;
             case "I":  //Inhibition (Cyan)
             {
-                flag =0;
+                flag = 0;
                 for (var i = 0; i < this.bubble.children.length; i++) {
-                    if(beginType === "R")
-                    {
+                    if (beginType === "R") {
                         if (this.bubble.children[i].dataId === beginIndex)
-                            if(this.bubble.children[i].type === "T"|| this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
+                            if (this.bubble.children[i].type === "T" || this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
                                 beginNode = this.bubble.children[i];
-                                flag ++;
+                                flag++;
                             }
                     }
-                    else
-                    {
+                    else {
                         if (this.bubble.children[i].dataId === beginIndex && this.bubble.children[i].type === beginType) {
                             beginNode = this.bubble.children[i];
-                            flag ++;
+                            flag++;
                         }
                     }
-                    if(endType === "R") {
+                    if (endType === "R") {
                         if (this.bubble.children[i].dataId === endIndex)
-                            if(this.bubble.children[i].type === "T"|| this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
+                            if (this.bubble.children[i].type === "T" || this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
                                 endNode = this.bubble.children[i];
-                                flag ++;
+                                flag++;
                             }
                     }
-                    else
-                    {
+                    else {
                         if (this.bubble.children[i].dataId === endIndex && this.bubble.children[i].type === endType) {
                             endNode = this.bubble.children[i];
-                            flag ++;
+                            flag++;
                         }
                     }
-                    if(flag ===2)
-                    {
-                        flag =0;
-                        if(beginType === "R" && endType !== "R")
-                        {
-                            for(var j=0; j<beginNode.connections.length; ++j)
-                            {
-                                if(beginNode.connections[j] === endNode)
-                                {
+                    if (flag === 2) {
+                        flag = 0;
+                        if (beginType === "R" && endType !== "R") {
+                            for (var j = 0; j < beginNode.connections.length; ++j) {
+                                if (beginNode.connections[j] === endNode) {
                                     break;
                                 }
                             }
-                            if(j>=beginNode.connections.length)
-                            {
+                            if (j >= beginNode.connections.length) {
                                 beginNode.connections.push(endNode);
                             }
                         }
-                        if(beginType !== "R" && endType === "R")
-                        {
-                            for(var j=0; j<endNode.connections.length; ++j)
-                            {
-                                if(endNode.connections[j] === beginNode)
-                                {
+                        if (beginType !== "R" && endType === "R") {
+                            for (var j = 0; j < endNode.connections.length; ++j) {
+                                if (endNode.connections[j] === beginNode) {
                                     break;
                                 }
                             }
-                            if(j>=endNode.connections.length)
-                            {
+                            if (j >= endNode.connections.length) {
                                 endNode.connections.push(beginNode);
                             }
                         }
@@ -315,65 +282,53 @@ PATHBUBBLES.LocalFileLoader.prototype ={
                 break;
             case "A":  //Activation (Green)
             {
-                flag =0;
+                flag = 0;
                 for (var i = 0; i < this.bubble.children.length; i++) {
-                    if(beginType === "R")
-                    {
+                    if (beginType === "R") {
                         if (this.bubble.children[i].dataId === beginIndex)
-                            if(this.bubble.children[i].type === "T"|| this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
+                            if (this.bubble.children[i].type === "T" || this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
                                 beginNode = this.bubble.children[i];
-                                flag ++;
+                                flag++;
                             }
                     }
-                    else
-                    {
+                    else {
                         if (this.bubble.children[i].dataId === beginIndex && this.bubble.children[i].type === beginType) {
                             beginNode = this.bubble.children[i];
-                            flag ++;
+                            flag++;
                         }
                     }
-                    if(endType === "R") {
+                    if (endType === "R") {
                         if (this.bubble.children[i].dataId === endIndex)
-                            if(this.bubble.children[i].type === "T"|| this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
+                            if (this.bubble.children[i].type === "T" || this.bubble.children[i].type === "B" || this.bubble.children[i].type === "K") {
                                 endNode = this.bubble.children[i];
-                                flag ++;
+                                flag++;
                             }
                     }
-                    else
-                    {
+                    else {
                         if (this.bubble.children[i].dataId === endIndex && this.bubble.children[i].type === endType) {
                             endNode = this.bubble.children[i];
-                            flag ++;
+                            flag++;
                         }
                     }
-                    if(flag ===2)
-                    {
-                        flag =0;
-                        if(beginType === "R" && endType !== "R")
-                        {
-                            for(var j=0; j<beginNode.connections.length; ++j)
-                            {
-                                if(beginNode.connections[j] === endNode)
-                                {
+                    if (flag === 2) {
+                        flag = 0;
+                        if (beginType === "R" && endType !== "R") {
+                            for (var j = 0; j < beginNode.connections.length; ++j) {
+                                if (beginNode.connections[j] === endNode) {
                                     break;
                                 }
                             }
-                            if(j>=beginNode.connections.length)
-                            {
+                            if (j >= beginNode.connections.length) {
                                 beginNode.connections.push(endNode);
                             }
                         }
-                        if(beginType !== "R" && endType === "R")
-                        {
-                            for(var j=0; j<endNode.connections.length; ++j)
-                            {
-                                if(endNode.connections[j] === beginNode)
-                                {
+                        if (beginType !== "R" && endType === "R") {
+                            for (var j = 0; j < endNode.connections.length; ++j) {
+                                if (endNode.connections[j] === beginNode) {
                                     break;
                                 }
                             }
-                            if(j>=endNode.connections.length)
-                            {
+                            if (j >= endNode.connections.length) {
                                 endNode.connections.push(beginNode);
                             }
                         }
@@ -387,7 +342,7 @@ PATHBUBBLES.LocalFileLoader.prototype ={
     parseCompartmentBlock: function (compartmentBlock) {
         var length = compartmentBlock.children().length;
         var t = compartmentBlock.attr('Num');
-        length = Math.max(length,t)+1;
+        length = Math.max(length, t) + 1;
         for (var i = 0; i < length; ++i) {
             var currentCompartment = compartmentBlock.find('compartment[j="' + i + '"]');
             var name = currentCompartment.find("Name").text();
@@ -446,7 +401,7 @@ PATHBUBBLES.LocalFileLoader.prototype ={
             }
         }
     },
-    addElement: function ( comparmentId, type, index, colors ) {
+    addElement: function (comparmentId, type, index, colors) {
         switch (type) {
             case "C":  //COMPLEX
             {
@@ -482,10 +437,9 @@ PATHBUBBLES.LocalFileLoader.prototype ={
                     .replace("(", "")   //remove the right bracket
                     .replace(")", "") //remove the left bracket;
                     .split(",");
-                var duplicates=[];
-                for(var i=0; i<duplicate.length; ++i)
-                {
-                    if(duplicate[i] !== "")
+                var duplicates = [];
+                for (var i = 0; i < duplicate.length; ++i) {
+                    if (duplicate[i] !== "")
                         duplicates.push(duplicate[i]);
                 }
                 this.bubble.bubbleView.compartments[comparmentId].addSmall_Molecule(index, position[0], position[1], position[2], position[3], name);
@@ -533,16 +487,13 @@ PATHBUBBLES.LocalFileLoader.prototype ={
                     .split(",");
                 var name = reactionE.find("Name").text();
                 var typeR = reactionE.find("Type").text();
-                if(typeR === "K")
-                {
-                    this.bubble.bubbleView.compartments[comparmentId].addDissociation(index, position[0], position[1],name);
+                if (typeR === "K") {
+                    this.bubble.bubbleView.compartments[comparmentId].addDissociation(index, position[0], position[1], name);
                 }
-                else if(typeR === "T")
-                {
-                    this.bubble.bubbleView.compartments[comparmentId].addTransition(index, position[0], position[1],name);
+                else if (typeR === "T") {
+                    this.bubble.bubbleView.compartments[comparmentId].addTransition(index, position[0], position[1], name);
                 }
-                else if(typeR === "B")
-                {
+                else if (typeR === "B") {
                     this.bubble.bubbleView.compartments[comparmentId].addAssociation(index, position[0], position[1], name);
                 }
                 break;
