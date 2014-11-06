@@ -16,6 +16,7 @@ PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
     this.customExpression = null;
     this.expressionScaleMax = null;
     this.renderType = null;
+    this.maxLevel = 6;
 };
 PATHBUBBLES.D3Ring.prototype = {
     constructor: PATHBUBBLES.D3Ring,
@@ -131,8 +132,7 @@ PATHBUBBLES.D3Ring.prototype = {
                 return [d.x, d.y];
             });
         var _this = this;
-//        var crossTalkFileName;
-        var maxLevel = 1;
+//        var maxLevel = 1;
         var minRatio;
         var maxRatio;
         if (_this.selectedData == null) {
@@ -173,9 +173,9 @@ PATHBUBBLES.D3Ring.prototype = {
                         }
                     }
                     if (!_this.ChangeLevel) {
-                        maxLevel = 6;
+//                        maxLevel = 6;
                         var tmpString = "";
-                        for (var i = 1; i <= maxLevel; ++i) {
+                        for (var i = 1; i <= _this.maxLevel; ++i) {
                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                         }
                         $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
@@ -229,9 +229,9 @@ PATHBUBBLES.D3Ring.prototype = {
                         }
                     }
                     if (!_this.ChangeLevel) {
-                        maxLevel = 6;
+//                        maxLevel = 6;
                         var tmpString = "";
-                        for (var i = 1; i <= maxLevel; ++i) {
+                        for (var i = 1; i <= _this.maxLevel; ++i) {
                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                         }
                         $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
@@ -309,9 +309,9 @@ PATHBUBBLES.D3Ring.prototype = {
                         }
                     }
                     if (!_this.ChangeLevel) {
-                        maxLevel = 6;
+//                        maxLevel = 6;
                         var tmpString = "";
-                        for (var i = 1; i <= maxLevel; ++i) {
+                        for (var i = 1; i <= _this.maxLevel; ++i) {
                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                         }
                         $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
@@ -321,9 +321,9 @@ PATHBUBBLES.D3Ring.prototype = {
                 }
                 else {
                     if (!_this.ChangeLevel) {
-                        maxLevel = 6;
+//                        maxLevel = 6;
                         var tmpString = "";
-                        for (var i = 1; i <= maxLevel; ++i) {
+                        for (var i = 1; i <= _this.maxLevel; ++i) {
                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                         }
                         $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
@@ -337,9 +337,9 @@ PATHBUBBLES.D3Ring.prototype = {
         }
         else {
             if (!_this.ChangeLevel) {
-                maxLevel = 6 - _this.selectedData.depth;
+//                maxLevel = _this.selectedData.maxLevel - _this.selectedData.depth;
                 var tmpString = "";
-                for (var i = 1; i <= maxLevel; ++i) {
+                for (var i = 1; i <= _this.maxLevel; ++i) {
                     tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                 }
                 $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
@@ -543,6 +543,8 @@ PATHBUBBLES.D3Ring.prototype = {
                     .attr("dy", ".35em") // vertical-align
                     .style("font-size", 10)
                     .text(function (d, i) {
+                        if(d.name == "homo sapiens")
+                            return "";
                         if (i == 0)
                             return d.name;
                         var str = d.name;
@@ -581,7 +583,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         });
                     }
                     var _nodes = objects.nodes;
-                    maxLevel = 6 - _nodes[0].depth;
+//                    maxLevel = 6 - _nodes[0].depth;
                     link = link
                         .data(bundle(links))
                         .enter().append("path")
@@ -605,12 +607,12 @@ PATHBUBBLES.D3Ring.prototype = {
                             .attr("height", function (d) {
                                 var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
                                 var r = Math.max(0, y(d.dy));
-                                return Math.min(r * thea, Math.floor(maxLevel + 4));
+                                return Math.min(r * thea, Math.floor(_this.maxLevel + 4));
                             })
                             .attr("y", function (d) {
                                 var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
                                 var r = Math.max(0, y(d.dy));
-                                return -(Math.min(r * thea, Math.floor(maxLevel + 4))) / 2;
+                                return -(Math.min(r * thea, Math.floor(_this.maxLevel + 4))) / 2;
                             })
                             .attr("width", function (d) {
                                 var temp = 0;
@@ -642,12 +644,12 @@ PATHBUBBLES.D3Ring.prototype = {
                             .attr("height", function (d) {
                                 var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
                                 var r = Math.max(0, y(d.dy));
-                                return Math.min(r * thea, Math.floor(maxLevel + 4));
+                                return Math.min(r * thea, Math.floor(_this.maxLevel + 4));
                             })
                             .attr("y", function (d) {
                                 var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
                                 var r = Math.max(0, y(d.dy));
-                                return -(Math.min(r * thea, Math.floor(maxLevel + 4))) / 2;
+                                return -(Math.min(r * thea, Math.floor(_this.maxLevel + 4))) / 2;
                             })
                             .attr("width", function (d) {
                                 if (d.expression == undefined || d.gallusOrth == undefined || upDownMax == 0)
@@ -697,12 +699,12 @@ PATHBUBBLES.D3Ring.prototype = {
                             .attr("height", function (d) {
                                 var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
                                 var r = Math.max(0, y(d.y));
-                                return Math.min(r * thea, Math.floor(maxLevel + 4));
+                                return Math.min(r * thea, Math.floor(_this.maxLevel + 4));
                             })
                             .attr("y", function (d) {
                                 var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
                                 var r = Math.max(0, y(d.y));
-                                return -(Math.min(r * thea, Math.floor(maxLevel + 4))) / 2;
+                                return -(Math.min(r * thea, Math.floor(_this.maxLevel + 4))) / 2;
                             })
                             .attr("width", function (d) {
                                 var temp = 0;
@@ -732,12 +734,12 @@ PATHBUBBLES.D3Ring.prototype = {
                             .attr("height", function (d) {
                                 var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
                                 var r = Math.max(0, y(d.y));
-                                return Math.min(r * thea, Math.floor(maxLevel + 4));
+                                return Math.min(r * thea, Math.floor(_this.maxLevel + 4));
                             })
                             .attr("y", function (d) {
                                 var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
                                 var r = Math.max(0, y(d.y));
-                                return -(Math.min(r * thea, Math.floor(maxLevel + 4))) / 2;
+                                return -(Math.min(r * thea, Math.floor(_this.maxLevel + 4))) / 2;
                             })
                             .attr("width", function (d) {
                                 if (d.expression == undefined || d.gallusOrth == undefined || upDownMax == 0)
@@ -1016,6 +1018,7 @@ PATHBUBBLES.D3Ring.prototype = {
                     if (d.children.length == 0)
                         return;
                     var selectedData = d3.select(this).datum();
+                    var maxLevel = _this.maxLevel-selectedData.depth;
                     var name = selectedData.name;
                     var dataType = $('#menuView' + _this.parent.id).children('#file').val();
 
@@ -1026,12 +1029,13 @@ PATHBUBBLES.D3Ring.prototype = {
                         RingHeight = RingHeight * 0.8;
                     }
                     var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, name, dataType, selectedData);
-                    bubble5.addHtml();
+                    bubble5.addHtml(maxLevel);
                     if (_this.customOrtholog) {
                         bubble5.treeRing.customOrtholog = _this.customOrtholog;
                         $('#menuView' + bubble5.id).find("#minRatio").val($('#menuView' + _this.parent.id).find("#minRatio").val());
                         $('#menuView' + bubble5.id).find("#maxRatio").val($('#menuView' + _this.parent.id).find("#maxRatio").val());
-                        $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).children("#crossTalkLevel").val());
+                        $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
+                        $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
                     }
                     if (_this.customExpression) {
                         d3.select("#svg" + bubble5.id).selectAll(".symbol").remove();
@@ -1039,7 +1043,8 @@ PATHBUBBLES.D3Ring.prototype = {
                         bubble5.treeRing.expressionScaleMax = max;
                         $('#menuView' + bubble5.id).find("#minRatio").val($('#menuView' + _this.parent.id).find("#minRatio").val());
                         $('#menuView' + bubble5.id).find("#maxRatio").val($('#menuView' + _this.parent.id).find("#maxRatio").val());
-                        $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).children("#crossTalkLevel").val());
+                        $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
+                        $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
                     }
 
                     bubble5.menuOperation();
