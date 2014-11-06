@@ -357,11 +357,14 @@ PATHBUBBLES.Bubble.prototype = {
         return  (x <= mx) && (x + w >= mx) && (y <= my) && (y + h >= my);
     },
     containsInMenu: function (mx, my) {
+
         var x = this.menu.x;
         var y = this.menu.y;
         return  (x - mx ) * (x - mx) + (y - my ) * (y - my) <= this.menu.r * this.menu.r;
     },
     containsInHalo: function (mx, my) {
+        if(this.title.contains(mx,my))
+            return true;
         var x = this.shape.offsetX + this.shape.x + 5;
         var y = this.shape.offsetY + this.shape.y + 5;
         var w = this.shape.w - 10;

@@ -75,7 +75,6 @@ PATHBUBBLES.Interaction = function (renderer) {
                 renderer.valid = false;
                 return;
             }
-
             else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)

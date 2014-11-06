@@ -41,6 +41,11 @@ PATHBUBBLES.Title.prototype = {
         this.shape.w = this.w;
     },
     contains: function (mx, my) {
-        return this.shape.contains(mx, my);
+        var x = this.x;
+        var y = this.y;
+        var w = this.w;
+        var h = this.h;
+
+        return  (x <= mx) && (x + w >= mx) && (y <= my) && (y + h >= my);
     }
 };

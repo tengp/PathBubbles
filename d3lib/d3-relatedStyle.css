@@ -71,3 +71,7 @@ svg .colorScaleBar {
     text-decoration: none;
     cursor: hand;
 }
+
+.bar-text {
+    pointer-events: none;
+}

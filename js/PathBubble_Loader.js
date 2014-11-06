@@ -36,7 +36,8 @@ PATHBUBBLES.FileLoader.prototype = {
             tempdata = reader.result;
             if (tempdata != null) {
                 if (_this.type == "Ortholog") {
-                    var orthology = tempdata.split("\r\n");
+                    tempdata.replace('\r\n', '\n');
+                    var orthology = tempdata.split("\n");
 
                     for (var j = 0; j < orthology.length; ++j) {
                         if (orthology[j] == "") {
@@ -54,7 +55,8 @@ PATHBUBBLES.FileLoader.prototype = {
                     callback(result);
                 }
                 else if (_this.type == "Expression") {
-                    var expression = tempdata.split("\r\n");
+                    tempdata.replace('\r\n', '\n');
+                    var expression = tempdata.split("\n");
 
                     for (var j = 0; j < expression.length; ++j) {
                         if (expression[j] == "") {
@@ -67,7 +69,7 @@ PATHBUBBLES.FileLoader.prototype = {
                         var obj = {};
                         obj.gene_id = temps[0];
                         obj.symbol = temps[1];
-                        obj.ratio = temps[2];
+                        obj.ratio = Math.log2(temps[2]);
                         result.push(obj);
                     }
                     callback(result);
