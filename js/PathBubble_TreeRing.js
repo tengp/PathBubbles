@@ -87,7 +87,7 @@ PATHBUBBLES.TreeRing.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
 
 PATHBUBBLES.TreeRing.prototype = {
     constructor: PATHBUBBLES.TreeRing,
-    addHtml: function (maxLevel) {
+    addHtml: function () {
         this.setOffset();
         var tmp = '';
         tmp += '<div id= svg' + this.id + ' style="position: absolute; width:' + (this.w + 5) + 'px; ' + 'height:' + (this.h + 5) + 'px; left:' + (this.shape.x + this.offsetX) + ' px; top:' + (this.shape.y + this.offsetY) + 'px; "> </div>';
@@ -103,10 +103,6 @@ PATHBUBBLES.TreeRing.prototype = {
         this.treeRing = new PATHBUBBLES.D3Ring(this, Math.min(this.w, this.h) - 30, this.dataType, this.dataName);
         if (this.selectedData !== undefined && this.selectedData !== null) {
             this.treeRing.selectedData = this.selectedData;
-        }
-        if(maxLevel!==undefined)
-        {
-            this.treeRing.maxLevel = maxLevel;
         }
         this.treeRing.init();
     },
@@ -149,7 +145,7 @@ PATHBUBBLES.TreeRing.prototype = {
             if (_this.treeRing.customExpression) {
                 customExpression = _this.treeRing.customExpression;
             }
-            var maxLevel = _this.treeRing.maxLevel;
+
             _this.treeRing = null;
             _this.treeRing = new PATHBUBBLES.D3Ring(_this, Math.min(_this.w, _this.h) - 30, val, _this.dataName);
             _this.treeRing.file = "./data/Ortholog/" + val + "/" + _this.dataName + ".json";
@@ -163,7 +159,7 @@ PATHBUBBLES.TreeRing.prototype = {
                 _this.name = _this.pre + val;
             }
 
-            _this.treeRing.init(maxLevel);
+            _this.treeRing.init();
         });
         $menuBarbubble.children('#crossTalkLevel').change(function () {
             var val = $(this).val();
@@ -183,7 +179,7 @@ PATHBUBBLES.TreeRing.prototype = {
             if (_this.treeRing.customExpression) {
                 expressionData = _this.treeRing.customExpression;
             }
-            var maxLevel = _this.treeRing.maxLevel;
+
             _this.treeRing = null;
 
             var fileVal = $('#menuView' + _this.id).children('#file').val();
@@ -200,7 +196,7 @@ PATHBUBBLES.TreeRing.prototype = {
                 _this.treeRing.customExpression = expressionData;
                 _this.name = "(Expression) ";
             }
-            _this.treeRing.init(maxLevel);
+            _this.treeRing.init();
         });
         $menuBarbubble.find('#delete').on('click', function () {
             if (!_this.GROUP)
@@ -253,7 +249,7 @@ PATHBUBBLES.TreeRing.prototype = {
                     if (_this.treeRing.customExpression) {
                         customExpression = _this.treeRing.customExpression;
                     }
-                    var maxLevel = _this.treeRing.maxLevel;
+
                     _this.treeRing = null;
                     var val = $menuBarbubble.children('#file').val();
                     _this.treeRing = new PATHBUBBLES.D3Ring(_this, Math.min(_this.w, _this.h) - 30, val, _this.dataName);
@@ -267,7 +263,7 @@ PATHBUBBLES.TreeRing.prototype = {
 //                    _this.treeRing.renderType = "Ortholog";
                     _this.name = _this.pre + "custom";
                     $menuBarbubble.find('#file').val("Default");
-                    _this.treeRing.init(maxLevel);
+                    _this.treeRing.init();
                 });
             }
         });
@@ -296,7 +292,7 @@ PATHBUBBLES.TreeRing.prototype = {
                     if (_this.treeRing.customOrtholog) {
                         customOrtholog = _this.treeRing.customOrtholog;
                     }
-                    var maxLevel = _this.treeRing.maxLevel;
+
                     _this.treeRing = null;
                     var orthologyFile = $menuBarbubble.children('#file').val();     //
                     _this.treeRing = new PATHBUBBLES.D3Ring(_this, Math.min(_this.w, _this.h) - 30, orthologyFile, _this.dataName);
@@ -308,7 +304,7 @@ PATHBUBBLES.TreeRing.prototype = {
                         _this.treeRing.customOrtholog = customOrtholog;
                     }
                     _this.name = "(Expression) " + _this.selected_file.name;
-                    _this.treeRing.init(maxLevel);
+                    _this.treeRing.init();
                 });
             }
         });

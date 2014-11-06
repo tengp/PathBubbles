@@ -15,12 +15,13 @@ PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
     this.ChangeLevel = false;
     this.customExpression = null;
     this.expressionScaleMax = null;
-    this.renderType = null;
     this.maxLevel = 6;
 };
 PATHBUBBLES.D3Ring.prototype = {
     constructor: PATHBUBBLES.D3Ring,
     init: function () {
+//        if(maxLevel!== undefined)
+//            this.maxLevel = maxLevel;
         var _this = this;
         var width = this.defaultRadius,
             height = this.defaultRadius,
@@ -172,6 +173,11 @@ PATHBUBBLES.D3Ring.prototype = {
 //                            nodeData[i].gallusOrth.count = count;
                         }
                     }
+                    _this.maxLevel = d3.max(nodeData, function (d) {
+
+                        return d.depth;
+                    });
+
                     if (!_this.ChangeLevel) {
 //                        maxLevel = 6;
                         var tmpString = "";
@@ -228,6 +234,10 @@ PATHBUBBLES.D3Ring.prototype = {
                             }
                         }
                     }
+                    _this.maxLevel = d3.max(nodeData, function (d) {
+
+                        return d.depth;
+                    });
                     if (!_this.ChangeLevel) {
 //                        maxLevel = 6;
                         var tmpString = "";
@@ -308,6 +318,10 @@ PATHBUBBLES.D3Ring.prototype = {
 //                            nodeData[i].gallusOrth.count = count;
                         }
                     }
+                    _this.maxLevel = d3.max(nodeData, function (d) {
+
+                        return d.depth;
+                    });
                     if (!_this.ChangeLevel) {
 //                        maxLevel = 6;
                         var tmpString = "";
@@ -320,6 +334,10 @@ PATHBUBBLES.D3Ring.prototype = {
                     operation(nodeData);
                 }
                 else {
+                    nodeData = partition.nodes(root);
+                    _this.maxLevel = d3.max(nodeData, function (d) {
+                        return d.depth;
+                    });
                     if (!_this.ChangeLevel) {
 //                        maxLevel = 6;
                         var tmpString = "";
@@ -329,13 +347,17 @@ PATHBUBBLES.D3Ring.prototype = {
                         $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
                         _this.parent.name = root.name + " " + _this.parent.name;
                     }
-                    nodeData = partition.nodes(root);
 //                    crossTalkFileName = "./data/crossTalkData/" + nodeData[0].name + ".json";
                     operation(nodeData);
                 }
             });
         }
         else {
+            nodeData = partition.nodes(_this.selectedData);
+            _this.maxLevel = d3.max(nodeData, function (d) {
+
+                return d.depth;
+            });
             if (!_this.ChangeLevel) {
 //                maxLevel = _this.selectedData.maxLevel - _this.selectedData.depth;
                 var tmpString = "";
@@ -345,7 +367,6 @@ PATHBUBBLES.D3Ring.prototype = {
                 $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
                 _this.parent.name = _this.selectedData.name + " " + _this.parent.name;
             }
-            nodeData = partition.nodes(_this.selectedData);
 //            crossTalkFileName = "./data/crossTalkData/" + nodeData[0].name + ".json";
             operation(nodeData);
         }
@@ -387,7 +408,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
                             var obj = {};
                             obj.data = i;
-                            obj.text = parseFloat(j).toFixed(3);
+                            obj.text = parseFloat(j).toFixed(4);
                             newData.push(obj);
                         }
 
@@ -414,7 +435,7 @@ PATHBUBBLES.D3Ring.prototype = {
 
                     var colorScaleBar = svg.append("g")
                         .attr("class", "colorScaleBar")
-                        .attr("transform", "translate(" + (width - 2 * scaleWidth) + "," + ( height + 40 - 10 * sectionHeight  ) + ")")
+                        .attr("transform", "translate(" + (width - 3 * scaleWidth) + "," + ( height + 40 - 10 * sectionHeight  ) + ")")
                         .attr("width", BarWidth)
                         .attr("height", BarHeight);
 
@@ -1018,7 +1039,6 @@ PATHBUBBLES.D3Ring.prototype = {
                     if (d.children.length == 0)
                         return;
                     var selectedData = d3.select(this).datum();
-                    var maxLevel = _this.maxLevel-selectedData.depth;
                     var name = selectedData.name;
                     var dataType = $('#menuView' + _this.parent.id).children('#file').val();
 
@@ -1029,7 +1049,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         RingHeight = RingHeight * 0.8;
                     }
                     var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, name, dataType, selectedData);
-                    bubble5.addHtml(maxLevel);
+                    bubble5.addHtml();
                     if (_this.customOrtholog) {
                         bubble5.treeRing.customOrtholog = _this.customOrtholog;
                         $('#menuView' + bubble5.id).find("#minRatio").val($('#menuView' + _this.parent.id).find("#minRatio").val());
