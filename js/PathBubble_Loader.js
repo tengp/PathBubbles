@@ -70,7 +70,8 @@ PATHBUBBLES.FileLoader.prototype = {
                         var obj = {};
                         obj.gene_id = temps[0];
                         obj.symbol = temps[1];
-                        obj.ratio = Math.log2(parseFloat(temps[2]));
+//                        obj.ratio = Math.log2(parseFloat(temps[2]));
+                        obj.ratio = Math.log(parseFloat(temps[2]))/Math.log(2);
                         result.push(obj);
                     }
                     callback(result);

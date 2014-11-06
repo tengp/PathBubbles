@@ -271,17 +271,8 @@ PATHBUBBLES.TreeRing.prototype = {
                 });
             }
         });
-//        $menuBarbubble.find('#customOrth').on('change', function () {
-////        $menuBarbubble.find('#customOrth' + _this.id).on('change', function () {
-//            var temp = $(this).val();
-//            if (temp == "")
-//                return;
-//            $menuBarbubble.find("label[for=customOrth" + "]").text(temp.replace(/^.*[\\\/]/, ''));
-////            $menuBarbubble.find("label[for=customOrth" + _this.id + "]").text(temp.replace(/^.*[\\\/]/, ''));
-//        });
         $menuBarbubble.find('#loadExp').on('click', function () {
             _this.selected_file = $menuBarbubble.find('#customExp' ).get(0).files[0];
-//            _this.selected_file = $menuBarbubble.find('#customExp' + _this.id).get(0).files[0];
             if (!_this.selected_file) {
                 alert("Please select your Expression data file!");
             }
@@ -316,20 +307,11 @@ PATHBUBBLES.TreeRing.prototype = {
                     if (customOrtholog) {
                         _this.treeRing.customOrtholog = customOrtholog;
                     }
-//                    _this.treeRing.renderType = "Expression";
                     _this.name = "(Expression) " + _this.selected_file.name;
                     _this.treeRing.init(maxLevel);
                 });
             }
         });
-////        $menuBarbubble.find('#customExp' + _this.id).on('change', function () {
-//        $menuBarbubble.find('#customExp' ).on('change', function () {
-//            var temp = $(this).val();
-//            if (temp == "")
-//                return;
-////            $menuBarbubble.find("label[for=customExp" + "]").text(temp.replace(/^.*[\\\/]/, ''));
-////            $menuBarbubble.find("label[for=customExp" + _this.id + "]").text(temp.replace(/^.*[\\\/]/, ''));
-//        });
     },
     ungroup: function () {
         if (!this.GROUP) {
