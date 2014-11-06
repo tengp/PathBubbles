@@ -29,6 +29,8 @@ PATHBUBBLES.ViewPoint.prototype = {
         this.shape.offsetY = this.offsetY;
         this.shape.x = this.x;
         this.shape.y = 0;
+        this.shape.w = this.w;
+        this.shape.h = this.h;
     },
     contains: function (mx, my) {
         this.setOffset();

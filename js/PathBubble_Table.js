@@ -21,8 +21,8 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
 //    this.menuBar = new PATHBUBBLES.Menu(this);
     this.button = new PATHBUBBLES.Button(this);   //Button 0 for file selection
     var tmp = '';
-    tmp += '<input type="text" id=file style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
-    tmp += '<input type="button" id=load value= "Load" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
+//    tmp += '<input type="text" id=file style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
+//    tmp += '<input type="button" id=load value= "Load" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y + 55 + ' px; "></div>';
     tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 80 + 'px; ">';
     tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
@@ -83,21 +83,21 @@ PATHBUBBLES.Table.prototype = {
     menuOperation: function () {
         var _this = this;
         var $menuBarbubble = $('#menuView' + this.id);
-        $menuBarbubble.find('#load').on('click', function () {
-            var dbId = $menuBarbubble.find('#file').val();
-            _this.dbId = dbId;
-            if (!dbId) {
-                alert("Please input database Id!");
-            }
-            else {
-                $("#svg" + _this.id).remove();
-                var tmp = '';
-                tmp += '<div id= svg' + _this.id + ' style="position: absolute;"> </div>';
-                $("#bubble").append($(tmp));
-                _this.table = new PATHBUBBLES.D3Table(_this, _this.w, _this.h);
-                _this.table.init(dbId);
-            }
-        });
+//        $menuBarbubble.find('#load').on('click', function () {
+//            var dbId = $menuBarbubble.find('#file').val();
+//            _this.dbId = dbId;
+//            if (!dbId) {
+//                alert("Please input database Id!");
+//            }
+//            else {
+//                $("#svg" + _this.id).remove();
+//                var tmp = '';
+//                tmp += '<div id= svg' + _this.id + ' style="position: absolute;"> </div>';
+//                $("#bubble").append($(tmp));
+//                _this.table = new PATHBUBBLES.D3Table(_this, _this.w, _this.h);
+//                _this.table.init(dbId);
+//            }
+//        });
         $menuBarbubble.find('#delete').on('click', function () {
             if (!_this.GROUP)
                 _this.deleteBubble();
@@ -172,24 +172,24 @@ PATHBUBBLES.Table.prototype = {
             width: 200,
             height: 215
         });
-        $menuBarbubble.find('#file').css({
+//        $menuBarbubble.find('#file').css({
+//            left: 10,
+//            top: 45,
+//            width: 180
+//        });
+//        $menuBarbubble.find('#load').css({
+//            left: 10,
+//            top: 70,
+//            width: 180
+//        });
+        $menuBarbubble.find('#ungroup').css({
             left: 10,
             top: 45,
             width: 180
         });
-        $menuBarbubble.find('#load').css({
-            left: 10,
-            top: 70,
-            width: 180
-        });
-        $menuBarbubble.find('#ungroup').css({
-            left: 10,
-            top: 95,
-            width: 180
-        });
         $menuBarbubble.find('#delete').css({
             left: 10,
-            top: 115,
+            top: 70,
             width: 180
         });
     },

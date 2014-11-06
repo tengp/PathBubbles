@@ -5,10 +5,10 @@
  * @name        PathBubble_render
  */
 PATHBUBBLES.Renderer = function () {
-    this.canvasWidth = canvas.clientWidth;
-    this.canvasHeight = canvas.clientHeight;
-    this.navCanvasWidth = navCanvas.clientWidth;
-    this.navCanvasHeight = navCanvas.clientHeight;
+    this.canvasWidth = window.innerWidth;
+    this.canvasHeight = window.innerHeight;
+    this.navCanvasWidth = window.innerWidth;
+    this.navCanvasHeight = 50;
     this.alpha = false;
     this.ctx = canvas.getContext('2d', {
 //        alpha: this.alpha === true
@@ -30,6 +30,10 @@ PATHBUBBLES.Renderer.prototype = {
     },
     render: function () {
         var _this = this;
+        this.canvasWidth = canvas.width;
+        this.canvasHeight = canvas.height;
+        this.navCanvasWidth = navCanvas.width;
+        this.navCanvasHeight = 50;
 
         function drawObject(object) {
             if (!(object instanceof PATHBUBBLES.Scene) && !( object instanceof PATHBUBBLES.Object2D )) {

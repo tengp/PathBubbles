@@ -520,7 +520,9 @@ PATHBUBBLES.D3Ring.prototype = {
                 });
 
                 textG = textG.data(nodeData.filter(
-                    function (d) {
+                    function (d,i) {
+                        if(i==0)          //center of the circle
+                            return true;
                         var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
                         var r = Math.max(0, y(d.y));
                         return thea * r >= 10;

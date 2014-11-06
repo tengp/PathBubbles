@@ -4,21 +4,36 @@
  * @time        9/16/2014
  * @name        main
  */
-var scene;
-var canvas;
-var navCanvas;
+var scene=null;
+var canvas=null;
+var navCanvas=null;
 var viewpoint = null;
-var navInterection;
-var interection;
+var navInterection = null;
+var interection = null;
 $(document).ready(function () {
-    scene = new PATHBUBBLES.Scene();
-    viewpoint = new PATHBUBBLES.ViewPoint();
     canvas = $("#bgCanvas")[0];
+    navCanvas = $("#navCanvas")[0];
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    navCanvas = $("#navCanvas")[0];
     navCanvas.height = 50;
     navCanvas.width = window.innerWidth;
+    scene = new PATHBUBBLES.Scene();
+    viewpoint = new PATHBUBBLES.ViewPoint();
+    viewpoint.h = 50;
+    viewpoint.w = window.innerWidth / window.innerHeight * 50;
+//    var resize = function () {
+//        viewpoint.h = 50;
+//        viewpoint.w = window.innerWidth / window.innerHeight * 50;
+//        canvas.width = window.innerWidth;
+//        canvas.height = window.innerHeight;
+//        navCanvas.height = 50;
+//        navCanvas.width = window.innerWidth;
+//    };
+//
+//    window.addEventListener('resize', resize);
+//    resize();
+    PATHBUBBLES.WindowResize();
     var renderer = new PATHBUBBLES.Renderer();
     navInterection = new PATHBUBBLES.NavInteraction(renderer);
     interection = new PATHBUBBLES.Interaction(renderer);

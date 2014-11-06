@@ -29,19 +29,22 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 75 + 'px; ">';
 
     tmp += '<select id="file" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
-    tmp += '<option value="Gallus">Gallus</option>';
+    tmp += '<option value="Default">Choose Species</option>';
+    tmp += '<option value="Gallus" selected="selected">Gallus</option>';
     tmp += '<option value="Alligator">Alligator</option>';
     tmp += '<option value="Turtle">Turtle</option>';
     tmp += '</select>';
 
-    tmp += '<div id=customOrthDiv style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
-    tmp += '<button><label for="customOrth" style="padding-left: 0px;">';
-    tmp += '<a >Choose orthology File</a></label></button>';
-    tmp += '<input style="display: none;" type="file" id="customOrth">';
-    tmp += '</div>';
+//    tmp += '<div id=customOrthDiv style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
+//    tmp += '<button><label for="customOrth" style="padding-left: 0px;">';
+//    tmp += '<a >Choose orthology File</a></label></button>';
+//    tmp += '<input style="display: none;" type="file" id="customOrth">';
+//    tmp += '</div>';
+    tmp += '<input type="file" id="customOrth"  style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
+
     tmp += '<div id=loadOrthDiv style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<input type="button" id=loadOrth value= "Load(Ortholog)" >';
-    tmp += '<a href="./data/sample/customeOrtholog.txt" target="_blank"><button style="margin-left:10px"><font style="font-size: 10px">Sample Data</font></button></a>';
+    tmp += '<a href="./data/sample/customeOrtholog.txt" target="_blank"><button style="position: absolute; margin-left:10px"><font style="font-size: 10px">Sample Data</font></button></a>';
     tmp += '</div>';
     tmp += '<div id=minMaxRatio style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
     tmp += 'Ratio &gt;=';
@@ -54,14 +57,15 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     tmp += '</span>';
     tmp += '</div>';
 
-    tmp += '<div id=customExpDiv style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
-    tmp += '<button><label for="customExp" style="padding-left: 0px;">';
-    tmp += '<a >Choose Expression File</a></label></button>';
-    tmp += '<input style="display: none;" type="file" id="customExp">';
-    tmp += '</div>';
+//    tmp += '<div id=customExpDiv style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
+//    tmp += '<button><label for="customExp" style="padding-left: 0px;">';
+//    tmp += '<a >Choose Expression File</a></label></button>';
+//    tmp += '<input style="display: none;" type="file" id="customExp">';
+//    tmp += '</div>';
+    tmp += '<input type="file" id="customExp" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<div id=loadExpDiv style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<input type="button" id=loadExp value= "Load(Expression)" >';
-    tmp += '<a href="./data/sample/TGF0expression.txt" target="_blank"><button style="margin-left:10px"><font style="font-size: 10px">Sample Data</font></button></a>';
+    tmp += '<a href="./data/sample/TGF0expression.txt" target="_blank"><button style="position: absolute; margin-left:10px"><font style="font-size: 10px">Sample Data</font></button></a>';
     tmp += '</div>';
     this.button.addButton(tmp);
 
@@ -89,10 +93,10 @@ PATHBUBBLES.TreeRing.prototype = {
         tmp += '<div id= svg' + this.id + ' style="position: absolute; width:' + (this.w + 5) + 'px; ' + 'height:' + (this.h + 5) + 'px; left:' + (this.shape.x + this.offsetX) + ' px; top:' + (this.shape.y + this.offsetY) + 'px; "> </div>';
         $("#bubble").append($(tmp));
         var $menuBarbubble = $('#menuView' + this.id);
-        $menuBarbubble.find("#customOrthDiv").find("label").attr("for", "customOrth" + this.id);     //for="customOrth"
-        $menuBarbubble.find("#customOrthDiv").find("input").attr("id", "customOrth" + this.id);     //for="customOrth"
-        $menuBarbubble.find("#customExpDiv").find("label").attr("for", "customExp" + this.id);     //for="customExp"
-        $menuBarbubble.find("#customExpDiv").find("input").attr("id", "customExp" + this.id);     //for="customOrth"
+//        $menuBarbubble.find("#customOrthDiv").find("label").attr("for", "customOrth" + this.id);     //for="customOrth"
+//        $menuBarbubble.find("#customOrthDiv").find("input").attr("id", "customOrth" + this.id);     //for="customOrth"
+//        $menuBarbubble.find("#customExpDiv").find("label").attr("for", "customExp" + this.id);     //for="customExp"
+//        $menuBarbubble.find("#customExpDiv").find("input").attr("id", "customExp" + this.id);     //for="customOrth"
         if (!this.dataType)
             this.dataType = "Gallus";
         this.treeRing = new PATHBUBBLES.D3Ring(this, Math.min(this.w, this.h) - 30, this.dataType, this.dataName);
@@ -183,32 +187,39 @@ PATHBUBBLES.TreeRing.prototype = {
             _this.treeRing.file = "./data/Ortholog/" + fileVal + "/" + _this.dataName + ".json";
             if (orthlogData) {
                 _this.treeRing.customOrtholog = orthlogData;
+                _this.name = _this.pre + "custom";
             }
             if (expressionData) {
                 _this.treeRing.customExpression = expressionData;
+                _this.name = "(Expression) " + _this.selected_file.name;
             }
-
-            if ($menuBarbubble.find('#customOrth' + _this.id).get(0).files[0] !== undefined) {
-                var localFileLoader = new PATHBUBBLES.FileLoader("Ortholog");
-                localFileLoader.load(_this.selected_file, function (orthlogData) {
-                    _this.treeRing.customOrtholog = orthlogData;
-                    _this.treeRing.customExpression = null;
-                    _this.name = _this.pre + "custom";
-                });
-                _this.treeRing.init();
-            } else if ($menuBarbubble.find('#customExp' + _this.id).get(0).files[0] !== undefined) {
-                var localFileLoader = new PATHBUBBLES.FileLoader("Expression");
-                localFileLoader.load(_this.selected_file, function (expression) {
-                    _this.treeRing.customExpression = expression;
-                    _this.treeRing.customOrtholog = null;
-                    if ($menuBarbubble.find('#customExp' + _this.id).get(0).files[0] !== undefined)
-                        _this.name = "(Expression) " + $menuBarbubble.find('#customExp' + _this.id).get(0).files[0].name;
-                });
-                _this.treeRing.init();
-            }
-            else {
-                _this.treeRing.init();
-            }
+            _this.treeRing.init();
+//            if ($menuBarbubble.find('#customOrth' ).get(0).files[0] !== undefined) {
+////                if ($menuBarbubble.find('#customOrth' + _this.id).get(0).files[0] !== undefined) {
+//                var localFileLoader = new PATHBUBBLES.FileLoader("Ortholog");
+//                localFileLoader.load(_this.selected_file, function (orthlogData) {
+//                    _this.treeRing.customOrtholog = orthlogData;
+//                    _this.treeRing.customExpression = null;
+//                    _this.name = _this.pre + "custom";
+//                });
+//                _this.treeRing.init();
+//            }
+//            else if ($menuBarbubble.find('#customExp' ).get(0).files[0] !== undefined) {
+////            else if ($menuBarbubble.find('#customExp' + _this.id).get(0).files[0] !== undefined) {
+//                var localFileLoader = new PATHBUBBLES.FileLoader("Expression");
+//                localFileLoader.load(_this.selected_file, function (expression) {
+//                    _this.treeRing.customExpression = expression;
+//                    _this.treeRing.customOrtholog = null;
+//                    if ($menuBarbubble.find('#customExp' ).get(0).files[0] !== undefined)
+//                        _this.name = "(Expression) " + $menuBarbubble.find('#customExp' ).get(0).files[0].name;
+////                    if ($menuBarbubble.find('#customExp' + _this.id).get(0).files[0] !== undefined)
+////                        _this.name = "(Expression) " + $menuBarbubble.find('#customExp' + _this.id).get(0).files[0].name;
+//                });
+//                _this.treeRing.init();
+//            }
+//            else {
+//                _this.treeRing.init();
+//            }
         });
         $menuBarbubble.find('#delete').on('click', function () {
             if (!_this.GROUP)
@@ -242,7 +253,8 @@ PATHBUBBLES.TreeRing.prototype = {
             _this.ungroup();
         });
         $menuBarbubble.find('#loadOrth').on('click', function () {
-            _this.selected_file = $menuBarbubble.find('#customOrth' + _this.id).get(0).files[0];
+            _this.selected_file = $menuBarbubble.find('#customOrth').get(0).files[0];
+//            _this.selected_file = $menuBarbubble.find('#customOrth' + _this.id).get(0).files[0];
             if (!_this.selected_file) {
                 alert("Please select your Ortholog data file!");
             }
@@ -262,8 +274,6 @@ PATHBUBBLES.TreeRing.prototype = {
                     }
                     _this.treeRing = null;
                     var val = $menuBarbubble.children('#file').val();
-//                    var functionType =$menuBarbubble.children('#type').val();
-//                    var functionType = "Ortholog";
                     _this.treeRing = new PATHBUBBLES.D3Ring(_this, Math.min(_this.w, _this.h) - 30, val, _this.dataName);
                     _this.treeRing.file = "./data/Ortholog/" + val + "/" + _this.dataName + ".json";
                     _this.treeRing.showCrossTalkLevel = parseInt($menuBarbubble.children('#crossTalkLevel').val());
@@ -273,18 +283,22 @@ PATHBUBBLES.TreeRing.prototype = {
                     }
 //                    _this.treeRing.renderType = "Ortholog";
                     _this.name = _this.pre + "custom";
+                    $menuBarbubble.find('#file').val("Default");
                     _this.treeRing.init();
                 });
             }
         });
-        $menuBarbubble.find('#customOrth' + _this.id).on('change', function () {
+        $menuBarbubble.find('#customOrth').on('change', function () {
+//        $menuBarbubble.find('#customOrth' + _this.id).on('change', function () {
             var temp = $(this).val();
             if (temp == "")
                 return;
-            $menuBarbubble.find("label[for=customOrth" + _this.id + "]").text(temp.replace(/^.*[\\\/]/, ''));
+            $menuBarbubble.find("label[for=customOrth" + "]").text(temp.replace(/^.*[\\\/]/, ''));
+//            $menuBarbubble.find("label[for=customOrth" + _this.id + "]").text(temp.replace(/^.*[\\\/]/, ''));
         });
         $menuBarbubble.find('#loadExp').on('click', function () {
-            _this.selected_file = $menuBarbubble.find('#customExp' + _this.id).get(0).files[0];
+            _this.selected_file = $menuBarbubble.find('#customExp' ).get(0).files[0];
+//            _this.selected_file = $menuBarbubble.find('#customExp' + _this.id).get(0).files[0];
             if (!_this.selected_file) {
                 alert("Please select your Expression data file!");
             }
@@ -325,11 +339,13 @@ PATHBUBBLES.TreeRing.prototype = {
                 });
             }
         });
-        $menuBarbubble.find('#customExp' + _this.id).on('change', function () {
+//        $menuBarbubble.find('#customExp' + _this.id).on('change', function () {
+        $menuBarbubble.find('#customExp' ).on('change', function () {
             var temp = $(this).val();
             if (temp == "")
                 return;
-            $menuBarbubble.find("label[for=customExp" + _this.id + "]").text(temp.replace(/^.*[\\\/]/, ''));
+            $menuBarbubble.find("label[for=customExp" + "]").text(temp.replace(/^.*[\\\/]/, ''));
+//            $menuBarbubble.find("label[for=customExp" + _this.id + "]").text(temp.replace(/^.*[\\\/]/, ''));
         });
     },
     ungroup: function () {
@@ -394,7 +410,7 @@ PATHBUBBLES.TreeRing.prototype = {
             top: 100,
             width: 180
         });
-        $menuBarbubble.find('#customOrthDiv').css({
+        $menuBarbubble.find('#customOrth').css({
             left: 10,
             top: 125,
             width: 180
@@ -404,7 +420,7 @@ PATHBUBBLES.TreeRing.prototype = {
             top: 150,
             width: 180
         });
-        $menuBarbubble.find('#customExpDiv').css({
+        $menuBarbubble.find('#customExp').css({
             left: 10,
             top: 175,
             width: 180
