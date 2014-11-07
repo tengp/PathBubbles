@@ -40,55 +40,50 @@ PATHBUBBLES.D3Ring.prototype = {
         var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
         if (!_this.customExpression) {     //Color Bar for ortholog
 
-            var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
-                scaleWidth = 50 - scaleMargin.left - scaleMargin.right,
-                scaleHeight = 170 - scaleMargin.top - scaleMargin.bottom;
-            var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
-            var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
-
-            var sectionHeight = 20;
-            var texts = ["Partial","Complete","Empty"];
-            var newData = [];
-            for (var i = 0; i< 3; i++) {
-                var obj = {};
-                obj.data = i*20;
-                obj.text = texts[i];
-                obj.color = colors[i];
-                newData.push(obj);
-            }
-            var colorScaleBar = svg.append("g")
-                .attr("class", "colorScaleBar")
-                .attr("transform", "translate(" + (width - 2.5 * scaleWidth) + "," + ( height + 40 - 3 * sectionHeight  ) + ")")
-                .attr("width", BarWidth)
-                .attr("height", BarHeight);
-
-            colorScaleBar.selectAll('rect')
-                .data(newData)
-                .enter()
-                .append('rect')
+            var symbol = svg.append("g")
+                .attr("class", "symbol")
+                .attr("transform", "translate(" + (width / 2 - 75) + "," + (height + 5 ) + ")")
+                .attr("width", 150)
+                .attr("height", 20);
+            var color1 = symbol.append("g");
+            color1.attr("class", "color1")
+                .append("rect")
+                .attr("width", 50)
+                .attr("height", 20)
+                .style("stroke", colors[0])
+                .style("fill", colors[0]);
+            color1.append("text")
                 .attr("x", 0)
-                .attr("y", function (d) {
-                    return d.data;
-                })
-                .attr("height", sectionHeight)
-                .attr("width", scaleWidth)
-
-                .attr('fill', function (d) {
-                    return d.color;
-                });
-            colorScaleBar.selectAll('text')
-                .data(newData)
-                .enter().append("text")
-                .style("font-size", 10)
-                .attr("transform", "translate(" + (scaleWidth / 2 + 20) + "," + (sectionHeight) + ")")
-                .attr("y", function (d, i) {
-                    return d.data - 5;
-                })
-                .attr("dy", ".1em")
+                .attr("y", 13)
                 .style("text-anchor", "start")
-                .text(function (d, i) {
-                    return d.text;
-                });
+                .style("font-size", 10)
+                .style("fill", "#000")
+                .text("Partial");
+
+            var color2 = symbol.append("g");
+            color2.append("rect").attr("width", 50).attr("transform", "translate(" + 50 + "," + 0 + ")")
+                .attr("height", 20)
+                .style("stroke", colors[1])
+                .style("fill", colors[1]);
+            color2.append("text")
+                .attr("x", 50)
+                .attr("y", 13)
+                .style("text-anchor", "start")
+                .style("font-size", 10)
+                .style("fill", "#000")
+                .text("Complete");
+            var color3 = symbol.append("g");
+            color3.append("rect").attr("width", 50).attr("transform", "translate(" + 100 + "," + 0 + ")")
+                .attr("height", 20)
+                .style("stroke", colors[2])
+                .style("fill", colors[2]);
+            color3.append("text")
+                .attr("y", 13)
+                .attr("x", 100)
+                .style("text-anchor", "start")
+                .style("font-size", 10)
+                .style("fill", "#000")
+                .text("Empty");
         }
 
         var mainSvg = svg.append("g")
@@ -189,7 +184,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         for (var i = 1; i <= _this.maxLevel; ++i) {
                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                         }
-                        $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                        $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
                         _this.parent.name = root.name + " " + _this.parent.name;
                     }
 
@@ -249,7 +244,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         for (var i = 1; i <= _this.maxLevel; ++i) {
                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                         }
-                        $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                        $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
                         _this.parent.name = root.name + " " + _this.parent.name;
                     }
                     operation(nodeData);
@@ -333,7 +328,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         for (var i = 1; i <= _this.maxLevel; ++i) {
                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                         }
-                        $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                        $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
                         _this.parent.name = root.name + " " + _this.parent.name;
                     }
                     operation(nodeData);
@@ -349,7 +344,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         for (var i = 1; i <= _this.maxLevel; ++i) {
                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                         }
-                        $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                        $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
                         _this.parent.name = root.name + " " + _this.parent.name;
                     }
 //                    crossTalkFileName = "./data/crossTalkData/" + nodeData[0].name + ".json";
@@ -369,7 +364,7 @@ PATHBUBBLES.D3Ring.prototype = {
                 for (var i = 1; i <= _this.maxLevel; ++i) {
                     tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                 }
-                $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                $('#menuView' + _this.parent.id).children("#crossTalkLevel").html(tmpString);
                 _this.parent.name = _this.selectedData.name + " " + _this.parent.name;
             }
 //            crossTalkFileName = "./data/crossTalkData/" + nodeData[0].name + ".json";
@@ -378,7 +373,7 @@ PATHBUBBLES.D3Ring.prototype = {
         function operation(nodeData) {
 
             var crossTalkFileName = "./data/crossTalkLevel/" + nodeData[0].name + ".json";
-            $('#menuView' + _this.parent.id).find('#crossTalkLevel').val(_this.showCrossTalkLevel);
+            $('#menuView' + _this.parent.id).children('#crossTalkLevel').val(_this.showCrossTalkLevel);
             d3.json(crossTalkFileName, function (error, crossTalkData) {
                 var classes = crossTalkData[_this.showCrossTalkLevel - 1];
 
@@ -1045,7 +1040,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         return;
                     var selectedData = d3.select(this).datum();
                     var name = selectedData.name;
-                    var dataType = $('#menuView' + _this.parent.id).find('#file').val();
+                    var dataType = $('#menuView' + _this.parent.id).children('#file').val();
 
                     var RingWidth = _this.parent.w;
                     var RingHeight = _this.parent.h;
