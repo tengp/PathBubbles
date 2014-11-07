@@ -36,8 +36,8 @@ PATHBUBBLES.Shape.Rectangle.prototype = {
         ctx.fillStyle = this.fillColor;
         ctx.strokeStyle = this.strokeColor;
         ctx.lineWidth = this.lineWidth * scale;
-        ctx.setLineDash([0]);
-        ctx.lineDashOffset = 0;
+//        ctx.setLineDash([0]);
+//        ctx.lineDashOffset = 0;
         if (!this.cornerRadius) {
             if (this.fillState)
                 ctx.fillRect(x, y, w, h);
@@ -131,8 +131,8 @@ PATHBUBBLES.Shape.Rectangle.prototype = {
         ctx.fillStyle = this.fillColor;
         ctx.strokeStyle = this.strokeColor;
         ctx.lineWidth = this.lineWidth * scale;
-        ctx.setLineDash([0]);
-        ctx.lineDashOffset = 0;
+//        ctx.setLineDash([0]);
+//        ctx.lineDashOffset = 0;
         if (!this.cornerRadius) {
             if (this.fillState)
                 ctx.fillRect(x, y, w, h);
@@ -185,8 +185,8 @@ PATHBUBBLES.Shape.Rectangle.prototype = {
         ctx.lineWidth = 2 * scale;
         if (this.cornerRadius) {
             // Draw the square
-            ctx.setLineDash([5, 4]);
-            ctx.lineDashOffset = 4;
+//            ctx.setLineDash([5, 4]);
+//            ctx.lineDashOffset = 4;
             var r = x + w + 5;
             var b = y + h + 5;
             ctx.beginPath();
@@ -268,8 +268,8 @@ PATHBUBBLES.Shape.Circle.prototype = {
         ctx.fillStyle = this.fillColor;
         ctx.strokeStyle = this.strokeColor;
         ctx.lineWidth = this.lineWidth;
-        ctx.setLineDash([0]);
-        ctx.lineDashOffset = 0;
+//        ctx.setLineDash([0]);
+//        ctx.lineDashOffset = 0;
         ctx.beginPath();
         if (scale == 1)
             ctx.arc(x * scale, y * scale, this.r * scale, 0, 2 * Math.PI, false);
@@ -340,8 +340,8 @@ PATHBUBBLES.Shape.Ellipse.prototype = {
         ctx.fillStyle = this.fillColor;
         ctx.strokeStyle = this.strokeColor;
         ctx.lineWidth = this.lineWidth;
-        ctx.setLineDash([0]);
-        ctx.lineDashOffset = 0;
+//        ctx.setLineDash([0]);
+//        ctx.lineDashOffset = 0;
         var w = this.w;
         var h = this.h;
         var mx = x + w / 2;
@@ -440,8 +440,8 @@ PATHBUBBLES.Shape.Triangle.prototype = {
         ctx.fillStyle = this.fillColor;
         ctx.strokeStyle = this.strokeColor;
         ctx.lineWidth = this.lineWidth * scale;
-        ctx.setLineDash([0]);
-        ctx.lineDashOffset = 0;
+//        ctx.setLineDash([0]);
+//        ctx.lineDashOffset = 0;
         var h = this.l * (Math.sqrt(3) / 2);   //h is the height of the triangle
         ctx.beginPath();
         if (scale == 1) {
@@ -528,8 +528,8 @@ PATHBUBBLES.Shape.Hexahedron.prototype = {
         ctx.fillStyle = this.fillColor;
         ctx.strokeStyle = this.strokeColor;
         ctx.lineWidth = this.lineWidth * scale;
-        ctx.setLineDash([0]);
-        ctx.lineDashOffset = 0;
+//        ctx.setLineDash([0]);
+//        ctx.lineDashOffset = 0;
 
         var mx1 = x + w / 4;
         var mx2 = x + w * 3 / 4;
@@ -641,8 +641,8 @@ PATHBUBBLES.Shape.Path.prototype = {
         ctx.fillStyle = this.fillColor;
         ctx.strokeStyle = this.strokeColor;
         ctx.lineWidth = this.lineWidth * scale;
-        ctx.setLineDash([0]);
-        ctx.lineDashOffset = 0;
+//        ctx.setLineDash([0]);
+//        ctx.lineDashOffset = 0;
         // beginPath
         if (this.points.length > 0) {
             ctx.beginPath();

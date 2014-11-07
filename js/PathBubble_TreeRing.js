@@ -49,11 +49,11 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     tmp += '<div id=minMaxRatio style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
     tmp += 'Ratio &lt;=';
     tmp += '<span class="inlineinput">';
-    tmp += '    <input id = "minRatio" type="text"  placeholder="0.5" style="display: inline; width: 40px;" />';
+    tmp += '    <input id = "minRatio" type="text"  placeholder="-1.5" style="display: inline; width: 40px;" />';
     tmp += '</span>';
     tmp += 'Ratio &gt;=';
     tmp += '<span class="inlineinput">';
-    tmp += '   <input id = "maxRatio" type="text"  placeholder="2.0"  style="display: inline; width: 40px;" />';
+    tmp += '   <input id = "maxRatio" type="text"  placeholder="1.5"  style="display: inline; width: 40px;" />';
     tmp += '</span>';
     tmp += '</div>';
 

@@ -79,28 +79,13 @@ PATHBUBBLES.Bubble.prototype = {
         });
     },
     addObject: function (object) {
-//        object.parent = this;
-//        object.shape.parent = this;
-
         var index = this.children.indexOf(object);
         if (index > -1) {
             this.children.splice(index, 1);
         }
         this.children.push(object);
-//        if (PATHBUBBLES.objects.indexOf(object) == -1)
-//            PATHBUBBLES.objects.push(object);
-//        this.__objectsAdded.push(object);
-        // check if previously removed
-//        var i = this.__objectsRemoved.indexOf(object);
-//        if (i !== -1) {
-//            this.__objectsRemoved.splice(i, 1);
-//        }
-//        for (var c = 0; c < object.children.length; c++) {
-//            this.addObject(object.children[ c ]);
-//        }
     },
     removeObject: function (object) {
-//        this.__objectsRemoved.push(object);
         var index = PATHBUBBLES.objects.indexOf(object);
         if (index !== -1) {
             PATHBUBBLES.objects.splice(index, 1);
@@ -109,13 +94,6 @@ PATHBUBBLES.Bubble.prototype = {
         if (index !== -1) {
             this.children.splice(index, 1);
         }
-//        var i = this.__objectsAdded.indexOf(object);
-//        if (i !== -1) {
-//            this.__objectsAdded.splice(i, 1);
-//        }
-//        for (var c = 0; c < object.children.length; c++) {
-//            this.removeObject(object.children[ c ]);
-//        }
     },
     menuOperation: function () {
         var _this = this;
@@ -227,7 +205,6 @@ PATHBUBBLES.Bubble.prototype = {
     },
     draw: function (ctx, scale) {
         this.setOffset();
-
         ctx.save();
         this.shape.draw(ctx, scale);
         if (this.bubbleView)
@@ -276,7 +253,6 @@ PATHBUBBLES.Bubble.prototype = {
             this.drawSelection(ctx, scale);
             ctx.restore();
         }
-
     },
     setOffset: function () {
         if (this.parent !== undefined) {
@@ -357,7 +333,6 @@ PATHBUBBLES.Bubble.prototype = {
         return  (x <= mx) && (x + w >= mx) && (y <= my) && (y + h >= my);
     },
     containsInMenu: function (mx, my) {
-
         var x = this.menu.x;
         var y = this.menu.y;
         return  (x - mx ) * (x - mx) + (y - my ) * (y - my) <= this.menu.r * this.menu.r;
