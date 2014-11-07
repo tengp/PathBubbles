@@ -257,13 +257,12 @@ PATHBUBBLES.TreeRing.prototype = {
             }
         });
         $menuBarbubble.find('#loadExp').on('click', function () {
-            $menuBarbubble.find('#orthologTypeDiv').hide();
-           _this.HIDE=true;
             _this.selected_file = $menuBarbubble.find('#customExp' ).get(0).files[0];
             if (!_this.selected_file) {
                 alert("Please select your Expression data file!");
             }
             else {
+                _this.HIDE=true;
                 var minRatio = $menuBarbubble.find('#minRatio').val();
                 var maxRatio = $menuBarbubble.find('#maxRatio').val();
                 if (minRatio == "")
@@ -305,6 +304,13 @@ PATHBUBBLES.TreeRing.prototype = {
             alert("It is not Grouped, right now!");
         }
         else {
+//            var object = this;
+//            if ($('#svg' + this.id).length)
+//                $('#svg' + this.id).remove();
+//            if ($('#menuView' + this.id).length)
+//                $('#menuView' + this.id).remove();
+//            this.removeObject(this);
+//            scene.addObject(object);
             var group = this.parent;
             this.GROUP = false;
             var tempdata = [];
@@ -381,6 +387,7 @@ PATHBUBBLES.TreeRing.prototype = {
         });
         if(this.HIDE!==undefined&&this.HIDE==true)
         {
+            $menuBarbubble.find('#orthologTypeDiv').hide();
             $menuBarbubble.find('#expressionTypeDiv').css({
                 left: 10,
                 top: 100,
@@ -389,6 +396,7 @@ PATHBUBBLES.TreeRing.prototype = {
         }
         else
         {
+            $menuBarbubble.find('#orthologTypeDiv').show();
             $menuBarbubble.find('#expressionTypeDiv').css({
                 left: 10,
                 top: 175,

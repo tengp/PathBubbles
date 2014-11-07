@@ -38,7 +38,7 @@ PATHBUBBLES.D3Ring.prototype = {
             .attr("width", width)
             .attr("height", _this.parent.h);
         var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
-        if (!_this.customExpression) {     //Color Bar for ortholog
+        if (_this.parent.HIDE==undefined ||_this.parent.HIDE!==true) {     //Color Bar for ortholog
 
             var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
                 scaleWidth = 50 - scaleMargin.left - scaleMargin.right,
@@ -388,7 +388,7 @@ PATHBUBBLES.D3Ring.prototype = {
                 var link = gGroup.append("g").selectAll(".link");
                 var node = gGroup.append("g").selectAll(".node");
                 var textG = gGroup.append("g").selectAll(".text");
-                if (_this.customExpression) {
+                if (_this.parent.HIDE) {
                     var max;
                     if (!_this.expressionScaleMax) {
                         max = d3.max(nodeData, function (d) {
@@ -1054,7 +1054,9 @@ PATHBUBBLES.D3Ring.prototype = {
                         RingHeight = RingHeight * 0.8;
                     }
                     var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, name, dataType, selectedData);
+                    bubble5.HIDE = _this.parent.HIDE;
                     bubble5.addHtml();
+
                     if (_this.customOrtholog) {
                         bubble5.treeRing.customOrtholog = _this.customOrtholog;
                         $('#menuView' + bubble5.id).find("#minRatio").val($('#menuView' + _this.parent.id).find("#minRatio").val());
