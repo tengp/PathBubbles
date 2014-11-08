@@ -103,7 +103,8 @@ PATHBUBBLES.TreeRing.prototype = {
         this.children.push(object);
     },
     removeObject: function (object) {
-
+        if ($('#svg' + this.id).length)
+            $('#svg' + this.id).remove();
         if ($('#svg' + this.id).length)
             $('#svg' + this.id).remove();
         if ($('#menuView' + this.id).length)

@@ -22,17 +22,6 @@ $(document).ready(function () {
     viewpoint = new PATHBUBBLES.ViewPoint();
     viewpoint.h = 50;
     viewpoint.w = window.innerWidth / window.innerHeight * 50;
-//    var resize = function () {
-//        viewpoint.h = 50;
-//        viewpoint.w = window.innerWidth / window.innerHeight * 50;
-//        canvas.width = window.innerWidth;
-//        canvas.height = window.innerHeight;
-//        navCanvas.height = 50;
-//        navCanvas.width = window.innerWidth;
-//    };
-//
-//    window.addEventListener('resize', resize);
-//    resize();
     PATHBUBBLES.WindowResize();
     var renderer = new PATHBUBBLES.Renderer();
     navInterection = new PATHBUBBLES.NavInteraction(renderer);
@@ -85,20 +74,20 @@ $(document).ready(function () {
 //                }
 //                scene.addObject(bubble6);
 //            }
-            else if (key === 'Delete_All') {
-                for (var i = 0, l = scene.children.length; i < l; ++i) {
-                    if (scene.children[i])
-                        scene.removeObject(scene.children[i]);
+            else if (key === 'Delete_All') {       //modify a bug by changing for loop from i=0, ... to i= array length to 0
+                for (var l = scene.children.length; l >0; l--) {
+                    if (scene.children[l])
+                        scene.removeObject(scene.children[l]);
                 }
                 scene.children.length = 0;
-                for (var i = 0, l = PATHBUBBLES.objects.length; i < l; i++) {
-                    if (PATHBUBBLES.objects[i])
-                        delete PATHBUBBLES.objects[i];
+                for (var l = PATHBUBBLES.objects.length; l > 0; l--) {
+                    if (PATHBUBBLES.objects[l])
+                        delete PATHBUBBLES.objects[l];
                 }
                 PATHBUBBLES.objects.length = 0;
 
                 $('svg').parent().remove();
-                $('.menu').remove();
+                $('.menu').remove();     //modify a bug by changing for loop from i=0, ... to i= array length to 0
             }
         },
         items: {
