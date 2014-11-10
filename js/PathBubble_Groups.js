@@ -104,6 +104,13 @@ PATHBUBBLES.Groups.prototype = {
             }
         }
     },
+    resetPosition: function(){
+        for(var i=0; i<this.children.length-1; ++i)
+        {
+            this.children[i+1].x = this.children[i].x + this.children[i].w;
+            this.children[i+1].y = this.children[i].y ;
+        }
+    },
     calculateDistance: function(object1, object2)
     {
          var centerObj1={

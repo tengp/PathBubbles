@@ -265,6 +265,7 @@ PATHBUBBLES.Interaction = function (renderer) {
             }
 
             if (_this.selection[0].GROUP) {
+                _this.selection[0].parent.resetPosition();
 //                var id = _this.selection[0].id;
 //
 //                for (var i = 0; i < _this.selection[0].parent.shape.points.length; ++i) {
