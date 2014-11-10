@@ -202,8 +202,9 @@ PATHBUBBLES.Table.prototype = {
         else {
 
             this.GROUP = false;
-            this.x = this.parent.children[this.parent.children.length - 1].x + 20;
+            this.y =this.parent.children[this.parent.children.length -1].y - 20;
             this.parent.removeObject(this);
+            scene.moveObjectToFront(this);
             this.parent = scene;
         }
     },

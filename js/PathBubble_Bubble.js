@@ -173,7 +173,7 @@ PATHBUBBLES.Bubble.prototype = {
         }
         else {
             this.GROUP = false;
-            this.y =this.parent.children[this.parent.children.length -1].y - 10;
+            this.y =this.parent.children[this.parent.children.length -1].y - 20;
             this.parent.removeObject(this);
             scene.moveObjectToFront(this);
             this.parent = scene;
