@@ -173,8 +173,9 @@ PATHBUBBLES.Bubble.prototype = {
         }
         else {
             this.GROUP = false;
-            this.x =this.parent.children[this.parent.children.length -1].x + 20;
+            this.y =this.parent.children[this.parent.children.length -1].y - 10;
             this.parent.removeObject(this);
+            scene.moveObjectToFront(this);
             this.parent = scene;
 //            var tempdata = [];
 //            for (var i = 0; i < group.children.length; ++i) {
@@ -283,6 +284,14 @@ PATHBUBBLES.Bubble.prototype = {
             this.closeMenuText.fillColor = "#f00";
             this.closeMenuText.font = '15pt Calibri';
             this.closeMenuText.draw(ctx, this.closeMenu.x, this.closeMenu.y);
+        }
+        if(this.ungroupMenu.HighLight_State)
+        {
+            this.ungroupMenuText.text = "G";
+        }
+        else
+        {
+            this.ungroupMenuText.text = "U";
         }
         if(this.ungroupMenu && scale == 1)
         {

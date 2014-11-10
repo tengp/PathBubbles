@@ -97,8 +97,10 @@ PATHBUBBLES.Groups.prototype = {
                 {
                     if(minObject.InsertIndex !== undefined)
                     {
-                        this.children.splice(minObject.InsertIndex+1, 0, object);
-
+                        if(object.x > this.children[minObject.InsertIndex].x)
+                            this.children.splice(minObject.InsertIndex+1, 0, object);
+                        else
+                            this.children.splice(minObject.InsertIndex, 0, object);
                         for(var i=0; i<this.children.length-1; ++i)
                         {
                             this.children[i+1].x = this.children[i].x + this.children[i].w;

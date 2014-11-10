@@ -363,6 +363,10 @@ PATHBUBBLES.Interaction = function (renderer) {
                         || _this.selection[0].parent instanceof PATHBUBBLES.Groups
                         || _this.selection[0] instanceof PATHBUBBLES.Table
                         || _this.selection[0] instanceof PATHBUBBLES.TreeRing)) {
+                    if(_this.selection[0].ungroupMenuText.text =="G")
+                        break;
+                    if(!(PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Groups) && PATHBUBBLES.objects[i].ungroupMenuText.text =="G")
+                        break;
                     if (_this.detectOverlap(_this.selection[0], PATHBUBBLES.objects[i])) {
                         if (_this.selection[0].GROUP && PATHBUBBLES.objects[i].GROUP && _this.selection[0].parent == PATHBUBBLES.objects[i].parent)   //By adding this code fix a bug 11.5 2014
                         {
@@ -409,7 +413,7 @@ PATHBUBBLES.Interaction = function (renderer) {
                 _this.selection[0].bubbleView.HighLight_State = false;
             }
         }
-        _this.selection[0] = null;
+//        _this.selection[0] = null;
         _this.bubbleViewDrag = false;
         _this.dragging = false;
         _this.moleculeDrag = false;

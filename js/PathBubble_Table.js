@@ -291,6 +291,14 @@ PATHBUBBLES.Table.prototype = {
             this.closeMenuText.font = '15pt Calibri';
             this.closeMenuText.draw(ctx, this.closeMenu.x, this.closeMenu.y);
         }
+        if(this.ungroupMenu.HighLight_State)
+        {
+            this.ungroupMenuText.text = "G";
+        }
+        else
+        {
+            this.ungroupMenuText.text = "U";
+        }
         if(this.ungroupMenu && scale == 1)
         {
             this.ungroupMenu.draw(ctx, scale);
