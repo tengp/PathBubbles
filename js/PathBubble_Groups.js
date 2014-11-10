@@ -34,6 +34,8 @@ PATHBUBBLES.Groups.prototype = {
         }
     },
     addToGroup: function (object) {
+        if(this.children.indexOf(object)!== -1)
+            return;
         if (object.parent instanceof PATHBUBBLES.Groups) {
             var temp = object.parent;
             var childrenObjs = [];
