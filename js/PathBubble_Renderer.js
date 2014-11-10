@@ -23,6 +23,13 @@ PATHBUBBLES.Renderer.prototype = {
 
     clear: function () {
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+        var grd = this.ctx.createLinearGradient(0, 0, 0, this.canvasHeight);
+        grd.addColorStop(0, "#3E4041");
+        grd.addColorStop(1, "#899DAB");
+
+        this.ctx.fillStyle = grd;
+        this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
+
         this.nav_ctx.fillStyle = "#666699";
         this.nav_ctx.fillRect(0, 0, 300, 150);
         this.nav_ctx.clearRect(0, 0, this.navCanvasWidth, this.navCanvasHeight);
