@@ -35,7 +35,7 @@ PATHBUBBLES.Bubble = function (x, y, w, h, strokeColor, fillColor, cornerRadius,
 //    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
     this.button.addButton(tmp);
 
-    this.name = text;
+    this.name = this.id;
     this.title = new PATHBUBBLES.Title(this, this.name);
     this.__objectsAdded = [];
     this.__objectsRemoved = [];
@@ -172,11 +172,9 @@ PATHBUBBLES.Bubble.prototype = {
             alert("It is not Grouped, right now!");
         }
         else {
-            var group = this.parent;
             this.GROUP = false;
-
             this.x =this.parent.children[this.parent.children.length -1].x + 20;
-            group.removeObject(this);
+            this.parent.removeObject(this);
             this.parent = scene;
 //            var tempdata = [];
 //            for (var i = 0; i < group.children.length; ++i) {

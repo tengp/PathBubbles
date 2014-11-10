@@ -49,13 +49,13 @@ PATHBUBBLES.Interaction = function (renderer) {
         var mx = mouse.x;
         var my = mouse.y;
         renderer.valid = false;
-        if (_this.selection[0]) {
-            if (_this.selection[0].shape.HighLight_State)
-                _this.selection[0].shape.HighLight_State = false;
-            if (_this.selection[0].bubbleView && _this.selection[0] instanceof PATHBUBBLES.Bubble) {
-                _this.selection[0].bubbleView.HighLight_State = false;
-            }
-        }
+//        if (_this.selection[0]) {
+//            if (_this.selection[0].shape.HighLight_State)
+//                _this.selection[0].shape.HighLight_State = false;
+//            if (_this.selection[0].bubbleView && _this.selection[0] instanceof PATHBUBBLES.Bubble) {
+//                _this.selection[0].bubbleView.HighLight_State = false;
+//            }
+//        }
 
         for (i = PATHBUBBLES.objects.length - 1; i >= 0; i--) {
             if (PATHBUBBLES.objects[i] === null)
@@ -341,7 +341,8 @@ PATHBUBBLES.Interaction = function (renderer) {
                             this.style.cursor = 'se-resize';
                             break;
                     }
-                    _this.selection[0].shape.HighLight_State = true;
+                    if(_this.selection[0].shape)
+                        _this.selection[0].shape.HighLight_State = true;
                     return;
                 }
 
@@ -354,7 +355,8 @@ PATHBUBBLES.Interaction = function (renderer) {
     }, true);
     canvas.addEventListener('mouseup', function (e) {
         this.style.cursor = 'auto';
-        if (_this.selection[0] && !_this.groupResize) {
+
+        if (_this.selection[0] && !_this.groupResize && PATHBUBBLES.objects.indexOf(_this.selection[0]) !== -1) {
             for (var i = 0; i < PATHBUBBLES.objects.length; ++i) {
                 if ((_this.selection[0] !== PATHBUBBLES.objects[i])
                     && (_this.selection[0] instanceof PATHBUBBLES.Bubble
@@ -371,15 +373,7 @@ PATHBUBBLES.Interaction = function (renderer) {
                             PATHBUBBLES.objects[i]  instanceof PATHBUBBLES.Groups
                             || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing) {
                             if (PATHBUBBLES.objects[i].GROUP) {
-                                if (PATHBUBBLES.objects[i].parent instanceof PATHBUBBLES.Groups) {
-//                                    if (PATHBUBBLES.objects[i].parent == _this.selection[0].parent) {
-//                                        var object = _this.selection[0];
-//                                        _this.selection[0].ungroup();
-//                                        PATHBUBBLES.objects[i].parent.addToGroup(object);
-//                                    }
-//                                    else
-                                        PATHBUBBLES.objects[i].parent.addToGroup(_this.selection[0]);
-                                }
+                                PATHBUBBLES.objects[i].parent.addToGroup(_this.selection[0]);
                             }
                             else if(!PATHBUBBLES.objects[i].GROUP && _this.selection[0].GROUP )
                             {
@@ -390,8 +384,17 @@ PATHBUBBLES.Interaction = function (renderer) {
                             else if(!PATHBUBBLES.objects[i].GROUP && !_this.selection[0].GROUP )
                             {
                                 var group = new PATHBUBBLES.Groups();
-                                group.addToGroup(PATHBUBBLES.objects[i]);
-                                group.addToGroup(_this.selection[0]);
+                                if(PATHBUBBLES.objects[i].x < _this.selection[0].x)
+                                {
+                                    group.addToGroup(PATHBUBBLES.objects[i]);
+                                    group.addToGroup(_this.selection[0]);
+                                }
+                                else
+                                {
+                                    group.addToGroup(_this.selection[0]);
+                                    group.addToGroup(PATHBUBBLES.objects[i]);
+                                }
+
                                 scene.addObject(group);
                             }
                         }
@@ -399,6 +402,14 @@ PATHBUBBLES.Interaction = function (renderer) {
                 }
             }
         }
+        if (_this.selection[0]) {
+            if (_this.selection[0].shape.HighLight_State)
+                _this.selection[0].shape.HighLight_State = false;
+            if (_this.selection[0].bubbleView && _this.selection[0] instanceof PATHBUBBLES.Bubble) {
+                _this.selection[0].bubbleView.HighLight_State = false;
+            }
+        }
+        _this.selection[0] = null;
         _this.bubbleViewDrag = false;
         _this.dragging = false;
         _this.moleculeDrag = false;

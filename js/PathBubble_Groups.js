@@ -17,13 +17,15 @@ PATHBUBBLES.Groups.prototype = {
 
     constructor: PATHBUBBLES.Groups,
     removeObject: function (object) {
+//        console.log(object.id);
         var index = this.children.indexOf(object);
-        this.children.splice(index, 1);
+        if(index !== -1)
+            this.children.splice(index, 1);
         if(this.children.length==1)
         {
-            var objectC = this.children[0];
-            objectC.parent = scene;
-            objectC.GROUP = false;
+//            var objectC = this.children[0];
+            this.children[0].parent = scene;
+            this.children[0].GROUP = false;
             scene.removeBasicObject(this);
             return;
         }
@@ -63,7 +65,8 @@ PATHBUBBLES.Groups.prototype = {
             object.offsetY = this.offsetY;
             if(!this.children.length)
             {
-                this.children.push(object);
+                if(this.children.indexOf(object)== -1)
+                    this.children.push(object);
             }
             else
             {
@@ -141,15 +144,15 @@ PATHBUBBLES.Groups.prototype = {
     },
     draw: function (ctx, scale) {
 
-        if (this.shape.points.length) {
-            this.setOffset();
-            //ctx.save();
-//            this.shape.draw(ctx, scale);
-//
-//            for (var i = 0; i < this.children.length; ++i) {
-//                this.children[i].draw(ctx, scale);
-//            }
-            //ctx.restore();
-        }
+//        if (this.shape.points.length) {
+//            this.setOffset();
+//            //ctx.save();
+////            this.shape.draw(ctx, scale);
+////
+////            for (var i = 0; i < this.children.length; ++i) {
+////                this.children[i].draw(ctx, scale);
+////            }
+//            //ctx.restore();
+//        }
     }
 };

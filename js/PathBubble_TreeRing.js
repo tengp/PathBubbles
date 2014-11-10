@@ -398,11 +398,10 @@ PATHBUBBLES.TreeRing.prototype = {
             alert("It is not Grouped, right now!");
         }
         else {
-            var group = this.parent;
-            this.GROUP = false;
 
+            this.GROUP = false;
             this.x =this.parent.children[this.parent.children.length -1].x + 20;
-            group.removeObject(this);
+            this.parent.removeObject(this);
             this.parent = scene;
 
 ////            var object = this;
