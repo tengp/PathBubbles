@@ -6,7 +6,7 @@ html { height:100%;  }
 body { font-family: sans-serif; background:#111; margin: 0;
     overflow: hidden; }
 
-#navigationBar canvas {margin:0 0 -5px 0; z-index:300;background:#282828}    /*background:#666699*/
+#navigationBar canvas {margin:0 0 -5px 0; z-index:300;background:#282828;}    /*background:#666699*/
 
 .bubble { border:solid 0 red; float:left; margin:0;}
 .compare { border:solid 0 red; float:left; margin:0;}

@@ -362,62 +362,76 @@ PATHBUBBLES.TreeRing.prototype = {
         if (!_this.GROUP)
             _this.deleteBubble();
         else {
-            var id = _this.id;
-            var group = _this.parent;
-            _this.GROUP = false;
-            var tempdata = [];
-            for (var i = 0; i < group.children.length; ++i) {
-                if (group.children[i].id !== _this.id) {
-                    var a = group.children[i];
-                    a.parent = undefined;
-                    tempdata.push(a);
-                }
-            }
-            _this.parent = undefined;
+            _this.ungroup();
             _this.deleteBubble();
-            group.tempPoints.length = 0;
-            group.arranged.length = 0;
-            group.children.length = 0;
-            for (var i = 0; i < tempdata.length; ++i) {
-                group.RESET = true;
-                group.addToGroup(tempdata[i]);
-            }
-            group.RESET = false;
-            scene.addObject(group);
         }
+//        var _this =this;
+//        if (!_this.GROUP)
+//            _this.deleteBubble();
+//        else {
+//            var id = _this.id;
+//            var group = _this.parent;
+//            _this.GROUP = false;
+//            var tempdata = [];
+//            for (var i = 0; i < group.children.length; ++i) {
+//                if (group.children[i].id !== _this.id) {
+//                    var a = group.children[i];
+//                    a.parent = undefined;
+//                    tempdata.push(a);
+//                }
+//            }
+//            _this.parent = undefined;
+//            _this.deleteBubble();
+//            group.tempPoints.length = 0;
+//            group.arranged.length = 0;
+//            group.children.length = 0;
+//            for (var i = 0; i < tempdata.length; ++i) {
+//                group.RESET = true;
+//                group.addToGroup(tempdata[i]);
+//            }
+//            group.RESET = false;
+//            scene.addObject(group);
+//        }
     },
     ungroup: function () {
         if (!this.GROUP) {
             alert("It is not Grouped, right now!");
         }
         else {
-//            var object = this;
-//            if ($('#svg' + this.id).length)
-//                $('#svg' + this.id).remove();
-//            if ($('#menuView' + this.id).length)
-//                $('#menuView' + this.id).remove();
-//            this.removeObject(this);
-//            scene.addObject(object);
             var group = this.parent;
             this.GROUP = false;
-            var tempdata = [];
-            for (var i = 0; i < group.children.length; ++i) {
-                if (group.children[i].id !== this.id) {
-                    var a = group.children[i];
-                    a.parent = undefined;
-                    tempdata.push(a);
-                }
-            }
-            this.parent = undefined;     //just has one set
-            group.tempPoints.length = 0;
-            group.arranged.length = 0;
-            group.children.length = 0;
-            for (var i = tempdata.length - 1; i >= 0; i--) {
-                group.RESET = true;
-                group.addToGroup(tempdata[i]);
-            }
-            group.RESET = false;
-            scene.addObject(group);
+
+            this.x =this.parent.children[this.parent.children.length -1].x + 20;
+            group.removeObject(this);
+            this.parent = scene;
+
+////            var object = this;
+////            if ($('#svg' + this.id).length)
+////                $('#svg' + this.id).remove();
+////            if ($('#menuView' + this.id).length)
+////                $('#menuView' + this.id).remove();
+////            this.removeObject(this);
+////            scene.addObject(object);
+//            var group = this.parent;
+//            this.GROUP = false;
+//            var tempdata = [];
+//            for (var i = 0; i < group.children.length; ++i) {
+//                if (group.children[i].id !== this.id) {
+//                    var a = group.children[i];
+//                    a.parent = undefined;
+//                    tempdata.push(a);
+//                }
+//            }
+//            this.parent = undefined;     //just has one set
+//            group.tempPoints.length = 0;
+//            group.arranged.length = 0;
+//            group.children.length = 0;
+//            for (var i = tempdata.length - 1; i >= 0; i--) {
+//                group.RESET = true;
+//                group.addToGroup(tempdata[i]);
+//            }
+//            group.RESET = false;
+//            scene.addObject(group);
         }
     },
     deleteBubble: function () {

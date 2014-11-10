@@ -265,33 +265,33 @@ PATHBUBBLES.Interaction = function (renderer) {
             }
 
             if (_this.selection[0].GROUP) {
-                var id = _this.selection[0].id;
-
-                for (var i = 0; i < _this.selection[0].parent.shape.points.length; ++i) {
-                    if (_this.selection[0].parent.shape.points[i].bubbleId === id) {
-                        var x = _this.selection[0].x - _this.selection[0].parent.offsetX;
-                        var y = _this.selection[0].y - _this.selection[0].parent.offsetY;
-                        if (_this.selection[0].parent.shape.points[i].bubblePos == "left") {
-                            _this.selection[0].parent.shape.points[i].x = x;
-                            _this.selection[0].parent.shape.points[i].y = y;
-                            continue;
-                        }
-                        if (_this.selection[0].parent.shape.points[i].bubblePos == "right") {
-                            _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
-                            _this.selection[0].parent.shape.points[i].y = y;
-                            continue;
-                        }
-                        if (_this.selection[0].parent.shape.points[i].bubblePos == "bleft") {
-                            _this.selection[0].parent.shape.points[i].x = x;
-                            _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
-                            continue;
-                        }
-                        if (_this.selection[0].parent.shape.points[i].bubblePos == "bright") {
-                            _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
-                            _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
-                        }
-                    }
-                }
+//                var id = _this.selection[0].id;
+//
+//                for (var i = 0; i < _this.selection[0].parent.shape.points.length; ++i) {
+//                    if (_this.selection[0].parent.shape.points[i].bubbleId === id) {
+//                        var x = _this.selection[0].x - _this.selection[0].parent.offsetX;
+//                        var y = _this.selection[0].y - _this.selection[0].parent.offsetY;
+//                        if (_this.selection[0].parent.shape.points[i].bubblePos == "left") {
+//                            _this.selection[0].parent.shape.points[i].x = x;
+//                            _this.selection[0].parent.shape.points[i].y = y;
+//                            continue;
+//                        }
+//                        if (_this.selection[0].parent.shape.points[i].bubblePos == "right") {
+//                            _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
+//                            _this.selection[0].parent.shape.points[i].y = y;
+//                            continue;
+//                        }
+//                        if (_this.selection[0].parent.shape.points[i].bubblePos == "bleft") {
+//                            _this.selection[0].parent.shape.points[i].x = x;
+//                            _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
+//                            continue;
+//                        }
+//                        if (_this.selection[0].parent.shape.points[i].bubblePos == "bright") {
+//                            _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
+//                            _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
+//                        }
+//                    }
+//                }
                 _this.groupResize = true;
             }
             renderer.valid = false;
@@ -371,16 +371,23 @@ PATHBUBBLES.Interaction = function (renderer) {
                             || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing) {
                             if (PATHBUBBLES.objects[i].GROUP) {
                                 if (PATHBUBBLES.objects[i].parent instanceof PATHBUBBLES.Groups) {
-                                    if (PATHBUBBLES.objects[i].parent == _this.selection[0].parent) {
-                                        var object = _this.selection[0];
-                                        _this.selection[0].ungroup();
-                                        PATHBUBBLES.objects[i].parent.addToGroup(object);
-                                    }
-                                    else
+//                                    if (PATHBUBBLES.objects[i].parent == _this.selection[0].parent) {
+//                                        var object = _this.selection[0];
+//                                        _this.selection[0].ungroup();
+//                                        PATHBUBBLES.objects[i].parent.addToGroup(object);
+//                                    }
+//                                    else
                                         PATHBUBBLES.objects[i].parent.addToGroup(_this.selection[0]);
                                 }
                             }
-                            else {
+                            else if(!PATHBUBBLES.objects[i].GROUP && _this.selection[0].GROUP )
+                            {
+                                if (_this.selection[0].parent instanceof PATHBUBBLES.Groups) {
+                                    _this.selection[0].parent.addToGroup(PATHBUBBLES.objects[i]);
+                                }
+                            }
+                            else if(!PATHBUBBLES.objects[i].GROUP && !_this.selection[0].GROUP )
+                            {
                                 var group = new PATHBUBBLES.Groups();
                                 group.addToGroup(PATHBUBBLES.objects[i]);
                                 group.addToGroup(_this.selection[0]);

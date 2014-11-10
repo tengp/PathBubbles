@@ -15,7 +15,7 @@ PATHBUBBLES.Scene.prototype = Object.create(PATHBUBBLES.Scene.prototype);
 
 PATHBUBBLES.Scene.prototype = {
     addObject: function (object) {
-        object.parentObject = this;
+        object.parent = this;
         if (PATHBUBBLES.objects.indexOf(object) == -1)
             PATHBUBBLES.objects.push(object);
         var index = this.children.indexOf(object);
@@ -48,12 +48,7 @@ PATHBUBBLES.Scene.prototype = {
         }
     },
     removeBasicObject: function (object) {        //fix a bug
-        if (object instanceof PATHBUBBLES.Groups) {
-            for (var c = 0; c < object.children.length; c++) {
-                this.removeBasicObject(object.children[ c ]);
-            }
-        }
-        else if (object instanceof PATHBUBBLES.Bubble) {
+        if (object instanceof PATHBUBBLES.Bubble) {
             if (object.menu.HighLight_State)
                 object.button.hide();
             object.menu.HighLight_State = false;

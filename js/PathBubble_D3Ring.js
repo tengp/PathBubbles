@@ -1191,58 +1191,7 @@ PATHBUBBLES.D3Ring.prototype = {
                     }
                 }
 
-                if (_this.parent.HIDE==undefined ||_this.parent.HIDE!==true) {     //Color Bar for ortholog
 
-                    var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
-                        scaleWidth = 30 - scaleMargin.left - scaleMargin.right,
-                        scaleHeight = 170 - scaleMargin.top - scaleMargin.bottom;
-                    var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
-                    var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
-
-                    var sectionHeight = 20;
-                    var texts = ["Partial","Complete","Empty"];
-                    var newData = [];
-                    for (var i = 0; i< 3; i++) {
-                        var obj = {};
-                        obj.data = i*20;
-                        obj.text = texts[i];
-                        obj.color = colors[i];
-                        newData.push(obj);
-                    }
-                    var colorScaleBar = svg.append("g")
-                        .attr("class", "colorScaleBar")
-                        .attr("transform", "translate(" + (width - 30-33) + "," + (  0  ) + ")")
-                        .attr("width", BarWidth)
-                        .attr("height", BarHeight);
-
-                    colorScaleBar.selectAll('rect')
-                        .data(newData)
-                        .enter()
-                        .append('rect')
-                        .attr("x", 0)
-                        .attr("y", function (d) {
-                            return d.data;
-                        })
-                        .attr("height", sectionHeight)
-                        .attr("width", scaleWidth)
-
-                        .attr('fill', function (d) {
-                            return d.color;
-                        });
-                    colorScaleBar.selectAll('text')
-                        .data(newData)
-                        .enter().append("text")
-                        .style("font-size", 10)
-                        .attr("transform", "translate(" + (scaleWidth / 2 + 10) + "," + (sectionHeight) + ")")
-                        .attr("y", function (d, i) {
-                            return d.data - 5;
-                        })
-                        .attr("dy", ".1em")
-                        .style("text-anchor", "start")
-                        .text(function (d, i) {
-                            return d.text;
-                        });
-                }
                 if($('#menuView' + _this.parent.id).find('#operateText').val() == "showTitle")
                 {
                     d3.select("#svg" + _this.parent.id).selectAll(".link").style("opacity", 0);
@@ -1258,6 +1207,58 @@ PATHBUBBLES.D3Ring.prototype = {
                     $('#menuView' + _this.parent.id).find('#crossTalkLevel').show();
                 }
             });
+        }
+        if (_this.parent.HIDE==undefined ||_this.parent.HIDE!==true) {     //Color Bar for ortholog
+
+            var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
+                scaleWidth = 30 - scaleMargin.left - scaleMargin.right,
+                scaleHeight = 170 - scaleMargin.top - scaleMargin.bottom;
+            var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
+            var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
+
+            var sectionHeight = 20;
+            var texts = ["Partial","Complete","Empty"];
+            var newData = [];
+            for (var i = 0; i< 3; i++) {
+                var obj = {};
+                obj.data = i*20;
+                obj.text = texts[i];
+                obj.color = colors[i];
+                newData.push(obj);
+            }
+            var colorScaleBar = svg.append("g")
+                .attr("class", "colorScaleBar")
+                .attr("transform", "translate(" + (width - 30-33) + "," + (  0  ) + ")")
+                .attr("width", BarWidth)
+                .attr("height", BarHeight);
+
+            colorScaleBar.selectAll('rect')
+                .data(newData)
+                .enter()
+                .append('rect')
+                .attr("x", 0)
+                .attr("y", function (d) {
+                    return d.data;
+                })
+                .attr("height", sectionHeight)
+                .attr("width", scaleWidth)
+
+                .attr('fill', function (d) {
+                    return d.color;
+                });
+            colorScaleBar.selectAll('text')
+                .data(newData)
+                .enter().append("text")
+                .style("font-size", 10)
+                .attr("transform", "translate(" + (scaleWidth / 2 + 10) + "," + (sectionHeight) + ")")
+                .attr("y", function (d, i) {
+                    return d.data - 5;
+                })
+                .attr("dy", ".1em")
+                .style("text-anchor", "start")
+                .text(function (d, i) {
+                    return d.text;
+                });
         }
         d3.select(self.frameElement).style("height", height + "px");
     },

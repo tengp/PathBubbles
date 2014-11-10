@@ -60,6 +60,15 @@ PATHBUBBLES.Renderer.prototype = {
                 for (var i = scene.children.length - 1; i >= 0; i--) {
                     if (scene.children[i] instanceof PATHBUBBLES.Bubble || scene.children[i] instanceof PATHBUBBLES.Groups
                         || scene.children[i] instanceof PATHBUBBLES.TreeRing || scene.children[i] instanceof PATHBUBBLES.Table) {
+                        if(scene.children[i].GROUP)
+                        {
+                            var index = scene.children.indexOf(scene.children[i].parent);
+                            if(index == -1)
+                            {
+                                scene.children[i].GROUP = false;
+                                scene.children[i].parent = scene;
+                            }
+                        }
                         scene.children[i].draw(_this.ctx, 1);
                         scene.children[i].draw(_this.nav_ctx, this.navCanvasHeight / this.canvasHeight);
                     }
