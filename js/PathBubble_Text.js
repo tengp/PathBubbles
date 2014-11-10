@@ -21,6 +21,10 @@ PATHBUBBLES.Text.prototype = {
         this.font = num + 'pt Calibri';
     },
     draw: function (ctx, x, y) {
+//        if(x==undefined)
+//            x=this.x;
+//        if(y==undefined)
+//            y=this.y;
 //        ctx.save();	// save the context so we don't mess up others
         ctx.font = this.font;
         // textAlign aligns text horizontally relative to placement

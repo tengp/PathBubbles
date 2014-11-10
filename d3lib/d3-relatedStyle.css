@@ -46,6 +46,13 @@ path {
     stroke: #2ca02c;
 }
 
+.titleLink {
+    stroke: steelblue;
+    stroke-opacity: .4;
+    fill: none;
+    pointer-events: none;
+}
+
 svg .colorScaleBar {
     xborder:1px solid red;
 }

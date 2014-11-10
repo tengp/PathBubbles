@@ -18,15 +18,27 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     this.lineWidth = 10;
 
     this.shape = new PATHBUBBLES.Shape.Rectangle(this, this.x, this.y, this.w, this.h, this.strokeColor, this.fillColor, this.lineWidth, this.cornerRadius);
-    this.menu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2, this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1) || null;
-//    this.menuBar = new PATHBUBBLES.Menu(this);
+    this.menu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2, this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1);
+    this.menuText = new PATHBUBBLES.Text(this, "M");
+    this.closeMenu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2 - this.cornerRadius -5, this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1);
+    this.closeMenuText = new PATHBUBBLES.Text(this, "X");
+    this.ungroupMenu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2 - 2*(this.cornerRadius +5), this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1);
+    this.ungroupMenuText = new PATHBUBBLES.Text(this, "U");
+//    this.closeMenuText.x = this.x + this.w - this.cornerRadius / 2 - this.cornerRadius -5;
+//    this.closeMenuText.y = this.y + this.cornerRadius / 2;
+
     this.button = new PATHBUBBLES.Button(this);   //Button 0 for file selection
     var tmp = '';
+    tmp += '<select id="operateText" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
+    tmp += '<option value="showTitle">Show Title</option>';
+    tmp += '<option value="showCrossTalk">Show CrossTalk</option>';
+    tmp += '</select>';
+
     tmp += '<select id="crossTalkLevel" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '</select>';
 
-    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 50 + 'px; ">';
-    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 75 + 'px; ">';
+//    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 50 + 'px; ">';
+//    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 75 + 'px; ">';
     tmp +='<div id="orthologTypeDiv" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<select id="file" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<option value="Default">Choose Species</option>';
@@ -70,6 +82,7 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     this.dataName = dataName || null;
     this.dataType = dataType || null;
     this.selectedData = selectedData || null;
+//    this.operateText = "showTitle";
 };
 
 PATHBUBBLES.TreeRing.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
@@ -88,7 +101,7 @@ PATHBUBBLES.TreeRing.prototype = {
 //        $menuBarbubble.find("#customExpDiv").find("input").attr("id", "customExp" + this.id);     //for="customOrth"
         if (!this.dataType)
             this.dataType = "Gallus";
-
+//        $menuBarbubble.find('#operateText').val(this.operateText);
         this.treeRing = new PATHBUBBLES.D3Ring(this, Math.min(this.w, this.h) - 30, this.dataType, this.dataName);
         if (this.selectedData !== undefined && this.selectedData !== null) {
             this.treeRing.selectedData = this.selectedData;
@@ -122,6 +135,7 @@ PATHBUBBLES.TreeRing.prototype = {
         var _this = this;
         var $menuBarbubble = $('#menuView' + this.id);
         $menuBarbubble.find('#file').change(function () {
+            var operateText = $menuBarbubble.find('#operateText').val();
             var val = $(this).val();
             if (val == undefined)
                 return;
@@ -140,6 +154,16 @@ PATHBUBBLES.TreeRing.prototype = {
             _this.treeRing = new PATHBUBBLES.D3Ring(_this, Math.min(_this.w, _this.h) - 30, val, _this.dataName);
             _this.treeRing.file = "./data/Ortholog/" + val + "/" + _this.dataName + ".json";
             _this.treeRing.showCrossTalkLevel = parseInt($menuBarbubble.find('#crossTalkLevel').val());
+            if( operateText=="showTitle")
+            {
+                _this.treeRing.showTitle();
+                $menuBarbubble.find('#crossTalkLevel').hide();
+            }
+            else if(operateText == "showCrossTalk")
+            {
+                _this.treeRing.showCrossTalk();
+                $menuBarbubble.find('#crossTalkLevel').show();
+            }
             _this.treeRing.ChangeLevel = true;
             if (customExpression) {
                 _this.treeRing.customExpression = customExpression;
@@ -188,37 +212,50 @@ PATHBUBBLES.TreeRing.prototype = {
             }
             _this.treeRing.init();
         });
-        $menuBarbubble.find('#delete').on('click', function () {
-            if (!_this.GROUP)
-                _this.deleteBubble();
-            else {
-                var id = _this.id;
-                var group = _this.parent;
-                _this.GROUP = false;
-                var tempdata = [];
-                for (var i = 0; i < group.children.length; ++i) {
-                    if (group.children[i].id !== _this.id) {
-                        var a = group.children[i];
-                        a.parent = undefined;
-                        tempdata.push(a);
-                    }
-                }
-                _this.parent = undefined;
-                _this.deleteBubble();
-                group.tempPoints.length = 0;
-                group.arranged.length = 0;
-                group.children.length = 0;
-                for (var i = 0; i < tempdata.length; ++i) {
-                    group.RESET = true;
-                    group.addToGroup(tempdata[i]);
-                }
-                group.RESET = false;
-                scene.addObject(group);
+        $menuBarbubble.find('#operateText').change(function (){
+            var val = $(this).val();
+            if(val == "showTitle")
+            {
+                _this.treeRing.showTitle();
+                $menuBarbubble.find('#crossTalkLevel').hide();
+            }
+            else if(val == "showCrossTalk")
+            {
+                  _this.treeRing.showCrossTalk();
+                $menuBarbubble.find('#crossTalkLevel').show();
             }
         });
-        $menuBarbubble.find('#ungroup').on('click', function () {
-            _this.ungroup();
-        });
+//        $menuBarbubble.find('#delete').on('click', function () {
+//            if (!_this.GROUP)
+//                _this.deleteBubble();
+//            else {
+//                var id = _this.id;
+//                var group = _this.parent;
+//                _this.GROUP = false;
+//                var tempdata = [];
+//                for (var i = 0; i < group.children.length; ++i) {
+//                    if (group.children[i].id !== _this.id) {
+//                        var a = group.children[i];
+//                        a.parent = undefined;
+//                        tempdata.push(a);
+//                    }
+//                }
+//                _this.parent = undefined;
+//                _this.deleteBubble();
+//                group.tempPoints.length = 0;
+//                group.arranged.length = 0;
+//                group.children.length = 0;
+//                for (var i = 0; i < tempdata.length; ++i) {
+//                    group.RESET = true;
+//                    group.addToGroup(tempdata[i]);
+//                }
+//                group.RESET = false;
+//                scene.addObject(group);
+//            }
+//        });
+//        $menuBarbubble.find('#ungroup').on('click', function () {
+//            _this.ungroup();
+//        });
         $menuBarbubble.find('#loadOrth').on('click', function () {
             _this.selected_file = $menuBarbubble.find('#customOrth').get(0).files[0];
 //            _this.selected_file = $menuBarbubble.find('#customOrth' + _this.id).get(0).files[0];
@@ -246,6 +283,16 @@ PATHBUBBLES.TreeRing.prototype = {
                     _this.treeRing.file = "./data/Ortholog/" + val + "/" + _this.dataName + ".json";
                     _this.treeRing.showCrossTalkLevel = parseInt($menuBarbubble.find('#crossTalkLevel').val());
                     _this.treeRing.customOrtholog = orthlogData;
+                    if($menuBarbubble.find('#operateText').val() == "showTitle")
+                    {
+                        _this.treeRing.showTitle();
+                        $menuBarbubble.find('#crossTalkLevel').hide();
+                    }
+                    else if($menuBarbubble.find('#operateText').val() == "showCrossTalk")
+                    {
+                        _this.treeRing.showCrossTalk();
+                        $menuBarbubble.find('#crossTalkLevel').show();
+                    }
                     _this.treeRing.ChangeLevel = true;
                     if (customExpression) {
                         _this.treeRing.customExpression = customExpression;
@@ -291,6 +338,16 @@ PATHBUBBLES.TreeRing.prototype = {
                     _this.treeRing.customExpression = expressionData;
                     _this.treeRing.ChangeLevel = true;
                     _this.treeRing.showCrossTalkLevel = parseInt($menuBarbubble.find('#crossTalkLevel').val());
+                    if($menuBarbubble.find('#operateText').val() == "showTitle")
+                    {
+                        _this.treeRing.showTitle();
+                        $menuBarbubble.find('#crossTalkLevel').hide();
+                    }
+                    else if($menuBarbubble.find('#operateText').val() == "showCrossTalk")
+                    {
+                        _this.treeRing.showCrossTalk();
+                        $menuBarbubble.find('#crossTalkLevel').show();
+                    }
                     if (customOrtholog) {
                         _this.treeRing.customOrtholog = customOrtholog;
                     }
@@ -299,6 +356,35 @@ PATHBUBBLES.TreeRing.prototype = {
                 });
             }
         });
+    },
+    deleteThisBubble: function (){
+        var _this =this;
+        if (!_this.GROUP)
+            _this.deleteBubble();
+        else {
+            var id = _this.id;
+            var group = _this.parent;
+            _this.GROUP = false;
+            var tempdata = [];
+            for (var i = 0; i < group.children.length; ++i) {
+                if (group.children[i].id !== _this.id) {
+                    var a = group.children[i];
+                    a.parent = undefined;
+                    tempdata.push(a);
+                }
+            }
+            _this.parent = undefined;
+            _this.deleteBubble();
+            group.tempPoints.length = 0;
+            group.arranged.length = 0;
+            group.children.length = 0;
+            for (var i = 0; i < tempdata.length; ++i) {
+                group.RESET = true;
+                group.addToGroup(tempdata[i]);
+            }
+            group.RESET = false;
+            scene.addObject(group);
+        }
     },
     ungroup: function () {
         if (!this.GROUP) {
@@ -349,25 +435,30 @@ PATHBUBBLES.TreeRing.prototype = {
             width: 240,
             height: 265
         });
-        $menuBarbubble.find('#crossTalkLevel').css({
+        $menuBarbubble.find('#operateText').css({
             left: 10,
             top: 25,
             width: 220
         });
-        $menuBarbubble.find('#ungroup').css({
+        $menuBarbubble.find('#crossTalkLevel').css({
             left: 10,
             top: 50,
             width: 220
         });
-
-        $menuBarbubble.find('#delete').css({
-            left: 10,
-            top: 75,
-            width: 220
-        });
+//        $menuBarbubble.find('#ungroup').css({
+//            left: 10,
+//            top: 50,
+//            width: 220
+//        });
+//
+//        $menuBarbubble.find('#delete').css({
+//            left: 10,
+//            top: 75,
+//            width: 220
+//        });
         $menuBarbubble.find('#orthologTypeDiv').css({
             left: 10,
-            top: 100,
+            top: 75,
             width: 220
         });
 
@@ -386,24 +477,60 @@ PATHBUBBLES.TreeRing.prototype = {
             top: 50,
             width: 220
         });
-        if(this.HIDE!==undefined&&this.HIDE==true)
+
+        if(this.checkUIElementVisible($menuBarbubble.find('#crossTalkLevel')) )
         {
-            $menuBarbubble.find('#orthologTypeDiv').hide();
-            $menuBarbubble.find('#expressionTypeDiv').css({
-                left: 10,
-                top: 100,
-                width: 220
-            });
+            if(this.HIDE!==undefined&&this.HIDE==true)
+            {
+                $menuBarbubble.find('#orthologTypeDiv').hide();
+                $menuBarbubble.find('#expressionTypeDiv').css({
+                    left: 10,
+                    top: 75,
+                    width: 220
+                });
+            }
+            else
+            {
+                $menuBarbubble.find('#orthologTypeDiv').show();
+                $menuBarbubble.find('#expressionTypeDiv').css({
+                    left: 10,
+                    top: 155,
+                    width: 220
+                });
+            }
         }
         else
         {
-            $menuBarbubble.find('#orthologTypeDiv').show();
-            $menuBarbubble.find('#expressionTypeDiv').css({
-                left: 10,
-                top: 175,
-                width: 220
-            });
+            if(this.HIDE!==undefined&&this.HIDE==true)
+            {
+                $menuBarbubble.find('#orthologTypeDiv').css({
+                    left: 10,
+                    top: 55,
+                    width: 220
+                });
+                $menuBarbubble.find('#orthologTypeDiv').hide();
+                $menuBarbubble.find('#expressionTypeDiv').css({
+                    left: 10,
+                    top: 55,
+                    width: 220
+                });
+            }
+            else
+            {
+                $menuBarbubble.find('#orthologTypeDiv').css({
+                    left: 10,
+                    top: 55,
+                    width: 220
+                });
+                $menuBarbubble.find('#orthologTypeDiv').show();
+                $menuBarbubble.find('#expressionTypeDiv').css({
+                    left: 10,
+                    top: 135,
+                    width: 220
+                });
+            }
         }
+
 
         $menuBarbubble.find('#minMaxRatio').css({
             left: 0,
@@ -421,9 +548,13 @@ PATHBUBBLES.TreeRing.prototype = {
             width: 220
         });
     },
+    checkUIElementVisible: function (element) {
+        return ((element.css('display') !== 'none') && (element.css('visibility') !== 'hidden'));
+    },
     draw: function (ctx, scale) {
         this.setOffset();
         ctx.save();
+
         this.shape.draw(ctx, scale);
         var space = 6;
         $('#svg' + this.id).css({
@@ -455,12 +586,30 @@ PATHBUBBLES.TreeRing.prototype = {
         }
 
         ctx.save();
-        if (this.menu && scale == 1) {
+        if(this.menu && scale == 1)
+        {
             this.menu.draw(ctx, scale);
+            this.menuText.fillColor = "#f00";
+            this.menuText.font = '15pt Calibri';
+            this.menuText.draw(ctx, this.menu.x, this.menu.y);
         }
-        if (this.menu.HighLight_State && scale == 1) {
-//            this.menuBar.draw(ctx, scale);
+        if (this.closeMenu && scale == 1) {
+            this.closeMenu.draw(ctx, scale);
+            this.closeMenuText.fillColor = "#f00";
+            this.closeMenuText.font = '15pt Calibri';
+            this.closeMenuText.draw(ctx, this.closeMenu.x, this.closeMenu.y);
         }
+        if(this.ungroupMenu && scale == 1)
+        {
+            this.ungroupMenu.draw(ctx, scale);
+            this.ungroupMenuText.fillColor = "#f00";
+            this.ungroupMenuText.font = '15pt Calibri';
+            this.ungroupMenuText.draw(ctx, this.ungroupMenu.x, this.ungroupMenu.y);
+        }
+
+//        if (this.menu.HighLight_State && scale == 1) {
+////            this.menuBar.draw(ctx, scale);
+//        }
         if (this.menu.HighLight_State) {
             this.updateMenu();
             this.button.show();
@@ -492,6 +641,10 @@ PATHBUBBLES.TreeRing.prototype = {
         this.shape.y = this.y;
         this.menu.x = this.x + this.w - this.cornerRadius / 2;
         this.menu.y = this.y + this.cornerRadius / 2;
+        this.ungroupMenu.x = this.x + this.w - this.cornerRadius / 2 - (this.cornerRadius +5)*2;
+        this.ungroupMenu.y = this.y + this.cornerRadius / 2;
+        this.closeMenu.x = this.x + this.w - this.cornerRadius / 2 - this.cornerRadius -5;
+        this.closeMenu.y = this.y + this.cornerRadius / 2;
         this.shape.w = this.w;
         this.shape.h = this.h;
     },
@@ -557,6 +710,16 @@ PATHBUBBLES.TreeRing.prototype = {
         var x = this.menu.x;
         var y = this.menu.y;
         return  (x - mx ) * (x - mx) + (y - my ) * (y - my) <= this.menu.r * this.menu.r;
+    },
+    containsInCloseMenu: function (mx, my) {
+        var x = this.closeMenu.x;
+        var y = this.closeMenu.y;
+        return  (x - mx ) * (x - mx) + (y - my ) * (y - my) <= this.closeMenu.r * this.closeMenu.r;
+    },
+    containsInUnGroupMenu: function (mx, my) {
+        var x = this.ungroupMenu.x;
+        var y = this.ungroupMenu.y;
+        return  (x - mx ) * (x - mx) + (y - my ) * (y - my) <= this.ungroupMenu.r * this.ungroupMenu.r;
     },
     containsInHalo: function (mx, my) {
         if(this.title.contains(mx,my))

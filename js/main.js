@@ -75,12 +75,12 @@ $(document).ready(function () {
 //                scene.addObject(bubble6);
 //            }
             else if (key === 'Delete_All') {       //modify a bug by changing for loop from i=0, ... to i= array length to 0
-                for (var l = scene.children.length; l >0; l--) {
+                for (var l = scene.children.length-1; l >0; l--) {
                     if (scene.children[l])
                         scene.removeObject(scene.children[l]);
                 }
                 scene.children.length = 0;
-                for (var l = PATHBUBBLES.objects.length; l > 0; l--) {
+                for (var l = PATHBUBBLES.objects.length-1; l > 0; l--) {
                     if (PATHBUBBLES.objects[l])
                         delete PATHBUBBLES.objects[l];
                 }

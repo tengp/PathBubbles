@@ -78,6 +78,35 @@ PATHBUBBLES.Interaction = function (renderer) {
             else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
+                && PATHBUBBLES.objects[i].containsInCloseMenu(mx, my)) {
+                oldMouseX = mx;
+                oldMouseY = my;
+
+                _this.selection[0] = PATHBUBBLES.objects[i];
+                _this.selection[0].closeMenu.HighLight_State = !_this.selection[0].closeMenu.HighLight_State;
+//                scene.moveObjectToFront(_this.selection[0]);
+                _this.selection[0].deleteThisBubble();
+                renderer.valid = false;
+                return;
+            }
+            else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
+                && PATHBUBBLES.objects[i].containsInUnGroupMenu(mx, my)) {
+                oldMouseX = mx;
+                oldMouseY = my;
+
+                _this.selection[0] = PATHBUBBLES.objects[i];
+                _this.selection[0].ungroupMenu.HighLight_State = !_this.selection[0].ungroupMenu.HighLight_State;
+//                scene.moveObjectToFront(_this.selection[0]);
+                _this.selection[0].ungroup();
+                renderer.valid = false;
+
+                return;
+            }
+            else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
                 && PATHBUBBLES.objects[i].containsInHalo(mx, my)) {
                 oldMouseX = mx;
                 oldMouseY = my;

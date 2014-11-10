@@ -335,6 +335,9 @@ PATHBUBBLES.D3Ring.prototype = {
                 var link = gGroup.append("g").selectAll(".link");
                 var node = gGroup.append("g").selectAll(".node");
                 var textG = gGroup.append("g").selectAll(".text");
+
+                processTextLinks(nodeData);
+
                 if (_this.parent.HIDE) {
                     var max;
                     if (!_this.expressionScaleMax) {
@@ -516,10 +519,10 @@ PATHBUBBLES.D3Ring.prototype = {
                     .attr("dy", ".35em") // vertical-align
                     .style("font-size", 10)
                     .text(function (d, i) {
-                        if(d.name == "homo sapiens")
-                            return "";
+//                        if(d.name == "homo sapiens")
+//                            return "";
                         if (i == 0)
-                            return d.name;
+                            return '';
                         var str = d.name;
                         str = str.match(/\b\w/g).join('');
                         str = str.substr(0, 4);
@@ -852,6 +855,128 @@ PATHBUBBLES.D3Ring.prototype = {
                     return angle / Math.PI * 180;
                 }
 
+                function processTextLinks(nodes)
+                {
+                    var importLinks = [];
+                    var data = [];
+                    for(var i=0; i<nodes.length; ++i)
+                    {
+                        if(nodes[i].depth ==1)
+                        {
+                            data.push(nodes[i]);
+                        }
+                    }
+                    var rect_height = 7;
+                    var rect_width = 20;
+                    var inner_y = d3.scale.linear()
+                        .domain([0, data.length])
+                        .range([-(data.length * rect_height) / 2, (data.length * rect_height) / 2]);
+                    var inners = [];
+                    for(var i=0; i<data.length; ++i)
+                    {
+                        var object = {};
+                        object.id = i;
+                        object.name = data[i].name;
+                        object.x = -(rect_width / 2);
+                        object.y = inner_y(i);
+                        object.linkTo = data[i];
+                        inners.push(object);
+                    }
+
+                    for(var i=0; i<inners.length; ++i)
+                    {
+                        var importObj = {};
+                        importObj.id = inners[i].id;
+                        importObj.target = inners[i];
+                        importObj.source = inners[i].linkTo;
+                        importLinks.push(importObj);
+                    }
+
+                    var inode = mainSvg.append('g').selectAll(".inner_node");
+                    var titleLink = mainSvg.append('g').attr('class', 'links').selectAll(".titleLink");
+                    var inodeRect  = inode.data(inners).enter().append("g")
+                        .attr("class", "inner_node");
+                    var inodeText  = inode.data(inners).enter().append("g")
+                        .attr("class", "inner_node");
+
+                    inodeText = inodeText.append("text")
+                        .attr('id', function (d) {
+                            return d.id + '-txt';
+                        })
+                        .attr('text-anchor', 'middle')
+                        .attr("transform", function(d){
+                            return "translate(" + ( rect_width / 2+ d.x ) + ", " + (rect_height * .75+ d.y) + ")";
+                        })
+                        .style("font-size",rect_height)
+                        .text(function (d) {
+                            return d.name;
+                        })
+                        .each(function(d) {
+                            d.bx = this.getBBox().x;
+                            d.by = this.getBBox().y;
+                            d.bwidth = this.getBBox().width;
+                            d.bheight = this.getBBox().height;
+                        })
+                        .on("mouseover", mouserOverText)
+                        .on("mouseout", mouseOutText);
+
+                    inodeRect = inodeRect.append('rect')
+                        .attr('x', function(d) { return d.bx; })
+                        .attr('y', function(d) { return d.by; })
+                        .attr('width', function(d) { return d.bwidth; })
+                        .attr('height', function(d) { return d.bheight; })
+                        .attr('text-anchor', 'middle')
+                        .attr("transform", function(d){
+                            return "translate(" + ( rect_width / 2+ d.x ) + ", " + (rect_height * .75+ d.y) + ")";
+                        })
+                        .attr('id', function (d) {
+                            return d.id+ '-txt';
+                        })
+                        .attr('fill', function (d) {
+                            return "#e5f5f9";
+                        })
+                        .on("mouseover", mouserOverText)
+                        .on("mouseout", mouseOutText);
+                    var diagonal = d3.svg.diagonal()
+                        .source(function (d) {
+                            var innerRadius = Math.max(0, y(d.source.y));
+                            var arcCenter = x(d.source.x + d.source.dx/2.0);
+
+                            return {"x": innerRadius * Math.cos(Math.PI - arcCenter),      //radial space
+                                "y": innerRadius * Math.sin(Math.PI - arcCenter)};
+                        })
+                        .target(function (d) {                                           //normal space
+                            return {"x": d.target.y + rect_height / 2,
+//                                "y": d.source.x ? d.target.x : d.target.x + rect_width};
+                                "y": d.source.x+ d.source.dx/2.0<Math.PI?  -d.target.bwidth/2 : -d.target.bwidth/2};
+                        })
+                        .projection(function (d) {
+                            return [d.y, d.x];
+                        });
+
+                    // links
+                    titleLink = titleLink
+                        .data(importLinks)
+                        .enter().append('path')
+                        .attr('class', 'titleLink')
+                        .attr('id', function (d) {
+                            return  'titleLink'+ d.id;
+                        })
+                        .attr("d", diagonal)
+                        .attr('stroke', function (d) {
+                            return "#00f";
+                        })
+                        .attr('stroke-width', "1px");
+
+                    function mouserOverText(d){
+                        d3.select("#svg" + _this.parent.id).select("#"+ 'titleLink'+d.id ).attr('stroke-width', '5px');
+                    }
+                    function mouseOutText(d)
+                    {
+                        d3.select("#svg" + _this.parent.id).select("#"+ 'titleLink'+d.id ).attr('stroke-width', '1px');
+                    }
+                }
+
                 function mouseovered(d) {
                     node
                         .each(function (n) {
@@ -1010,6 +1135,18 @@ PATHBUBBLES.D3Ring.prototype = {
                         $('#menuView' + bubble5.id).find("#maxRatio").val($('#menuView' + _this.parent.id).find("#maxRatio").val());
                         $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
                         $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
+                        $('#menuView' + bubble5.id).find("#operateText").val($('#menuView' + _this.parent.id).find("#operateText").val());
+//                        bubble5.operateText = $('#menuView' + _this.parent.id).find("#operateText").val();
+//                        if($('#menuView' + bubble5.id).find('#operateText').val() == "showTitle")
+//                        {
+//                            bubble5.treeRing.showTitle();
+//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').hide();
+//                        }
+//                        else if($('#menuView' + bubble5.id).find('#operateText').val() == "showCrossTalk")
+//                        {
+//                            bubble5.treeRing.showCrossTalk();
+//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').show();
+//                        }
                     }
                     if (_this.customExpression) {
                         d3.select("#svg" + bubble5.id).selectAll(".symbol").remove();
@@ -1019,6 +1156,18 @@ PATHBUBBLES.D3Ring.prototype = {
                         $('#menuView' + bubble5.id).find("#maxRatio").val($('#menuView' + _this.parent.id).find("#maxRatio").val());
                         $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
                         $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
+                        $('#menuView' + bubble5.id).find("#operateText").val($('#menuView' + _this.parent.id).find("#operateText").val());
+//                        if($('#menuView' + bubble5.id).find('#operateText').val() == "showTitle")
+//                        {
+//                            bubble5.treeRing.showTitle();
+//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').hide();
+//                        }
+//                        else if($('#menuView' + bubble5.id).find('#operateText').val() == "showCrossTalk")
+//                        {
+//                            bubble5.treeRing.showCrossTalk();
+//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').show();
+//                        }
+                        bubble5.operateText = $('#menuView' + _this.parent.id).find("#operateText").val();
                     }
 
                     bubble5.menuOperation();
@@ -1041,61 +1190,85 @@ PATHBUBBLES.D3Ring.prototype = {
                         }
                     }
                 }
-            });
-            if (_this.parent.HIDE==undefined ||_this.parent.HIDE!==true) {     //Color Bar for ortholog
 
-                var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
-                    scaleWidth = 30 - scaleMargin.left - scaleMargin.right,
-                    scaleHeight = 170 - scaleMargin.top - scaleMargin.bottom;
-                var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
-                var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
+                if (_this.parent.HIDE==undefined ||_this.parent.HIDE!==true) {     //Color Bar for ortholog
 
-                var sectionHeight = 20;
-                var texts = ["Partial","Complete","Empty"];
-                var newData = [];
-                for (var i = 0; i< 3; i++) {
-                    var obj = {};
-                    obj.data = i*20;
-                    obj.text = texts[i];
-                    obj.color = colors[i];
-                    newData.push(obj);
+                    var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
+                        scaleWidth = 30 - scaleMargin.left - scaleMargin.right,
+                        scaleHeight = 170 - scaleMargin.top - scaleMargin.bottom;
+                    var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
+                    var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
+
+                    var sectionHeight = 20;
+                    var texts = ["Partial","Complete","Empty"];
+                    var newData = [];
+                    for (var i = 0; i< 3; i++) {
+                        var obj = {};
+                        obj.data = i*20;
+                        obj.text = texts[i];
+                        obj.color = colors[i];
+                        newData.push(obj);
+                    }
+                    var colorScaleBar = svg.append("g")
+                        .attr("class", "colorScaleBar")
+                        .attr("transform", "translate(" + (width - 30-33) + "," + (  0  ) + ")")
+                        .attr("width", BarWidth)
+                        .attr("height", BarHeight);
+
+                    colorScaleBar.selectAll('rect')
+                        .data(newData)
+                        .enter()
+                        .append('rect')
+                        .attr("x", 0)
+                        .attr("y", function (d) {
+                            return d.data;
+                        })
+                        .attr("height", sectionHeight)
+                        .attr("width", scaleWidth)
+
+                        .attr('fill', function (d) {
+                            return d.color;
+                        });
+                    colorScaleBar.selectAll('text')
+                        .data(newData)
+                        .enter().append("text")
+                        .style("font-size", 10)
+                        .attr("transform", "translate(" + (scaleWidth / 2 + 10) + "," + (sectionHeight) + ")")
+                        .attr("y", function (d, i) {
+                            return d.data - 5;
+                        })
+                        .attr("dy", ".1em")
+                        .style("text-anchor", "start")
+                        .text(function (d, i) {
+                            return d.text;
+                        });
                 }
-                var colorScaleBar = svg.append("g")
-                    .attr("class", "colorScaleBar")
-                    .attr("transform", "translate(" + (width - 30-33) + "," + (  0  ) + ")")
-                    .attr("width", BarWidth)
-                    .attr("height", BarHeight);
-
-                colorScaleBar.selectAll('rect')
-                    .data(newData)
-                    .enter()
-                    .append('rect')
-                    .attr("x", 0)
-                    .attr("y", function (d) {
-                        return d.data;
-                    })
-                    .attr("height", sectionHeight)
-                    .attr("width", scaleWidth)
-
-                    .attr('fill', function (d) {
-                        return d.color;
-                    });
-                colorScaleBar.selectAll('text')
-                    .data(newData)
-                    .enter().append("text")
-                    .style("font-size", 10)
-                    .attr("transform", "translate(" + (scaleWidth / 2 + 10) + "," + (sectionHeight) + ")")
-                    .attr("y", function (d, i) {
-                        return d.data - 5;
-                    })
-                    .attr("dy", ".1em")
-                    .style("text-anchor", "start")
-                    .text(function (d, i) {
-                        return d.text;
-                    });
-            }
+                if($('#menuView' + _this.parent.id).find('#operateText').val() == "showTitle")
+                {
+                    d3.select("#svg" + _this.parent.id).selectAll(".link").style("opacity", 0);
+                    d3.select("#svg" + _this.parent.id).selectAll(".titleLink").style("opacity", 1);
+                    d3.select("#svg" + _this.parent.id).selectAll(".inner_node").style("opacity", 1);
+                    $('#menuView' + _this.parent.id).find('#crossTalkLevel').hide();
+                }
+                else if($('#menuView' + _this.parent.id).find('#operateText').val() == "showCrossTalk")
+                {
+                    d3.select("#svg" + _this.parent.id).selectAll(".titleLink").style("opacity", 0);
+                    d3.select("#svg" + _this.parent.id).selectAll(".inner_node").style("opacity", 0);
+                    d3.select("#svg" + _this.parent.id).selectAll(".link").style("opacity", 1);
+                    $('#menuView' + _this.parent.id).find('#crossTalkLevel').show();
+                }
+            });
         }
-
         d3.select(self.frameElement).style("height", height + "px");
+    },
+    showTitle: function(){
+        d3.select("#svg" + this.parent.id).selectAll(".link").style("opacity", 0);
+        d3.select("#svg" + this.parent.id).selectAll(".titleLink").style("opacity", 1);
+        d3.select("#svg" + this.parent.id).selectAll(".inner_node").style("opacity", 1);
+    },
+    showCrossTalk: function(){
+        d3.select("#svg" + this.parent.id).selectAll(".titleLink").style("opacity", 0);
+        d3.select("#svg" + this.parent.id).selectAll(".inner_node").style("opacity", 0);
+        d3.select("#svg" + this.parent.id).selectAll(".link").style("opacity", 1);
     }
 };

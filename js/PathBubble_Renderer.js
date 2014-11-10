@@ -35,16 +35,16 @@ PATHBUBBLES.Renderer.prototype = {
         this.navCanvasWidth = navCanvas.width;
         this.navCanvasHeight = 50;
 
-        function drawObject(object) {
-            if (!(object instanceof PATHBUBBLES.Scene) && !( object instanceof PATHBUBBLES.Object2D )) {
-                object.draw(_this.ctx);
-            }
-            if (!(object instanceof PATHBUBBLES.Groups)) {
-                for (var i = 0, l = object.children.length; i < l; i++) {
-                    drawObject(object.children[ i ]);
-                }
-            }
-        }
+//        function drawObject(object) {
+//            if (!(object instanceof PATHBUBBLES.Scene) && !( object instanceof PATHBUBBLES.Object2D )) {
+//                object.draw(_this.ctx);
+//            }
+//            if (!(object instanceof PATHBUBBLES.Groups)) {
+//                for (var i = 0, l = object.children.length; i < l; i++) {
+//                    drawObject(object.children[ i ]);
+//                }
+//            }
+//        }
 
         if (!_this.valid) {
             _this.clear();
