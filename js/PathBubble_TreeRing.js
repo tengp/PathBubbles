@@ -313,9 +313,9 @@ PATHBUBBLES.TreeRing.prototype = {
                 var minRatio = $menuBarbubble.find('#minRatio').val();
                 var maxRatio = $menuBarbubble.find('#maxRatio').val();
                 if (minRatio == "")
-                    minRatio = "0.5";
+                    minRatio = "-1.5";
                 if (maxRatio == "")
-                    maxRatio = "2.0";
+                    maxRatio = "1.5";
                 var localFileLoader = new PATHBUBBLES.FileLoader("Expression");
                 localFileLoader.load(_this.selected_file, function (expressionData) {
 

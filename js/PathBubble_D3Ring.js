@@ -150,9 +150,9 @@ PATHBUBBLES.D3Ring.prototype = {
                     var minRatio = $menuBarbubble.find('#minRatio').val();
                     var maxRatio = $menuBarbubble.find('#maxRatio').val();
                     if (minRatio == "")
-                        minRatio = "0.5";
+                        minRatio = "-1.5";
                     if (maxRatio == "")
-                        maxRatio = "2.0";
+                        maxRatio = "1.5";
                     minRatio = parseFloat(minRatio);
                     maxRatio = parseFloat(maxRatio);
                     nodeData = partition.nodes(root);
@@ -210,9 +210,9 @@ PATHBUBBLES.D3Ring.prototype = {
                     var minRatio = $menuBarbubble.find('#minRatio').val();
                     var maxRatio = $menuBarbubble.find('#maxRatio').val();
                     if (minRatio == "")
-                        minRatio = "0.5";
+                        minRatio = "-1.5";
                     if (maxRatio == "")
-                        maxRatio = "2.0";
+                        maxRatio = "1.5";
                     minRatio = parseFloat(minRatio);
                     maxRatio = parseFloat(maxRatio);
                     nodeData = partition.nodes(root);
