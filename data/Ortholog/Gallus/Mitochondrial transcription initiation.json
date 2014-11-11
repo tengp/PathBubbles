@@ -1,1 +1,1 @@
-{"dbId":"163282","name":"Mitochondrial transcription initiation","children":[],"size":1,"symbols":["TFAM","POLRMT","TFB2M"],"gallusOrth":{"sharedSymbols":[],"count":0,"type":"Empty"}}
+{"dbId":"163282","name":"Mitochondrial transcription initiation","children":[],"size":1,"symbols":["TFAM","POLRMT","TFB2M"],"gallusOrth":{"sharedSymbols":["TFAM","POLRMT","TFB2M"],"count":3,"type":"Complete"}}

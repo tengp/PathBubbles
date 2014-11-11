@@ -1,1 +1,1 @@
-{"dbId":"977347","name":"Serine biosynthesis","children":[],"size":1,"symbols":["PHGDH","PSAT1","PSPH"],"gallusOrth":{"sharedSymbols":[],"count":0,"type":"Empty"}}
+{"dbId":"977347","name":"Serine biosynthesis","children":[],"size":1,"symbols":["PHGDH","PSAT1","PSPH"],"gallusOrth":{"sharedSymbols":["PHGDH","PSAT1","PSPH"],"count":3,"type":"Complete"}}
