@@ -26,7 +26,8 @@ PATHBUBBLES.Groups.prototype = {
 //            var objectC = this.children[0];
             this.children[0].parent = scene;
             this.children[0].GROUP = false;
-            scene.removeBasicObject(this);
+//            scene.removeBasicObject(this);
+            scene.removeObject(this);
             return;
         }
         for(var i=0; i<this.children.length-1; ++i)
@@ -39,22 +40,14 @@ PATHBUBBLES.Groups.prototype = {
         if(this.children.indexOf(object)!== -1)
             return;
         if (object.parent instanceof PATHBUBBLES.Groups) {
-            var temp = object.parent;
-            var childrenObjs = [];
             for (var i = 0; i < object.parent.children.length; ++i) {
-                var a = object.parent.children[i];
-                childrenObjs.push(a);
+                this.objectAddToGroup(object.parent.children[i]);
             }
-
-            for (var i = 0; i < childrenObjs.length; ++i) {
-                this.objectAddToGroup(childrenObjs[i]);
-            }
-            scene.removeBasicObject(temp);   //removeObject     //fix a bug
+            scene.removeObject(this);
         }
         else {
             this.objectAddToGroup(object);
         }
-
     },
     objectAddToGroup: function (object) {
         if(object)
@@ -78,7 +71,8 @@ PATHBUBBLES.Groups.prototype = {
                         if(this.detectOverlap(this.children[i],object))
                         {
                             this.children[i].InsertIndex = i;
-                            overlappedObjects.push(this.children[i]);
+                            if(overlappedObjects.indexOf(this.children[i]) == -1)
+                                overlappedObjects.push(this.children[i]);
                         }
                     }
                 }
@@ -97,10 +91,13 @@ PATHBUBBLES.Groups.prototype = {
                 {
                     if(minObject.InsertIndex !== undefined)
                     {
-                        if(object.x > this.children[minObject.InsertIndex].x)
-                            this.children.splice(minObject.InsertIndex+1, 0, object);
-                        else
-                            this.children.splice(minObject.InsertIndex, 0, object);
+                        if(this.children.indexOf(object) == -1)
+                        {
+                            if(object.x > this.children[minObject.InsertIndex].x)
+                                this.children.splice(minObject.InsertIndex+1, 0, object);
+                            else
+                                this.children.splice(minObject.InsertIndex, 0, object);
+                        }
                         for(var i=0; i<this.children.length-1; ++i)
                         {
                             this.children[i+1].x = this.children[i].x + this.children[i].w;
