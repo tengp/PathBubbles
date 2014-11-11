@@ -102,7 +102,9 @@ PATHBUBBLES.D3Ring.prototype = {
                         nodeData[i].gallusOrth.sharedSymbols = [];
                         for (var k = 0; k < nodeData[i].symbols.length; ++k) {
                             for (var j = 0; j < _this.customOrtholog.length; ++j) {
-                                if (nodeData[i].symbols[k] == _this.customOrtholog[j].symbol) {
+                                if(nodeData[i].symbols[k] == null)
+                                    continue;
+                                if (nodeData[i].symbols[k].toUpperCase() == _this.customOrtholog[j].symbol.toUpperCase()) {
                                     if (_this.customOrtholog[j].dbId !== "\N") {
                                         count++;
                                         nodeData[i].gallusOrth.sharedSymbols.push(_this.customOrtholog[j].symbol);
@@ -169,7 +171,9 @@ PATHBUBBLES.D3Ring.prototype = {
                         for (var k = 0; k < nodeData[i].gallusOrth.sharedSymbols.length; ++k) {
 
                             for (var j = 0; j < _this.customExpression.length; ++j) {
-                                if (nodeData[i].gallusOrth.sharedSymbols[k] == _this.customExpression[j].symbol) {
+                                if(nodeData[i].gallusOrth.sharedSymbols[k] == null)
+                                    continue;
+                                if (nodeData[i].gallusOrth.sharedSymbols[k].toUpperCase() == _this.customExpression[j].symbol.toUpperCase()) {
                                     if (parseFloat(_this.customExpression[j].ratio) >= maxRatio) {
                                         nodeData[i].expression.ups.push(_this.customExpression[j]);
                                         break;
@@ -230,7 +234,9 @@ PATHBUBBLES.D3Ring.prototype = {
 
                         for (var k = 0; k < nodeData[i].symbols.length; ++k) {
                             for (var j = 0; j < _this.customOrtholog.length; ++j) {
-                                if (nodeData[i].symbols[k] == _this.customOrtholog[j].symbol) {
+                                if(nodeData[i].symbols[k] == null)
+                                    continue;
+                                if (nodeData[i].symbols[k].toUpperCase() == _this.customOrtholog[j].symbol.toUpperCase()) {
                                     if (_this.customOrtholog[j].dbId !== "\N") {
                                         count++;
                                         nodeData[i].gallusOrth.sharedSymbols.push(_this.customOrtholog[j].symbol);
@@ -241,7 +247,9 @@ PATHBUBBLES.D3Ring.prototype = {
                         }
                         for (var k = 0; k < nodeData[i].gallusOrth.sharedSymbols.length; ++k) {
                             for (var j = 0; j < _this.customExpression.length; ++j) {
-                                if (nodeData[i].gallusOrth.sharedSymbols[k] == _this.customExpression[j].symbol) {
+                                if(nodeData[i].gallusOrth.sharedSymbols[k] == null)
+                                    continue;
+                                if (nodeData[i].gallusOrth.sharedSymbols[k].toUpperCase() == _this.customExpression[j].symbol.toUpperCase()) {
                                     if (parseFloat(_this.customExpression[j].ratio) >= maxRatio) {
                                         nodeData[i].expression.ups.push(_this.customExpression[j]);
                                         break;
@@ -791,7 +799,7 @@ PATHBUBBLES.D3Ring.prototype = {
                     for (var i = 0; i < ups.length; ++i) {
                         var symbolObj = {};
                         for (var j = 0; j < _symbols.length; ++j) {
-                            if (_symbols[j].symbol == ups[i].symbol && _symbols[j].regulation == "Up") {
+                            if (_symbols[j].symbol.toUpperCase() == ups[i].symbol && _symbols[j].regulation == "Up") {
                                 _symbols[j].count++;
                                 break;
                             }
@@ -799,7 +807,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         if (j >= _symbols.length) {
 
                             symbolObj.gene_id = ups[i].gene_id;
-                            symbolObj.symbol = ups[i].symbol;
+                            symbolObj.symbol = ups[i].symbol.toUpperCase();
                             symbolObj.count = 1;
                             symbolObj.ratio = parseFloat(ups[i].ratio).toFixed(5);
                             symbolObj.regulation = "Up";
@@ -810,14 +818,14 @@ PATHBUBBLES.D3Ring.prototype = {
                     for (var i = 0; i < downs.length; ++i) {
                         var symbolObj = {};
                         for (var j = upLength; j < _symbols.length; ++j) {
-                            if (_symbols[j].symbol == downs[i].symbol && _symbols[j].regulation == "Down") {
+                            if (_symbols[j].symbol.toUpperCase() == downs[i].symbol.toUpperCase() && _symbols[j].regulation == "Down") {
                                 _symbols[j].count++;
                                 break;
                             }
                         }
                         if (j >= _symbols.length) {
                             symbolObj.gene_id = downs[i].gene_id;
-                            symbolObj.symbol = downs[i].symbol;
+                            symbolObj.symbol = downs[i].symbol.toUpperCase();
                             symbolObj.count = 1;
                             symbolObj.ratio = parseFloat(downs[i].ratio).toFixed(5);
                             symbolObj.regulation = "Down";

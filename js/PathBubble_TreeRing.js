@@ -30,7 +30,7 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     this.button = new PATHBUBBLES.Button(this);   //Button 0 for file selection
     var tmp = '';
     tmp += '<select id="operateText" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
-    tmp += '<option value="showTitle">Show Title</option>';
+    tmp += '<option value="showTitle">Show Pathway Name</option>';
     tmp += '<option value="showCrossTalk">Show CrossTalk</option>';
     tmp += '</select>';
 

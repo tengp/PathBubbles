@@ -48,7 +48,7 @@ PATHBUBBLES.FileLoader.prototype = {
                         if (temps[0] == "symbol" && temps[1] == "dbId") {
                             continue;
                         }
-                        obj.symbol = temps[0];
+                        obj.symbol = temps[0].toUpperCase();
                         obj.dbId = temps[1];
                         result.push(obj);
                     }
