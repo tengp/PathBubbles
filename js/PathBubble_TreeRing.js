@@ -116,8 +116,7 @@ PATHBUBBLES.TreeRing.prototype = {
         this.children.push(object);
     },
     removeObject: function (object) {
-        if ($('#svg' + this.id).length)
-            $('#svg' + this.id).remove();
+
         if ($('#svg' + this.id).length)
             $('#svg' + this.id).remove();
         if ($('#menuView' + this.id).length)
@@ -439,7 +438,7 @@ PATHBUBBLES.TreeRing.prototype = {
             $('#svg' + this.id).remove();
         if ($('#menuView' + this.id).length)
             $('#menuView' + this.id).remove();
-        this.removeObject(this);
+        scene.removeObject(this);
     },
     updateMenu: function () {
         var $menuBarbubble = $('#menuView' + this.id);

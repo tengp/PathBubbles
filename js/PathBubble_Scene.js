@@ -75,12 +75,13 @@ PATHBUBBLES.Scene.prototype = {
         }
     },
     removeObject: function (object) {
-        if (object instanceof PATHBUBBLES.Groups) {
-            for (var c = 0; c < object.children.length; c++) {
-                this.removeObject(object.children[ c ]);
-            }
-        }
-        else if (object instanceof PATHBUBBLES.Bubble) {
+//        if (object instanceof PATHBUBBLES.Groups) {
+//            for (var c = 0; c < object.children.length; c++) {
+//                this.removeObject(object.children[ c ]);
+//            }
+//        }
+//        else
+        if (object instanceof PATHBUBBLES.Bubble) {
             if (object.menu.HighLight_State)
                 object.button.hide();
             object.menu.HighLight_State = false;
@@ -90,13 +91,13 @@ PATHBUBBLES.Scene.prototype = {
             if (object.menu.HighLight_State)
                 object.button.hide();
             object.menu.HighLight_State = false;
-            object.deleteBubble();
+//            object.deleteBubble();
         }
         else if (object instanceof PATHBUBBLES.Table) {
             if (object.menu.HighLight_State)
                 object.button.hide();
             object.menu.HighLight_State = false;
-            object.deleteBubble();
+//            object.deleteBubble();
         }
         var index = PATHBUBBLES.objects.indexOf(object);
         if (index !== -1) {

@@ -214,7 +214,7 @@ PATHBUBBLES.Table.prototype = {
         if ($('#menuView' + this.id).length)
             $('#menuView' + this.id).remove();
 //        this.removeObject(this);
-        scene.removeBasicObject(this);
+        scene.removeObject(this);
     },
     updateMenu: function () {
         var $menuBarbubble = $('#menuView' + this.id);

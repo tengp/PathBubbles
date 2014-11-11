@@ -13,7 +13,15 @@ var interection = null;
 $(document).ready(function () {
     canvas = $("#bgCanvas")[0];
     navCanvas = $("#navCanvas")[0];
-    THREEx.FullScreen.bindKey({ charCode: 'f'.charCodeAt(0) });
+    window.addEventListener( 'keydown', function(event){
+           if(event.keyCode === 70)
+           {
+               screenfull.request();
+           }
+    }, false );
+    // trigger the onchange() to set the initial values
+    screenfull.onchange();
+//    THREEx.FullScreen.bindKey({ charCode: 'f'.charCodeAt(0) });
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     navCanvas.height = 50;
