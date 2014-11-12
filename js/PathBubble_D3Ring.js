@@ -32,7 +32,7 @@ PATHBUBBLES.D3Ring.prototype = {
         var y = d3.scale.sqrt()
             .range([0, radius]);
 
-        var color = d3.scale.category20c();
+//        var color = d3.scale.category20c();
 
         var svg = d3.select("#svg" + _this.parent.id).append("svg")
             .attr("width", width)
@@ -343,7 +343,9 @@ PATHBUBBLES.D3Ring.prototype = {
                 var link = gGroup.append("g").selectAll(".link");
                 var node = gGroup.append("g").selectAll(".node");
                 var textG = gGroup.append("g").selectAll(".text");
-
+//                var expressionColors = d3.scale.category10();
+                var expressionColors = ["#aec7e8","#ffbb78"," #98df8a","#c5b0d5","#ff9896",
+                                        " #f7b6d2", "#ff7f0e","#17becf","#2ca02c","#e377c2"];
                 processTextLinks(nodeData);
 
                 if (_this.parent.HIDE) {
@@ -399,31 +401,38 @@ PATHBUBBLES.D3Ring.prototype = {
 
                     var newData = [];
                     var sectionHeight = Math.floor(scaleHeight / divisions);
-                    if (max !== 0) {
-                        for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
-                            var obj = {};
-                            obj.data = i;
-                            obj.text = parseFloat(j).toFixed(4);
-                            newData.push(obj);
-                        }
-
-                        var colorScaleLin = d3.scale.linear()
-                            .domain([0, newData.length - 1])
-                            .interpolate(d3.interpolateRgb)
-                            .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
+                    for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
+                        var obj = {};
+                        obj.data = i;
+                        obj.text = parseFloat(j).toFixed(3);
+                        newData.push(obj);
                     }
-                    else {
-                        for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
-                            var obj = {};
-                            obj.data = i;
-                            obj.text = parseFloat(j).toFixed(3);
-                            newData.push(obj);
-                        }
-                        var colorScaleLin = d3.scale.linear()
-                            .domain([0, newData.length - 1])
-                            .interpolate(d3.interpolateRgb)
-                            .range([d3.rgb(243, 247, 213), d3.rgb(243, 247, 213)]);
-                    }
+//                    if (max !== 0) {
+//                        for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
+//                            var obj = {};
+//                            obj.data = i;
+//                            obj.text = parseFloat(j).toFixed(4);
+//                            newData.push(obj);
+//                        }
+//
+//                        var colorScaleLin = d3.scale.linear()
+//                            .domain([0, newData.length - 1])
+//                            .interpolate(d3.interpolateRgb)
+//                            .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
+//                    }
+//                    else {
+//                        for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
+//                            var obj = {};
+//                            obj.data = i;
+//                            obj.text = parseFloat(j).toFixed(3);
+//                            newData.push(obj);
+//                        }
+//                        var colorScaleLin = d3.scale.linear()
+//                            .domain([0, newData.length - 1])
+//                            .interpolate(d3.interpolateRgb)
+//                            .range([d3.rgb(243, 247, 213), d3.rgb(243, 247, 213)]);
+//
+//                    }
 
                     var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
                     var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
@@ -434,10 +443,10 @@ PATHBUBBLES.D3Ring.prototype = {
                         .attr("width", BarWidth)
                         .attr("height", BarHeight);
 
-                    var colorRange = d3.scale.linear()
-                        .domain([0, max])
-                        .interpolate(d3.interpolateRgb)
-                        .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
+//                    var colorRange = d3.scale.linear()
+//                        .domain([0, max])
+//                        .interpolate(d3.interpolateRgb)
+//                        .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
 
                     colorScaleBar.selectAll('rect')
                         .data(newData)
@@ -451,7 +460,7 @@ PATHBUBBLES.D3Ring.prototype = {
                         .attr("width", scaleWidth)
 
                         .attr('fill', function (d, i) {
-                            return colorScaleLin(i)
+                            return expressionColors[i]
                         });
                     colorScaleBar.selectAll('text')
                         .data(newData)
@@ -466,6 +475,13 @@ PATHBUBBLES.D3Ring.prototype = {
                         .text(function (d, i) {
                             return d.text;
                         });
+                }
+
+                function getExpressionColor(ratio)
+                {
+                     if(max==0)
+                        return expressionColors[0];
+                    return expressionColors[Math.floor(9*ratio/max)];
                 }
 
                 pathG = pathG.data(nodeData)
@@ -502,11 +518,11 @@ PATHBUBBLES.D3Ring.prototype = {
                                 return "#fff";
 //                            else if (d.gallusOrth.sharedSymbols.length == 0) {
                                 else if (d.unique.sharedSymbols.length == 0) {
-                                return colorRange(0);
+                                return getExpressionColor(0);
                             }
                             else {
 //                                return colorRange((d.expression.downs.length + d.expression.ups.length) / d.gallusOrth.sharedSymbols.length);
-                                return colorRange((d.unique.downs.length + d.unique.ups.length) / d.unique.sharedSymbols.length);
+                                return getExpressionColor((d.unique.downs.length + d.unique.ups.length) / d.unique.sharedSymbols.length);
                             }
                         }
                     })
