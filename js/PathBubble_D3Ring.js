@@ -349,10 +349,42 @@ PATHBUBBLES.D3Ring.prototype = {
                 if (_this.parent.HIDE) {
                     var max;
                     if (!_this.expressionScaleMax) {
+                        for(var i=0; i<nodeData.length; ++i)
+                        {
+                            if(nodeData[i].name !== "homo sapiens" && nodeData[i].expression !== undefined && nodeData[i].gallusOrth !== undefined)
+                            {
+                                nodeData[i].unique = {};
+                                nodeData[i].unique.ups=[];
+                                nodeData[i].unique.downs=[];
+                                nodeData[i].unique.sharedSymbols=[];
+                                for(var j=0; j< nodeData[i].expression.ups.length; ++j)
+                                {
+                                     if(nodeData[i].unique.ups.indexOf(nodeData[i].expression.ups[j]) == -1 )
+                                     {
+                                         nodeData[i].unique.ups.push(nodeData[i].expression.ups[j]);
+                                     }
+                                }
+                                for(var j=0; j< nodeData[i].expression.downs.length; ++j)
+                                {
+                                    if(nodeData[i].unique.downs.indexOf(nodeData[i].expression.downs[j]) == -1 )
+                                    {
+                                        nodeData[i].unique.downs.push(nodeData[i].expression.downs[j]);
+                                    }
+                                }
+                                for(var j=0; j< nodeData[i].gallusOrth.sharedSymbols.length; ++j)
+                                {
+                                    if(nodeData[i].unique.sharedSymbols.indexOf(nodeData[i].gallusOrth.sharedSymbols[j]) == -1 )
+                                    {
+                                        nodeData[i].unique.sharedSymbols.push(nodeData[i].gallusOrth.sharedSymbols[j]);
+                                    }
+                                }
+                            }
+                        }
                         max = d3.max(nodeData, function (d) {
                             if (d.name == "homo sapiens" || d.expression == undefined || d.gallusOrth == undefined)
                                 return 0;
-                            return (d.expression.downs.length + d.expression.ups.length) / d.gallusOrth.sharedSymbols.length;
+//                            return (d.expression.downs.length + d.expression.ups.length) / d.gallusOrth.sharedSymbols.length;
+                            return (d.unique.downs.length + d.unique.ups.length) / d.unique.sharedSymbols.length;
                         });
                     }
                     else {
@@ -468,11 +500,13 @@ PATHBUBBLES.D3Ring.prototype = {
                         else if (_this.customExpression) {
                             if (d.name == "homo sapiens" || d.expression == undefined || d.gallusOrth == undefined)
                                 return "#fff";
-                            else if (d.gallusOrth.sharedSymbols.length == 0) {
+//                            else if (d.gallusOrth.sharedSymbols.length == 0) {
+                                else if (d.unique.sharedSymbols.length == 0) {
                                 return colorRange(0);
                             }
                             else {
-                                return colorRange((d.expression.downs.length + d.expression.ups.length) / d.gallusOrth.sharedSymbols.length);
+//                                return colorRange((d.expression.downs.length + d.expression.ups.length) / d.gallusOrth.sharedSymbols.length);
+                                return colorRange((d.unique.downs.length + d.unique.ups.length) / d.unique.sharedSymbols.length);
                             }
                         }
                     })
