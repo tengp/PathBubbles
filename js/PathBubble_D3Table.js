@@ -184,11 +184,20 @@ PATHBUBBLES.D3Table.prototype = {
 
         function sort(a,b){
             if(typeof a == "string"){
-                var parseA = format.parse(a);
-                if(parseA){
-                    var timeA = parseA.getTime();
-                    var timeB = format.parse(b).getTime();
-                    return timeA > timeB ? 1 : timeA == timeB ? 0 : -1;
+//                var parseA = format.parse(a);
+//                if(parseA){
+//                    var timeA = parseA.getTime();
+//                    var timeB = format.parse(b).getTime();
+//                    return timeA > timeB ? 1 : timeA == timeB ? 0 : -1;
+//                }
+//                else
+//                    return a.localeCompare(b);
+                if(typeof parseFloat(a) == "number" && typeof parseFloat(b) == "number" )
+                {
+                    if(!isNaN( parseFloat(a) ) && !isNaN (parseFloat(b) )  )
+                        return parseFloat(a) > parseFloat(b) ? 1 : parseFloat(a) == parseFloat(b) ? 0 : -1;
+                    else
+                        return a.localeCompare(b);
                 }
                 else
                     return a.localeCompare(b);
