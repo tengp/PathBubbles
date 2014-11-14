@@ -37,10 +37,11 @@ PATHBUBBLES.FileLoader.prototype = {
             if (tempdata != null) {
                 if (_this.type == "Ortholog") {
                     tempdata = tempdata.replace(/\r\n/g, '\n');
+                    tempdata = tempdata.replace(/\r/g, '\n');
                     var orthology = tempdata.split("\n");
 
                     for (var j = 0; j < orthology.length; ++j) {
-                        if (orthology[j] == "") {
+                        if (orthology[j] == ""||orthology[j] == " ") {
                             continue;
                         }
                         var obj = {};
@@ -48,6 +49,8 @@ PATHBUBBLES.FileLoader.prototype = {
                         if (temps[0] == "symbol" && temps[1] == "dbId") {
                             continue;
                         }
+                        if(typeof temps[0] !=="string")
+                            continue;
                         obj.symbol = temps[0].toUpperCase();
                         obj.dbId = temps[1];
                         result.push(obj);
@@ -64,13 +67,13 @@ PATHBUBBLES.FileLoader.prototype = {
                             continue;
                         }
                         var temps = expression[j].split("\t");
-                        if (temps[0] == "gene_id" || temps[2] == "Infinity" || isNaN(temps[2]) || temps[2] == "0"||temps[1]==undefined) {
+                        if (temps[0] == "gene_id" ||typeof temps[1] !=="string"|| temps[2] == "Infinity" || temps[2]=="NaN" || isNaN(parseFloat(temps[2]))|| temps[2] == "0"||temps[1]==undefined) {
                             continue;
                         }
 
                         var obj = {};
                         obj.gene_id = temps[0];
-                        obj.symbol = temps[1];
+                        obj.symbol = temps[1].toUpperCase();
 //                        obj.ratio = Math.log2(parseFloat(temps[2]));
                         obj.ratio = Math.log(parseFloat(temps[2]))/Math.log(2);
                         result.push(obj);
