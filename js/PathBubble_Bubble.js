@@ -35,7 +35,7 @@ PATHBUBBLES.Bubble = function (x, y, w, h, strokeColor, fillColor, cornerRadius,
 //    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
     this.button.addButton(tmp);
 
-    this.name = this.id;
+    this.name = text;
     this.title = new PATHBUBBLES.Title(this, this.name);
     this.__objectsAdded = [];
     this.__objectsRemoved = [];
@@ -117,7 +117,7 @@ PATHBUBBLES.Bubble.prototype = {
                 var localFileLoader = new PATHBUBBLES.LocalFileLoader(_this);
 
                 localFileLoader.load(_this.selected_file);
-                _this.title.name = localFileLoader.fileName;
+                _this.name = localFileLoader.fileName;
             }
         });
 //        $menuBarbubble.find('#delete').on('click', function () {

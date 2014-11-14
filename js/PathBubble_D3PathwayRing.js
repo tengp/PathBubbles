@@ -13,6 +13,12 @@ PATHBUBBLES.D3PathwayRing = function (parent, name, dbId, defaultRadius) {
 };
 PATHBUBBLES.D3PathwayRing.prototype = {
     constructor: PATHBUBBLES.D3PathwayRing,
+//     reflesh:function() {
+//         for (var i = 0; i < this.children.length - 1; ++i) {
+//             this.children[i + 1].x = this.children[i].x + this.children[i].w;
+//             this.children[i + 1].y = this.children[i].y;
+//         }
+//     }
     init: function () {
         var _this = this;
         var width = this.defaultRadius,

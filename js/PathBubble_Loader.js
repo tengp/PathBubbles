@@ -56,14 +56,15 @@ PATHBUBBLES.FileLoader.prototype = {
                 }
                 else if (_this.type == "Expression") {
                     tempdata = tempdata.replace(/\r\n/g, '\n');
+                    tempdata = tempdata.replace(/\r/g, '\n');
                     var expression = tempdata.split("\n");
 
                     for (var j = 0; j < expression.length; ++j) {
-                        if (expression[j] == "") {
+                        if (expression[j] == ""||expression[j] == " ") {
                             continue;
                         }
                         var temps = expression[j].split("\t");
-                        if (temps[0] == "gene_id" || temps[2] == "Infinity" || temps[2] == "NaN" || temps[2] == "0") {
+                        if (temps[0] == "gene_id" || temps[2] == "Infinity" || isNaN(temps[2]) || temps[2] == "0"||temps[1]==undefined) {
                             continue;
                         }
 
