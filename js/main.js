@@ -97,13 +97,16 @@ $(document).ready(function () {
                 $('svg').parent().remove();
                 $('.menu').remove();     //modify a bug by changing for loop from i=0, ... to i= array length to 0
             }
+            else if (key === 'Open_Help') {       //modify a bug by changing for loop from i=0, ... to i= array length to 0
+                $("#infoBox").dialog("open");
+            }
         },
         items: {
             "Open_Bubble": {name: "Open_bubble"},
             "Open_TreeRing": {name: "Open_treeRing"},
-//            "Open_Table": {name: "Open_table"},
+            "Delete_All": {name: "Delete_all"},
             "sep1": "---------",
-            "Delete_All": {name: "Delete_all"}
+            "Open_Help": {name: "Open_helpMenu"}
         }
     });
 });
