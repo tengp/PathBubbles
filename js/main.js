@@ -102,11 +102,11 @@ $(document).ready(function () {
             }
         },
         items: {
-            "Open_Bubble": {name: "Open_bubble"},
-            "Open_TreeRing": {name: "Open_treeRing"},
-            "Delete_All": {name: "Delete_all"},
+            "Open_Bubble": {name: "Open Pathway Graph"},
+            "Open_TreeRing": {name: "Open Pathway TreeRing"},
+            "Delete_All": {name: "Delete All"},
             "sep1": "---------",
-            "Open_Help": {name: "Open_helpMenu"}
+            "Open_Help": {name: "Open Simple Tutorial"}
         }
     });
 });
