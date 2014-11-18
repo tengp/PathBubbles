@@ -427,8 +427,7 @@
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\spaceship.js" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\test.html" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\videos\sintel.ogv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Ortholog/Alligator/2-LTR circle formation.json" afterPath="$PROJECT_DIR$/data/Ortholog/Alligator/2-LTR circle formation.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" afterPath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
     </list>
     <ignored path="PathBubbles.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -451,21 +450,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46692607" vertical-offset="2088" max-vertical-offset="2832">
-              <caret line="97" column="68" selection-start-line="97" selection-start-column="68" selection-end-line="97" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.620689" vertical-offset="1545" max-vertical-offset="2136">
-              <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+            <state vertical-scroll-proportion="-8.793103" vertical-offset="753" max-vertical-offset="2136">
+              <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -485,20 +474,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PathBubble_TreeRing.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PathBubble_TreeRing.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="19152">
-              <caret line="68" column="54" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.5708583" vertical-offset="3026" max-vertical-offset="17496">
+              <caret line="176" column="53" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
               <folding>
-                <marker date="1415744188787" expanded="false" signature="3242:3278" placeholder="..." />
-                <marker date="1415744188787" expanded="false" signature="3293:3308" placeholder="..." />
-                <marker date="1415744188787" expanded="false" signature="3642:3653" placeholder="..." />
-                <marker date="1415744188787" expanded="false" signature="3775:3804" placeholder="..." />
-                <marker date="1415744188787" expanded="false" signature="3856:3867" placeholder="..." />
-                <marker date="1415744188787" expanded="false" signature="3990:4019" placeholder="..." />
-                <marker date="1415744188787" expanded="false" signature="4471:4507" placeholder="..." />
-                <marker date="1415744188787" expanded="false" signature="4522:4537" placeholder="..." />
+                <element signature="e#5361#6657#0" expanded="false" />
+                <element signature="e#6692#6866#0" expanded="false" />
+                <element signature="e#6904#7366#0" expanded="false" />
+                <element signature="e#9605#11285#0" expanded="false" />
+                <element signature="e#10953#11080#0" expanded="false" />
+                <element signature="e#11113#11240#0" expanded="false" />
+                <marker date="1416325617092" expanded="false" signature="3293:3329" placeholder="..." />
+                <marker date="1416325617092" expanded="false" signature="3344:3359" placeholder="..." />
+                <marker date="1416325617092" expanded="true" signature="3693:3704" placeholder="..." />
+                <marker date="1416325617092" expanded="false" signature="3826:3855" placeholder="..." />
+                <marker date="1416325617092" expanded="true" signature="3907:3918" placeholder="..." />
+                <marker date="1416325617092" expanded="false" signature="4041:4070" placeholder="..." />
+                <marker date="1416325617092" expanded="false" signature="4522:4558" placeholder="..." />
+                <marker date="1416325617092" expanded="false" signature="4573:4588" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -532,6 +527,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/data/Ortholog/Alligator/2-LTR circle formation.json" />
+        <option value="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
       </list>
     </option>
   </component>
@@ -596,6 +592,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PathBubbles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="documents" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -611,24 +621,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PathBubbles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PathBubbles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -764,23 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="19152">
-          <caret line="68" column="54" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
-          <folding>
-            <marker date="1415744188787" expanded="false" signature="3242:3278" placeholder="..." />
-            <marker date="1415744188787" expanded="false" signature="3293:3308" placeholder="..." />
-            <marker date="1415744188787" expanded="false" signature="3642:3653" placeholder="..." />
-            <marker date="1415744188787" expanded="false" signature="3775:3804" placeholder="..." />
-            <marker date="1415744188787" expanded="false" signature="3856:3867" placeholder="..." />
-            <marker date="1415744188787" expanded="false" signature="3990:4019" placeholder="..." />
-            <marker date="1415744188787" expanded="false" signature="4471:4507" placeholder="..." />
-            <marker date="1415744188787" expanded="false" signature="4522:4537" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/documents/temp.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="514">
@@ -813,31 +788,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/documents/TGF0expression.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14007781" vertical-offset="0" max-vertical-offset="1152">
-          <caret line="3" column="46" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/documents/customeOrtholog.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.046692606" vertical-offset="0" max-vertical-offset="514">
           <caret line="1" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.620689" vertical-offset="1545" max-vertical-offset="2136">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#font#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -849,11 +804,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/documents/TGF0expression.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46692607" vertical-offset="0" max-vertical-offset="1152">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46692607" vertical-offset="2088" max-vertical-offset="2832">
-          <caret line="97" column="68" selection-start-line="97" selection-start-column="68" selection-end-line="97" selection-end-column="68" />
+        <state vertical-scroll-proportion="1.2315176" vertical-offset="1671" max-vertical-offset="2832">
+          <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.793103" vertical-offset="753" max-vertical-offset="2136">
+          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5708583" vertical-offset="3026" max-vertical-offset="17496">
+          <caret line="176" column="53" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
+          <folding>
+            <element signature="e#5361#6657#0" expanded="false" />
+            <element signature="e#6692#6866#0" expanded="false" />
+            <element signature="e#6904#7366#0" expanded="false" />
+            <element signature="e#9605#11285#0" expanded="false" />
+            <element signature="e#10953#11080#0" expanded="false" />
+            <element signature="e#11113#11240#0" expanded="false" />
+            <marker date="1416325617092" expanded="false" signature="3293:3329" placeholder="..." />
+            <marker date="1416325617092" expanded="false" signature="3344:3359" placeholder="..." />
+            <marker date="1416325617092" expanded="true" signature="3693:3704" placeholder="..." />
+            <marker date="1416325617092" expanded="false" signature="3826:3855" placeholder="..." />
+            <marker date="1416325617092" expanded="true" signature="3907:3918" placeholder="..." />
+            <marker date="1416325617092" expanded="false" signature="4041:4070" placeholder="..." />
+            <marker date="1416325617092" expanded="false" signature="4522:4558" placeholder="..." />
+            <marker date="1416325617092" expanded="false" signature="4573:4588" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

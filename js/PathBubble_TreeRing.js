@@ -45,6 +45,7 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     tmp += '<option value="Gallus" selected="selected">Gallus</option>';
     tmp += '<option value="Alligator">Alligator</option>';
     tmp += '<option value="Turtle">Turtle</option>';
+    tmp += '<option value="Human">Human</option>';
     tmp += '</select>';
     tmp += '<input type="file" id="customOrth"  style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<div id=loadOrthDiv style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
@@ -170,6 +171,10 @@ PATHBUBBLES.TreeRing.prototype = {
             }
             else {
                 _this.name = _this.pre + val;
+                if(val == "Human")
+                {
+                    _this.name ="(Ortholog) Human";
+                }
             }
 
             _this.treeRing.init();
