@@ -176,7 +176,6 @@ PATHBUBBLES.TreeRing.prototype = {
                     _this.name ="(Ortholog) Human";
                 }
             }
-
             _this.treeRing.init();
         });
         $menuBarbubble.find('#crossTalkLevel').change(function () {

@@ -2,432 +2,437 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682b94b1-fe59-4182-aba9-e0dbea7f8d6f" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\stemkoski.github.com-master.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\3JSFPS.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\audio\deep-solar-wind.mp3" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\audio\deep-solar-wind.ogg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\css\base.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\css\index.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\html-images\3JSFPS.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\html-images\white-pixels.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\alien-alloy.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\alien-carving-gray.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\alien-carving.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-xneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-xpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-yneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-ypos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-zneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-zpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\blue-glowy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\cloud.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\electric-blue-light.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\glow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\rocky-ground.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\x-crate.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\Detector.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\Stats.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\THREEx.FullScreen.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\THREEx.KeyboardState.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\THREEx.WindowResize.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\Three.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\gamepad_uncompressed.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\models\brass-512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\models\star.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\Three.js.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\dictionaries\Yongnanzhu.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\FilmPass.js" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\jsLibraryMappings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\1.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Anaglyph.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Atmosphere.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Bubble.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\CSG.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\CSS3D.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Camera-Texture.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Chase-Camera.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Dashed-3D.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Dashed-Lines.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Earth-80Days.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Earth-LatLon.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Earth.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Extrusion.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\GUI.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Gamepad-Test.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\HelloWorld.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Helpers.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Infobox.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Keyboard.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\LeapMotion.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Many-Cameras.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mesh-Movement.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Metaballs.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Metabubbles.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Model.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mouse-Click.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mouse-Over.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mouse-Sprite.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mouse-Tooltip.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Outline.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Particles.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\PlaneGeometry.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Polyhedra.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Reflection.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Refraction.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shader-Glow.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shader-Halo.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shader-Simple.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shaders.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shadow.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shapes.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Simple-Glow.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Skybox.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Sprites.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Subsurf.html" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Template.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\TestPhysics.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Text3D.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Textures.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\ToDo.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Topology-Data.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Touch-Events.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Translucence.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Tween.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Vertex-Colors.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Video.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Voxel-Painter.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Webcam-Test.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Wireframe.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\base.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-icons_222222_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-icons_454545_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-icons_888888_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\index.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\info.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\jquery-ui.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\droid_sans_bold.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\droid_sans_regular.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\droid_serif_bold.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\droid_serif_regular.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\gentilis_bold.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\gentilis_regular.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\helvetiker_bold.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\helvetiker_regular.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\optimer_bold.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\optimer_regular.typeface.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Anaglyph.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Atmosphere.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Bubble.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\CSG.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\CSS3D.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Camera-Texture.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Chase-Camera.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Collision-Detection.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Color-Explorer.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Dashed-3D.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Dashed-Lines.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Extrusion.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\GUI-Controller.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\GUI.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Gamepad-Test.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Graphulus-Curve.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Graphulus-Function.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Graphulus-Surface.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\HelloWorld.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Helpers.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Image 10.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Infobox.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Labeled-Geometry.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\LeapMotion.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Many-Cameras.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Marching-Cubes.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Materials-Solid.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mesh-Movement-Gamepad.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mesh-Movement.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Metaballs.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Metabubbles.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Model-Animation-Control.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Model-Animation.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Model.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mouse-Click.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mouse-Over.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mouse-Sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mouse-Tooltip.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Multiple-Cameras.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Outline.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Particle-Engine.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\ParticleSystem-Attributes.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\ParticleSystem-Dynamic.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\ParticleSystem-PathMovement.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\ParticleSystem-Static.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Particles.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\DotScreenPass.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-zneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\grass-512.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\workspace.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Polyhedra.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Reflection.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Refraction.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Selective-Glow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Animate.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Attributes.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Explorer.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Fireball.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Glow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Simple.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shadow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shapes.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Simple-Glow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Skybox.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Sphere-Project.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Sphere-Unwrapping.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Sprite-Text-Labels.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Sprites.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Subdivision-Cube.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Template.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Text3D-Textures.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Text3D.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Texture-Animation.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Texture-From-Canvas.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\CSG.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\right-B.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\SquareYellow.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\gamepad_uncompressed.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Camera-Texture.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\down-B.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\leap.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Chrome.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Metaballs.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\cloud.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mesh-Movement.png" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Texture-Repeat.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Textures.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Topology-Data-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Topology-Data.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Translucence.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Vertex-Colors.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Video.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Viewports-Dual.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Viewports-Quad.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Voxel-Painter.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Webcam-Motion-Detection-Texture.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square-plus.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Particles.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\X-button.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\BloomPass.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Keyboard.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-zneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\jquery-1.9.1.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ThreeCSG.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-xpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Helpers.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\VignetteShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Voxel-Painter.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\TestPhysics.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Model.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Anaglyph.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\dictionaries\Yongnanzhu.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\AdditiveBlendShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-yneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Chase-Camera.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-ypos.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\EdgeShader2.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\HelloWorld.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Sphere-Unwrapping.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mouse-Click.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\droid_serif_regular.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three58.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\models\brass-512.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\smokeparticle.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Multiple-Cameras.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Gamepad-Test.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\GUI.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\alien-carving.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\up-A.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\raindrop.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mouse-Click.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Particles.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Dashed-3D.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Template.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\THREEx.KeyboardState.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\GUI-Controller.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-topo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ParticleEngineExamples.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\DOFMipMapShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mouse-Tooltip.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shapes.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ShaderWater.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shader-Simple.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\peer.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\alien-alloy.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\UnpackDepthRGBAShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BleachBypassShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Bubble.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\zneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\SSAOShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mouse-Sprite.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\run.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mouse-Tooltip.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Simple-Glow.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-zpos.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Fireball.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Chase-Camera.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\B-button.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Infobox.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Subdivision-Cube.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\up-B.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\GamepadState.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shader-Halo.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\index.html" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Webcam-Motion-Detection.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Webcam-Test.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Webcam-Texture.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\spikey.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\raindropflip.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-ypos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\helvetiker_bold.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Text3D-Textures.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-yneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dirt-512.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-zpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\right-C.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\GUI.png" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Wireframe.png" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\white-pixels.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\A-button.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\B-button.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Chrome.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-xneg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-xpos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-yneg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-ypos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-zneg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-zpos.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-4.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-5.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-6.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\SquareBlue.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\SquareGreen.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\SquareRed.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\SquareYellow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\X-button.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Y-button.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\checkerboard.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\cloud.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\crate.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\crate.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-xneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-xpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-yneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-ypos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-zneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-zpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\diamond.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dirt-512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\disc.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\down-A.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\down-B.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\down-C.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-clouds.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-day.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-index-shifted-gray.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-outline-shifted-gray.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-specular.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-topo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\explosion.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\fluffy.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\glow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\grass-512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\heightmap.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\icon-close-16.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\icon-close-24.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\icon-close-48.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\icon-info.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\lava.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\left-A.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\left-B.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\left-C.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-xneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-xpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-yneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-ypos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-zneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-zpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-xneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-xpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-yneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-ypos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-zneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-zpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\raindrop.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\raindrop2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\raindrop2flip.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\raindropflip.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\redball.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\right-A.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\right-B.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\right-C.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\rock-512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\room.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\run.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\sand-512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\smoke512.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\smokeparticle.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\snow-512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\snowflake.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\spark.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\spikey.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square-O.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square-X.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square-plus.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square-thick.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\star.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\triangles.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\up-A.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\up-B.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\up-C.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\uvgrid01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\uvgrid02.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\uvgrid03.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\water.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\water512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\world.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\xbox-controller-FPS.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\xneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\xpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\yneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\ypos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\zneg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\zpos.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\CSS3DRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\DAT.GUI.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Detector.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\FlatMirror.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\GamepadState.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\KeyboardState.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\MarchingCubesData.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\OrbitControls-Touch.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\OrbitControls.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ParticleEngine.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ParticleEngineExamples.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Pool.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\RequestAnimationFrame.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ShaderParticleEmitter.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ShaderParticleGroup.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ShaderWater.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Stats.js" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\SubdivisionModifier.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\THREEx.FullScreen.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\THREEx.KeyboardState.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\THREEx.WindowResize.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three56.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three58.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three59.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three59dev.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three60.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three62.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three62dev.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three63.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three63Min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three66.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ThreeCSG.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ThreeDebug.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\TrackballControls.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Tween.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\effects\AnaglyphEffect.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\gamepad.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\gamepad_no_images.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\gamepad_uncompressed.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\info.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\jquery-1.9.1.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\jquery-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\leap.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\parser.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\peer.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\polyhedra.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\BloomPass.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\DotScreenPass.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\EffectComposer.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\FilmPass.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\MaskPass.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\RenderPass.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\SavePass.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\ShaderPass.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\TexturePass.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\AdditiveBlendShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BasicShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BleachBypassShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BlendShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BokehShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BrightnessContrastShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\ColorCorrectionShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\ColorifyShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\ConvolutionShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\CopyShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\DOFMipMapShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\DotScreenShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\EdgeShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\EdgeShader2.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\FXAAShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\FilmShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\FocusShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\FresnelShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\HorizontalBlurShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\HorizontalTiltShiftShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\HueSaturationShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\KaleidoShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\LambertToon.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\LuminosityShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\MirrorShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\NormalMapShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\RGBShiftShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\SSAOShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\SepiaShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\TriangleBlurShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\UnpackDepthRGBAShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\VerticalBlurShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\VerticalTiltShiftShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\VignetteShader.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\topology.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\YoungLink_grp.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\android-animations.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\android.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\link.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\spaceship.js" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\test.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Anaglyph.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\KaleidoShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Y-button.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\TriangleBlurShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Collision-Detection.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Translucence.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\snowflake.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Helpers.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\SepiaShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-2.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Tween.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\optimer_bold.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Sprite-Text-Labels.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\snow-512.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Labeled-Geometry.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\THREEx.FullScreen.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\SquareBlue.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Earth-LatLon.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square-thick.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\polyhedra.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\3JSFPS.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\uvgrid02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\audio\deep-solar-wind.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-zpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\models\star.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\sand-512.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Metaballs.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square-X.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\EdgeShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\up-C.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\NormalMapShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Extrusion.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Reflection.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Gamepad-Test.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Video.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\THREEx.KeyboardState.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-specular.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Text3D.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Webcam-Motion-Detection-Texture.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\android-animations.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\gamepad.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three59.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Model.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\droid_sans_regular.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Model-Animation-Control.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\left-B.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Sprites.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three66.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-clouds.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\gentilis_regular.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\base.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-1.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shapes.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\VerticalBlurShader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/documents/PathBubbles_manual.pdf" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\rock-512.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\triangles.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Image 10.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-xneg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Atmosphere.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\glow.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\parser.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Webcam-Test.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-6.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\redball.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\gamepad_uncompressed.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\THREEx.WindowResize.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\html-images\3JSFPS.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\ToDo.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\stemkoski.github.com-master.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Metabubbles.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\raindrop2.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Earth.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\Three.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-icons_888888_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\RenderPass.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\PlaneGeometry.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Dashed-Lines.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\glow.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Sphere-Project.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\crate.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\uvgrid01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\SquareGreen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\diamond.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Selective-Glow.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Extrusion.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\spark.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\THREEx.FullScreen.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-xneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Tween.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\icon-info.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\ParticleSystem-Dynamic.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\heightmap.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\ColorifyShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-ypos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three62dev.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\right-A.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Pool.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Texture-From-Canvas.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Skybox.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\info.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\TexturePass.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\ConvolutionShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Dashed-Lines.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\CSS3DRenderer.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\xbox-controller-FPS.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-xneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Topology-Data.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\LuminosityShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\down-C.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\explosion.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\gamepad_no_images.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\icon-close-24.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\CSS3D.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\rocky-ground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Attributes.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Sprites.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\world.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Animate.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Text3D.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\MaskPass.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\alien-carving-gray.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\square-O.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\icon-close-16.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Outline.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\MirrorShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Viewports-Quad.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\HueSaturationShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Webcam-Texture.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Atmosphere.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\star.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\uvgrid03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ShaderParticleGroup.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-zneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\MarchingCubesData.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-xpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-outline-shifted-gray.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\FocusShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\link.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BokehShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Earth-80Days.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Detector.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mesh-Movement.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\TrackballControls.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Many-Cameras.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Video.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shaders.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Viewports-Dual.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\spaceship.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-ypos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\DotScreenShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Polyhedra.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\droid_sans_bold.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\VerticalTiltShiftShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Dashed-3D.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-4.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Textures.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Texture-Animation.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ShaderParticleEmitter.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-zneg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-5.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\blue-glowy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-day.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Reflection.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\ParticleSystem-Static.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\RGBShiftShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Glow.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-xpos.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\earth-index-shifted-gray.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Translucence.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mesh-Movement-Gamepad.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-xneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-xpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\DarkSea-yneg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\HorizontalTiltShiftShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\smoke512.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BrightnessContrastShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\FXAAShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\left-C.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\LeapMotion.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Camera-Texture.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-xneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Skybox.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\FilmShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\Dice-Blue-3.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\Stats.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\EffectComposer.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\fluffy.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Textures.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Color-Explorer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three56.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three62.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Graphulus-Surface.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\room.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\info.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\disc.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\icon-close-48.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\css\index.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Topology-Data-2.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\nebula-zpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\zpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\gentilis_bold.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\raindrop2flip.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\LambertToon.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\droid_serif_bold.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Simple.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mouse-Sprite.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\HorizontalBlurShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\helvetiker_regular.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\ypos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three59dev.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\KeyboardState.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Bubble.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\audio\deep-solar-wind.ogg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Simple-Glow.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Vertex-Colors.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\checkerboard.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\css\base.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\RequestAnimationFrame.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\crate.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Mouse-Over.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moondust-zpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Many-Cameras.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Outline.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\index.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Wireframe.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\Three.js.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\electric-blue-light.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\ParticleSystem-PathMovement.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\ParticleSystem-Attributes.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ParticleEngine.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\yneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\xpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\water.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three63Min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\CopyShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\css\images\ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Graphulus-Curve.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\LeapMotion.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\moon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\effects\AnaglyphEffect.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Topology-Data.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Graphulus-Function.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\js\Detector.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\OrbitControls.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\water512.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\SquareRed.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Refraction.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-zneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\ShaderPass.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\FresnelShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Refraction.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three63.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shadow.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\CSS3D.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Three60.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Vertex-Colors.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\html-images\white-pixels.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Shader-Glow.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\topology.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\1.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BasicShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Particle-Engine.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\xneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\cloud.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\android.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\BlendShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\THREEx.WindowResize.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\fonts\optimer_regular.typeface.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\left-A.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-yneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\A-button.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Infobox.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\ThreeDebug.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Mouse-Over.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\lava.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Metabubbles.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\shaders\ColorCorrectionShader.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\postprocessing\SavePass.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Marching-Cubes.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Subsurf.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\OrbitControls-Touch.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\DAT.GUI.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Webcam-Test.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\HelloWorld.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Model-Animation.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\autumn-yneg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Materials-Solid.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\7DFPS\images\x-crate.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-xpos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Shader-Explorer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\CSG.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\dawnmountain-ypos.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\Touch-Events.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\models\YoungLink_grp.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\FlatMirror.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\.idea\vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\videos\sintel.ogv" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\images\down-A.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\js\Stats.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\css\infoIcon\stemkoski.github.com-master\Three.js\html-images\Voxel-Painter.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" afterPath="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documents/screenshot/menu.png" afterPath="$PROJECT_DIR$/documents/screenshot/menu.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documents/screenshot/menuOfBubble.PNG" afterPath="$PROJECT_DIR$/documents/screenshot/menuOfBubble.PNG" />
     </list>
     <ignored path="PathBubbles.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -450,61 +455,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2304" max-vertical-offset="2832">
+              <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PathBubble_TreeRing.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5400" max-vertical-offset="19248">
+              <caret line="225" column="31" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="13" />
+              <folding>
+                <marker date="1416325921594" expanded="false" signature="3293:3329" placeholder="..." />
+                <marker date="1416325921594" expanded="false" signature="3344:3359" placeholder="..." />
+                <marker date="1416325921594" expanded="true" signature="3693:3704" placeholder="..." />
+                <marker date="1416325921594" expanded="false" signature="3826:3855" placeholder="..." />
+                <marker date="1416325921594" expanded="true" signature="3907:3918" placeholder="..." />
+                <marker date="1416325921594" expanded="false" signature="4041:4070" placeholder="..." />
+                <marker date="1416325921594" expanded="false" signature="4522:4558" placeholder="..." />
+                <marker date="1416325921594" expanded="false" signature="4573:4588" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.793103" vertical-offset="753" max-vertical-offset="2136">
-              <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.3633218" vertical-offset="1317" max-vertical-offset="2184">
+              <caret line="68" column="60" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#font#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="info.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/info.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="576">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathBubble_TreeRing.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5708583" vertical-offset="3026" max-vertical-offset="17496">
-              <caret line="176" column="53" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
-              <folding>
-                <element signature="e#5361#6657#0" expanded="false" />
-                <element signature="e#6692#6866#0" expanded="false" />
-                <element signature="e#6904#7366#0" expanded="false" />
-                <element signature="e#9605#11285#0" expanded="false" />
-                <element signature="e#10953#11080#0" expanded="false" />
-                <element signature="e#11113#11240#0" expanded="false" />
-                <marker date="1416325617092" expanded="false" signature="3293:3329" placeholder="..." />
-                <marker date="1416325617092" expanded="false" signature="3344:3359" placeholder="..." />
-                <marker date="1416325617092" expanded="true" signature="3693:3704" placeholder="..." />
-                <marker date="1416325617092" expanded="false" signature="3826:3855" placeholder="..." />
-                <marker date="1416325617092" expanded="true" signature="3907:3918" placeholder="..." />
-                <marker date="1416325617092" expanded="false" signature="4041:4070" placeholder="..." />
-                <marker date="1416325617092" expanded="false" signature="4522:4558" placeholder="..." />
-                <marker date="1416325617092" expanded="false" signature="4573:4588" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="info.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/info.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
-              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -524,16 +513,16 @@
       <list>
         <option value="$PROJECT_DIR$/css/info.css" />
         <option value="$PROJECT_DIR$/js/info.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/data/Ortholog/Alligator/2-LTR circle formation.json" />
         <option value="$PROJECT_DIR$/js/PathBubble_TreeRing.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-4" />
+    <option name="y" value="89" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -592,7 +581,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="image" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -610,20 +599,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PathBubbles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PathBubbles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -632,6 +607,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -644,14 +620,6 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -662,14 +630,12 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
-      <option name="cucumberJsArguments" />
-      <option name="executablePath" />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
       <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -677,6 +643,16 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" />
+      <option name="executablePath" />
+      <option name="filePath" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -695,6 +671,9 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="682b94b1-fe59-4182-aba9-e0dbea7f8d6f" name="Default" comment="" />
@@ -704,22 +683,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-4" y="89" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21484992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39933258" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933258" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -746,84 +725,35 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/ui-lightness/jquery-ui-1.10.4.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28742516" vertical-offset="0" max-vertical-offset="501">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#9087#9170#2" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/documents/temp.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="514">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/info.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="576">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/documents/Peroxisomal lipid metabolism.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56886226" vertical-offset="15171" max-vertical-offset="44520">
-          <caret line="644" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="1849" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/documents/customeOrtholog.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.046692606" vertical-offset="0" max-vertical-offset="514">
-          <caret line="1" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Ortholog/Alligator/2-LTR circle formation.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20338982" vertical-offset="0" max-vertical-offset="472">
-          <caret line="4" column="57" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/documents/TGF0expression.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46692607" vertical-offset="0" max-vertical-offset="1152">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2315176" vertical-offset="1671" max-vertical-offset="2832">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2832">
           <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5400" max-vertical-offset="19248">
+          <caret line="225" column="31" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="13" />
+          <folding>
+            <marker date="1416325921594" expanded="false" signature="3293:3329" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="3344:3359" placeholder="..." />
+            <marker date="1416325921594" expanded="true" signature="3693:3704" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="3826:3855" placeholder="..." />
+            <marker date="1416325921594" expanded="true" signature="3907:3918" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="4041:4070" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="4522:4558" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="4573:4588" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.793103" vertical-offset="753" max-vertical-offset="2136">
-          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1361" max-vertical-offset="2184">
+          <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -832,25 +762,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/ui-lightness/jquery-ui-1.10.4.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28742516" vertical-offset="0" max-vertical-offset="501">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/documents/temp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="514">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/info.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="576">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/documents/Peroxisomal lipid metabolism.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56886226" vertical-offset="15171" max-vertical-offset="44520">
+          <caret line="644" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="1849" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/documents/customeOrtholog.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.046692606" vertical-offset="0" max-vertical-offset="514">
+          <caret line="1" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Ortholog/Alligator/2-LTR circle formation.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20338982" vertical-offset="0" max-vertical-offset="472">
+          <caret line="4" column="57" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/documents/TGF0expression.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46692607" vertical-offset="0" max-vertical-offset="1152">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_TreeRing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5708583" vertical-offset="3026" max-vertical-offset="17496">
-          <caret line="176" column="53" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3218" max-vertical-offset="17472">
+          <caret line="225" column="31" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="13" />
           <folding>
-            <element signature="e#5361#6657#0" expanded="false" />
-            <element signature="e#6692#6866#0" expanded="false" />
-            <element signature="e#6904#7366#0" expanded="false" />
-            <element signature="e#9605#11285#0" expanded="false" />
-            <element signature="e#10953#11080#0" expanded="false" />
-            <element signature="e#11113#11240#0" expanded="false" />
-            <marker date="1416325617092" expanded="false" signature="3293:3329" placeholder="..." />
-            <marker date="1416325617092" expanded="false" signature="3344:3359" placeholder="..." />
-            <marker date="1416325617092" expanded="true" signature="3693:3704" placeholder="..." />
-            <marker date="1416325617092" expanded="false" signature="3826:3855" placeholder="..." />
-            <marker date="1416325617092" expanded="true" signature="3907:3918" placeholder="..." />
-            <marker date="1416325617092" expanded="false" signature="4041:4070" placeholder="..." />
-            <marker date="1416325617092" expanded="false" signature="4522:4558" placeholder="..." />
-            <marker date="1416325617092" expanded="false" signature="4573:4588" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="3293:3329" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="3344:3359" placeholder="..." />
+            <marker date="1416325921594" expanded="true" signature="3693:3704" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="3826:3855" placeholder="..." />
+            <marker date="1416325921594" expanded="true" signature="3907:3918" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="4041:4070" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="4522:4558" placeholder="..." />
+            <marker date="1416325921594" expanded="false" signature="4573:4588" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2832">
+          <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3633218" vertical-offset="1317" max-vertical-offset="2184">
+          <caret line="68" column="60" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
