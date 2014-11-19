@@ -2,7 +2,7 @@ PathBubbles--A web-version of biological data visualization framework
 ============
 
 
-**Website** : [http://younyzhu.github.io/PathBubblesWeb/](http://younyzhu.github.io/PathBubblesWeb/)
+**Website** : [http://raven.anr.udel.edu/~sunliang/PathBubbles/](http://raven.anr.udel.edu/~sunliang/PathBubbles/)
 
 **Operation** : `Right Click`   ===>  `Select Menu`
 
