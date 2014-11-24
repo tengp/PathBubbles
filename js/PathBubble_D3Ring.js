@@ -1319,6 +1319,8 @@ PATHBUBBLES.D3Ring.prototype = {
                 });
         }
         d3.select(self.frameElement).style("height", height + "px");
+
+//        d3.select('#status').style("display", "none");
     },
     showTitle: function(){
         d3.select("#svg" + this.parent.id).selectAll(".link").style("opacity", 0);

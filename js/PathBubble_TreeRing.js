@@ -24,8 +24,8 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     this.closeMenuText = new PATHBUBBLES.Text(this, "X");
     this.ungroupMenu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2 - 2*(this.cornerRadius +5), this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1);
     this.ungroupMenuText = new PATHBUBBLES.Text(this, "U");
-//    this.closeMenuText.x = this.x + this.w - this.cornerRadius / 2 - this.cornerRadius -5;
-//    this.closeMenuText.y = this.y + this.cornerRadius / 2;
+
+    this.processingStatus = new PATHBUBBLES.Text(this, "Processing");
 
     this.button = new PATHBUBBLES.Button(this);   //Button 0 for file selection
     var tmp = '';
@@ -37,8 +37,6 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     tmp += '<select id="crossTalkLevel" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '</select>';
 
-//    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 50 + 'px; ">';
-//    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 75 + 'px; ">';
     tmp +='<div id="orthologTypeDiv" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<select id="file" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
     tmp += '<option value="Default">Choose Species</option>';
@@ -83,7 +81,7 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     this.dataName = dataName || null;
     this.dataType = dataType || null;
     this.selectedData = selectedData || null;
-//    this.operateText = "showTitle";
+
 };
 
 PATHBUBBLES.TreeRing.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
@@ -95,14 +93,10 @@ PATHBUBBLES.TreeRing.prototype = {
         var tmp = '';
         tmp += '<div id= svg' + this.id + ' style="position: absolute; width:' + (this.w + 5) + 'px; ' + 'height:' + (this.h + 5) + 'px; left:' + (this.shape.x + this.offsetX) + ' px; top:' + (this.shape.y + this.offsetY) + 'px; "> </div>';
         $("#bubble").append($(tmp));
-        var $menuBarbubble = $('#menuView' + this.id);
-//        $menuBarbubble.find("#customOrthDiv").find("label").attr("for", "customOrth" + this.id);     //for="customOrth"
-//        $menuBarbubble.find("#customOrthDiv").find("input").attr("id", "customOrth" + this.id);     //for="customOrth"
-//        $menuBarbubble.find("#customExpDiv").find("label").attr("for", "customExp" + this.id);     //for="customExp"
-//        $menuBarbubble.find("#customExpDiv").find("input").attr("id", "customExp" + this.id);     //for="customOrth"
+
         if (!this.dataType)
             this.dataType = "Gallus";
-//        $menuBarbubble.find('#operateText').val(this.operateText);
+
         this.treeRing = new PATHBUBBLES.D3Ring(this, Math.min(this.w, this.h) - 30, this.dataType, this.dataName);
         if (this.selectedData !== undefined && this.selectedData !== null) {
             this.treeRing.selectedData = this.selectedData;
@@ -135,6 +129,8 @@ PATHBUBBLES.TreeRing.prototype = {
         var _this = this;
         var $menuBarbubble = $('#menuView' + this.id);
         $menuBarbubble.find('#file').change(function () {
+//            _this.statusDomElement = _this.addStatusElement();
+//            $("#bubble")[0].appendChild(_this.statusDomElement);
             var operateText = $menuBarbubble.find('#operateText').val();
             var val = $(this).val();
             if (val == undefined)
@@ -177,6 +173,7 @@ PATHBUBBLES.TreeRing.prototype = {
                 }
             }
             _this.treeRing.init();
+//            _this.statusDomElement.style.display = 'none';
         });
         $menuBarbubble.find('#crossTalkLevel').change(function () {
             var val = $(this).val();
@@ -228,37 +225,6 @@ PATHBUBBLES.TreeRing.prototype = {
                 $menuBarbubble.find('#crossTalkLevel').show();
             }
         });
-//        $menuBarbubble.find('#delete').on('click', function () {
-//            if (!_this.GROUP)
-//                _this.deleteBubble();
-//            else {
-//                var id = _this.id;
-//                var group = _this.parent;
-//                _this.GROUP = false;
-//                var tempdata = [];
-//                for (var i = 0; i < group.children.length; ++i) {
-//                    if (group.children[i].id !== _this.id) {
-//                        var a = group.children[i];
-//                        a.parent = undefined;
-//                        tempdata.push(a);
-//                    }
-//                }
-//                _this.parent = undefined;
-//                _this.deleteBubble();
-//                group.tempPoints.length = 0;
-//                group.arranged.length = 0;
-//                group.children.length = 0;
-//                for (var i = 0; i < tempdata.length; ++i) {
-//                    group.RESET = true;
-//                    group.addToGroup(tempdata[i]);
-//                }
-//                group.RESET = false;
-//                scene.addObject(group);
-//            }
-//        });
-//        $menuBarbubble.find('#ungroup').on('click', function () {
-//            _this.ungroup();
-//        });
         $menuBarbubble.find('#loadOrth').on('click', function () {
             _this.selected_file = $menuBarbubble.find('#customOrth').get(0).files[0];
 //            _this.selected_file = $menuBarbubble.find('#customOrth' + _this.id).get(0).files[0];
@@ -368,33 +334,6 @@ PATHBUBBLES.TreeRing.prototype = {
             _this.ungroup();
             _this.deleteBubble();
         }
-//        var _this =this;
-//        if (!_this.GROUP)
-//            _this.deleteBubble();
-//        else {
-//            var id = _this.id;
-//            var group = _this.parent;
-//            _this.GROUP = false;
-//            var tempdata = [];
-//            for (var i = 0; i < group.children.length; ++i) {
-//                if (group.children[i].id !== _this.id) {
-//                    var a = group.children[i];
-//                    a.parent = undefined;
-//                    tempdata.push(a);
-//                }
-//            }
-//            _this.parent = undefined;
-//            _this.deleteBubble();
-//            group.tempPoints.length = 0;
-//            group.arranged.length = 0;
-//            group.children.length = 0;
-//            for (var i = 0; i < tempdata.length; ++i) {
-//                group.RESET = true;
-//                group.addToGroup(tempdata[i]);
-//            }
-//            group.RESET = false;
-//            scene.addObject(group);
-//        }
     },
     ungroup: function () {
         if (!this.GROUP) {
@@ -407,34 +346,6 @@ PATHBUBBLES.TreeRing.prototype = {
             this.parent.removeObject(this);
             scene.moveObjectToFront(this);
             this.parent = scene;
-
-////            var object = this;
-////            if ($('#svg' + this.id).length)
-////                $('#svg' + this.id).remove();
-////            if ($('#menuView' + this.id).length)
-////                $('#menuView' + this.id).remove();
-////            this.removeObject(this);
-////            scene.addObject(object);
-//            var group = this.parent;
-//            this.GROUP = false;
-//            var tempdata = [];
-//            for (var i = 0; i < group.children.length; ++i) {
-//                if (group.children[i].id !== this.id) {
-//                    var a = group.children[i];
-//                    a.parent = undefined;
-//                    tempdata.push(a);
-//                }
-//            }
-//            this.parent = undefined;     //just has one set
-//            group.tempPoints.length = 0;
-//            group.arranged.length = 0;
-//            group.children.length = 0;
-//            for (var i = tempdata.length - 1; i >= 0; i--) {
-//                group.RESET = true;
-//                group.addToGroup(tempdata[i]);
-//            }
-//            group.RESET = false;
-//            scene.addObject(group);
         }
     },
     deleteBubble: function () {
@@ -445,6 +356,13 @@ PATHBUBBLES.TreeRing.prototype = {
         scene.removeObject(this);
     },
     updateMenu: function () {
+        if($('#status').length)
+        {
+            $('#status').css({
+                left: this.x + this.offsetX + this.w/2 - 60,
+                top: this.y + this.offsetY + this.h/2
+            })
+        }
         var $menuBarbubble = $('#menuView' + this.id);
         $menuBarbubble.css({
             left: this.x + this.offsetX + this.w + 10,
@@ -462,17 +380,6 @@ PATHBUBBLES.TreeRing.prototype = {
             top: 50,
             width: 220
         });
-//        $menuBarbubble.find('#ungroup').css({
-//            left: 10,
-//            top: 50,
-//            width: 220
-//        });
-//
-//        $menuBarbubble.find('#delete').css({
-//            left: 10,
-//            top: 75,
-//            width: 220
-//        });
         $menuBarbubble.find('#orthologTypeDiv').css({
             left: 10,
             top: 75,
@@ -548,7 +455,6 @@ PATHBUBBLES.TreeRing.prototype = {
             }
         }
 
-
         $menuBarbubble.find('#minMaxRatio').css({
             left: 0,
             top: 0,
@@ -568,8 +474,27 @@ PATHBUBBLES.TreeRing.prototype = {
     checkUIElementVisible: function (element) {
         return ((element.css('display') !== 'none') && (element.css('visibility') !== 'hidden'));
     },
+    addStatusElement: function () {
+        var e = document.getElementById('status');
+        if (e === null) {
+            e = document.createElement("div");
+            e.id = 'status';
+        }
+        else
+            e.style.display = 'block';
+        e.style.position = "absolute";
+        e.style.fontWeight = 'bold';
+        e.style.fontSize = "1.2em";
+        e.style.color = "#f00";
+        e.style.width = "100%";
+        e.style.zIndex = 1000;
+        e.innerHTML = "Processing ...";
+        return e;
+    },
     draw: function (ctx, scale) {
         this.setOffset();
+
+
         ctx.save();
 
         this.shape.draw(ctx, scale);
@@ -632,9 +557,6 @@ PATHBUBBLES.TreeRing.prototype = {
             this.ungroupMenuText.draw(ctx, this.ungroupMenu.x, this.ungroupMenu.y);
         }
 
-//        if (this.menu.HighLight_State && scale == 1) {
-////            this.menuBar.draw(ctx, scale);
-//        }
         if (this.menu.HighLight_State) {
             this.updateMenu();
             this.button.show();
@@ -643,6 +565,7 @@ PATHBUBBLES.TreeRing.prototype = {
             this.updateMenu();
             this.button.hide();
         }
+        this.processingStatus.draw(ctx, this.x+this.w/2, this.y+this.h/2);
         ctx.restore();
 
         if (this.shape.HighLight_State) {

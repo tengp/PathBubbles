@@ -23,11 +23,12 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
     this.closeMenuText = new PATHBUBBLES.Text(this, "X");
     this.ungroupMenu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2 - 2*(this.cornerRadius +5), this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1);
     this.ungroupMenuText = new PATHBUBBLES.Text(this, "U");
+
     this.button = new PATHBUBBLES.Button(this);   //Button 0 for file selection
     var tmp = '';
 //    tmp += '<input type="text" id=file style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
-//    tmp += '<input type="button" id=load value= "Load" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
-    tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y + 55 + ' px; "></div>';
+    tmp += '<input type="button" id=export value= "Link TO WebGiVi" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
+//    tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y + 55 + ' px; "></div>';
 //    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 80 + 'px; ">';
 //    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
     this.button.addButton(tmp);
@@ -87,52 +88,47 @@ PATHBUBBLES.Table.prototype = {
     menuOperation: function () {
         var _this = this;
         var $menuBarbubble = $('#menuView' + this.id);
-//        $menuBarbubble.find('#load').on('click', function () {
-//            var dbId = $menuBarbubble.find('#file').val();
-//            _this.dbId = dbId;
-//            if (!dbId) {
-//                alert("Please input database Id!");
-//            }
-//            else {
-//                $("#svg" + _this.id).remove();
-//                var tmp = '';
-//                tmp += '<div id= svg' + _this.id + ' style="position: absolute;"> </div>';
-//                $("#bubble").append($(tmp));
-//                _this.table = new PATHBUBBLES.D3Table(_this, _this.w, _this.h);
-//                _this.table.init(dbId);
-//            }
-//        });
-//        $menuBarbubble.find('#delete').on('click', function () {
-//            if (!_this.GROUP)
-//                _this.deleteBubble();
-//            else {
-//                var id = _this.id;
-//                var group = _this.parent;
-//                _this.GROUP = false;
-//                var tempdata = [];
-//                for (var i = 0; i < group.children.length; ++i) {
-//                    if (group.children[i].id !== _this.id) {
-//                        var a = group.children[i];
-//                        a.parent = undefined;
-//                        tempdata.push(a);
-//                    }
-//                }
-//                _this.parent = undefined;
-//                _this.deleteBubble();
-//                group.tempPoints.length = 0;
-//                group.arranged.length = 0;
-//                group.children.length = 0;
-//                for (var i = 0; i < tempdata.length; ++i) {
-//                    group.RESET = true;
-//                    group.addToGroup(tempdata[i]);
-//                }
-//                group.RESET = false;
-//                scene.addObject(group);
-//            }
-//        });
-//        $menuBarbubble.find('#ungroup').on('click', function () {
-//            _this.ungroup();
-//        });
+        $menuBarbubble.find("#export").on('click',function(){
+            if(_this.data.length)
+            {
+                if(_this.data[0].gene_id!==undefined)
+                {
+                    var entrezIDsString = "";
+                    for(var i=0; i<_this.data.length; ++i)
+                    {
+                        if(i!==0)
+                            entrezIDsString +=",";
+                        entrezIDsString +=_this.data[i].gene_id;
+                    }
+                    var userString = "";
+                    userString +="userID=";
+                    userString +="pathbubbles";  //$userID
+                    userString +="&password=";
+                    userString +="webgiviForYongnan";  //$password
+                    userString +="&entrezIDs=";
+                    userString +=entrezIDsString;  //$entrezIDs
+                    window.open("http://raven.anr.udel.edu/~sunliang/webgivi/webgiviAPI.php?"+userString);
+//                    $.ajax({
+//                        type: "POST",
+//                        url: "./php/webgiviAPI_sample.php",
+//                        dataType: "text",
+//                        data: {
+//                            entrezIDs: entrezIDsString
+//                        }
+////                        , // send the string directly
+////                        success: function (result) {
+////                            if (result) {
+////
+////                            }
+////                        }
+//                    });
+                }
+                else
+                {
+                    alert("Link to WebGiVi is just for expression Analysis!");
+                }
+            }
+        });
     },
     deleteThisBubble: function(){
         var _this =this;
@@ -142,60 +138,8 @@ PATHBUBBLES.Table.prototype = {
             _this.ungroup();
             _this.deleteBubble();
         }
-//        var _this =this;
-//        if (!_this.GROUP)
-//            _this.deleteBubble();
-//        else {
-//            var id = _this.id;
-//            var group = _this.parent;
-//            _this.GROUP = false;
-//            var tempdata = [];
-//            for (var i = 0; i < group.children.length; ++i) {
-//                if (group.children[i].id !== _this.id) {
-//                    var a = group.children[i];
-//                    a.parent = undefined;
-//                    tempdata.push(a);
-//                }
-//            }
-//            _this.parent = undefined;
-//            _this.deleteBubble();
-//            group.tempPoints.length = 0;
-//            group.arranged.length = 0;
-//            group.children.length = 0;
-//            for (var i = 0; i < tempdata.length; ++i) {
-//                group.RESET = true;
-//                group.addToGroup(tempdata[i]);
-//            }
-//            group.RESET = false;
-//            scene.addObject(group);
-//        }
     },
     ungroup: function () {
-//        if (!this.GROUP) {
-//            alert("It is not Grouped, right now!");
-//        }
-//        else {
-//            var group = this.parent;
-//            this.GROUP = false;
-//            var tempdata = [];
-//            for (var i = 0; i < group.children.length; ++i) {
-//                if (group.children[i].id !== this.id) {
-//                    var a = group.children[i];
-//                    a.parent = undefined;
-//                    tempdata.push(a);
-//                }
-//            }
-//            this.parent = undefined;     //just has one set
-//            group.tempPoints.length = 0;
-//            group.arranged.length = 0;
-//            group.children.length = 0;
-//            for (var i = tempdata.length - 1; i >= 0; i--) {
-//                group.RESET = true;
-//                group.addToGroup(tempdata[i]);
-//            }
-//            group.RESET = false;
-//            scene.addObject(group);
-//        }
         if (!this.GROUP) {
             alert("It is not Grouped, right now!");
         }
@@ -213,7 +157,6 @@ PATHBUBBLES.Table.prototype = {
             $('#svg' + this.id).remove();
         if ($('#menuView' + this.id).length)
             $('#menuView' + this.id).remove();
-//        this.removeObject(this);
         scene.removeObject(this);
     },
     updateMenu: function () {
@@ -224,26 +167,11 @@ PATHBUBBLES.Table.prototype = {
             width: 200,
             height: 215
         });
-//        $menuBarbubble.find('#file').css({
-//            left: 10,
-//            top: 45,
-//            width: 180
-//        });
-//        $menuBarbubble.find('#load').css({
-//            left: 10,
-//            top: 70,
-//            width: 180
-//        });
-//        $menuBarbubble.find('#ungroup').css({
-//            left: 10,
-//            top: 45,
-//            width: 180
-//        });
-//        $menuBarbubble.find('#delete').css({
-//            left: 10,
-//            top: 70,
-//            width: 180
-//        });
+        $menuBarbubble.find('#export').css({
+            left: 10,
+            top: 25,
+            width: 180
+        });
     },
     draw: function (ctx, scale) {
         this.setOffset();
@@ -307,17 +235,15 @@ PATHBUBBLES.Table.prototype = {
             this.ungroupMenuText.font = '15pt Calibri';
             this.ungroupMenuText.draw(ctx, this.ungroupMenu.x, this.ungroupMenu.y);
         }
-
-//        if (this.menu.HighLight_State) {        //Does not have menu
-//            this.updateMenu();
-//            this.button.show();
-//        }
-//        else {
-//            this.updateMenu();
-//            this.button.hide();
-//        }
         ctx.restore();
-
+        if (this.menu.HighLight_State) {
+            this.updateMenu();
+            this.button.show();
+        }
+        else {
+            this.updateMenu();
+            this.button.hide();
+        }
         if (this.shape.HighLight_State) {
             ctx.save();
             this.shape.drawStroke(ctx, scale);

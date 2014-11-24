@@ -19,10 +19,6 @@ PATHBUBBLES.FileLoader.prototype = {
 //        this.statusDomElement = this.addStatusElement();
 //        $("#bubble")[0].appendChild(this.statusDomElement);
         reader.readAsText(url, "UTF-8");
-//        var fileName = url.name;
-//        if (fileName.lastIndexOf('.') !== -1)
-//            fileName = fileName.substr(0, fileName.lastIndexOf('.'));
-//        this.fileName = fileName;
         reader.onerror = function () {
 //            _this.statusDomElement.innerHTML = "Could not read file, error code is " + reader.error.code;
         };
@@ -84,6 +80,5 @@ PATHBUBBLES.FileLoader.prototype = {
 
             }
         };
-
     }
 };
