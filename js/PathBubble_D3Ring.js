@@ -407,32 +407,6 @@ PATHBUBBLES.D3Ring.prototype = {
                         obj.text = parseFloat(j).toFixed(3);
                         newData.push(obj);
                     }
-//                    if (max !== 0) {
-//                        for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
-//                            var obj = {};
-//                            obj.data = i;
-//                            obj.text = parseFloat(j).toFixed(4);
-//                            newData.push(obj);
-//                        }
-//
-//                        var colorScaleLin = d3.scale.linear()
-//                            .domain([0, newData.length - 1])
-//                            .interpolate(d3.interpolateRgb)
-//                            .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
-//                    }
-//                    else {
-//                        for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
-//                            var obj = {};
-//                            obj.data = i;
-//                            obj.text = parseFloat(j).toFixed(3);
-//                            newData.push(obj);
-//                        }
-//                        var colorScaleLin = d3.scale.linear()
-//                            .domain([0, newData.length - 1])
-//                            .interpolate(d3.interpolateRgb)
-//                            .range([d3.rgb(243, 247, 213), d3.rgb(243, 247, 213)]);
-//
-//                    }
 
                     var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
                     var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;

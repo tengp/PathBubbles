@@ -118,3 +118,17 @@ tbody tr:hover rect {
 table, th, td {
     border: 1px solid black;
 }
+
+.biPartiteMenu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    width: 60px;
+    border: 1px #ccc solid;
+    border-radius: 6px;
+    box-shadow: #333 2px 2px 4px;
+    padding: 8px;
+    font-family: arial, helvetica, sans-serif;
+    opacity:0;
+}

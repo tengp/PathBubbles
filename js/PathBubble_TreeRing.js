@@ -112,10 +112,10 @@ PATHBUBBLES.TreeRing.prototype = {
     },
     removeObject: function (object) {
 
-        if ($('#svg' + this.id).length)
-            $('#svg' + this.id).remove();
-        if ($('#menuView' + this.id).length)
-            $('#menuView' + this.id).remove();
+        if ($('#svg' + object.id).length)
+            $('#svg' + object.id).remove();
+        if ($('#menuView' + object.id).length)
+            $('#menuView' + object.id).remove();
         var index = PATHBUBBLES.objects.indexOf(object);
         if (index !== -1) {
             PATHBUBBLES.objects.splice(index, 1);
@@ -493,10 +493,7 @@ PATHBUBBLES.TreeRing.prototype = {
     },
     draw: function (ctx, scale) {
         this.setOffset();
-
-
         ctx.save();
-
         this.shape.draw(ctx, scale);
         var space = 6;
         $('#svg' + this.id).css({

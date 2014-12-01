@@ -24,20 +24,6 @@ PATHBUBBLES.Interaction = function (renderer) {
         PATHBUBBLES.selectionHandles.push(new PATHBUBBLES.Shape.Rectangle());   //here we just keep 8 rectangle for resizing
     }
     var _this = this;
-//    document.addEventListener('keydown',function(e){
-//        if(e.keyCode === 17)//Ctrl
-//        {
-//            console.log("Ctrl key down for multi selection.");
-//        }
-//    },true);
-//
-//    document.addEventListener('keyup',function(e){
-//        if(e.keyCode === 17)//Ctrl
-//        {
-//            console.log("Ctrl key up, this time select " + _this.selection.length + " elements");
-//            renderer.valid = false;
-//        }
-//    },true);
     var oldMouseX;
     var oldMouseY;
     canvas.addEventListener('mousedown', function (e) {
@@ -49,19 +35,13 @@ PATHBUBBLES.Interaction = function (renderer) {
         var mx = mouse.x;
         var my = mouse.y;
         renderer.valid = false;
-//        if (_this.selection[0]) {
-//            if (_this.selection[0].shape.HighLight_State)
-//                _this.selection[0].shape.HighLight_State = false;
-//            if (_this.selection[0].bubbleView && _this.selection[0] instanceof PATHBUBBLES.Bubble) {
-//                _this.selection[0].bubbleView.HighLight_State = false;
-//            }
-//        }
 
         for (i = PATHBUBBLES.objects.length - 1; i >= 0; i--) {
             if (PATHBUBBLES.objects[i] === null)
                 continue;
             if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.BiPartite
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
                 && PATHBUBBLES.objects[i].containsInMenu(mx, my)) {
                 oldMouseX = mx;
@@ -77,6 +57,7 @@ PATHBUBBLES.Interaction = function (renderer) {
             }
             else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.BiPartite
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
                 && PATHBUBBLES.objects[i].containsInCloseMenu(mx, my)) {
                 oldMouseX = mx;
@@ -91,7 +72,8 @@ PATHBUBBLES.Interaction = function (renderer) {
             }
             else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
-                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.BiPartite)
                 && PATHBUBBLES.objects[i].containsInUnGroupMenu(mx, my)) {
                 oldMouseX = mx;
                 oldMouseY = my;
@@ -106,7 +88,8 @@ PATHBUBBLES.Interaction = function (renderer) {
             }
             else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
                 || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
-                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing)
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing
+                || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.BiPartite)
                 && PATHBUBBLES.objects[i].containsInHalo(mx, my)) {
                 oldMouseX = mx;
                 oldMouseY = my;
@@ -192,7 +175,8 @@ PATHBUBBLES.Interaction = function (renderer) {
         else if (_this.dragging) {
             if ((_this.selection[0] instanceof PATHBUBBLES.Bubble
                 || _this.selection[0] instanceof PATHBUBBLES.Table
-                || _this.selection[0] instanceof PATHBUBBLES.TreeRing)
+                || _this.selection[0] instanceof PATHBUBBLES.TreeRing
+                || _this.selection[0] instanceof PATHBUBBLES.BiPartite)
                 || _this.selection[0] instanceof PATHBUBBLES.Groups) {
                 if (!_this.selection[0].GROUP) {
                     _this.selection[0].x += offsetX;
@@ -266,33 +250,6 @@ PATHBUBBLES.Interaction = function (renderer) {
 
             if (_this.selection[0].GROUP) {
                 _this.selection[0].parent.resetPosition();
-//                var id = _this.selection[0].id;
-//
-//                for (var i = 0; i < _this.selection[0].parent.shape.points.length; ++i) {
-//                    if (_this.selection[0].parent.shape.points[i].bubbleId === id) {
-//                        var x = _this.selection[0].x - _this.selection[0].parent.offsetX;
-//                        var y = _this.selection[0].y - _this.selection[0].parent.offsetY;
-//                        if (_this.selection[0].parent.shape.points[i].bubblePos == "left") {
-//                            _this.selection[0].parent.shape.points[i].x = x;
-//                            _this.selection[0].parent.shape.points[i].y = y;
-//                            continue;
-//                        }
-//                        if (_this.selection[0].parent.shape.points[i].bubblePos == "right") {
-//                            _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
-//                            _this.selection[0].parent.shape.points[i].y = y;
-//                            continue;
-//                        }
-//                        if (_this.selection[0].parent.shape.points[i].bubblePos == "bleft") {
-//                            _this.selection[0].parent.shape.points[i].x = x;
-//                            _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
-//                            continue;
-//                        }
-//                        if (_this.selection[0].parent.shape.points[i].bubblePos == "bright") {
-//                            _this.selection[0].parent.shape.points[i].x = x + _this.selection[0].w;
-//                            _this.selection[0].parent.shape.points[i].y = y + _this.selection[0].h;
-//                        }
-//                    }
-//                }
                 _this.groupResize = true;
             }
             renderer.valid = false;
@@ -362,6 +319,7 @@ PATHBUBBLES.Interaction = function (renderer) {
                     && (_this.selection[0] instanceof PATHBUBBLES.Bubble
                         || _this.selection[0].parent instanceof PATHBUBBLES.Groups
                         || _this.selection[0] instanceof PATHBUBBLES.Table
+                        || _this.selection[0] instanceof PATHBUBBLES.BiPartite
                         || _this.selection[0] instanceof PATHBUBBLES.TreeRing)) {
                     if(_this.selection[0].ungroupMenuText.text =="G")
                         break;
@@ -373,8 +331,9 @@ PATHBUBBLES.Interaction = function (renderer) {
                             continue;
                         }
                         if (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble
-                            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table ||
-                            PATHBUBBLES.objects[i]  instanceof PATHBUBBLES.Groups
+                            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Table
+                            || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.BiPartite
+                            || PATHBUBBLES.objects[i]  instanceof PATHBUBBLES.Groups
                             || PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing) {
                             if (PATHBUBBLES.objects[i].GROUP) {
                                 PATHBUBBLES.objects[i].parent.addToGroup(_this.selection[0]);

@@ -1,12 +1,12 @@
 /**
  * @author      Yongnan
  * @version     1.0
- * @time        10/18/2014
- * @name        PathBubble_Table
+ * @time        11/26/2014
+ * @name        PathBubble_BiPartite
  */
-PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
+PATHBUBBLES.BiPartite = function (x, y, w, h, data) {
     PATHBUBBLES.Object2D.call(this);
-    this.type = "Table";
+    this.type = "BiPartite";
     this.x = x || 0;
     this.y = y || 0;
     this.w = w || 500;
@@ -15,7 +15,7 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
     this.fillColor = "#ffffff";
     this.cornerRadius = 20;
     this.lineWidth = 10;
-    this.dbId = dbId;
+
     this.shape = new PATHBUBBLES.Shape.Rectangle(this, this.x, this.y, this.w, this.h, this.strokeColor, this.fillColor, this.lineWidth, this.cornerRadius);
     this.menu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2, this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1) || null;
     this.menuText = new PATHBUBBLES.Text(this, "M");
@@ -29,40 +29,32 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
 //    tmp += '<input type="text" id=file style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
     tmp += '<input type="button" id=export value= "Link TO WebGiVi" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
 //    tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y + 55 + ' px; "></div>';
-//    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 80 + 'px; ">';
+    tmp += '<input type="button" id=saveFile value= "Save" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 50 + 'px; ">';
 //    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
     this.button.addButton(tmp);
 
-    this.name = "table";
+    this.name = "biPartite";
     this.title = new PATHBUBBLES.Title(this, this.name);
     this.__objectsAdded = [];
     this.__objectsRemoved = [];
     this.center = {x: this.x + this.w / 2, y: this.y + this.h / 2};
     this.GROUP = false;
-    this.selected_file = null;
     this.data = data || null;
-    this.queryObject = queryObject || null;
 };
 
-PATHBUBBLES.Table.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
+PATHBUBBLES.BiPartite.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
 
-PATHBUBBLES.Table.prototype = {
-    constructor: PATHBUBBLES.Table,
+PATHBUBBLES.BiPartite.prototype = {
+    constructor: PATHBUBBLES.BiPartite,
     addHtml: function () {
+        var _this=this;
         this.setOffset();
         var tmp = '';
         tmp += '<div id= svg' + this.id + ' style="position: absolute;"> </div>';
         $("#bubble").append($(tmp));
-        this.table = new PATHBUBBLES.D3Table(this, this.w, this.h);
-        if (this.data !== undefined && this.data !== null) {
-            this.table.data = this.data;
-        }
-        if (this.queryObject !== undefined && this.queryObject !== null) {
-            this.table.init(this.queryObject.dbId, this.queryObject.symbol);
-        }
-        else {
-            this.table.init(this.dbId);
-        }
+        this.biPartite = new PATHBUBBLES.D3BiPartite(this, this.w, this.h);
+        this.biPartite.init();
+
     },
     addObject: function (object) {
         var index = this.children.indexOf(object);
@@ -144,40 +136,12 @@ PATHBUBBLES.Table.prototype = {
                                         var string2temp=string2[j].split(" (")[0].toUpperCase();
                                         line.push(string2temp);
                                         biPartiteData.push(line);
-
                                     }
 
                                 }
                                 if(biPartiteData.length>0)
                                 {
-                                    var bubble = new PATHBUBBLES.BiPartite(_this.x + _this.offsetX + _this.w-40, _this.y + _this.offsetY,600,510,biPartiteData);
-                                    bubble.addHtml();
-                                    if(_this.name.indexOf(")"))
-                                    {
-                                        bubble.name ="(Gene Symbol)"+_this.name.split(")")[1];
-                                    }
-
-                                    bubble.menuOperation();
-                                    if(viewpoint)
-                                    {
-                                        bubble.offsetX = viewpoint.x;
-                                        bubble.offsetY = viewpoint.y;
-                                    }
-                                    scene.addObject(bubble);
-
-                                    if (!_this.GROUP) {
-                                        var group = new PATHBUBBLES.Groups();
-                                        group.objectAddToGroup(_this);
-                                        group.objectAddToGroup(bubble);
-                                        scene.addObject(group);
-                                    }
-                                    else {
-                                        if (_this.parent instanceof  PATHBUBBLES.Groups) {
-                                            _this.parent.objectAddToGroup(_this);
-                                            _this.parent.objectAddToGroup(bubble);
-                                            scene.addObject(_this.parent);
-                                        }
-                                    }
+                                    var t;
                                 }
 
                             }
@@ -189,6 +153,43 @@ PATHBUBBLES.Table.prototype = {
                     alert("Link to WebGiVi is just for expression Analysis!");
                 }
             }
+        });
+        $menuBarbubble.find("#saveFile").on('click',function(){
+            var currentData= _this.biPartite.data[0].data;
+            var saveString = "";
+            if(currentData.data!==undefined)
+            {
+                var tempData = currentData.data;
+                var tempKey = currentData.keys;
+                for(var i=0; i<tempData[0].length; ++i)
+                {
+                   for(var j=0;j<tempData[0][i].length; ++j)
+                   {
+                       if(tempData[0][i][j] ==1)
+                       {
+                           saveString += tempKey[0][i];
+                           saveString += "\t";
+                           saveString += tempKey[1][j];
+                           saveString += "\n";
+                       }
+                   }
+                }
+                for(var i=0; i<tempData[1].length; ++i)
+                {
+                    for(var j=0;j<tempData[1][i].length; ++j)
+                    {
+                        if(tempData[1][i][j] ==1)
+                        {
+                            saveString += tempKey[0][j];
+                            saveString += "\t";
+                            saveString += tempKey[1][i];
+                            saveString += "\n";
+                        }
+                    }
+                }
+                download(saveString, "geneSymbol.txt", "text/plain");
+            }
+
         });
     },
     deleteThisBubble: function(){
@@ -233,18 +234,22 @@ PATHBUBBLES.Table.prototype = {
             top: 25,
             width: 180
         });
+        $menuBarbubble.find('#saveFile').css({
+            left: 10,
+            top: 50,
+            width: 180
+        });
     },
     draw: function (ctx, scale) {
         this.setOffset();
-
         ctx.save();
         this.shape.draw(ctx, scale);
         var space = 6;
         $('#svg' + this.id).css({
             width: this.w - 15 - space,      //leve 6 space for tree ring
             height: this.h - 20 - space,
-            left: this.x + this.w / 2 - this.table.w / 2 + 5 + space / 2,
-            top: this.y + this.h / 2 - this.table.h / 2 + 50 + 10 + space / 2+5
+            left: this.x + this.w / 2 - this.biPartite.w / 2 + 5 + space / 2,
+            top: this.y + this.h / 2 - this.biPartite.h / 2 + 50 + 10 + space / 2+5
         });
         //
         this.shape.drawStrokeAgain(ctx, scale);

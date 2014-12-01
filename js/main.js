@@ -70,25 +70,28 @@ $(document).ready(function () {
                 }
                 scene.addObject(bubble5);
             }
-//            else if (key === 'Open_Table') {
-//                var bubble6 = new PATHBUBBLES.Table(mousePosX, mousePosY,500,500,1643713);
-//                bubble6.addHtml();
-//                bubble6.table.keepQuery = false;
-//                bubble6.menuOperation();
-//                if(viewpoint)
-//                {
-//                    bubble6.offsetX = viewpoint.x;
-//                    bubble6.offsetY = viewpoint.y;
-//                }
-//                scene.addObject(bubble6);
-//            }
+            else if (key === 'Open_Tree') {
+                var bubble6 = new PATHBUBBLES.BiPartite(mousePosX, mousePosY,600,510);
+                bubble6.addHtml();
+                bubble6.menuOperation();
+                if(viewpoint)
+                {
+                    bubble6.offsetX = viewpoint.x;
+                    bubble6.offsetY = viewpoint.y;
+                }
+                scene.addObject(bubble6);
+            }
             else if (key === 'Delete_All') {       //modify a bug by changing for loop from i=0, ... to i= array length to 0
-                for (var l = scene.children.length-1; l >0; l--) {
-                    if (scene.children[l])
-                        scene.removeObject(scene.children[l]);
+                for (var l = scene.children.length-1; l >=0; l--) {
+                    if (scene.children[l] instanceof PATHBUBBLES.Bubble
+                        ||scene.children[l] instanceof PATHBUBBLES.TreeRing
+                        ||scene.children[l] instanceof PATHBUBBLES.Table
+                        ||scene.children[l] instanceof PATHBUBBLES.BiPartite)
+//                        scene.removeObject(scene.children[l]);
+                        scene.children[l].deleteThisBubble();
                 }
                 scene.children.length = 0;
-                for (var l = PATHBUBBLES.objects.length-1; l > 0; l--) {
+                for (var l = PATHBUBBLES.objects.length-1; l >= 0; l--) {
                     if (PATHBUBBLES.objects[l])
                         delete PATHBUBBLES.objects[l];
                 }
@@ -104,6 +107,7 @@ $(document).ready(function () {
         items: {
             "Open_Bubble": {name: "Open Pathway Graph"},
             "Open_TreeRing": {name: "Open Pathway TreeRing"},
+            "Open_Tree": {name: "Open Pathway"},
             "Delete_All": {name: "Delete All"},
             "sep1": "---------",
             "Open_Help": {name: "Open Simple Tutorial"}

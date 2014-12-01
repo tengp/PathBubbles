@@ -59,7 +59,7 @@ PATHBUBBLES.Renderer.prototype = {
             if (scene.children.length > 0) {
                 for (var i = scene.children.length - 1; i >= 0; i--) {
                     if (scene.children[i] instanceof PATHBUBBLES.Bubble
-                        || scene.children[i] instanceof PATHBUBBLES.TreeRing || scene.children[i] instanceof PATHBUBBLES.Table) {
+                        || scene.children[i] instanceof PATHBUBBLES.TreeRing || scene.children[i] instanceof PATHBUBBLES.Table||scene.children[i] instanceof PATHBUBBLES.BiPartite) {
                         scene.children[i].draw(_this.ctx, 1);
                         scene.children[i].draw(_this.nav_ctx, this.navCanvasHeight / this.canvasHeight);
                     }

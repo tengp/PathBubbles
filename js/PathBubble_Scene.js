@@ -24,16 +24,6 @@ PATHBUBBLES.Scene.prototype = {
             this.children.splice(index, 1);
         }
         this.children.push(object);
-//        if( this.__objectsAdded.indexOf( object )  == -1)
-//            this.__objectsAdded.push( object );
-//        // check if previously removed
-//        var i = this.__objectsRemoved.indexOf( object );
-//        if ( i !== - 1 ) {
-//            this.__objectsRemoved.splice( i, 1 );
-//        }
-//        for ( var c = 0; c < object.children.length; c ++ ) {
-//            this.addObject( object.children[ c ] );
-//        }
     },
     moveObjectToFront: function (object) {
         var indexThis = this.children.indexOf(object);
@@ -60,6 +50,11 @@ PATHBUBBLES.Scene.prototype = {
             object.menu.HighLight_State = false;
         }
         else if (object instanceof PATHBUBBLES.Table) {
+            if (object.menu.HighLight_State)
+                object.button.hide();
+            object.menu.HighLight_State = false;
+        }
+        else if (object instanceof PATHBUBBLES.BiPartite) {
             if (object.menu.HighLight_State)
                 object.button.hide();
             object.menu.HighLight_State = false;
@@ -94,6 +89,12 @@ PATHBUBBLES.Scene.prototype = {
 //            object.deleteBubble();
         }
         else if (object instanceof PATHBUBBLES.Table) {
+            if (object.menu.HighLight_State)
+                object.button.hide();
+            object.menu.HighLight_State = false;
+//            object.deleteBubble();
+        }
+        else if (object instanceof PATHBUBBLES.BiPartite) {
             if (object.menu.HighLight_State)
                 object.button.hide();
             object.menu.HighLight_State = false;

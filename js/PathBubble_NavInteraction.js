@@ -45,6 +45,8 @@ PATHBUBBLES.NavInteraction = function (renderer) {
                         scene.children[i].x -= offsetX * window.innerHeight / 50;
                     if (scene.children[i] instanceof PATHBUBBLES.Table)
                         scene.children[i].x -= offsetX * window.innerHeight / 50;
+                    if (scene.children[i] instanceof PATHBUBBLES.BiPartite)
+                        scene.children[i].x -= offsetX * window.innerHeight / 50;
                     if (scene.children[i] instanceof PATHBUBBLES.Groups)
                         scene.children[i].offsetX -= offsetX * window.innerHeight / 50;
                 }
