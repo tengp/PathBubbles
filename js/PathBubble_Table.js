@@ -241,6 +241,7 @@ PATHBUBBLES.Table.prototype = {
             top: 25,
             width: 180
         });
+
     },
     draw: function (ctx, scale) {
         this.setOffset();
@@ -248,10 +249,11 @@ PATHBUBBLES.Table.prototype = {
         ctx.save();
         this.shape.draw(ctx, scale);
         var space = 6;
+        this.w = $("#svg" + this.id).children("table").width()+40;
         $('#svg' + this.id).css({
             width: this.w - 15 - space,      //leve 6 space for tree ring
             height: this.h - 20 - space,
-            left: this.x + this.w / 2 - this.table.w / 2 + 5 + space / 2,
+            left: this.x + space / 2+5,
             top: this.y + this.h / 2 - this.table.h / 2 + 50 + 10 + space / 2+5
         });
         //

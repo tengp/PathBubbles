@@ -89,6 +89,7 @@ PATHBUBBLES.D3Table.prototype = {
                 _this.parent.h = Math.min(jsonData.length *12+100, 400);
                 _this.h = Math.min(jsonData.length *12+100, 400);
                 height = _this.h - margin.top - margin.bottom;
+
                 d3.select("#svg" + _this.parent.id)
                     .attr("width", width )
                     .attr("height",  height );
@@ -228,5 +229,7 @@ PATHBUBBLES.D3Table.prototype = {
                 return b ? 1 : a ? -1 : 0;
             }
         }
+
+
     }
 };
