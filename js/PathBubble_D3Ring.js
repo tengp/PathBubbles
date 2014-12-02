@@ -20,8 +20,7 @@ PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
 PATHBUBBLES.D3Ring.prototype = {
     constructor: PATHBUBBLES.D3Ring,
     init: function () {
-//        if(maxLevel!== undefined)
-//            this.maxLevel = maxLevel;
+
         var _this = this;
         var width = this.defaultRadius,
             height = this.defaultRadius,
@@ -32,16 +31,19 @@ PATHBUBBLES.D3Ring.prototype = {
         var y = d3.scale.sqrt()
             .range([0, radius]);
 
-//        var color = d3.scale.category20c();
-
         var svg = d3.select("#svg" + _this.parent.id).append("svg")
             .attr("width", width)
-            .attr("height", _this.parent.h);
+            .attr("height", _this.parent.h -40);
         var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
-
-
+        var gGroup;
         var mainSvg = svg.append("g")
             .attr("transform", "translate(" + width / 2 + "," + (height / 2 ) + ")");
+        function zoom() {
+            gGroup.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+        }
+        var zoomListener = d3.behavior.zoom()
+            .translate([0, 0])
+            .scaleExtent([1, 10]).on("zoom", zoom);
 
         var partition = d3.layout.partition()
             .value(function (d) {
@@ -336,16 +338,37 @@ PATHBUBBLES.D3Ring.prototype = {
             $('#menuView' + _this.parent.id).find('#crossTalkLevel').val(_this.showCrossTalkLevel);
             d3.json(crossTalkFileName, function (error, crossTalkData) {
                 var classes = crossTalkData[_this.showCrossTalkLevel - 1];
-
-                var gGroup = mainSvg.append("g").attr("class", "graphGroup");
+                gGroup = mainSvg.append("g").attr("class", "graphGroup");
+                gGroup.call(zoomListener) // delete this line to disable free zooming
+                    .call(zoomListener.event);
                 var pathG = gGroup.append("g").selectAll(".path");
 //                var bundleGroup = svg.append("g").attr("class", "bundleGroup");
                 var link = gGroup.append("g").selectAll(".link");
                 var node = gGroup.append("g").selectAll(".node");
                 var textG = gGroup.append("g").selectAll(".text");
 //                var expressionColors = d3.scale.category10();
-                var expressionColors = ["#aec7e8","#ffbb78"," #98df8a","#c5b0d5","#ff9896",
-                                        " #f7b6d2", "#ff7f0e","#17becf","#2ca02c","#e377c2"];
+                var expressionColors = [
+//                    "#543005",
+//                    "#8c510a",
+//                    "#bf812d",
+//                    "#dfc27d",
+//                    "#f6e8c3",
+//                    "#c7eae5",
+//                    "#80cdc1",
+//                    "#35978f",
+//                    "#01665e",
+//                    "#003c30"
+                    "#a6cee3",
+                    "#1f78b4",
+                    "#b2df8a",
+                    "#33a02c",
+                    "#fb9a99",
+                    "#e31a1c",
+                    "#fdbf6f",
+                    "#ff7f00",
+                    "#cab2d6",
+                    "#6a3d9a"
+                ];
                 processTextLinks(nodeData);
 
                 if (_this.parent.HIDE) {
@@ -416,11 +439,6 @@ PATHBUBBLES.D3Ring.prototype = {
                         .attr("transform", "translate(" + (width - 3 * scaleWidth) + "," + ( height + 40 - 10 * sectionHeight  ) + ")")
                         .attr("width", BarWidth)
                         .attr("height", BarHeight);
-
-//                    var colorRange = d3.scale.linear()
-//                        .domain([0, max])
-//                        .interpolate(d3.interpolateRgb)
-//                        .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
 
                     colorScaleBar.selectAll('rect')
                         .data(newData)
@@ -924,8 +942,8 @@ PATHBUBBLES.D3Ring.prototype = {
                         importLinks.push(importObj);
                     }
 
-                    var inode = mainSvg.append('g').selectAll(".inner_node");
-                    var titleLink = mainSvg.append('g').attr('class', 'links').selectAll(".titleLink");
+                    var inode = gGroup.append('g').selectAll(".inner_node");
+                    var titleLink = gGroup.append('g').attr('class', 'links').selectAll(".titleLink");
                     var inodeRect  = inode.data(inners).enter().append("g")
                         .attr("class", "inner_node");
                     var inodeText  = inode.data(inners).enter().append("g")
@@ -1222,7 +1240,6 @@ PATHBUBBLES.D3Ring.prototype = {
                         }
                     }
                 }
-
 
                 if($('#menuView' + _this.parent.id).find('#operateText').val() == "showTitle")
                 {

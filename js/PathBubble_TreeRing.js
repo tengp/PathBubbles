@@ -91,7 +91,7 @@ PATHBUBBLES.TreeRing.prototype = {
     addHtml: function () {
         this.setOffset();
         var tmp = '';
-        tmp += '<div id= svg' + this.id + ' style="position: absolute; width:' + (this.w + 5) + 'px; ' + 'height:' + (this.h + 5) + 'px; left:' + (this.shape.x + this.offsetX) + ' px; top:' + (this.shape.y + this.offsetY) + 'px; "> </div>';
+        tmp += '<div id= svg' + this.id + ' style="position: absolute; width:' + (this.w + 5) + 'px; ' + 'height:' + (this.h ) + 'px; left:' + (this.shape.x + this.offsetX) + ' px; top:' + (this.shape.y + this.offsetY) + 'px; "> </div>';
         $("#bubble").append($(tmp));
 
         if (!this.dataType)

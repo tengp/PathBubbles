@@ -4,87 +4,49 @@
  * @time        10/10/2014
  * @name        PathBubble_D3Ring
  */
-PATHBUBBLES.D3Ring = function (parent, defaultRadius, functionType, dataType, name) {
+PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
     this.parent = parent;
     this.defaultRadius = defaultRadius;
     this.name = name || null;
-    this.file = "./data/" + functionType + "/" + dataType + "/" + name + ".json";
+    this.file = "./data/Ortholog/" + dataType + "/" + name + ".json";
+    this.customOrtholog = null;
+    this.selectedData = null;
+    this.showCrossTalkLevel = 1;
+    this.ChangeLevel = false;
+    this.customExpression = null;
+    this.expressionScaleMax = null;
+    this.maxLevel = 6;
 };
 PATHBUBBLES.D3Ring.prototype = {
     constructor: PATHBUBBLES.D3Ring,
-    init: function (type) {
+    init: function () {
+//        if(maxLevel!== undefined)
+//            this.maxLevel = maxLevel;
+        var _this = this;
         var width = this.defaultRadius,
             height = this.defaultRadius,
             radius = Math.min(width, height) / 2;
-
         var x = d3.scale.linear()
             .range([0, 2 * Math.PI]);
-
 
         var y = d3.scale.sqrt()
             .range([0, radius]);
 
-        var color = d3.scale.category20c();
+//        var color = d3.scale.category20c();
 
-        var svg = d3.select("#svg" + this.parent.id).append("svg")
+        var svg = d3.select("#svg" + _this.parent.id).append("svg")
             .attr("width", width)
-            .attr("height", this.parent.h);
-        if (type !== "Expression") {
-            var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
-            var symbol = svg.append("g")
-                .attr("class", "symbol")
-                .attr("transform", "translate(" + (width / 2 - 75) + "," + (height + 5 ) + ")")
-                .attr("width", 150)
-                .attr("height", 20);
-            var color1 = symbol.append("g");
-            color1.attr("class", "color1")
-                .append("rect")
-                .attr("width", 50)
-                .attr("height", 20)
-                .style("stroke", colors[0])
-                .style("fill", colors[0]);
-            color1.append("text")
-                .attr("x", 0)
-                .attr("y", 13)
-                .style("text-anchor", "start")
-                .style("font-size", 10)
-                .style("fill", "#000")
-                .text("Partial");
+            .attr("height", _this.parent.h);
+        var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
 
-            var color2 = symbol.append("g");
-            color2.append("rect").attr("width", 50).attr("transform", "translate(" + 50 + "," + 0 + ")")
-                .attr("height", 20)
-                .style("stroke", colors[1])
-                .style("fill", colors[1]);
-            color2.append("text")
-                .attr("x", 50)
-                .attr("y", 13)
-                .style("text-anchor", "start")
-                .style("font-size", 10)
-                .style("fill", "#000")
-                .text("Complete");
-            var color3 = symbol.append("g");
-            color3.append("rect").attr("width", 50).attr("transform", "translate(" + 100 + "," + 0 + ")")
-                .attr("height", 20)
-                .style("stroke", colors[2])
-                .style("fill", colors[2]);
-            color3.append("text")
-                .attr("y", 13)
-                .attr("x", 100)
-                .style("text-anchor", "start")
-                .style("font-size", 10)
-                .style("fill", "#000")
-                .text("Empty");
-        }
 
-        svg = svg.append("g")
+        var mainSvg = svg.append("g")
             .attr("transform", "translate(" + width / 2 + "," + (height / 2 ) + ")");
 
         var partition = d3.layout.partition()
             .value(function (d) {
                 return d.size;
             });
-        var innerRingRadius = 0;
         var arc = d3.svg.arc()
             .startAngle(function (d) {
                 return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
@@ -96,7 +58,6 @@ PATHBUBBLES.D3Ring.prototype = {
                 return Math.max(0, y(d.y));
             })
             .outerRadius(function (d) {
-                innerRingRadius = Math.max(0, y(d.y + d.dy));
                 return Math.max(0, y(d.y + d.dy));
             });
 
@@ -124,110 +85,384 @@ PATHBUBBLES.D3Ring.prototype = {
                 return [d.x, d.y];
             });
         var _this = this;
-//        if(!this.data)
-//        {
-        d3.json(_this.file, function (error, root) {
-            operation(root);
-        });
-//        }
-//        else
-//        {
-//             operation(this.data);
-//        }
-        function operation(root) {
-            nodeData = partition.nodes(root);
-            _this.parent.name = nodeData[0].name + " " + _this.parent.name;
+//        var maxLevel = 1;
+        var minRatio;
+        var maxRatio;
+        if (_this.selectedData == null) {
+            d3.json(_this.file, function (error, root) {
+                if (_this.customOrtholog && !_this.customExpression) {
+                    nodeData = partition.nodes(root);
+                    for (var i = 0; i < nodeData.length; ++i)  //every pathway
+                    {
+                        if (nodeData[i].symbols == undefined) {
+                            continue;
+                        }
+                        var count = 0;
+                        nodeData[i].gallusOrth = {};
+                        nodeData[i].gallusOrth.sharedSymbols = [];
+                        for (var k = 0; k < nodeData[i].symbols.length; ++k) {
+                            for (var j = 0; j < _this.customOrtholog.length; ++j) {
+                                if(nodeData[i].symbols[k] == null)
+                                    continue;
+                                if (nodeData[i].symbols[k].toUpperCase() == _this.customOrtholog[j].symbol.toUpperCase()) {
+                                    if (_this.customOrtholog[j].dbId !== "\N") {
+                                        count++;
+                                        nodeData[i].gallusOrth.sharedSymbols.push(_this.customOrtholog[j].symbol);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
 
-//            var crossTalkFileName = "./data/data.json";
-            var crossTalkFileName = "./data/crossTalkData1/" + root.name + ".json";
-            d3.json(crossTalkFileName, function (error, classes) {
-                var g = svg.selectAll("g")
-                    .data(nodeData)
-                    .enter().append("g");
-                if (type == "Expression") {
-                    var sum = 0;
-                    var max = d3.max(nodeData, function (d) {
-                        if (d.name == "homo sapiens")
-                            return;
-                        var temp = d.downs.length + d.ups.length;
-                        sum += temp;
-                        return temp;
+                        if (count === nodeData[i].symbols.length) {
+                            nodeData[i].gallusOrth.type = "Complete";
+//                            nodeData[i].gallusOrth.count = count;
+                        }
+                        else if (count === 0) {
+                            nodeData[i].gallusOrth.type = "Empty";
+//                            nodeData[i].gallusOrth.count = count;
+                        }
+                        else {
+                            nodeData[i].gallusOrth.type = "Part";
+//                            nodeData[i].gallusOrth.count = count;
+                        }
+                    }
+                    _this.maxLevel = d3.max(nodeData, function (d) {
+
+                        return d.depth;
                     });
-                    var divisions = 20;
 
-                    var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
-                        scaleWidth = 170 - scaleMargin.left - scaleMargin.right,
-                        scaleHeight = 30 - scaleMargin.top - scaleMargin.bottom;
-
-                    var newData = [];
-                    var sectionWidth = Math.floor(scaleWidth / divisions);
-
-                    for (var i = 0; i < scaleWidth; i += sectionWidth) {
-                        newData.push(i);
+                    if (!_this.ChangeLevel) {
+//                        maxLevel = 6;
+                        var tmpString = "";
+                        for (var i = 1; i <= _this.maxLevel; ++i) {
+                            tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
+                        }
+                        $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                        _this.parent.name = root.name + " " + _this.parent.name;
                     }
 
-                    var colorScaleLin = d3.scale.linear()
-                        .domain([0, newData.length - 1])
-                        .interpolate(d3.interpolateRgb)
-                        .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
+                    operation(nodeData);
+                }   //Custom Ortholog
+                else if (_this.customExpression && !_this.customOrtholog)    //Default Ortholog //custom expression
+                {
+                    var $menuBarbubble = $('#menuView' + _this.parent.id); //Custom Ortholog   //custom expression
+                    var minRatio = $menuBarbubble.find('#minRatio').val();
+                    var maxRatio = $menuBarbubble.find('#maxRatio').val();
+                    if (minRatio == "")
+                        minRatio = "-1.5";
+                    if (maxRatio == "")
+                        maxRatio = "1.5";
+                    minRatio = parseFloat(minRatio);
+                    maxRatio = parseFloat(maxRatio);
+                    nodeData = partition.nodes(root);
+                    for (var i = 0; i < nodeData.length; ++i)  //every pathway
+                    {
+                        if (nodeData[i].gallusOrth == undefined) {
+                            continue;
+                        }
+                        if (nodeData[i].gallusOrth.sharedSymbols == undefined) {
+                            continue;
+                        }
+                        nodeData[i].expression = {};
+                        nodeData[i].expression.ups = [];
+                        nodeData[i].expression.downs = [];
+                        nodeData[i].expression.unchanges = [];
+                        for (var k = 0; k < nodeData[i].gallusOrth.sharedSymbols.length; ++k) {
+
+                            for (var j = 0; j < _this.customExpression.length; ++j) {
+                                if(nodeData[i].gallusOrth.sharedSymbols[k] == null)
+                                    continue;
+                                if (nodeData[i].gallusOrth.sharedSymbols[k].toUpperCase() == _this.customExpression[j].symbol.toUpperCase()) {
+                                    if (parseFloat(_this.customExpression[j].ratio) >= maxRatio) {
+                                        nodeData[i].expression.ups.push(_this.customExpression[j]);
+                                        break;
+                                    }
+                                    else if (parseFloat(_this.customExpression[j].ratio) <= minRatio) {
+                                        nodeData[i].expression.downs.push(_this.customExpression[j]);
+                                        break;
+                                    }
+                                    else {
+                                        nodeData[i].expression.unchanges.push(_this.customExpression[j]);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    _this.maxLevel = d3.max(nodeData, function (d) {
+
+                        return d.depth;
+                    });
+                    if (!_this.ChangeLevel) {
+//                        maxLevel = 6;
+                        var tmpString = "";
+                        for (var i = 1; i <= _this.maxLevel; ++i) {
+                            tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
+                        }
+                        $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                        _this.parent.name = root.name + " " + _this.parent.name;
+                    }
+                    operation(nodeData);
+                }
+                else if (_this.customExpression && _this.customOrtholog) {
+                    var $menuBarbubble = $('#menuView' + _this.parent.id);
+                    var minRatio = $menuBarbubble.find('#minRatio').val();
+                    var maxRatio = $menuBarbubble.find('#maxRatio').val();
+                    if (minRatio == "")
+                        minRatio = "-1.5";
+                    if (maxRatio == "")
+                        maxRatio = "1.5";
+                    minRatio = parseFloat(minRatio);
+                    maxRatio = parseFloat(maxRatio);
+                    nodeData = partition.nodes(root);
+                    for (var i = 0; i < nodeData.length; ++i)  //every pathway
+                    {
+                        if (nodeData[i].symbols == undefined) {
+                            continue;
+                        }
+                        //---------------------
+                        var count = 0;
+                        nodeData[i].gallusOrth = {};
+                        nodeData[i].gallusOrth.sharedSymbols = [];
+
+                        //---------------------
+                        nodeData[i].expression = {};
+                        nodeData[i].expression.ups = [];
+                        nodeData[i].expression.downs = [];
+                        nodeData[i].expression.unchanges = [];
+
+                        for (var k = 0; k < nodeData[i].symbols.length; ++k) {
+                            for (var j = 0; j < _this.customOrtholog.length; ++j) {
+                                if(nodeData[i].symbols[k] == null)
+                                    continue;
+                                if (nodeData[i].symbols[k].toUpperCase() == _this.customOrtholog[j].symbol.toUpperCase()) {
+                                    if (_this.customOrtholog[j].dbId !== "\N") {
+                                        count++;
+                                        nodeData[i].gallusOrth.sharedSymbols.push(_this.customOrtholog[j].symbol);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        for (var k = 0; k < nodeData[i].gallusOrth.sharedSymbols.length; ++k) {
+                            for (var j = 0; j < _this.customExpression.length; ++j) {
+                                if(nodeData[i].gallusOrth.sharedSymbols[k] == null)
+                                    continue;
+                                if (nodeData[i].gallusOrth.sharedSymbols[k].toUpperCase() == _this.customExpression[j].symbol.toUpperCase()) {
+                                    if (parseFloat(_this.customExpression[j].ratio) >= maxRatio) {
+                                        nodeData[i].expression.ups.push(_this.customExpression[j]);
+                                        break;
+                                    }
+                                    else if (parseFloat(_this.customExpression[j].ratio) <= minRatio) {
+                                        nodeData[i].expression.downs.push(_this.customExpression[j]);
+                                        break;
+                                    }
+                                    else {
+                                        nodeData[i].expression.unchanges.push(_this.customExpression[j]);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        if (count === nodeData[i].symbols.length) {
+                            nodeData[i].gallusOrth.type = "Complete";
+//                            nodeData[i].gallusOrth.count = count;
+                        }
+                        else if (count === 0) {
+                            nodeData[i].gallusOrth.type = "Empty";
+//                            nodeData[i].gallusOrth.count = count;
+                        }
+                        else {
+                            nodeData[i].gallusOrth.type = "Part";
+//                            nodeData[i].gallusOrth.count = count;
+                        }
+                    }
+                    _this.maxLevel = d3.max(nodeData, function (d) {
+
+                        return d.depth;
+                    });
+                    if (!_this.ChangeLevel) {
+//                        maxLevel = 6;
+                        var tmpString = "";
+                        for (var i = 1; i <= _this.maxLevel; ++i) {
+                            tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
+                        }
+                        $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                        _this.parent.name = root.name + " " + _this.parent.name;
+                    }
+                    operation(nodeData);
+                }
+                else {
+                    nodeData = partition.nodes(root);
+                    _this.maxLevel = d3.max(nodeData, function (d) {
+                        return d.depth;
+                    });
+                    if (!_this.ChangeLevel) {
+//                        maxLevel = 6;
+                        var tmpString = "";
+                        for (var i = 1; i <= _this.maxLevel; ++i) {
+                            tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
+                        }
+                        $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                        _this.parent.name = root.name + " " + _this.parent.name;
+                    }
+//                    crossTalkFileName = "./data/crossTalkData/" + nodeData[0].name + ".json";
+                    operation(nodeData);
+                }
+            });
+        }
+        else {
+            nodeData = partition.nodes(_this.selectedData);
+            _this.maxLevel = d3.max(nodeData, function (d) {
+
+                return d.depth;
+            });
+            if (!_this.ChangeLevel) {
+//                maxLevel = _this.selectedData.maxLevel - _this.selectedData.depth;
+                var tmpString = "";
+                for (var i = 1; i <= _this.maxLevel; ++i) {
+                    tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
+                }
+                $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+                _this.parent.name = _this.selectedData.name + " " + _this.parent.name;
+            }
+//            crossTalkFileName = "./data/crossTalkData/" + nodeData[0].name + ".json";
+            operation(nodeData);
+        }
+        function operation(nodeData) {
+
+            var crossTalkFileName = "./data/crossTalkLevel/" + nodeData[0].name + ".json";
+            $('#menuView' + _this.parent.id).find('#crossTalkLevel').val(_this.showCrossTalkLevel);
+            d3.json(crossTalkFileName, function (error, crossTalkData) {
+                var classes = crossTalkData[_this.showCrossTalkLevel - 1];
+
+                var gGroup = mainSvg.append("g").attr("class", "graphGroup");
+                var pathG = gGroup.append("g").selectAll(".path");
+//                var bundleGroup = svg.append("g").attr("class", "bundleGroup");
+                var link = gGroup.append("g").selectAll(".link");
+                var node = gGroup.append("g").selectAll(".node");
+                var textG = gGroup.append("g").selectAll(".text");
+//                var expressionColors = d3.scale.category10();
+                var expressionColors = ["#aec7e8","#ffbb78"," #98df8a","#c5b0d5","#ff9896",
+                                        " #f7b6d2", "#ff7f0e","#17becf","#2ca02c","#e377c2"];
+                processTextLinks(nodeData);
+
+                if (_this.parent.HIDE) {
+                    var max;
+                    if (!_this.expressionScaleMax) {
+                        for(var i=0; i<nodeData.length; ++i)
+                        {
+                            if(nodeData[i].name !== "homo sapiens" && nodeData[i].expression !== undefined && nodeData[i].gallusOrth !== undefined)
+                            {
+                                nodeData[i].unique = {};
+                                nodeData[i].unique.ups=[];
+                                nodeData[i].unique.downs=[];
+                                nodeData[i].unique.sharedSymbols=[];
+                                for(var j=0; j< nodeData[i].expression.ups.length; ++j)
+                                {
+                                     if(nodeData[i].unique.ups.indexOf(nodeData[i].expression.ups[j]) == -1 )
+                                     {
+                                         nodeData[i].unique.ups.push(nodeData[i].expression.ups[j]);
+                                     }
+                                }
+                                for(var j=0; j< nodeData[i].expression.downs.length; ++j)
+                                {
+                                    if(nodeData[i].unique.downs.indexOf(nodeData[i].expression.downs[j]) == -1 )
+                                    {
+                                        nodeData[i].unique.downs.push(nodeData[i].expression.downs[j]);
+                                    }
+                                }
+                                for(var j=0; j< nodeData[i].gallusOrth.sharedSymbols.length; ++j)
+                                {
+                                    if(nodeData[i].unique.sharedSymbols.indexOf(nodeData[i].gallusOrth.sharedSymbols[j]) == -1 )
+                                    {
+                                        nodeData[i].unique.sharedSymbols.push(nodeData[i].gallusOrth.sharedSymbols[j]);
+                                    }
+                                }
+                            }
+                        }
+                        max = d3.max(nodeData, function (d) {
+                            if (d.name == "homo sapiens" || d.expression == undefined || d.gallusOrth == undefined)
+                                return 0;
+//                            return (d.expression.downs.length + d.expression.ups.length) / d.gallusOrth.sharedSymbols.length;
+                            return (d.unique.downs.length + d.unique.ups.length) / d.unique.sharedSymbols.length;
+                        });
+                    }
+                    else {
+                        max = _this.expressionScaleMax;
+                    }
+
+                    var divisions = 10;
+
+                    var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
+                        scaleWidth = 30 - scaleMargin.left - scaleMargin.right,
+                        scaleHeight = 170 - scaleMargin.top - scaleMargin.bottom;
+
+                    var newData = [];
+                    var sectionHeight = Math.floor(scaleHeight / divisions);
+                    for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
+                        var obj = {};
+                        obj.data = i;
+                        obj.text = parseFloat(j).toFixed(3);
+                        newData.push(obj);
+                    }
 
                     var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
                     var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
+
                     var colorScaleBar = svg.append("g")
                         .attr("class", "colorScaleBar")
-                        .attr("transform", "translate(" + (0 - BarWidth / 2) + "," + height / 2 + ")")
+                        .attr("transform", "translate(" + (width - 3 * scaleWidth) + "," + ( height + 40 - 10 * sectionHeight  ) + ")")
                         .attr("width", BarWidth)
                         .attr("height", BarHeight);
-//                    .attr("transform", "rotate(-90)");
-
-                    var xScale = d3.scale.linear()
-                        .domain([0, max / sum])
-                        .range([0, scaleWidth]);
-
-                    var colorRange = d3.scale.linear()
-                        .domain([0, max / sum])
-                        .interpolate(d3.interpolateRgb)
-                        .range([d3.rgb(243, 247, 213), d3.rgb(33, 49, 131)]);
-
-                    var xAxis = d3.svg.axis()
-                        .scale(xScale);
-
-                    colorScaleBar.append("g")
-                        .attr("class", "x axis")
-                        .attr("transform", "translate(0," + (scaleHeight + 3) + ")")
-                        .call(xAxis)
-                        .selectAll("text")
-                        .attr("y", 0)
-                        .attr("x", 8)
-                        .attr("dy", ".1em")
-                        .attr("transform", "rotate(90)")
-                        .style("text-anchor", "start");
 
                     colorScaleBar.selectAll('rect')
                         .data(newData)
                         .enter()
                         .append('rect')
-                        .attr("x", function (d) {
-                            return d;
+                        .attr("x", 0)
+                        .attr("y", function (d) {
+                            return d.data;
                         })
-                        .attr("y", 0)
-                        .attr("height", scaleHeight)
-                        .attr("width", sectionWidth)
+                        .attr("height", sectionHeight)
+                        .attr("width", scaleWidth)
+
                         .attr('fill', function (d, i) {
-                            return colorScaleLin(i)
+                            return expressionColors[i]
+                        });
+                    colorScaleBar.selectAll('text')
+                        .data(newData)
+                        .enter().append("text")
+                        .style("font-size", 10)
+                        .attr("transform", "translate(" + (scaleWidth / 2 + 10) + "," + (sectionHeight) + ")")
+                        .attr("y", function (d, i) {
+                            return d.data - 5;
+                        })
+                        .attr("dy", ".1em")
+                        .style("text-anchor", "start")
+                        .text(function (d, i) {
+                            return d.text;
                         });
                 }
-                var bundleGroup = svg.append("g").attr("class", "bundleGroup");
-                var link = bundleGroup.append("g").selectAll(".link");
-                var node = bundleGroup.append("g").selectAll(".node");
 
-                var path = g.append("path")
+                function getExpressionColor(ratio)
+                {
+                     if(max==0)
+                        return expressionColors[0];
+                    return expressionColors[Math.floor(9*ratio/max)];
+                }
+
+                pathG = pathG.data(nodeData)
+                    .enter().append("path")
                     .attr("id", function (d, i) {
                         return "group" + i;
                     })
                     .attr("d", arc)
                     .style("fill", function (d, i) {
-                        if (type != "Expression") {
+                        if (i == 0)
+                            return "#fff";
+                        if (!_this.customExpression) {
                             if (d.children !== undefined)
                                 var gallusOrth = (d.children ? d : d.parent).gallusOrth;
                             else
@@ -247,18 +482,17 @@ PATHBUBBLES.D3Ring.prototype = {
                                 return "#fff";
                             }
                         }
-                        else if (type == "Expression") {
-                            if (d.downs == undefined)
+                        else if (_this.customExpression) {
+                            if (d.name == "homo sapiens" || d.expression == undefined || d.gallusOrth == undefined)
                                 return "#fff";
-                            else {
-                                if (sum !== 0) {
-                                    return colorRange((d.downs.length + d.ups.length) / sum);
-                                }
-                                else {
-                                    return colorRange(0);
-                                }
+//                            else if (d.gallusOrth.sharedSymbols.length == 0) {
+                                else if (d.unique.sharedSymbols.length == 0) {
+                                return getExpressionColor(0);
                             }
-
+                            else {
+//                                return colorRange((d.expression.downs.length + d.expression.ups.length) / d.gallusOrth.sharedSymbols.length);
+                                return getExpressionColor((d.unique.downs.length + d.unique.ups.length) / d.unique.sharedSymbols.length);
+                            }
                         }
                     })
                     .style("cursor", "pointer")
@@ -288,34 +522,40 @@ PATHBUBBLES.D3Ring.prototype = {
                     return tooltip.html("");
                 });
 
-                var text = g.append("text")
-                    .attr("x", function (d) {
-                        return y(d.y);
+                textG = textG.data(nodeData.filter(
+                    function (d,i) {
+                        if(i==0)          //center of the circle
+                            return true;
+                        var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
+                        var r = Math.max(0, y(d.y));
+                        return thea * r >= 10;
+                    }))
+                    .enter().append("text")
+                    .attr("class", "bar-text") // add class
+                    .attr("text-anchor", function (d) {
+                        return "middle";
+//                        return x(d.x + d.dx / 2) > Math.PI ? "end" : "start";
                     })
-                    .attr("dx", "6") // margin
+                    .attr("transform", function (d, i) {
+                        if (i == 0)
+                            return "rotate(0)";
+                        var angle = x(d.x + d.dx / 2) * 180 / Math.PI - 90;
+
+                        return "rotate(" + angle + ")translate(" + (y(d.y) + 10) + ")rotate(" + (angle > 90 ? -180 : 0) + ")"
+                    })
                     .attr("dy", ".35em") // vertical-align
                     .style("font-size", 10)
                     .text(function (d, i) {
+//                        if(d.name == "homo sapiens")
+//                            return "";
                         if (i == 0)
-                            return d.name;
+                            return '';
                         var str = d.name;
                         str = str.match(/\b\w/g).join('');
                         str = str.substr(0, 4);
-                        if (d.depth < 3)
-                            return str;
-                        else
-                            return "";
-                    })
-                    .on("contextmenu", rightClick)
-                    .on("click", click)
-                    .on("mouseover", function (d) {
-                        tooltip.html(function () {
-                            return format_name(d);
-                        });
-                        return tooltip.transition()
-                            .duration(50)
-                            .style("opacity", 0.9);
+                        return str;
                     });
+                var symbol_max;
 
                 function computeTextRotation(d, i) {
                     if (i == 0)
@@ -323,238 +563,445 @@ PATHBUBBLES.D3Ring.prototype = {
                     var angle = x(d.x + d.dx / 2) - Math.PI / 2;
                     return angle / Math.PI * 180;
                 }
-
-                text.attr("transform", function (d, i) {
-                    return "rotate(" + computeTextRotation(d, i) + ")";
-                });
-
-                var objects = processLinks(nodeData, classes);
-                var links = objects.imports;
-                if (type != "Expression") {
-                    var simbol_max = d3.max(objects.nodes, function (d) {
-                        var temp = 0;
-                        if (d.simbols !== undefined)
-                            temp = d.simbols.length;
-                        return temp;
-                    });
-                }
-                else if (type == "Expression") {
-                    var up_max = d3.max(objects.nodes, function (d) {
-                        var temp = 0;
-                        if (d.ups !== undefined)
-                            temp = d.ups.length;
-                        return temp;
-                    });
-                    var down_max = d3.max(objects.nodes, function (d) {
-                        var temp = 0;
-                        if (d.downs !== undefined)
-                            temp = d.downs.length;
-                        return temp;
-                    });
-                }
-
-
-                var _nodes = objects.nodes;
-                link = link
-                    .data(bundle(links))
-                    .enter().append("path")
-                    .each(function (d) {
-                        d.source = d[0];
-                        d.target = d[d.length - 1];
-                    })
-                    .attr("class", "link")
-                    .attr("d", diagonal);
-                if (type != "Expression") {
-                    node = node
-                        .data(_nodes)
-                        .attr("id", function (d, i) {
-                            return "node" + d.dbId;
-                        })
-                        .enter().append("rect")
-                        .attr("class", "node")
-                        .attr("x", function (d) {
-                            return y(d.dy);
-                        })
-                        .attr("height", 10)
-                        .attr("width", function (d) {
+                if (classes !== undefined && classes.length) {
+                    var objects = processLinks(nodeData, classes);
+                    var links = objects.imports;
+                    if (!_this.customExpression) {
+                        symbol_max = d3.max(objects.nodes, function (d) {
                             var temp = 0;
-                            if (d.simbols !== undefined)
-                                temp = d.simbols.length;
-                            return temp / simbol_max * 40 + 3;
-                        })
-                        .attr("transform", function (d, i) {
-                            return "rotate(" + computeRotation(d, i) + ")";
-                        })
-                        .style("fill", "#f00")
-                        .on("contextmenu", barClick)
-                        .on("mouseover", mouseovered)
-                        .on("mouseout", mouseouted);
-
-                    function barClick() {
-                        var simbols = d3.select(this).datum().simbols;
-                        var _simbols = [];
-                        for (var i = 0; i < simbols.length; ++i) {
-                            var simbolObj = {};
-                            for (var j = 0; j < _simbols.length; ++j) {
-                                if (_simbols[j].name == simbols[i]) {
-                                    break;
-                                }
-                            }
-                            if (j >= _simbols.length) {
-                                simbolObj.name = simbols[i];
-                                simbolObj.count = 1;
-                                _simbols.push(simbolObj);
-                            }
-                            else {
-                                _simbols[j].count++;
-                            }
-                        }
-                        var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 230, 500, null, _simbols);
-                        bubble.name = "(Shared protein) " + d3.select(this).datum().name;
-                        bubble.addHtml();
-                        bubble.menuOperation();
-                        if (viewpoint) {
-                            bubble.offsetX = viewpoint.x;
-                            bubble.offsetY = viewpoint.y;
-                        }
-                        scene.addObject(bubble);
-                        if (!_this.parent.GROUP) {
-                            var group = new PATHBUBBLES.Groups();
-                            group.objectAddToGroup(_this.parent);
-                            group.objectAddToGroup(bubble);
-                            scene.addObject(group);
-                        }
-                        else {
-                            if (_this.parent.parent instanceof  PATHBUBBLES.Groups) {
-                                _this.parent.parent.objectAddToGroup(_this.parent);
-                                _this.parent.parent.objectAddToGroup(bubble);
-                                scene.addObject(_this.parent.parent);
-                            }
-                        }
-                        d3.event.preventDefault();
+                            if (d.gallusOrth.sharedSymbols !== undefined)
+                                temp = d.gallusOrth.sharedSymbols.length;
+                            return temp;
+                        });
                     }
-                }
-                else {
-//                    node = node
-//                        .data(_nodes)
-//                        .attr("id", function(d,i){
-//
-//                            return "node" + d.dbId;
-//                        })
-//                        .enter().append("circle")
-//                        .attr("class", "node")
-//                        .attr("r", 5)
-//                        .attr("cx", function(d) {
-//                            return d.x;
-//                        })
-//                        .attr("cy", function(d) {
-//                            return d.y;
-//                        })
-//                        .style("fill",   "#f00")
-//                        .on("mouseover", mouseovered)
-//                        .on("mouseout", mouseouted);
-
-                    node = node
-                        .data(_nodes)
-                        .attr("id", function (d, i) {
-                            return "nodeUp" + d.dbId;
-                        })
-                        .enter().append("rect")
-                        .attr("class", "node")
-                        .attr("x", function (d) {
-                            return y(d.dy);
-                        })
-                        .attr("y", function (d) {
-                            return 6;
-                        })
-                        .attr("height", 10)
-                        .attr("width", function (d) {
-                            if (d.ups == undefined)
-                                return 3;
+                    else if (_this.customExpression) {
+                        var upDownMax = d3.max(objects.nodes, function (d) {
+                            if (d.expression !== undefined) {
+                                return d.expression.ups.length + d.expression.downs.length;
+                            }
                             else {
+                                return 0;
+                            }
+
+                        });
+                    }
+                    var _nodes = objects.nodes;
+//                    maxLevel = 6 - _nodes[0].depth;
+                    link = link
+                        .data(bundle(links))
+                        .enter().append("path")
+                        .each(function (d) {
+                            d.source = d[0];
+                            d.target = d[d.length - 1];
+                        })
+                        .attr("class", "link")
+                        .attr("d", diagonal);
+                    if (!_this.customExpression) {
+                        node = node
+                            .data(_nodes)
+                            .attr("id", function (d, i) {
+                                return "node" + d.dbId;
+                            })
+                            .enter().append("rect")
+                            .attr("class", "node")
+                            .attr("x", function (d) {
+                                return y(d.dy);
+                            })
+                            .attr("height", function (d) {
+                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
+                                var r = Math.max(0, y(d.dy));
+                                return Math.min(r * thea, Math.floor(_this.maxLevel + 4));
+                            })
+                            .attr("y", function (d) {
+                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
+                                var r = Math.max(0, y(d.dy));
+                                return -(Math.min(r * thea, Math.floor(_this.maxLevel + 4))) / 2;
+                            })
+                            .attr("width", function (d) {
                                 var temp = 0;
-                                if (up_max !== 0) {
-                                    temp = d.ups.length;
-                                    return temp / up_max * 40 + 3;
-                                }
-                                else {
-                                    return 3;
-                                }
+                                if (d.gallusOrth !== undefined)
+                                    temp = d.gallusOrth.sharedSymbols.length;
+                                if (symbol_max == 0)
+                                    return 0;
+                                return Math.floor(temp / symbol_max * ( Math.max(0, y(d.dy + d.d_dy)) - Math.max(0, y(d.dy)) ));
+                            })
+                            .attr("transform", function (d, i) {
+                                return "rotate(" + computeRotation(d, i) + ")";
+                            })
+                            .style("fill", "#f00")
+                            .on("contextmenu", barClick)
+                            .on("mouseover", mouseovered)
+                            .on("mouseout", mouseouted);
+                    }
+                    else {
+                        node = node
+                            .data(_nodes)
+                            .attr("id", function (d, i) {
+                                return "nodeUp" + d.dbId;
+                            })
+                            .enter().append("rect")
+                            .attr("class", "node")
+                            .attr("x", function (d) {
+                                return y(d.dy);
+                            })
+                            .attr("height", function (d) {
+                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
+                                var r = Math.max(0, y(d.dy));
+                                return Math.min(r * thea, Math.floor(_this.maxLevel + 4));
+                            })
+                            .attr("y", function (d) {
+                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
+                                var r = Math.max(0, y(d.dy));
+                                return -(Math.min(r * thea, Math.floor(_this.maxLevel + 4))) / 2;
+                            })
+                            .attr("width", function (d) {
+                                if (d.expression == undefined || d.gallusOrth == undefined || upDownMax == 0)
+                                    return 0;
+                                return Math.floor((d.expression.downs.length + d.expression.ups.length) / upDownMax * ( Math.max(0, y(d.dy + d.d_dy)) - Math.max(0, y(d.dy)) ));
+                            })
+                            .attr("transform", function (d, i) {
+                                return "rotate(" + computeRotation(d, i) + ")";
+                            })
+                            .style("fill", "#f00")
+                            .on("contextmenu", expressionBarClick)
+                            .on("mouseover", mouseovered)
+                            .on("mouseout", mouseouted);
+                    }
+                }
+                else
+                {
+                    if (!_this.customExpression) {
+                        symbol_max = d3.max(nodeData, function (d) {
+                            var temp = 0;
+                            if (d.gallusOrth.sharedSymbols !== undefined)
+                                temp = d.gallusOrth.sharedSymbols.length;
+                            return temp;
+                        });
+                    }
+                    else if (_this.customExpression) {
+                        var upDownMax = d3.max(nodeData, function (d) {
+                            if (d.expression !== undefined) {
+                                return d.expression.ups.length + d.expression.downs.length;
                             }
-
-                        })
-                        .attr("transform", function (d, i) {
-                            return "rotate(" + computeRotation(d, i) + ")";
-                        })
-                        .style("fill", "#f00")
-                        .on("contextmenu", expressionBarClick)
-                        .on("mouseover", mouseovered)
-                        .on("mouseout", mouseouted);
-
-                    function expressionBarClick() {
-                        var ups = d3.select(this).datum().ups;
-                        var downs = d3.select(this).datum().downs;
-                        var _simbols = [];
-                        for (var i = 0; i < ups.length; ++i) {
-                            var simbolObj = {};
-                            for (var j = 0; j < _simbols.length; ++j) {
-                                if (_simbols[j].SimbolName == ups[i] && _simbols[j].type == "Up") {
-                                    _simbols[j].count++;
-                                    break;
-                                }
+                            else {
+                                return 0;
                             }
-                            if (j >= _simbols.length) {
-                                simbolObj.SimbolName = ups[i];
-                                simbolObj.count = 1;
-                                simbolObj.type = "Up";
-                                _simbols.push(simbolObj);
-                            }
-                        }
-                        var upLength = _simbols.length;
-                        for (var i = 0; i < downs.length; ++i) {
-                            var simbolObj = {};
-                            for (var j = upLength; j < _simbols.length; ++j) {
-                                if (_simbols[j].SimbolName == downs[i] && _simbols[j].type == "Down") {
-                                    _simbols[j].count++;
-                                    break;
-                                }
-                            }
-                            if (j >= _simbols.length) {
-                                simbolObj.SimbolName = downs[i];
-                                simbolObj.count = 1;
-                                simbolObj.type = "Down";
-                                _simbols.push(simbolObj);
-                            }
-                        }
-                        var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 320, 500, null, _simbols);
-                        bubble.name = "(Expression) " + d3.select(this).datum().name;
-                        bubble.addHtml();
-                        bubble.menuOperation();
-                        if (viewpoint) {
-                            bubble.offsetX = viewpoint.x;
-                            bubble.offsetY = viewpoint.y;
-                        }
-                        scene.addObject(bubble);
-                        if (!_this.parent.GROUP) {
-                            var group = new PATHBUBBLES.Groups();
-                            group.objectAddToGroup(_this.parent);
-                            group.objectAddToGroup(bubble);
-                            scene.addObject(group);
-                        }
-                        else {
-                            if (_this.parent.parent instanceof  PATHBUBBLES.Groups) {
-                                _this.parent.parent.objectAddToGroup(_this.parent);
-                                _this.parent.parent.objectAddToGroup(bubble);
-                                scene.addObject(_this.parent.parent);
-                            }
-                        }
-                        d3.event.preventDefault();
+                        });
+                    }
+                    if (!_this.customExpression)
+                    {
+                        node = node
+                            .data(nodeData.filter(function (d) {
+                                return d.depth == 1;
+                            }))
+                            .enter().append("rect")
+                            .attr("class", "node")
+                            .attr("x", function (d) {
+                                return y(d.y);
+                            })
+                            .attr("height", function (d) {
+                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
+                                var r = Math.max(0, y(d.y));
+                                return Math.min(r * thea, Math.floor(_this.maxLevel + 4));
+                            })
+                            .attr("y", function (d) {
+                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
+                                var r = Math.max(0, y(d.y));
+                                return -(Math.min(r * thea, Math.floor(_this.maxLevel + 4))) / 2;
+                            })
+                            .attr("width", function (d) {
+                                var temp = 0;
+                                if (d.gallusOrth !== undefined)
+                                    temp = d.gallusOrth.sharedSymbols.length;
+                                if (symbol_max == 0)
+                                    return 0;
+                                return Math.floor(temp / symbol_max * ( Math.max(0, y(d.y + d.dy)) - Math.max(0, y(d.y)) ));
+                            })
+                            .attr("transform", function (d, i) {
+                                return "rotate(" + computeBarRotation(d, i) + ")";
+                            })
+                            .style("fill", "#f00")
+                            .on("contextmenu", barClick);
+                    }
+                    else
+                    {
+                        node = node
+                            .data(nodeData.filter(function (d) {
+                                return d.depth == 1;
+                            }))
+                            .enter().append("rect")
+                            .attr("class", "node")
+                            .attr("x", function (d) {
+                                return y(d.y);
+                            })
+                            .attr("height", function (d) {
+                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
+                                var r = Math.max(0, y(d.y));
+                                return Math.min(r * thea, Math.floor(_this.maxLevel + 4));
+                            })
+                            .attr("y", function (d) {
+                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x)));
+                                var r = Math.max(0, y(d.y));
+                                return -(Math.min(r * thea, Math.floor(_this.maxLevel + 4))) / 2;
+                            })
+                            .attr("width", function (d) {
+                                if (d.expression == undefined || d.gallusOrth == undefined || upDownMax == 0)
+                                    return 0;
+                                return Math.floor((d.expression.downs.length + d.expression.ups.length) / upDownMax * ( Math.max(0, y(d.y + d.dy)) - Math.max(0, y(d.y)) ));
+                            })
+                            .attr("transform", function (d, i) {
+                                return "rotate(" + computeBarRotation(d, i) + ")";
+                            })
+                            .style("fill", "#f00")
+                            .on("contextmenu", expressionBarClick);
+                    }
+                    function computeBarRotation(d, i) {
+                        var angle = x(d.x + d.dx / 2) - Math.PI / 2;
+                        return angle / Math.PI * 180;
                     }
 
                 }
+
+                function barClick() {
+                    var symbols = d3.select(this).datum().gallusOrth.sharedSymbols;
+                    var _symbols = [];
+                    for (var i = 0; i < symbols.length; ++i) {
+                        if (symbols[i] == null)
+                            continue;
+                        var symbolObj = {};
+                        for (var j = 0; j < _symbols.length; ++j) {
+                            if (_symbols[j].symbol.toUpperCase() == symbols[i].toUpperCase()) {
+                                break;
+                            }
+                        }
+                        if (j >= _symbols.length) {
+                            symbolObj.symbol = symbols[i].toUpperCase();
+                            symbolObj.count = 1;
+                            _symbols.push(symbolObj);
+                        }
+                        else {
+                            _symbols[j].count++;
+                        }
+                    }
+                    var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 180, 400, d3.select(this).datum().dbId, _symbols);
+                    bubble.name = "(Shared protein) " + d3.select(this).datum().name;
+                    bubble.addHtml();
+                    bubble.table.keepQuery = true;
+                    bubble.menuOperation();
+                    if (viewpoint) {
+                        bubble.offsetX = viewpoint.x;
+                        bubble.offsetY = viewpoint.y;
+                    }
+                    scene.addObject(bubble);
+                    if (!_this.parent.GROUP) {
+                        var group = new PATHBUBBLES.Groups();
+                        group.objectAddToGroup(_this.parent);
+                        group.objectAddToGroup(bubble);
+                        scene.addObject(group);
+                    }
+                    else {
+                        if (_this.parent.parent instanceof  PATHBUBBLES.Groups) {
+                            _this.parent.parent.objectAddToGroup(_this.parent);
+                            _this.parent.parent.objectAddToGroup(bubble);
+                            scene.addObject(_this.parent.parent);
+                        }
+                    }
+                    d3.event.preventDefault();
+                }
+
+                function expressionBarClick() {
+                    if (d3.select(this).datum().expression == undefined)
+                        return;
+                    var ups = d3.select(this).datum().expression.ups;
+                    var downs = d3.select(this).datum().expression.downs;
+                    var _symbols = [];
+                    for (var i = 0; i < ups.length; ++i) {
+                        var symbolObj = {};
+                        for (var j = 0; j < _symbols.length; ++j) {
+                            if (_symbols[j].symbol.toUpperCase() == ups[i].symbol && _symbols[j].regulation == "Up") {
+                                _symbols[j].count++;
+                                break;
+                            }
+                        }
+                        if (j >= _symbols.length) {
+
+                            symbolObj.gene_id = ups[i].gene_id;
+                            symbolObj.symbol = ups[i].symbol.toUpperCase();
+                            symbolObj.count = 1;
+                            symbolObj.ratio = parseFloat(ups[i].ratio).toFixed(5);
+                            symbolObj.regulation = "Up";
+                            _symbols.push(symbolObj);
+                        }
+                    }
+                    var upLength = _symbols.length;
+                    for (var i = 0; i < downs.length; ++i) {
+                        var symbolObj = {};
+                        for (var j = upLength; j < _symbols.length; ++j) {
+                            if (_symbols[j].symbol.toUpperCase() == downs[i].symbol.toUpperCase() && _symbols[j].regulation == "Down") {
+                                _symbols[j].count++;
+                                break;
+                            }
+                        }
+                        if (j >= _symbols.length) {
+                            symbolObj.gene_id = downs[i].gene_id;
+                            symbolObj.symbol = downs[i].symbol.toUpperCase();
+                            symbolObj.count = 1;
+                            symbolObj.ratio = parseFloat(downs[i].ratio).toFixed(5);
+                            symbolObj.regulation = "Down";
+                            _symbols.push(symbolObj);
+                        }
+                    }
+                    var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 500, 500, d3.select(this).datum().dbId, _symbols);
+                    bubble.name = "(Expression) " + d3.select(this).datum().name;
+                    bubble.addHtml();
+                    bubble.table.keepQuery = true;
+                    bubble.menuOperation();
+                    if (viewpoint) {
+                        bubble.offsetX = viewpoint.x;
+                        bubble.offsetY = viewpoint.y;
+                    }
+                    scene.addObject(bubble);
+                    if (!_this.parent.GROUP) {
+                        var group = new PATHBUBBLES.Groups();
+                        group.objectAddToGroup(_this.parent);
+                        group.objectAddToGroup(bubble);
+                        scene.addObject(group);
+                    }
+                    else {
+                        if (_this.parent.parent instanceof  PATHBUBBLES.Groups) {
+                            _this.parent.parent.objectAddToGroup(_this.parent);
+                            _this.parent.parent.objectAddToGroup(bubble);
+                            scene.addObject(_this.parent.parent);
+                        }
+                    }
+                    d3.event.preventDefault();
+                }
+
                 function computeRotation(d, i) {
                     var angle = x(d.dx + d.d_dx / 2) - Math.PI / 2;
                     return angle / Math.PI * 180;
+                }
+
+                function processTextLinks(nodes)
+                {
+                    var importLinks = [];
+                    var data = [];
+                    for(var i=0; i<nodes.length; ++i)
+                    {
+                        if(nodes[i].depth ==1)
+                        {
+                            data.push(nodes[i]);
+                        }
+                    }
+                    var rect_height = 7;
+                    var rect_width = 20;
+                    var inner_y = d3.scale.linear()
+                        .domain([0, data.length])
+                        .range([-(data.length * rect_height) / 2, (data.length * rect_height) / 2]);
+                    var inners = [];
+                    for(var i=0; i<data.length; ++i)
+                    {
+                        var object = {};
+                        object.id = i;
+                        object.name = data[i].name;
+                        object.x = -(rect_width / 2);
+                        object.y = inner_y(i);
+                        object.linkTo = data[i];
+                        inners.push(object);
+                    }
+
+                    for(var i=0; i<inners.length; ++i)
+                    {
+                        var importObj = {};
+                        importObj.id = inners[i].id;
+                        importObj.target = inners[i];
+                        importObj.source = inners[i].linkTo;
+                        importLinks.push(importObj);
+                    }
+
+                    var inode = mainSvg.append('g').selectAll(".inner_node");
+                    var titleLink = mainSvg.append('g').attr('class', 'links').selectAll(".titleLink");
+                    var inodeRect  = inode.data(inners).enter().append("g")
+                        .attr("class", "inner_node");
+                    var inodeText  = inode.data(inners).enter().append("g")
+                        .attr("class", "inner_node");
+
+                    inodeText = inodeText.append("text")
+                        .attr('id', function (d) {
+                            return d.id + '-txt';
+                        })
+                        .attr('text-anchor', 'middle')
+                        .attr("transform", function(d){
+                            return "translate(" + ( rect_width / 2+ d.x ) + ", " + (rect_height * .75+ d.y) + ")";
+                        })
+                        .style("font-size",rect_height)
+                        .text(function (d) {
+                            return d.name;
+                        })
+                        .each(function(d) {
+                            d.bx = this.getBBox().x;
+                            d.by = this.getBBox().y;
+                            d.bwidth = this.getBBox().width;
+                            d.bheight = this.getBBox().height;
+                        })
+                        .on("mouseover", mouserOverText)
+                        .on("mouseout", mouseOutText);
+
+                    inodeRect = inodeRect.append('rect')
+                        .attr('x', function(d) { return d.bx; })
+                        .attr('y', function(d) { return d.by; })
+                        .attr('width', function(d) { return d.bwidth; })
+                        .attr('height', function(d) { return d.bheight; })
+                        .attr('text-anchor', 'middle')
+                        .attr("transform", function(d){
+                            return "translate(" + ( rect_width / 2+ d.x ) + ", " + (rect_height * .75+ d.y) + ")";
+                        })
+                        .attr('id', function (d) {
+                            return d.id+ '-txt';
+                        })
+                        .attr('fill', function (d) {
+                            return "#e5f5f9";
+                        })
+                        .on("mouseover", mouserOverText)
+                        .on("mouseout", mouseOutText);
+                    var diagonal = d3.svg.diagonal()
+                        .source(function (d) {
+                            var innerRadius = Math.max(0, y(d.source.y));
+                            var arcCenter = x(d.source.x + d.source.dx/2.0);
+
+                            return {"x": innerRadius * Math.cos(Math.PI - arcCenter),      //radial space
+                                "y": innerRadius * Math.sin(Math.PI - arcCenter)};
+                        })
+                        .target(function (d) {                                           //normal space
+                            return {"x": d.target.y + rect_height / 2,
+//                                "y": d.source.x ? d.target.x : d.target.x + rect_width};
+                                "y": d.source.x+ d.source.dx/2.0<Math.PI?  -d.target.bwidth/2 : -d.target.bwidth/2};
+                        })
+                        .projection(function (d) {
+                            return [d.y, d.x];
+                        });
+
+                    // links
+                    titleLink = titleLink
+                        .data(importLinks)
+                        .enter().append('path')
+                        .attr('class', 'titleLink')
+                        .attr('id', function (d) {
+                            return  'titleLink'+ d.id;
+                        })
+                        .attr("d", diagonal)
+                        .attr('stroke', function (d) {
+                            return "#00f";
+                        })
+                        .attr('stroke-width', "1px");
+
+                    function mouserOverText(d){
+                        d3.select("#svg" + _this.parent.id).select("#"+ 'titleLink'+d.id ).attr('stroke-width', '5px');
+                    }
+                    function mouseOutText(d)
+                    {
+                        d3.select("#svg" + _this.parent.id).select("#"+ 'titleLink'+d.id ).attr('stroke-width', '1px');
+                    }
                 }
 
                 function mouseovered(d) {
@@ -600,7 +1047,7 @@ PATHBUBBLES.D3Ring.prototype = {
                     var imports = [];
                     var _nodes = [];
                     for (var i = 0; i < nodes.length; ++i) {
-                        if (nodes[i].depth == 1) {
+                        if (nodes[i].depth == _this.showCrossTalkLevel) {
                             var dx = nodes[i].x;
                             var dy = nodes[i].y;
                             var d_dx = nodes[i].dx;
@@ -619,21 +1066,17 @@ PATHBUBBLES.D3Ring.prototype = {
                             temp.name = nodes[i].name;
                             temp.parent = nodes[i].parent;
                             temp.depth = nodes[i].depth;
+                            temp.dbId = nodes[i].dbId;
                             temp.children = nodes[i].children;
-                            if (type != "Expression") {
-                                temp.dx = nodes[i].x;
-                                temp.dy = nodes[i].y;
-                                temp.d_dx = nodes[i].dx;
-                                temp.d_dy = nodes[i].dy;
-                                temp.simbols = nodes[i].simbols;
-                            }
-                            else if (type == "Expression") {
-                                temp.dx = nodes[i].x;
-                                temp.dy = nodes[i].y;
-                                temp.d_dx = nodes[i].dx;
-                                temp.d_dy = nodes[i].dy;
-                                temp.downs = nodes[i].downs;
-                                temp.ups = nodes[i].ups;
+
+                            temp.dx = nodes[i].x;
+                            temp.dy = nodes[i].y;
+                            temp.d_dx = nodes[i].dx;
+                            temp.d_dy = nodes[i].dy;
+                            temp.symbols = nodes[i].symbols;
+                            temp.gallusOrth = nodes[i].gallusOrth;
+                            if (_this.customExpression) {
+                                temp.expression = nodes[i].expression;
                             }
 
                             _nodes.push(temp);
@@ -671,6 +1114,7 @@ PATHBUBBLES.D3Ring.prototype = {
                     var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 500, 500, dbId);
                     bubble.name = d3.select(this).datum().name;
                     bubble.addHtml();
+                    bubble.table.keepQuery = false;
                     bubble.menuOperation();
                     if (viewpoint) {
                         bubble.offsetX = viewpoint.x;
@@ -694,25 +1138,65 @@ PATHBUBBLES.D3Ring.prototype = {
                 }
 
                 function click(d, i) {
-                    if (i == 0)
+                    if (i == 0 || d.children == undefined)
                         return;
-//                    var data = d3.select(this).datum();
-                    var name = d3.select(this).datum().name;
-                    type = $('#menuView' + _this.parent.id).children('#type').val();
-                    if (type == "Expression") {
-                        var dataType = $('#menuView' + _this.parent.id).children('#expressionFile').val();
-                    }
-                    else if (type == "Ortholog") {
-                        var dataType = $('#menuView' + _this.parent.id).children('#file').val();
-                    }
+                    if (d.children.length == 0)
+                        return;
+                    var selectedData = d3.select(this).datum();
+                    var name = selectedData.name;
+                    var dataType = $('#menuView' + _this.parent.id).find('#file').val();
+
                     var RingWidth = _this.parent.w;
                     var RingHeight = _this.parent.h;
                     if (d3.select(this).datum().depth >= 1) {
                         RingWidth = RingWidth * 0.8;
                         RingHeight = RingHeight * 0.8;
                     }
-                    var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, name, type, dataType);
+                    var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, name, dataType, selectedData);
+                    bubble5.HIDE = _this.parent.HIDE;
                     bubble5.addHtml();
+
+                    if (_this.customOrtholog) {
+                        bubble5.treeRing.customOrtholog = _this.customOrtholog;
+                        $('#menuView' + bubble5.id).find("#minRatio").val($('#menuView' + _this.parent.id).find("#minRatio").val());
+                        $('#menuView' + bubble5.id).find("#maxRatio").val($('#menuView' + _this.parent.id).find("#maxRatio").val());
+                        $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
+                        $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
+                        $('#menuView' + bubble5.id).find("#operateText").val($('#menuView' + _this.parent.id).find("#operateText").val());
+//                        bubble5.operateText = $('#menuView' + _this.parent.id).find("#operateText").val();
+//                        if($('#menuView' + bubble5.id).find('#operateText').val() == "showTitle")
+//                        {
+//                            bubble5.treeRing.showTitle();
+//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').hide();
+//                        }
+//                        else if($('#menuView' + bubble5.id).find('#operateText').val() == "showCrossTalk")
+//                        {
+//                            bubble5.treeRing.showCrossTalk();
+//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').show();
+//                        }
+                    }
+                    if (_this.customExpression) {
+                        d3.select("#svg" + bubble5.id).selectAll(".symbol").remove();
+                        bubble5.treeRing.customExpression = _this.customExpression;
+                        bubble5.treeRing.expressionScaleMax = max;
+                        $('#menuView' + bubble5.id).find("#minRatio").val($('#menuView' + _this.parent.id).find("#minRatio").val());
+                        $('#menuView' + bubble5.id).find("#maxRatio").val($('#menuView' + _this.parent.id).find("#maxRatio").val());
+                        $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
+                        $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
+                        $('#menuView' + bubble5.id).find("#operateText").val($('#menuView' + _this.parent.id).find("#operateText").val());
+//                        if($('#menuView' + bubble5.id).find('#operateText').val() == "showTitle")
+//                        {
+//                            bubble5.treeRing.showTitle();
+//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').hide();
+//                        }
+//                        else if($('#menuView' + bubble5.id).find('#operateText').val() == "showCrossTalk")
+//                        {
+//                            bubble5.treeRing.showCrossTalk();
+//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').show();
+//                        }
+                        bubble5.operateText = $('#menuView' + _this.parent.id).find("#operateText").val();
+                    }
+
                     bubble5.menuOperation();
                     if (viewpoint) {
                         bubble5.offsetX = viewpoint.x;
@@ -734,49 +1218,87 @@ PATHBUBBLES.D3Ring.prototype = {
                     }
                 }
 
-                function doubleClick(d) {
-                    path.transition()
-                        .duration(1500)
-                        .attrTween("d", arcTween(d))
-                        .each("end", function (e, i) {
-                            // check if the animated element's data e lies within the visible angle span given in d
-                            if (e.x >= d.x && e.x < (d.x + d.dx)) {
-                                // get a selection of the associated text element
-                                var arcText = d3.select(this.parentNode).select("text");
-                                // fade in the text element and recalculate positions
-                                arcText.transition().duration(750)
-                                    .attr("opacity", 1)
-                                    .attr("transform", function () {
-                                        return "rotate(" + computeTextRotation(e) + ")"
-                                    })
-                                    .attr("x", function (d) {
-                                        return y(d.y);
-                                    });
-                            }
-                        });
 
+                if($('#menuView' + _this.parent.id).find('#operateText').val() == "showTitle")
+                {
+                    d3.select("#svg" + _this.parent.id).selectAll(".link").style("opacity", 0);
+                    d3.select("#svg" + _this.parent.id).selectAll(".titleLink").style("opacity", 1);
+                    d3.select("#svg" + _this.parent.id).selectAll(".inner_node").style("opacity", 1);
+                    $('#menuView' + _this.parent.id).find('#crossTalkLevel').hide();
+                }
+                else if($('#menuView' + _this.parent.id).find('#operateText').val() == "showCrossTalk")
+                {
+                    d3.select("#svg" + _this.parent.id).selectAll(".titleLink").style("opacity", 0);
+                    d3.select("#svg" + _this.parent.id).selectAll(".inner_node").style("opacity", 0);
+                    d3.select("#svg" + _this.parent.id).selectAll(".link").style("opacity", 1);
+                    $('#menuView' + _this.parent.id).find('#crossTalkLevel').show();
                 }
             });
         }
+        if (_this.parent.HIDE==undefined ||_this.parent.HIDE!==true) {     //Color Bar for ortholog
 
+            var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
+                scaleWidth = 30 - scaleMargin.left - scaleMargin.right,
+                scaleHeight = 170 - scaleMargin.top - scaleMargin.bottom;
+            var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
+            var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
+
+            var sectionHeight = 20;
+            var texts = ["Partial","Complete","Empty"];
+            var newData = [];
+            for (var i = 0; i< 3; i++) {
+                var obj = {};
+                obj.data = i*20;
+                obj.text = texts[i];
+                obj.color = colors[i];
+                newData.push(obj);
+            }
+            var colorScaleBar = svg.append("g")
+                .attr("class", "colorScaleBar")
+                .attr("transform", "translate(" + (width - 30-33) + "," + (  0  ) + ")")
+                .attr("width", BarWidth)
+                .attr("height", BarHeight);
+
+            colorScaleBar.selectAll('rect')
+                .data(newData)
+                .enter()
+                .append('rect')
+                .attr("x", 0)
+                .attr("y", function (d) {
+                    return d.data;
+                })
+                .attr("height", sectionHeight)
+                .attr("width", scaleWidth)
+
+                .attr('fill', function (d) {
+                    return d.color;
+                });
+            colorScaleBar.selectAll('text')
+                .data(newData)
+                .enter().append("text")
+                .style("font-size", 10)
+                .attr("transform", "translate(" + (scaleWidth / 2 + 10) + "," + (sectionHeight) + ")")
+                .attr("y", function (d, i) {
+                    return d.data - 5;
+                })
+                .attr("dy", ".1em")
+                .style("text-anchor", "start")
+                .text(function (d, i) {
+                    return d.text;
+                });
+        }
         d3.select(self.frameElement).style("height", height + "px");
 
-        // Interpolate the scales!
-        function arcTween(d) {
-            var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
-                yd = d3.interpolate(y.domain(), [d.y, 1]),
-                yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
-            return function (d, i) {
-                return i
-                    ? function (t) {
-                    return arc(d);
-                }
-                    : function (t) {
-                    x.domain(xd(t));
-                    y.domain(yd(t)).range(yr(t));
-                    return arc(d);
-                };
-            };
-        }
+//        d3.select('#status').style("display", "none");
+    },
+    showTitle: function(){
+        d3.select("#svg" + this.parent.id).selectAll(".link").style("opacity", 0);
+        d3.select("#svg" + this.parent.id).selectAll(".titleLink").style("opacity", 1);
+        d3.select("#svg" + this.parent.id).selectAll(".inner_node").style("opacity", 1);
+    },
+    showCrossTalk: function(){
+        d3.select("#svg" + this.parent.id).selectAll(".titleLink").style("opacity", 0);
+        d3.select("#svg" + this.parent.id).selectAll(".inner_node").style("opacity", 0);
+        d3.select("#svg" + this.parent.id).selectAll(".link").style("opacity", 1);
     }
 };
