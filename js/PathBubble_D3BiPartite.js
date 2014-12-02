@@ -46,7 +46,7 @@ PATHBUBBLES.D3BiPartite.prototype = {
         d3.select("#svg" + _this.parent.id)
             .attr("width", width )
             .attr("height",  height );
-         height = datawa.length *minHeight + 40;
+         height = datawa.length * minHeight + 40;
 
         var svg = container.append('svg')
             .attr("width", width + margin.left + margin.right)
@@ -176,17 +176,38 @@ PATHBUBBLES.D3BiPartite.prototype = {
                 .style("fill-opacity",0).style("stroke-width","0.5")
                 .style("stroke","black").style("stroke-opacity",0);
 
-            mainbar.append("text").attr("class","barlabel").style("font-size",fontSize)
+            mainbar.append("text").attr("class","barlabel hyper")
+                .style("font-size",fontSize)
                 .attr("x", c1[p]).attr("y",function(d){ return d.middle+5;})
                 .text(function(d,i){ return trimLabel( data.keys[p][i] );})
-                .attr("text-anchor","start" );
+                .attr("text-anchor","start" )
+                .on("click", function(d,i) {
+                    $("#information").children('iframe').remove();
+                    var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500"></iframe>');
+                    iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+data.keys[p][i]});
+                    $("#information").append(iframe).dialog({
+                        autoOpen: false,
+                        modal: true,
+                        resizable: false,
+                        width: "auto",
+                        height: "auto",
+                        top: (d3.event.pageY-10)+"px",
+                        left: (d3.event.pageX+10)+"px",
+                        close: function () {
+                            iframe.attr("src", "");
+                        }
+                    });
+
+                    $("#information").dialog("open");
+                });
 
             mainbar.append("text").attr("class","barvalue").style("font-size",fontSize)
                 .attr("x", c2[p]).attr("y",function(d){ return d.middle+5;})
                 .text(function(d,i){ return d.value ;})
                 .attr("text-anchor","end");
 
-            mainbar.append("text").attr("class","barpercent").style("font-size",fontSize)
+            mainbar
+                .append("text").attr("class","barpercent").style("font-size",fontSize)
                 .attr("x", c3[p]).attr("y",function(d){ return d.middle+5;})
                 .text(function(d,i){ return "( "+Math.round(100*d.percent)+"%)" ;})
                 .attr("text-anchor","end").style("fill","grey");

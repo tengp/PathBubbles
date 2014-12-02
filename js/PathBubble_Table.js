@@ -27,7 +27,7 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
     this.button = new PATHBUBBLES.Button(this);   //Button 0 for file selection
     var tmp = '';
 //    tmp += '<input type="text" id=file style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
-    tmp += '<input type="button" id=export value= "Link TO WebGiVi" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
+    tmp += '<input type="button" id=export value= "Link TO eGIFT" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
 //    tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y + 55 + ' px; "></div>';
 //    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 80 + 'px; ">';
 //    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
@@ -88,6 +88,14 @@ PATHBUBBLES.Table.prototype = {
     menuOperation: function () {
         var _this = this;
         var $menuBarbubble = $('#menuView' + this.id);
+        if(_this.name.indexOf("Expression")!==-1)
+        {
+            $menuBarbubble.find("#export").show();
+        }
+        else
+        {
+            $menuBarbubble.find("#export").hide();
+        }
         $menuBarbubble.find("#export").on('click',function(){
             if(_this.data.length)
             {
@@ -186,7 +194,7 @@ PATHBUBBLES.Table.prototype = {
                 }
                 else
                 {
-                    alert("Link to WebGiVi is just for expression Analysis!");
+                    alert("Link to eGIFT is just for expression Analysis!");
                 }
             }
         });
@@ -226,7 +234,7 @@ PATHBUBBLES.Table.prototype = {
             left: this.x + this.offsetX + this.w + 10,
             top: this.y + this.offsetY + this.cornerRadius / 2 + 40,
             width: 200,
-            height: 215
+            height: 80
         });
         $menuBarbubble.find('#export').css({
             left: 10,

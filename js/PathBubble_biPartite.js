@@ -27,7 +27,7 @@ PATHBUBBLES.BiPartite = function (x, y, w, h, data) {
     this.button = new PATHBUBBLES.Button(this);   //Button 0 for file selection
     var tmp = '';
 //    tmp += '<input type="text" id=file style="position: absolute; left:' + this.x + ' px; top:' + this.y + 'px; ">';
-    tmp += '<input type="button" id=export value= "Link TO WebGiVi" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
+//    tmp += '<input type="button" id=export value= "Link TO WebGiVi" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 25 + 'px; ">';
 //    tmp += '<div id=colorpickerField style="position: absolute; left:' + this.x + ' px; top: ' + this.y + 55 + ' px; "></div>';
     tmp += '<input type="button" id=saveFile value= "Save" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 50 + 'px; ">';
 //    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
@@ -80,80 +80,6 @@ PATHBUBBLES.BiPartite.prototype = {
     menuOperation: function () {
         var _this = this;
         var $menuBarbubble = $('#menuView' + this.id);
-        $menuBarbubble.find("#export").on('click',function(){
-            if(_this.data.length)
-            {
-                if(_this.data[0].gene_id!==undefined)
-                {
-                    var entrezIDsString = "";
-                    for(var i=0; i<_this.data.length; ++i)
-                    {
-                        if(i!==0)
-                            entrezIDsString +=",";
-                        entrezIDsString +=_this.data[i].gene_id;
-                    }
-                    var userString = "";
-                    //test from webGIVI
-//                    userString +="userID=";
-//                    userString +="pathbubbles";  //$userID
-//                    userString +="&password=";
-//                    userString +="webgiviForYongnan";  //$password
-//                    userString +="&entrezIDs=";
-//                    userString +=entrezIDsString;  //$entrezIDs
-//                    window.open("http://raven.anr.udel.edu/~sunliang/webgivi/webgiviAPI.php?"+userString);
-
-                    //test from eGIFT
-//                    userString +="user=";
-//                    userString +="liang";  //$userID
-//                    userString +="&pass=";
-//                    userString +="AnalysisForLiang";  //$password
-//                    userString +="&entrezids=";
-//                    userString +=entrezIDsString;  //$entrezIDs
-//                    window.open("http://biotm.cis.udel.edu/udelafc/getGeneAnalysisResults.php?"+userString);        //connect to eGIFT
-
-                    $.ajax({
-                        type: "POST",
-                        url: "./php/connect_eGIFT.php",
-                        dataType: "text",
-                        data: {
-                            entrezIDs: entrezIDsString
-                        }, // send the string directly
-                        success: function (result) {
-                            if (result) {
-                                var lines = result.split("\n");
-                                var biPartiteData = [];
-                                for(var i=0; i<lines.length; ++i)
-                                {
-                                    if(lines[i]=="")
-                                        continue;
-                                    var arrays = lines[i].split(",");
-                                    var string1 = arrays[0].substr(1, arrays[0].length-2).toUpperCase();
-                                    var string2 = arrays[4].substr(1, arrays[4].length-2).split("  ");
-                                    for(var j=0; j<string2.length; ++j)
-                                    {
-                                        var line = [];
-                                        line.push(string1);
-                                        var string2temp=string2[j].split(" (")[0].toUpperCase();
-                                        line.push(string2temp);
-                                        biPartiteData.push(line);
-                                    }
-
-                                }
-                                if(biPartiteData.length>0)
-                                {
-                                    var t;
-                                }
-
-                            }
-                        }
-                    });
-                }
-                else
-                {
-                    alert("Link to WebGiVi is just for expression Analysis!");
-                }
-            }
-        });
         $menuBarbubble.find("#saveFile").on('click',function(){
             var currentData= _this.biPartite.data[0].data;
             var saveString = "";
@@ -229,14 +155,14 @@ PATHBUBBLES.BiPartite.prototype = {
             width: 200,
             height: 215
         });
-        $menuBarbubble.find('#export').css({
-            left: 10,
-            top: 25,
-            width: 180
-        });
+//        $menuBarbubble.find('#export').css({
+//            left: 10,
+//            top: 25,
+//            width: 180
+//        });
         $menuBarbubble.find('#saveFile').css({
             left: 10,
-            top: 50,
+            top: 25,
             width: 180
         });
     },
