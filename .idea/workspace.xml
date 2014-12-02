@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="682b94b1-fe59-4182-aba9-e0dbea7f8d6f" name="Default" comment="">
       <change type="DELETED" beforePath="C:\wamp\www\PathBubbles\js\PATHBUBBLES_D3BiPartite.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\wamp\www\PathBubbles\js\PathBubble_biPartite.js" afterPath="$PROJECT_DIR$/js/PathBubble_BiPartite.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3BiPartite.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3BiPartite.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_Table.js" afterPath="$PROJECT_DIR$/js/PathBubble_Table.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/PathBubble_D3Table.js" afterPath="$PROJECT_DIR$/js/PathBubble_D3Table.js" />
     </list>
     <ignored path="PathBubbles.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PathBubble_D3BiPartite.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PathBubble_D3BiPartite.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/PathBubble_D3BiPartite.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2773893" vertical-offset="1921" max-vertical-offset="9264">
-              <caret line="178" column="65" selection-start-line="178" selection-start-column="65" selection-end-line="178" selection-end-column="65" />
+            <state vertical-scroll-proportion="-2.84" vertical-offset="2497" max-vertical-offset="9264">
+              <caret line="200" column="20" selection-start-line="200" selection-start-column="20" selection-end-line="200" selection-end-column="53" />
               <folding>
                 <element signature="e#2216#3229#0" expanded="false" />
                 <element signature="e#3263#5957#0" expanded="false" />
@@ -74,14 +70,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PathBubble_D3Table.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PathBubble_D3Table.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Table.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2699" max-vertical-offset="3912">
-              <caret line="120" column="24" selection-start-line="120" selection-start-column="20" selection-end-line="125" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.47136563" vertical-offset="3146" max-vertical-offset="4368">
+              <caret line="140" column="68" selection-start-line="140" selection-start-column="59" selection-end-line="140" selection-end-column="59" />
               <folding>
-                <element signature="e#4658#6479#0" expanded="false" />
-                <element signature="e#7290#8375#0" expanded="false" />
+                <element signature="e#5659#7480#0" expanded="false" />
+                <element signature="e#8291#9376#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,7 +123,6 @@
         <option value="$PROJECT_DIR$/data/Ortholog/Alligator/2-LTR circle formation.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/js/PathBubble_Loader.js" />
-        <option value="$PROJECT_DIR$/js/PathBubble_D3Table.js" />
         <option value="$PROJECT_DIR$/php/webgiviAPI_sample.php" />
         <option value="$PROJECT_DIR$/php/connect_eGIFT.php" />
         <option value="$PROJECT_DIR$/js/PathBubble_D3biPartite.js" />
@@ -150,12 +145,13 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/info.js" />
         <option value="$PROJECT_DIR$/js/PathBubble_D3BiPartite.js" />
+        <option value="$PROJECT_DIR$/js/PathBubble_D3Table.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="698" />
-    <option name="y" value="190" />
+    <option name="x" value="100" />
+    <option name="y" value="149" />
     <option name="width" value="1743" />
     <option name="height" value="1035" />
   </component>
@@ -355,7 +351,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="698" y="190" width="1743" height="1035" extended-state="0" />
+    <frame x="100" y="149" width="1743" height="1035" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -813,17 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2699" max-vertical-offset="3912">
-          <caret line="120" column="24" selection-start-line="120" selection-start-column="20" selection-end-line="125" selection-end-column="22" />
-          <folding>
-            <element signature="e#4658#6479#0" expanded="false" />
-            <element signature="e#7290#8375#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.793103" vertical-offset="1347" max-vertical-offset="1944">
@@ -837,12 +822,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/PathBubble_D3BiPartite.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2773893" vertical-offset="1921" max-vertical-offset="9264">
-          <caret line="178" column="65" selection-start-line="178" selection-start-column="65" selection-end-line="178" selection-end-column="65" />
+        <state vertical-scroll-proportion="-2.84" vertical-offset="2497" max-vertical-offset="9264">
+          <caret line="200" column="20" selection-start-line="200" selection-start-column="20" selection-end-line="200" selection-end-column="53" />
           <folding>
             <element signature="e#2216#3229#0" expanded="false" />
             <element signature="e#3263#5957#0" expanded="false" />
             <element signature="e#5988#6177#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PathBubble_D3Table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47136563" vertical-offset="3146" max-vertical-offset="4368">
+          <caret line="140" column="68" selection-start-line="140" selection-start-column="59" selection-end-line="140" selection-end-column="59" />
+          <folding>
+            <element signature="e#5659#7480#0" expanded="false" />
+            <element signature="e#8291#9376#0" expanded="false" />
           </folding>
         </state>
       </provider>

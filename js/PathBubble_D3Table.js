@@ -127,6 +127,25 @@ PATHBUBBLES.D3Table.prototype = {
                     .text(function (d) {
                         return d.value;
                     })
+                    .on("click",function(d,i){
+                        $("#information").children('iframe').remove();
+                        var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500"></iframe>');
+                        iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value});
+                        $("#information").append(iframe).dialog({
+                            autoOpen: false,
+                            modal: true,
+                            resizable: false,
+                            width: "auto",
+                            height: "auto",
+                            top: (d3.event.pageY-10)+"px",
+                            left: (d3.event.pageX+10)+"px",
+                            close: function () {
+                                iframe.attr("src", "");
+                            }
+                        });
+
+                        $("#information").dialog("open");
+                    })
                     .on("contextmenu", function (d, i) {
                         if (_this.keepQuery && d.key == "symbol")
                             if (d.value == String(d.value)) {
