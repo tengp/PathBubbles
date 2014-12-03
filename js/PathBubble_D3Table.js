@@ -12,6 +12,7 @@ PATHBUBBLES.D3Table = function (parent, w, h) {
     this.data = null;
     this.dbId = null;
     this.keepQuery = true;
+    this._symbols2Pathways = {};
 };
 
 PATHBUBBLES.D3Table.prototype = {
@@ -45,7 +46,31 @@ PATHBUBBLES.D3Table.prototype = {
         var previousSort = null;
         var format = d3.time.format("%a %b %d %Y");
 
-        refreshTable(null);
+        d3.text("./data/symbol2Pathway.txt", function (error, symbol2Pathways) {
+            var symbolsPathways = symbol2Pathways.split("\r\n");
+
+            _this._symbols2Pathways.symbols = [];
+            _this._symbols2Pathways.pathways = [];
+            for (var i = 0; i < symbolsPathways.length; ++i) {
+                if(symbolsPathways[i] == "")
+                    continue;
+                var arrays = symbolsPathways[i].split("\t");
+                var index = _this._symbols2Pathways.symbols.indexOf(arrays[0]);
+                if(index == -1)
+                {
+                    _this._symbols2Pathways.symbols.push(arrays[0]);
+                    var pathways = [];
+                    pathways.push(arrays[1]);
+                    _this._symbols2Pathways.pathways.push(pathways);
+                }
+                else
+                {
+                    _this._symbols2Pathways.pathways[index].push(arrays[1]);
+                }
+
+            }
+            refreshTable(null);
+        });
         function refreshTable(sortOn){
 
             if (_this.data == null) {
@@ -116,11 +141,24 @@ PATHBUBBLES.D3Table.prototype = {
 
                 // create cells
                 var td = tr.selectAll("td").data(function (d) {
-                    return d3.entries(d);
+                      if(_this.keepQuery)
+                      {
+                          var symbol = d3.entries(d)[0].value;
+                          var obj = [];
+                          d3.entries(d).forEach(function(data){
+                                  data.symbol = symbol;
+                              obj.push(data);
+                          });
+                          return obj;
+                      }
+                      else
+                           return d3.entries(d);
                 });
                 td.enter().append("td")
                     .attr("class", function (d) {
-                        if (_this.keepQuery && d.key == "symbol")
+                        if (d.key == "symbol")
+                            return "hyper";
+                        else  if(d.key == "crossTalk")
                             return "hyper";
                         else
                             return "normalCell";
@@ -129,6 +167,8 @@ PATHBUBBLES.D3Table.prototype = {
                         return d.value;
                     })
                     .on("click",function(d,i){
+                        if(d.key!=="symbol")
+                            return;
                         $("#information").children('iframe').remove();
                         var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500"></iframe>');
                         iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value});
@@ -149,7 +189,9 @@ PATHBUBBLES.D3Table.prototype = {
                     })
                     .on("contextmenu", function (d, i) {
                         if (_this.keepQuery && d.key == "symbol")
-                            if (d.value == String(d.value)) {
+                        {
+                            if (d.value == String(d.value))
+                            {
                                 var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 530, 500, null, null, {dbId: _this.dbId, symbol: d.value});
                                 bubble.name = _this.parent.name + "-" + d.value;
                                 bubble.addHtml();
@@ -176,6 +218,60 @@ PATHBUBBLES.D3Table.prototype = {
                                 }
                                 d3.event.preventDefault();
                             }
+                        }
+                        else if (_this.keepQuery && d.key == "crossTalk") {
+                            if(d.value == 0)
+                            {
+                                alert("It does not have cross-talking pathways!");
+                            }
+                            else
+                            {
+                                var index = _this._symbols2Pathways.symbols.indexOf(d.symbol);
+                                if(index!==-1)
+                                {
+                                    var pathways = _this._symbols2Pathways.pathways[index];
+                                    var biPartiteData = [];
+                                    for(var i=0; i<pathways.length; ++i)
+                                    {
+                                        var da = [];
+                                        da.push(d.symbol);
+                                        da.push(pathways[i]);
+                                        biPartiteData.push(da);
+                                    }
+                                    if(biPartiteData.length>0)
+                                    {
+                                        var bubble = new PATHBUBBLES.BiPartite(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 600,510,biPartiteData);
+                                        bubble.addHtml();
+                                        if(_this.parent.name.indexOf(")"))
+                                        {
+                                            bubble.name ="(Symbol crosstalking)"+_this.parent.name.split(")")[1];
+                                        }
+                                        bubble.menuOperation();
+                                        if(viewpoint)
+                                        {
+                                            bubble.offsetX = viewpoint.x;
+                                            bubble.offsetY = viewpoint.y;
+                                        }
+                                        scene.addObject(bubble);
+
+                                        if (!_this.parent.GROUP) {
+                                            var group = new PATHBUBBLES.Groups();
+                                            group.objectAddToGroup(_this.parent);
+                                            group.objectAddToGroup(bubble);
+                                            scene.addObject(group);
+                                        }
+                                        else {
+                                            if (_this.parent.parent instanceof  PATHBUBBLES.Groups) {
+                                                _this.parent.parent.objectAddToGroup(_this.parent);
+                                                _this.parent.parent.objectAddToGroup(bubble);
+                                                scene.addObject(_this.parent.parent);
+                                            }
+                                        }
+                                        d3.event.preventDefault();
+                                    }
+                                }
+                            }
+                        }
                     });
 
                 //update?
