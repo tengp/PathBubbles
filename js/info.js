@@ -10,7 +10,9 @@ $(function() {
         {
             "background-color":"rgba(255,255,255,1)"
         })
-        .dialog({ autoOpen: false,
+        .dialog({
+            autoOpen: false,
+            modal: false,
             resizable: false,
             show: { effect: 'fade', duration: 500 },
             hide: { effect: 'fade', duration: 500 }
