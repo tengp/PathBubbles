@@ -46,13 +46,15 @@ PATHBUBBLES.BiPartite.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
 
 PATHBUBBLES.BiPartite.prototype = {
     constructor: PATHBUBBLES.BiPartite,
-    addHtml: function () {
+    addHtml: function (header) {
         var _this=this;
         this.setOffset();
         var tmp = '';
         tmp += '<div id= svg' + this.id + ' style="position: absolute;"> </div>';
         $("#bubble").append($(tmp));
         this.biPartite = new PATHBUBBLES.D3BiPartite(this, this.w, this.h);
+        if(header!==undefined)
+            this.biPartite.header = header;
         this.biPartite.init();
 
     },

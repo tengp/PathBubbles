@@ -11,6 +11,7 @@ PATHBUBBLES.D3BiPartite = function (parent, w, h) {
     this.w = w;
     this.h = h;
     this.data = null;
+    this.header = ["Item", "Symbol"];
 };
 
 PATHBUBBLES.D3BiPartite.prototype = {
@@ -55,7 +56,7 @@ PATHBUBBLES.D3BiPartite.prototype = {
 //            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         _this.data = [
-            {data: this.partData(datawa), id: 'geneSymbols', header: ["Item", "Symbol"]}
+            {data: this.partData(datawa), id: 'geneSymbols', header: _this.header}
         ];
 
 
@@ -331,7 +332,15 @@ PATHBUBBLES.D3BiPartite.prototype = {
                         .select(".part"+p)
                         .select(".mainbars")
                         .selectAll(".mainbar")
-                        .on("click",function(d, i){ return bP.selectSegment(data, p, i); })
+                        .on("click",function(d, i){
+                            if($(".biPartiteMenu").length)
+                            {
+                                $(".biPartiteMenu").css({
+                                    opacity:0
+                                }) ;
+                            }
+                            return bP.selectSegment(data, p, i);
+                        })
                         .on("contextmenu",function(d, i){
                             menu
                                 .style("top", (d3.event.pageY-10)+"px")
@@ -354,6 +363,12 @@ PATHBUBBLES.D3BiPartite.prototype = {
                 });
             });
             mainSvg.on("dblclick", function(d,i){
+                if($(".biPartiteMenu").length)
+                {
+                    $(".biPartiteMenu").css({
+                        opacity:0
+                    }) ;
+                }
                 bP.draw(data,svg);
             });
         }
