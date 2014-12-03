@@ -37,8 +37,6 @@ PATHBUBBLES.D3Table.prototype = {
         var table = container.append("table")
             .attr("width", width )
             .attr("height", height );
-          //  .append("g")
-//            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         table.append("thead");
         table.append("tbody");
@@ -169,21 +167,30 @@ PATHBUBBLES.D3Table.prototype = {
                     .on("click",function(d,i){
                         if(d.key!=="symbol")
                             return;
-                        $("#information").children('iframe').remove();
-                        var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500"></iframe>');
-                        iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value});
-                        $("#information").append(iframe).dialog({
-                            autoOpen: false,
-                            modal: true,
-                            resizable: false,
-                            width: "auto",
-                            height: "auto",
-                            top: (d3.event.pageY-10)+"px",
-                            left: (d3.event.pageX+10)+"px",
-                            close: function () {
-                                iframe.attr("src", "");
-                            }
-                        });
+                        if( $("#information").children('iframe').length==0)
+                        {
+                            var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500"></iframe>');
+                            iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value});
+                            $("#information").append(iframe).dialog({
+                                autoOpen: false,
+                                modal: false,
+                                resizable: false,
+                                width: "auto",
+                                height: "auto",
+                                top: (d3.event.pageY-10)+"px",
+                                left: (d3.event.pageX+10)+"px",
+                                close: function () {
+                                    iframe.attr("src", "");
+                                }
+                            });
+                        }
+                        else
+                        {
+                            $("#information").children("iframe").attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value}).css({
+                                top: (d3.event.pageY-10)+"px",
+                                left: (d3.event.pageX+10)+"px"
+                            });
+                        }
 
                         $("#information").dialog("open");
                     })
@@ -223,6 +230,7 @@ PATHBUBBLES.D3Table.prototype = {
                             if(d.value == 0)
                             {
                                 alert("It does not have cross-talking pathways!");
+                                d3.event.preventDefault();
                             }
                             else
                             {
@@ -242,7 +250,6 @@ PATHBUBBLES.D3Table.prototype = {
                                     {
                                         var bubble = new PATHBUBBLES.BiPartite(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 600,510,biPartiteData);
                                         bubble.addHtml(["Symbol", "Pathway"]);
-
 
                                         if(_this.parent.name.indexOf(")"))
                                         {
@@ -273,6 +280,10 @@ PATHBUBBLES.D3Table.prototype = {
                                     }
                                 }
                             }
+                        }
+                        else
+                        {
+                            d3.event.preventDefault();
                         }
                     });
 
