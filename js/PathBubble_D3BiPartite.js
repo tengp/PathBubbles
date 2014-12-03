@@ -183,22 +183,41 @@ PATHBUBBLES.D3BiPartite.prototype = {
                 .text(function(d,i){ return trimLabel( data.keys[p][i] );})
                 .attr("text-anchor","start" )
                 .on("click", function(d,i) {
-                    $("#information").children('iframe').remove();
-                    var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500"></iframe>');
-                    iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+data.keys[p][i]});
-                    $("#information").append(iframe).dialog({
-                        autoOpen: false,
-                        modal: true,
-                        resizable: false,
-                        width: "auto",
-                        height: "auto",
-                        top: (d3.event.pageY-10)+"px",
-                        left: (d3.event.pageX+10)+"px",
-                        close: function () {
-                            iframe.attr("src", "");
-                        }
-                    });
-
+//                    $("#information").children('iframe').remove();
+//                    var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500"></iframe>');
+//                    iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+data.keys[p][i]});
+//                    $("#information").append(iframe).dialog({
+//                        autoOpen: false,
+//                        modal: false,
+//                        resizable: false,
+//                        width: "auto",
+//                        height: "auto",
+//                        position: [(d3.event.pageX+10),d3.event.pageY-10],
+//                        close: function () {
+//                            iframe.attr("src", "");
+//                        }
+//                    });
+                    if( $("#information").children('iframe').length==0)
+                    {
+                        var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500"></iframe>');
+                        iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+data.keys[p][i]});
+                        $("#information").append(iframe).dialog({
+                            autoOpen: false,
+                            modal: false,
+                            resizable: false,
+                            width: "auto",
+                            height: "auto",
+                            position: [(d3.event.pageX+10),d3.event.pageY-10],
+                            close: function () {
+                                iframe.attr("src", "");
+                            }
+                        });
+                    }
+                    else
+                    {
+                        $('#information').dialog('option', 'position', [(d3.event.pageX+10),d3.event.pageY-10]);
+                        $("#information").children("iframe").attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+data.keys[p][i]});
+                    }
                     $("#information").dialog("open");
                 });
 
