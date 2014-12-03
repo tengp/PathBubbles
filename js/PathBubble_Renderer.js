@@ -58,10 +58,16 @@ PATHBUBBLES.Renderer.prototype = {
             viewpoint.draw(_this.nav_ctx, 1);
             if (scene.children.length > 0) {
                 for (var i = scene.children.length - 1; i >= 0; i--) {
-                    if (scene.children[i] instanceof PATHBUBBLES.Bubble
-                        || scene.children[i] instanceof PATHBUBBLES.TreeRing || scene.children[i] instanceof PATHBUBBLES.Table||scene.children[i] instanceof PATHBUBBLES.BiPartite) {
+                    if( !scene.children[i].GROUP &&(scene.children[i] instanceof PATHBUBBLES.Bubble
+                        || scene.children[i] instanceof PATHBUBBLES.TreeRing
+                        || scene.children[i] instanceof PATHBUBBLES.Table
+                        ||scene.children[i] instanceof PATHBUBBLES.BiPartite) ){
                         scene.children[i].draw(_this.ctx, 1);
                         scene.children[i].draw(_this.nav_ctx, this.navCanvasHeight / this.canvasHeight);
+                    }
+                    else if(scene.children[i] instanceof PATHBUBBLES.Groups)
+                    {
+                        scene.children[i].draw(_this.ctx,_this.nav_ctx, this.navCanvasHeight / this.canvasHeight);
                     }
                 }
             }

@@ -141,17 +141,18 @@ PATHBUBBLES.Groups.prototype = {
         this.shape.offsetX = this.offsetX;
         this.shape.offsetY = this.offsetY;
     },
-    draw: function (ctx, scale) {
+    draw: function (ctx, nav_ctx, scale) {
 
-//        if (this.shape.points.length) {
-//            this.setOffset();
-//            //ctx.save();
-////            this.shape.draw(ctx, scale);
-////
-////            for (var i = 0; i < this.children.length; ++i) {
-////                this.children[i].draw(ctx, scale);
-////            }
-//            //ctx.restore();
-//        }
+        if (this.children.length > 0) {
+            for (var i = this.children.length - 1; i >= 0; i--) {
+                if( this.children[i] instanceof PATHBUBBLES.Bubble
+                    || this.children[i] instanceof PATHBUBBLES.TreeRing
+                    || this.children[i] instanceof PATHBUBBLES.Table
+                    ||this.children[i] instanceof PATHBUBBLES.BiPartite){
+                    this.children[i].draw(ctx, 1);
+                    this.children[i].draw(nav_ctx, scale);
+                }
+            }
+        }
     }
 };

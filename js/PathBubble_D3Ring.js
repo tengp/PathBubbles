@@ -481,10 +481,10 @@ PATHBUBBLES.D3Ring.prototype = {
                                     })
                                     .attr("height", sectionHeight)
                                     .attr("width", scaleWidth)
-
                                     .attr('fill', function (d, i) {
                                         return expressionColors[i]
                                     });
+
                                 colorScaleBar.selectAll('text')
                                     .data(newData)
                                     .enter().append("text")
@@ -857,7 +857,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                 }
 
                                 var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40,
-                                        _this.parent.y + _this.parent.offsetY, 180, 400, d3.select(this).datum().dbId, _symbols);
+                                        _this.parent.y + _this.parent.offsetY, 374, 400, d3.select(this).datum().dbId, _symbols);
                                 bubble.name = "(Shared protein) " + d3.select(this).datum().name;
                                 bubble.addHtml();
                                 bubble.table.keepQuery = true;
