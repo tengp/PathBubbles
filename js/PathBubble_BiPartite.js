@@ -177,7 +177,7 @@ PATHBUBBLES.BiPartite.prototype = {
             width: this.w - 15 - space,      //leve 6 space for tree ring
             height: this.h - 20 - space,
             left: this.x + this.w / 2 - this.biPartite.w / 2 + 5 + space / 2,
-            top: this.y + this.h / 2 - this.biPartite.h / 2 + 50 + 10 + space / 2+5
+            top: this.y  + 50 + 10 + space / 2+5
         });
         //
         this.shape.drawStrokeAgain(ctx, scale);

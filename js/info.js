@@ -18,4 +18,17 @@ $(function() {
             hide: { effect: 'fade', duration: 500 }
         });
     $("#infoBox").dialog("open");
+    $("#infoBox").on("contextmenu", function(e){
+        e.preventDefault();
+    });
+    $("#information").dialog({
+        autoOpen: false,
+        modal: false,
+        resizable: false,
+        width: "auto",
+        height: "auto",
+        close: function () {
+            $("#information").children('iframe').attr("src", "http://www.ncbi.nlm.nih.gov/gquery");
+        }
+    });
 });

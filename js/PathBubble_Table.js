@@ -42,6 +42,7 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
     this.selected_file = null;
     this.data = data || null;
     this.queryObject = queryObject || null;
+    this.crosstalking = null;
 };
 
 PATHBUBBLES.Table.prototype = Object.create(PATHBUBBLES.Object2D.prototype);

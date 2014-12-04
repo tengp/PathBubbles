@@ -38,16 +38,25 @@ PATHBUBBLES.D3BiPartite.prototype = {
 
         var container = d3.select("#svg" + _this.parent.id)
             .attr("width", width)
-            .attr("height", Math.min(height,datawa.length *minHeight + 40))
+            .attr("height", Math.min(height,datawa.length *(minHeight+2) + margin.top + margin.bottom))
             .style("border", "2px solid #000")
             .style("overflow", "scroll");
-        this.parent.h = Math.min(height, datawa.length *minHeight + 120);
-        _this.h = Math.min(height, datawa.length *minHeight + 120);
-        height = _this.h - margin.top - margin.bottom;
+
+        _this.data = [
+            {data: this.partData(datawa), id: 'geneSymbols', header: _this.header}
+        ];
+        var maxLength_ = Math.max(_this.data[0].data.data[0].length, _this.data[0].data.data[1].length);
+        var _needLength = (datawa.length) *(minHeight+2) + maxLength_ *2 * buffMargin + margin.top + margin.bottom;
+        this.parent.h = Math.min(600, _needLength)+60;
+        if(_needLength>100)
+            _this.h = _needLength;
+        else
+            _this.h = _needLength;
+        height = _this.h - margin.top - margin.bottom ;
         d3.select("#svg" + _this.parent.id)
             .attr("width", width )
             .attr("height",  height );
-         height = datawa.length * minHeight + 40;
+//         height = datawa.length * (minHeight+2) + 40;
 
         var svg = container.append('svg')
             .attr("width", width + margin.left + margin.right)
@@ -55,9 +64,6 @@ PATHBUBBLES.D3BiPartite.prototype = {
             .append("g");
 //            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        _this.data = [
-            {data: this.partData(datawa), id: 'geneSymbols', header: _this.header}
-        ];
 
 
         bP.partData = function(data){
@@ -209,7 +215,7 @@ PATHBUBBLES.D3BiPartite.prototype = {
                             height: "auto",
                             position: [(d3.event.pageX+10),d3.event.pageY-10],
                             close: function () {
-                                iframe.attr("src", "");
+                                iframe.attr("src", "http://www.ncbi.nlm.nih.gov/gquery");
                             }
                         });
                     }

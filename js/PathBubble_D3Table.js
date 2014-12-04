@@ -12,7 +12,7 @@ PATHBUBBLES.D3Table = function (parent, w, h) {
     this.data = null;
     this.dbId = null;
     this.keepQuery = true;
-    this._symbols2Pathways = {};
+    this._symbols2Pathways = this.parent.crosstalking;
 };
 
 PATHBUBBLES.D3Table.prototype = {
@@ -43,32 +43,7 @@ PATHBUBBLES.D3Table.prototype = {
 
         var previousSort = null;
         var format = d3.time.format("%a %b %d %Y");
-
-        d3.text("./data/symbol2Pathway.txt", function (error, symbol2Pathways) {
-            var symbolsPathways = symbol2Pathways.split("\r\n");
-
-            _this._symbols2Pathways.symbols = [];
-            _this._symbols2Pathways.pathways = [];
-            for (var i = 0; i < symbolsPathways.length; ++i) {
-                if(symbolsPathways[i] == "")
-                    continue;
-                var arrays = symbolsPathways[i].split("\t");
-                var index = _this._symbols2Pathways.symbols.indexOf(arrays[0]);
-                if(index == -1)
-                {
-                    _this._symbols2Pathways.symbols.push(arrays[0]);
-                    var pathways = [];
-                    pathways.push(arrays[1]);
-                    _this._symbols2Pathways.pathways.push(pathways);
-                }
-                else
-                {
-                    _this._symbols2Pathways.pathways[index].push(arrays[1]);
-                }
-
-            }
-            refreshTable(null);
-        });
+        refreshTable(null);
         function refreshTable(sortOn){
 
             if (_this.data == null) {
@@ -119,6 +94,7 @@ PATHBUBBLES.D3Table.prototype = {
                 d3.select("#svg" + _this.parent.id).select("table")
                     .attr("width", width )
                     .attr("height",  height );
+                var click = true;
                 // create the table header
                 var thead = d3.select("#svg" + _this.parent.id).select("thead").selectAll("th")
                     .data(d3.keys(jsonData[0]))
@@ -128,8 +104,21 @@ PATHBUBBLES.D3Table.prototype = {
                             return "ratio(log2 based)";
                         return d;
                     })
-                    .on("click", function (d) {
-                        return refreshTable(d);
+                    .on("click", function(d,i){
+                           click=!click;
+                        if(click)
+                        {
+                            d3.select("#svg" + _this.parent.id).select("tbody").selectAll("tr").sort(function (a, b) {
+                                return sort(a[d], b[d]);
+                            });
+                        }
+                        else
+                        {
+                            d3.select("#svg" + _this.parent.id).select("tbody").selectAll("tr").sort(function (a, b) {
+                                return sort(b[d], a[d]);
+                            });
+                        }
+
                     });
 
                 // fill the table
@@ -137,30 +126,36 @@ PATHBUBBLES.D3Table.prototype = {
                 var tr = d3.select("#svg" + _this.parent.id).select("tbody").selectAll("tr").data(jsonData);
                 tr.enter().append("tr");
 
+                var maxCount = d3.max(jsonData,function(d){ return d.count});
+                var maxCrossTalks = d3.max(jsonData,function(d){ return d.crossTalk});
+                var maxRatio = d3.max(jsonData,function(d){ return parseFloat(d.ratio)});
                 // create cells
                 var td = tr.selectAll("td").data(function (d) {
                       if(_this.keepQuery)
                       {
-                          var symbol = d3.entries(d)[0].value;
+                          var symbol = d.symbol;
                           var obj = [];
                           d3.entries(d).forEach(function(data){
                                   data.symbol = symbol;
                               obj.push(data);
                           });
+
                           return obj;
                       }
                       else
                            return d3.entries(d);
                 });
-                td.enter().append("td")
-                    .attr("class", function (d) {
-                        if (d.key == "symbol")
-                            return "hyper";
-                        else  if(d.key == "crossTalk")
-                            return "hyper";
-                        else
-                            return "normalCell";
-                    })
+
+
+                var cellTd = td.enter().append("td");
+                cellTd.attr("class", function (d) {
+                    if (d.key == "symbol")
+                        return "hyper";
+                    else  if(d.key == "crossTalk")
+                        return "hyper";
+                    else
+                        return "normalCell";
+                })
                     .text(function (d) {
                         return d.value;
                     })
@@ -169,7 +164,7 @@ PATHBUBBLES.D3Table.prototype = {
                             return;
                         if( $("#information").children('iframe').length==0)
                         {
-                            var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500"></iframe>');
+                            var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500" ></iframe>');
                             iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value});
                             $("#information").append(iframe).dialog({
                                 autoOpen: false,
@@ -179,7 +174,7 @@ PATHBUBBLES.D3Table.prototype = {
                                 height: "auto",
                                 position: [(d3.event.pageX+10),d3.event.pageY-10],
                                 close: function () {
-                                    iframe.attr("src", "");
+                                    iframe.attr("src", "http://www.ncbi.nlm.nih.gov/gquery");
                                 }
                             });
                         }
@@ -190,6 +185,9 @@ PATHBUBBLES.D3Table.prototype = {
                         }
 
                         $("#information").dialog("open");
+                        $("#information").on("contextmenu", function(e){
+                            return false;
+                        });
                     })
                     .on("contextmenu", function (d, i) {
                         if (_this.keepQuery && d.key == "symbol")
@@ -222,19 +220,20 @@ PATHBUBBLES.D3Table.prototype = {
                                 }
                                 d3.event.preventDefault();
                             }
+                            d3.event.preventDefault();
                         }
                         else if (_this.keepQuery && d.key == "crossTalk") {
                             if(d.value == 0)
                             {
                                 alert("It does not have cross-talking pathways!");
-                                d3.event.preventDefault();
+
                             }
                             else
                             {
                                 var index = _this._symbols2Pathways.symbols.indexOf(d.symbol);
                                 if(index!==-1)
                                 {
-                                    var pathways = _this._symbols2Pathways.pathways[index];
+                                    var pathways = _this._symbols2Pathways.pathwayNames[index];
                                     var biPartiteData = [];
                                     for(var i=0; i<pathways.length; ++i)
                                     {
@@ -273,10 +272,11 @@ PATHBUBBLES.D3Table.prototype = {
                                                 scene.addObject(_this.parent.parent);
                                             }
                                         }
-                                        d3.event.preventDefault();
+
                                     }
                                 }
                             }
+                            d3.event.preventDefault();
                         }
                         else
                         {
@@ -284,26 +284,135 @@ PATHBUBBLES.D3Table.prototype = {
                         }
                     });
 
-                //update?
-                if (sortOn !== null) {
-                    // update rows
-                    if (sortOn != previousSort) {
-                        tr.sort(function (a, b) {
-                            return sort(a[sortOn], b[sortOn]);
-                        });
-                        previousSort = sortOn;
-                    }
-                    else {
-                        tr.sort(function (a, b) {
-                            return sort(b[sortOn], a[sortOn]);
-                        });
-                        previousSort = null;
+                updateRect();
+
+//                //update?
+//                if (sortOn !== null) {
+//                    // update rows
+//                    if (sortOn != previousSort) {
+//                        d3.select("#svg" + _this.parent.id).select("tbody").selectAll("tr").sort(function (a, b) {
+//                            return sort(a[sortOn], b[sortOn]);
+//                        });
+//                        previousSort = sortOn;
+//                    }
+//                    else {
+//                        d3.select("#svg" + _this.parent.id).select("tbody").selectAll("tr").sort(function (a, b) {
+//                            return sort(b[sortOn], a[sortOn]);
+//                        });
+//                        previousSort = null;
+//                    }
+//
+//                    //update cells
+////                    td.text(
+////                        function (d) {
+////                            return d.value;
+////                        }
+////                    );
+//                }
+                function updateRect(){
+
+                    if(jsonData[0].hasOwnProperty("count"))
+                    {
+                        var maxCount = d3.max(jsonData,function(d){ return d.count});
+                        if(maxCount>0)
+                        {
+                            cellTd.append("svg")
+                                .attr("class", "cellCount")
+                                .attr("width",
+                                function(d) {
+                                    if(d.key == "count")
+                                        return d.value /maxCount * 20;
+                                    else
+                                        return 0;
+                                })
+                                .attr("height", 10)
+                                .append("rect")
+                                .attr("height", 10)
+                                .attr("width",
+                                function(d) {
+                                    if(d.key == "count")
+                                        return d.value /maxCount * 20;
+                                    else
+                                        return 0;
+                                });
+                        }
                     }
 
-                    //update cells
-                    td.text(function (d) {
-                        return d.value;
-                    });
+                    if(jsonData[0].hasOwnProperty("crossTalk"))
+                    {
+                        var maxCrossTalks = d3.max(jsonData,function(d){ return d.crossTalk});
+                        if(maxCrossTalks>0)
+                        {
+                            cellTd.append("svg")
+                                .attr("class", "cellCrossTalk")
+                                .attr("width",
+                                function(d) {
+                                    if(d.key == "crossTalk")
+                                        return d.value /maxCrossTalks * 20;
+                                    else
+                                        return 0;
+                                })
+                                .attr("height", 10)
+                                .append("rect")
+                                .attr("height", 10)
+                                .attr("width",
+                                function(d) {
+                                    if(d.key == "crossTalk")
+                                        return d.value /maxCrossTalks * 20;
+                                    else
+                                        return 0;
+                                });
+                        }
+                    }
+                    if(jsonData[0].hasOwnProperty("rateLimit"))
+                    {
+
+                        cellTd.append("svg")
+                            .attr("class", "cellRateLimit")
+                            .attr("width",
+                            function(d) {
+                                if(d.key == "rateLimit")
+                                    return d.value ? 20:0;
+                                else
+                                    return 0;
+                            })
+                            .attr("height", 10)
+                            .append("rect")
+                            .attr("height", 10)
+                            .attr("width",
+                            function(d) {
+                                if(d.key == "rateLimit")
+                                    return d.value ? 20:0;
+                                else
+                                    return 0;
+                            });
+                    }
+                    if(jsonData[0].hasOwnProperty("ratio"))
+                    {
+                        var maxRatio = d3.max(jsonData,function(d){ return parseFloat(d.ratio)});
+                        if(maxRatio>0)
+                        {
+                            cellTd.append("svg")
+                                .attr("class", "cellRatio")
+                                .attr("width",
+                                function(d) {
+                                    if(d.key == "ratio")
+                                        return d.value /maxRatio * 20;
+                                    else
+                                        return 0;
+                                })
+                                .attr("height", 10)
+                                .append("rect")
+                                .attr("height", 10)
+                                .attr("width",
+                                function(d) {
+                                    if(d.key == "ratio")
+                                        return d.value /maxRatio * 20;
+                                    else
+                                        return 0;
+                                });
+                        }
+                    }
                 }
             }
         }
@@ -335,7 +444,5 @@ PATHBUBBLES.D3Table.prototype = {
                 return b ? 1 : a ? -1 : 0;
             }
         }
-
-
     }
 };

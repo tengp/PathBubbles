@@ -20,39 +20,32 @@ PATHBUBBLES.D3Table.prototype = {
     init: function (dbId, querySymbol) {
         this.dbId = dbId;
         var _this = this;
-        var margin = {top: 20, right: 5, bottom: 20, left: 3},
+        var margin = {top: 20, right: 3, bottom: 20, left: 3},
             width = this.w - margin.left - margin.right,
             height = this.h - margin.top - margin.bottom;
+
         d3.select("#svg" + this.parent.id)
-            .attr("width", this.w)
-            .attr("height", this.h);
+            .attr("width", width)
+            .attr("height", height);
 
         var container = d3.select("#svg" + this.parent.id)
-            .attr("width", Math.min(this.w, width + margin.left + margin.right))
-            .attr("height", Math.min(this.h, height + margin.top + margin.bottom))
+            .attr("width", width )
+            .attr("height",  height )
             .style("border", "2px solid #000")
             .style("overflow", "scroll");
 
-        var svg = container.append('svg')
-            .attr("width", Math.min(this.w, width + margin.left + margin.right))
-            .attr("height", Math.min(this.h, height + margin.top + margin.bottom))
-            .style("vertical-align", "middle")
-            .style("box-shadow", "inset 0 0 3px 0px #CECECE")
-            .style("background", "rgba(255,255,255, 0.2)")
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        var table = container.append("table")
+            .attr("width", width )
+            .attr("height", height );
 
-        var headerGrp = svg.append("g").attr("class", "headerGrp");
-        var rowsGrp = svg.append("g").attr("class", "rowsGrp");
+        table.append("thead");
+        table.append("tbody");
 
         var previousSort = null;
         var format = d3.time.format("%a %b %d %Y");
-
         refreshTable(null);
+        function refreshTable(sortOn){
 
-        function refreshTable(sortOn) {
-            var fieldHeight = 30;
-            var fieldWidth = 90;
             if (_this.data == null) {
                 if (querySymbol !== null && querySymbol !== undefined) {
                     $.ajax({
@@ -89,114 +82,64 @@ PATHBUBBLES.D3Table.prototype = {
             else {
                 operation(_this.data);
             }
-            function trimLabel(label) {
-                if (label.length > 10) {
-                    return String(label).substr(0,15) + "...";
-                }
-                else {
-                    return label;
-                }
-            }
             function operation(jsonData) {
-                _this.w = Math.max((fieldWidth + 1) * d3.keys(jsonData[0]).length + 2 * (margin.left + margin.right)+40, width + margin.left + margin.right);
-                _this.parent.w = _this.w ;
-                $("#svg" + _this.parent.id).children("svg").css({
-                    width: Math.max((fieldWidth + 1) * d3.keys(jsonData[0]).length + 2 * (margin.left + margin.right), width + margin.left + margin.right),
-                    height: Math.max((fieldHeight + 1) * jsonData.length + 2 * (margin.top + margin.bottom), height + margin.top + margin.bottom)
-                });
+
+                _this.parent.h = Math.min(jsonData.length *12+100, 400);
+                _this.h = Math.min(jsonData.length *12+100, 400);
+                height = _this.h - margin.top - margin.bottom;
+
+                d3.select("#svg" + _this.parent.id)
+                    .attr("width", width )
+                    .attr("height",  height );
+                d3.select("#svg" + _this.parent.id).select("table")
+                    .attr("width", width )
+                    .attr("height",  height );
                 // create the table header
-                var header = headerGrp.selectAll("g")
+                var thead = d3.select("#svg" + _this.parent.id).select("thead").selectAll("th")
                     .data(d3.keys(jsonData[0]))
-                    .enter().append("g")
-                    .attr("class", "header")
-                    .attr("transform", function (d, i) {
-                        return "translate(" + i * fieldWidth + ",0)";
+                    .enter().append("th")
+                    .text(function (d) {
+                        if(d=="ratio")
+                            return "ratio(log2 based)";
+                        return d;
                     })
-                    .style("cursor", "s-resize")
                     .on("click", function (d) {
                         return refreshTable(d);
                     });
 
-                header.append("rect")
-                    .attr("width", fieldWidth - 1)
-                    .attr("height", fieldHeight)
-                    .style("fill", "#333").style("stroke", "#000000");
-
-                header.append("text")
-                    .attr("x", fieldWidth / 2)
-                    .attr("y", fieldHeight / 2)
-                    .attr("dy", ".35em")
-                    .style("fill", "#fff")
-                    .style("font-family", "sans-serif")
-                    .style("font-size", "10px")
-                    .style("text-anchor", "middle")
-                    .text(String);
-                var rows = rowsGrp.selectAll("g.row").data(jsonData);
-
+                // fill the table
                 // create rows
-                var rowsEnter = rows.enter().append("svg:g")
-                    .attr("class", "row")
-                    .attr("id", function (d, i) {
-                        return "row" + i;
-                    })
-                    .attr("transform", function (d, i) {
-                        return "translate(0," + (i + 1) * (fieldHeight + 1) + ")";
-                    });
-
-                // select cells
-                var cells = rows.selectAll("g.cell").data(function (d) {
-                    if(_this.keepQuery)
-                    {
-                        var symbol = d.symbol;
-                        var obj = [];
-                        d3.entries(d).forEach(function(data){
-                            data.symbol = symbol;
-                            obj.push(data);
-                        });
-                        return obj;
-                    }
-                    else
-                        return d3.entries(d);
-                });
+                var tr = d3.select("#svg" + _this.parent.id).select("tbody").selectAll("tr").data(jsonData);
+                tr.enter().append("tr");
 
                 // create cells
-                cells.enter().append("svg:g")
-                    .attr("class", "cell")
-                    .attr("id", function (d, i) {
-                        return "column" + i;
+                var td = tr.selectAll("td").data(function (d) {
+                      if(_this.keepQuery)
+                      {
+                          var symbol = d.symbol;
+                          var obj = [];
+                          d3.entries(d).forEach(function(data){
+                                  data.symbol = symbol;
+                              obj.push(data);
+                          });
+                          return obj;
+                      }
+                      else
+                           return d3.entries(d);
+                });
+                var maxCount = d3.max(jsonData,function(d){ return d.count});
+                var cellTd = td.enter().append("td");
+                cellTd.attr("class", function (d) {
+                    if (d.key == "symbol")
+                        return "hyper";
+                    else  if(d.key == "crossTalk")
+                        return "hyper";
+                    else
+                        return "normalCell";
+                })
+                    .text(function (d) {
+                        return d.value;
                     })
-                    .attr("transform", function (d, i) {
-                        return "translate(" + i * fieldWidth + ",0)";
-                    });
-
-                cells.append("rect")
-                    .attr("width", fieldWidth - 1)
-                    .attr("height", fieldHeight)
-                    .style("fill", "#ffffff")
-                    .style("stroke", "#000000");
-
-                cells.append("text")
-                    .attr("x", fieldWidth / 2)
-                    .attr("y", fieldHeight / 2)
-                    .attr("dy", ".35em")
-                    .style("fill", "#000")
-                    .style("font-family", "sans-serif")
-                    .style("font-size", "10px")
-                    .style("text-anchor", "middle")
-                    .attr("class", function (d) {
-                        if (d.key == "symbol")
-                            return "hyper";
-                        else  if(d.key == "crossTalk")
-                            return "hyper";
-                        else
-                            return "normalCell";
-                    })
-                    .text(
-                    function (d) {
-                        return trimLabel(d.value);
-                    });
-//                    .text(String);
-                cells
                     .on("click",function(d,i){
                         if(d.key!=="symbol")
                             return;
@@ -321,30 +264,107 @@ PATHBUBBLES.D3Table.prototype = {
                             d3.event.preventDefault();
                         }
                     });
+                if(jsonData[0].hasOwnProperty("count"))
+                {
+                    var maxCount = d3.max(jsonData,function(d){ return d.count});
+                    if(maxCount>0)
+                    {
+                        cellTd.append("svg")
+                            .attr("class", "cellCount")
+                            .attr("width", 20)
+                            .attr("height", 10)
+                            .append("rect")
+                            .attr("height", 10)
+                            .attr("width",
+                            function(d) {
+                                if(d.key == "count")
+                                    return d.value /maxCount * 20;
+                                else
+                                    return 0;
+                            });
+                    }
+                }
 
-                //update if not in initialisation
+                if(jsonData[0].hasOwnProperty("crossTalk"))
+                {
+                    var maxCrossTalks = d3.max(jsonData,function(d){ return d.crossTalk});
+                    if(maxCrossTalks>0)
+                    {
+                        cellTd.append("svg")
+                            .attr("class", "cellCrossTalk")
+                            .attr("width", 20)
+                            .attr("height", 10)
+                            .append("rect")
+                            .attr("height", 10)
+                            .attr("width",
+                            function(d) {
+                                if(d.key == "crossTalk")
+                                    return d.value /maxCrossTalks * 20;
+                                else
+                                    return 0;
+                            });
+                    }
+                }
+                if(jsonData[0].hasOwnProperty("rateLimit"))
+                {
+                    var maxRatio = d3.max(jsonData,function(d){ return parseFloat(d.ratio)});
+                    if(maxRatio>0)
+                    {
+                        cellTd.append("svg")
+                            .attr("class", "cellRateLimit")
+                            .attr("width", 20)
+                            .attr("height", 10)
+                            .append("rect")
+                            .attr("height", 10)
+                            .attr("width",
+                            function(d) {
+                                if(d.key == "rateLimit")
+                                    return d.value ? 20:0;
+                                else
+                                    return 0;
+                            });
+                    }
+                }
+                if(jsonData[0].hasOwnProperty("ratio"))
+                {
+                    var maxRatio = d3.max(jsonData,function(d){ return parseFloat(d.ratio)});
+                    if(maxRatio>0)
+                    {
+                        cellTd.append("svg")
+                            .attr("class", "cellRatio")
+                            .attr("width", 20)
+                            .attr("height", 10)
+                            .append("rect")
+                            .attr("height", 10)
+                            .attr("width",
+                            function(d) {
+                                if(d.key == "ratio")
+                                    return d.value /maxRatio * 20;
+                                else
+                                    return 0;
+                            });
+                    }
+                }
+
+
+                //update?
                 if (sortOn !== null) {
                     // update rows
                     if (sortOn != previousSort) {
-                        rows.sort(function (a, b) {
+                        tr.sort(function (a, b) {
                             return sort(a[sortOn], b[sortOn]);
                         });
                         previousSort = sortOn;
                     }
                     else {
-                        rows.sort(function (a, b) {
+                        tr.sort(function (a, b) {
                             return sort(b[sortOn], a[sortOn]);
                         });
                         previousSort = null;
                     }
-                    rows.transition()
-                        .duration(500)
-                        .attr("transform", function (d, i) {
-                            return "translate(0," + (i + 1) * (fieldHeight + 1) + ")";
-                        });
 
                     //update cells
-                    rows.selectAll("g.cell").select("text").text(function (d) {
+                    td.text(function (d) {
                         return d.value;
                     });
                 }
