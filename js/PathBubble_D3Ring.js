@@ -387,36 +387,26 @@ PATHBUBBLES.D3Ring.prototype = {
                                 var textG = gGroup.append("g").selectAll(".text");
 //                var expressionColors = d3.scale.category10();
                                 var expressionColors = [
-//                    "#543005",
-//                    "#8c510a",
-//                    "#bf812d",
-//                    "#dfc27d",
-//                    "#f6e8c3",
-//                    "#c7eae5",
-//                    "#80cdc1",
-//                    "#35978f",
-//                    "#01665e",
-//                    "#003c30"
-                                    "#a6cee3",
-                                    "#1f78b4",
-                                    "#b2df8a",
-                                    "#33a02c",
-                                    "#fb9a99",
-                                    "#e31a1c",
-                                    "#fdbf6f",
-                                    "#ff7f00",
-                                    "#cab2d6",
-                                    "#6a3d9a"
-
-//                                    "#ffffd9",
-//                                    "#edf8b1",
-//                                    "#c7e9b4",
-//                                    "#7fcdbb",
-//                                    "#41b6c4",
-//                                    "#1d91c0",
-//                                    "#225ea8",
-//                                    "#253494",
-//                                    "#081d58"
+//                                    "#a6cee3",
+//                                    "#1f78b4",
+//                                    "#b2df8a",
+//                                    "#33a02c",
+//                                    "#fb9a99",
+//                                    "#e31a1c",
+//                                    "#fdbf6f",
+//                                    "#ff7f00",
+//                                    "#cab2d6",
+//                                    "#6a3d9a"
+                                    "#006d2c",
+                                    "#31a354",
+                                    "#74c476",
+                                    "#a1d99b",
+                                    "#c7e9c0",
+                                    "#fdd0a2",
+                                    "#fdae6b",
+                                    "#fd8d3c",
+                                    "#e6550d",
+                                    "#a63603"
                                 ];
                                 processTextLinks(nodeData);
 
@@ -467,7 +457,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                     var sectionHeight = Math.floor(scaleHeight / divisions);
                                     for (var i = 0, j = 0; i < scaleHeight && j <= max; i += sectionHeight, j += max / 9) {
                                         var obj = {};
-                                        obj.data = i;
+                                        obj.data = 9-i;
                                         obj.text = parseFloat(j).toFixed(3);
                                         newData.push(obj);
                                     }
@@ -477,7 +467,7 @@ PATHBUBBLES.D3Ring.prototype = {
 
                                     var colorScaleBar = svg.append("g")
                                         .attr("class", "colorScaleBar")
-                                        .attr("transform", "translate(" + (width - 3 * scaleWidth) + "," + ( height + 40 - 10 * sectionHeight  ) + ")")
+                                        .attr("transform", "translate(" + (width - 3 * scaleWidth) + "," + ( height  ) + ")")
                                         .attr("width", BarWidth)
                                         .attr("height", BarHeight);
 
@@ -513,7 +503,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                 function getExpressionColor(ratio) {
                                     if (max == 0)
                                         return expressionColors[0];
-                                    return expressionColors[Math.floor(8 * ratio / max)];
+                                    return expressionColors[Math.floor(9 * ratio / max)];
                                 }
 
                                 pathG = pathG.data(nodeData)

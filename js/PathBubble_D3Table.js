@@ -145,10 +145,10 @@ PATHBUBBLES.D3Table.prototype = {
                       else
                            return d3.entries(d);
                 });
-
-
                 var cellTd = td.enter().append("td");
-                cellTd.attr("class", function (d) {
+                updateRect();
+
+                cellTd.append("text").attr("class", function (d) {
                     if (d.key == "symbol")
                         return "hyper";
                     else  if(d.key == "crossTalk")
@@ -284,31 +284,8 @@ PATHBUBBLES.D3Table.prototype = {
                         }
                     });
 
-                updateRect();
 
-//                //update?
-//                if (sortOn !== null) {
-//                    // update rows
-//                    if (sortOn != previousSort) {
-//                        d3.select("#svg" + _this.parent.id).select("tbody").selectAll("tr").sort(function (a, b) {
-//                            return sort(a[sortOn], b[sortOn]);
-//                        });
-//                        previousSort = sortOn;
-//                    }
-//                    else {
-//                        d3.select("#svg" + _this.parent.id).select("tbody").selectAll("tr").sort(function (a, b) {
-//                            return sort(b[sortOn], a[sortOn]);
-//                        });
-//                        previousSort = null;
-//                    }
-//
-//                    //update cells
-////                    td.text(
-////                        function (d) {
-////                            return d.value;
-////                        }
-////                    );
-//                }
+
                 function updateRect(){
 
                     if(jsonData[0].hasOwnProperty("count"))
@@ -420,14 +397,6 @@ PATHBUBBLES.D3Table.prototype = {
 
         function sort(a,b){
             if(typeof a == "string"){
-//                var parseA = format.parse(a);
-//                if(parseA){
-//                    var timeA = parseA.getTime();
-//                    var timeB = format.parse(b).getTime();
-//                    return timeA > timeB ? 1 : timeA == timeB ? 0 : -1;
-//                }
-//                else
-//                    return a.localeCompare(b);
                 if(typeof parseFloat(a) == "number" && typeof parseFloat(b) == "number" )
                 {
                     if(!isNaN( parseFloat(a) ) && !isNaN (parseFloat(b) )  )
