@@ -390,6 +390,7 @@ PATHBUBBLES.D3Table.prototype = {
                     if(jsonData[0].hasOwnProperty("ratio"))
                     {
                         var maxRatio = d3.max(jsonData,function(d){ return parseFloat(d.ratio)});
+                        var minRatio = d3.min(jsonData,function(d){ return parseFloat(d.ratio)});
                         if(maxRatio>0)
                         {
                             cellTd.append("svg")
@@ -397,7 +398,7 @@ PATHBUBBLES.D3Table.prototype = {
                                 .attr("width",
                                 function(d) {
                                     if(d.key == "ratio")
-                                        return d.value /maxRatio * 20;
+                                        return (parseFloat(d.value) -minRatio) /( maxRatio-minRatio) * 20;
                                     else
                                         return 0;
                                 })
@@ -407,7 +408,7 @@ PATHBUBBLES.D3Table.prototype = {
                                 .attr("width",
                                 function(d) {
                                     if(d.key == "ratio")
-                                        return d.value /maxRatio * 20;
+                                        return (parseFloat(d.value) -minRatio) /( maxRatio-minRatio) * 20;
                                     else
                                         return 0;
                                 });

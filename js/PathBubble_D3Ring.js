@@ -407,6 +407,16 @@ PATHBUBBLES.D3Ring.prototype = {
                                     "#ff7f00",
                                     "#cab2d6",
                                     "#6a3d9a"
+
+//                                    "#ffffd9",
+//                                    "#edf8b1",
+//                                    "#c7e9b4",
+//                                    "#7fcdbb",
+//                                    "#41b6c4",
+//                                    "#1d91c0",
+//                                    "#225ea8",
+//                                    "#253494",
+//                                    "#081d58"
                                 ];
                                 processTextLinks(nodeData);
 
@@ -503,7 +513,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                 function getExpressionColor(ratio) {
                                     if (max == 0)
                                         return expressionColors[0];
-                                    return expressionColors[Math.floor(9 * ratio / max)];
+                                    return expressionColors[Math.floor(8 * ratio / max)];
                                 }
 
                                 pathG = pathG.data(nodeData)
