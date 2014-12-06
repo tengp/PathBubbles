@@ -244,13 +244,14 @@ PATHBUBBLES.D3Table.prototype = {
                                     }
                                     if(biPartiteData.length>0)
                                     {
-                                        var bubble = new PATHBUBBLES.BiPartite(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 600,510,biPartiteData);
+                                        var thisName = _this.parent.name + "-"+d.symbol + "-Crosstalking";
+                                        var bubble = new PATHBUBBLES.BiPartite(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 600,510,biPartiteData,thisName);
                                         bubble.addHtml(["Symbol", "Pathway"]);
 
-                                        if(_this.parent.name.indexOf(")"))
-                                        {
-                                            bubble.name ="(Symbol crosstalking)"+_this.parent.name.split(")")[1];
-                                        }
+//                                        if(_this.parent.name.indexOf(")"))
+//                                        {
+//                                            bubble.name ="(Symbol crosstalking)"+_this.parent.name.split(")")[1];
+//                                        }
                                         bubble.menuOperation();
                                         if(viewpoint)
                                         {
@@ -283,9 +284,6 @@ PATHBUBBLES.D3Table.prototype = {
                             d3.event.preventDefault();
                         }
                     });
-
-
-
                 function updateRect(){
 
                     if(jsonData[0].hasOwnProperty("count"))

@@ -70,18 +70,25 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     tmp += '</div>';
     this.button.addButton(tmp);
 
-    this.pre = "(Ortholog) Human VS ";
-    this.name = this.pre + "Gallus";
+//    this.pre = "(Ortholog) Human VS ";
+//    this.name = this.pre + "Gallus";
+
+    this.dataName = dataName || null;
+    if(!this.dataName)
+        this.name = this.id +"_" + "Homo sapiens";
+    else
+        this.name = this.id +"_" + this.dataName;
     this.title = new PATHBUBBLES.Title(this, this.name);
     this.__objectsAdded = [];
     this.__objectsRemoved = [];
     this.center = {x: this.x + this.w / 2, y: this.y + this.h / 2};
     this.GROUP = false;
     this.selected_file = null;
-    this.dataName = dataName || null;
+
     this.dataType = dataType || null;
     this.selectedData = selectedData || null;
-
+    this.experiment_Type = "Ortholog";
+    this.preHierarchical = "";
 };
 
 PATHBUBBLES.TreeRing.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
@@ -163,15 +170,17 @@ PATHBUBBLES.TreeRing.prototype = {
             _this.treeRing.ChangeLevel = true;
             if (customExpression) {
                 _this.treeRing.customExpression = customExpression;
-                _this.name = "(Expression) ";
+//                _this.name = "(Expression) ";
+//                _this.name = _this.id+val;
             }
-            else {
-                _this.name = _this.pre + val;
-                if(val == "Human")
-                {
-                    _this.name ="(Ortholog) Human";
-                }
-            }
+            _this.name = _this.id + "_" +val;
+//            else {
+//                _this.name = _this.pre + val;
+//                if(val == "Human")
+//                {
+//                    _this.name ="(Ortholog) Human";
+//                }
+//            }
             _this.treeRing.init();
 //            _this.statusDomElement.style.display = 'none';
         });
@@ -204,11 +213,11 @@ PATHBUBBLES.TreeRing.prototype = {
             _this.treeRing.file = "./data/Ortholog/" + fileVal + "/" + _this.dataName + ".json";
             if (orthlogData) {
                 _this.treeRing.customOrtholog = orthlogData;
-                _this.name = _this.pre + "custom";
+//                _this.name = _this.pre + "custom";
             }
             if (expressionData) {
                 _this.treeRing.customExpression = expressionData;
-                _this.name = "(Expression) ";
+//                _this.name = "(Expression) ";
             }
             _this.treeRing.init();
         });
@@ -267,7 +276,8 @@ PATHBUBBLES.TreeRing.prototype = {
                         _this.treeRing.customExpression = customExpression;
                     }
 //                    _this.treeRing.renderType = "Ortholog";
-                    _this.name = _this.pre + "custom";
+//                    _this.name = _this.pre + "custom";
+//                    _this.name = _this.id+val;
                     $menuBarbubble.find('#file').val("Default");
                     _this.treeRing.init();
                 });
@@ -320,9 +330,10 @@ PATHBUBBLES.TreeRing.prototype = {
                     if (customOrtholog) {
                         _this.treeRing.customOrtholog = customOrtholog;
                     }
-                    _this.name = "(Expression) " + _this.selected_file.name;
+//                    _this.name = "(Expression) " + _this.selected_file.name;
                     _this.treeRing.init();
                 });
+                _this.experiment_Type = "Gene Expression";
             }
         });
     },

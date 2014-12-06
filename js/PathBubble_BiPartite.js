@@ -4,7 +4,7 @@
  * @time        11/26/2014
  * @name        PathBubble_BiPartite
  */
-PATHBUBBLES.BiPartite = function (x, y, w, h, data) {
+PATHBUBBLES.BiPartite = function (x, y, w, h, data,name) {
     PATHBUBBLES.Object2D.call(this);
     this.type = "BiPartite";
     this.x = x || 0;
@@ -33,7 +33,7 @@ PATHBUBBLES.BiPartite = function (x, y, w, h, data) {
 //    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
     this.button.addButton(tmp);
 
-    this.name = "biPartite";
+    this.name = name||"biPartite";
     this.title = new PATHBUBBLES.Title(this, this.name);
     this.__objectsAdded = [];
     this.__objectsRemoved = [];

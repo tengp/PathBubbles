@@ -40,8 +40,18 @@ PATHBUBBLES.D3Ring.prototype = {
         var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
         var gGroup;
         var mainSvg = svg.append("g")
-            .attr("transform", "translate(" + width / 2 + "," + (height / 2 ) + ")");
-
+            .attr("transform", "translate(" + width / 2 + "," + (height / 2+20 ) + ")");
+        svg.append("text")
+            .style("font-size", 15)
+            .attr("transform", "translate(" + (width / 2) + "," + 12 + ")")
+            .style("text-anchor", "middle")
+            .text(_this.parent.experiment_Type);
+        svg.append("text")
+            .style("font-size", 15)
+            .attr("transform", "translate(" + (0) + "," + 12 + ")")
+            .style("text-anchor", "start")
+            .style("fill", "#f0f")
+            .text(_this.parent.preHierarchical);
         function zoom() {
             gGroup.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
         }
@@ -91,24 +101,6 @@ PATHBUBBLES.D3Ring.prototype = {
             .projection(function (d) {
                 return [d.x, d.y];
             });
-//        d3.text("./data/crosstalksymbol.txt", function (error, crossTalkSymbols) {
-//            var crosstalk_symbols = crossTalkSymbols.split("\r\n");
-//
-//            _this._crossTalkSymbols.keys = d3.set(crosstalk_symbols.map(function (d) {
-//                if (d !== "")
-//                    return d;
-//            })).values().sort(function (a, b) {
-//                return ( a < b ? -1 : a > b ? 1 : 0);
-//            });
-//            _this._crossTalkSymbols.values = _this._crossTalkSymbols.keys.map(function (d) {
-//                return 0;
-//            });
-//            for (var i = 0; i < crosstalk_symbols.length; ++i) {
-//                var index = _this._crossTalkSymbols.keys.indexOf(crosstalk_symbols[i]);
-//                if (index !== -1) {
-//                    _this._crossTalkSymbols.values[index]++;
-//                }
-//            }
 
         d3.json("./data/crossTalkings.json", function (error, crossTalkSymbols) {
             _this._crossTalkSymbols = crossTalkSymbols;
@@ -131,7 +123,6 @@ PATHBUBBLES.D3Ring.prototype = {
                         _this._rateLimitSymbols.values[index]++;
                     }
                 }
-
                     {   //main
                         var minRatio;
                         var maxRatio;
@@ -191,7 +182,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                                         }
                                         $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
-                                        _this.parent.name = root.name + " " + _this.parent.name;
+//                                        _this.parent.name = root.name + " " + _this.parent.name;
                                     }
 
                                     operation(nodeData);
@@ -251,7 +242,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                                         }
                                         $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
-                                        _this.parent.name = root.name + " " + _this.parent.name;
+//                                        _this.parent.name = root.name + " " + _this.parent.name;
                                     }
                                     operation(nodeData);
                                 }
@@ -335,7 +326,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                                         }
                                         $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
-                                        _this.parent.name = root.name + " " + _this.parent.name;
+//                                        _this.parent.name = root.name + " " + _this.parent.name;
                                     }
                                     operation(nodeData);
                                 }
@@ -350,7 +341,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                                         }
                                         $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
-                                        _this.parent.name = root.name + " " + _this.parent.name;
+//                                        _this.parent.name = root.name + " " + _this.parent.name;
                                     }
                                     operation(nodeData);
                                 }
@@ -367,7 +358,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                     tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                                 }
                                 $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
-                                _this.parent.name = _this.selectedData.name + " " + _this.parent.name;
+//                                _this.parent.name = _this.selectedData.name + " " + _this.parent.name;
                             }
                             operation(nodeData);
                         }
@@ -828,6 +819,8 @@ PATHBUBBLES.D3Ring.prototype = {
                                         if (j >= _symbols.length) {
                                             symbolObj.symbol = symbols[i];
                                             symbolObj.count = 1;
+                                            symbolObj.crossTalk = 0;
+                                            symbolObj.rateLimit = 0;
                                             _symbols.push(symbolObj);
                                         }
                                         else {
@@ -855,10 +848,12 @@ PATHBUBBLES.D3Ring.prototype = {
                                             _symbols[i].rateLimit = 0;
                                         }
                                     }
-
+                                    var thisName = _this.parent.id + "_"+ d3.select(this).datum().name;
                                     var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40,
-                                            _this.parent.y + _this.parent.offsetY, 374, 400, d3.select(this).datum().dbId, _symbols);
-                                    bubble.name = "(Shared protein) " + d3.select(this).datum().name;
+                                            _this.parent.y + _this.parent.offsetY, 374, 400, d3.select(this).datum().dbId, _symbols,null, thisName);
+
+//                                    bubble.name = "(Shared protein) " + d3.select(this).datum().name;
+
                                     bubble.crosstalking = _this._crossTalkSymbols;
                                     bubble.addHtml();
                                     bubble.table.keepQuery = true;
@@ -905,6 +900,8 @@ PATHBUBBLES.D3Ring.prototype = {
                                             symbolObj.count = 1;
                                             symbolObj.ratio = parseFloat(ups[i].ratio).toFixed(5);
                                             symbolObj.regulation = "Up";
+                                            symbolObj.crossTalk = 0;
+                                            symbolObj.rateLimit = 0;
                                             _symbols.push(symbolObj);
                                         }
                                     }
@@ -924,6 +921,8 @@ PATHBUBBLES.D3Ring.prototype = {
                                             symbolObj.count = 1;
                                             symbolObj.ratio = parseFloat(downs[i].ratio).toFixed(5);
                                             symbolObj.regulation = "Down";
+                                            symbolObj.crossTalk = 0;
+                                            symbolObj.rateLimit = 0;
                                             _symbols.push(symbolObj);
                                         }
                                     }
@@ -948,8 +947,10 @@ PATHBUBBLES.D3Ring.prototype = {
                                             _symbols[i].rateLimit = 0;
                                         }
                                     }
-                                    var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 500, 500, d3.select(this).datum().dbId, _symbols);
-                                    bubble.name = "(Expression) " + d3.select(this).datum().name;
+                                    var thisName = _this.parent.id + "_"+ d3.select(this).datum().name;
+                                    var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40,
+                                            _this.parent.y + _this.parent.offsetY, 500, 500, d3.select(this).datum().dbId, _symbols,null,thisName);
+//                                    bubble.name = "(Expression) " + d3.select(this).datum().name;
                                     bubble.crosstalking = _this._crossTalkSymbols;
                                     bubble.addHtml();
                                     bubble.table.keepQuery = true;
@@ -1212,8 +1213,10 @@ PATHBUBBLES.D3Ring.prototype = {
                                     if (i == 0)
                                         return;
                                     var dbId = d3.select(this).datum().dbId;
-                                    var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 500, 500, dbId);
-                                    bubble.name = d3.select(this).datum().name;
+                                    var thisName = _this.parent.id + "_"+ d3.select(this).datum().name;
+                                    var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40,
+                                            _this.parent.y + _this.parent.offsetY, 500, 500, dbId,null,null,thisName);
+//                                    bubble.name = d3.select(this).datum().name;
                                     bubble.addHtml();
                                     bubble.table.keepQuery = false;
                                     bubble.menuOperation();
@@ -1253,7 +1256,14 @@ PATHBUBBLES.D3Ring.prototype = {
                                         RingWidth = RingWidth * 0.8;
                                         RingHeight = RingHeight * 0.8;
                                     }
-                                    var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, name, dataType, selectedData);
+                                    var bubble5 = new PATHBUBBLES.TreeRing(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, RingWidth, RingHeight, selectedData.name, dataType, selectedData);
+                                    bubble5.experiment_Type = _this.parent.experiment_Type;
+                                    if(_this.parent.preHierarchical!=="")
+                                        bubble5.preHierarchical = _this.parent.preHierarchical + "->" + _this.parent.id;
+                                    else
+                                    {
+                                        bubble5.preHierarchical +=  _this.parent.id;
+                                    }
                                     bubble5.HIDE = _this.parent.HIDE;
                                     bubble5.addHtml();
 
@@ -1264,17 +1274,6 @@ PATHBUBBLES.D3Ring.prototype = {
                                         $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
                                         $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
                                         $('#menuView' + bubble5.id).find("#operateText").val($('#menuView' + _this.parent.id).find("#operateText").val());
-//                        bubble5.operateText = $('#menuView' + _this.parent.id).find("#operateText").val();
-//                        if($('#menuView' + bubble5.id).find('#operateText').val() == "showTitle")
-//                        {
-//                            bubble5.treeRing.showTitle();
-//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').hide();
-//                        }
-//                        else if($('#menuView' + bubble5.id).find('#operateText').val() == "showCrossTalk")
-//                        {
-//                            bubble5.treeRing.showCrossTalk();
-//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').show();
-//                        }
                                     }
                                     if (_this.customExpression) {
                                         d3.select("#svg" + bubble5.id).selectAll(".symbol").remove();
@@ -1285,16 +1284,6 @@ PATHBUBBLES.D3Ring.prototype = {
                                         $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
                                         $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
                                         $('#menuView' + bubble5.id).find("#operateText").val($('#menuView' + _this.parent.id).find("#operateText").val());
-//                        if($('#menuView' + bubble5.id).find('#operateText').val() == "showTitle")
-//                        {
-//                            bubble5.treeRing.showTitle();
-//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').hide();
-//                        }
-//                        else if($('#menuView' + bubble5.id).find('#operateText').val() == "showCrossTalk")
-//                        {
-//                            bubble5.treeRing.showCrossTalk();
-//                            $('#menuView' + bubble5.id).find('#crossTalkLevel').show();
-//                        }
                                         bubble5.operateText = $('#menuView' + _this.parent.id).find("#operateText").val();
                                     }
 

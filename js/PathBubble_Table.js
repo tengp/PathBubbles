@@ -4,7 +4,7 @@
  * @time        10/18/2014
  * @name        PathBubble_Table
  */
-PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
+PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject,name) {
     PATHBUBBLES.Object2D.call(this);
     this.type = "Table";
     this.x = x || 0;
@@ -32,8 +32,15 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
 //    tmp += '<input type="button" id=ungroup value= "Ungroup" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 80 + 'px; ">';
 //    tmp += '<input type="button" id=delete value= "Delete" style="position: absolute; left:' + this.x + ' px; top:' + this.y + 105 + 'px; ">';
     this.button.addButton(tmp);
-
-    this.name = "table";
+    this.dataName = name||null;
+    if(this.dataName)
+    {
+        this.name = this.dataName;
+    }
+    else
+    {
+        this.name = "table";
+    }
     this.title = new PATHBUBBLES.Title(this, this.name);
     this.__objectsAdded = [];
     this.__objectsRemoved = [];
@@ -43,6 +50,8 @@ PATHBUBBLES.Table = function (x, y, w, h, dbId, data, queryObject) {
     this.data = data || null;
     this.queryObject = queryObject || null;
     this.crosstalking = null;
+    this.experiment_Type = "Ortholog";
+    this.preHierarchical = "";
 };
 
 PATHBUBBLES.Table.prototype = Object.create(PATHBUBBLES.Object2D.prototype);
@@ -89,7 +98,7 @@ PATHBUBBLES.Table.prototype = {
     menuOperation: function () {
         var _this = this;
         var $menuBarbubble = $('#menuView' + this.id);
-        if(_this.name.indexOf("Expression")!==-1)
+        if(this.experiment_Type == "Expression")
         {
             $menuBarbubble.find("#export").show();
         }
@@ -161,10 +170,10 @@ PATHBUBBLES.Table.prototype = {
                                 {
                                     var bubble = new PATHBUBBLES.BiPartite(_this.x + _this.offsetX + _this.w-40, _this.y + _this.offsetY,600,510,biPartiteData);
                                     bubble.addHtml();
-                                    if(_this.name.indexOf(")"))
-                                    {
-                                        bubble.name ="(Gene Symbol)"+_this.name.split(")")[1];
-                                    }
+//                                    if(_this.name.indexOf(")"))
+//                                    {
+//                                        bubble.name ="(Gene Symbol)"+_this.name.split(")")[1];
+//                                    }
 
                                     bubble.menuOperation();
                                     if(viewpoint)
