@@ -110,6 +110,7 @@ PATHBUBBLES.TreeRing.prototype = {
         }
         this.treeRing.init();
     },
+
     addObject: function (object) {
         var index = this.children.indexOf(object);
         if (index > -1) {
