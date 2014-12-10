@@ -160,34 +160,102 @@ PATHBUBBLES.D3Table.prototype = {
                         return d.value;
                     })
                     .on("click",function(d,i){
-                        if(d.key!=="symbol")
-                            return;
-                        if( $("#information").children('iframe').length==0)
+                        if(d.key=="symbol")
                         {
-                            var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500" ></iframe>');
-                            iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value});
-                            $("#information").append(iframe).dialog({
-                                autoOpen: false,
-                                modal: false,
-                                resizable: false,
-                                width: "auto",
-                                height: "auto",
-                                position: [(d3.event.pageX+10),d3.event.pageY-10],
-                                close: function () {
-                                    iframe.attr("src", "http://www.ncbi.nlm.nih.gov/gquery");
-                                }
+                            if( $("#information").children('iframe').length==0)
+                            {
+                                var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="560px" height="500" ></iframe>');
+                                iframe.attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value});
+                                $("#information").append(iframe).dialog({
+                                    autoOpen: false,
+                                    modal: false,
+                                    resizable: false,
+                                    width: "auto",
+                                    height: "auto",
+                                    position: [(d3.event.pageX+10),d3.event.pageY-10],
+                                    close: function () {
+                                        iframe.attr("src", "http://www.ncbi.nlm.nih.gov/gquery");
+                                    }
+                                });
+                            }
+                            else
+                            {
+                                $('#information').dialog('option', 'position', [(d3.event.pageX+10),d3.event.pageY-10]);
+                                $("#information").children("iframe").attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value});
+                            }
+
+                            $("#information").dialog("open");
+                            $("#information").on("contextmenu", function(e){
+                                return false;
                             });
                         }
-                        else
+                        else if(d.key=="crossTalk")
                         {
-                            $('#information').dialog('option', 'position', [(d3.event.pageX+10),d3.event.pageY-10]);
-                            $("#information").children("iframe").attr({src: "http://www.ncbi.nlm.nih.gov/gquery/?term="+d.value});
-                        }
+                            if(d.value == 0)
+                            {
+                                alert("It does not have cross-talking pathways!");
+                            }
+                            else {
+                                var index = _this._symbols2Pathways.symbols.indexOf(d.symbol);
+                                if (index !== -1) {
+                                    var pathways = _this._symbols2Pathways.pathwayNames[index];
+                                    for(var i=0; i<pathways.length; ++i)
+                                    {
+                                        pathways[i] = $.trim(pathways[i]);
+                                    }
+                                    var currentId=_this.parent.name.split("_")[0];
+                                    var currentBubble=null;
+                                    for(var i=0; i<scene.children.length; ++i)
+                                    {
+                                        if(scene.children[i].id == currentId)
+                                        {
+                                            currentBubble = scene.children[i];
+                                            break;
+                                        }
+                                    }
+                                    if(!currentBubble)
+                                        return;
+                                    d3.select('#svg' + currentId).remove();
+                                    var tmp = '';
+                                    tmp += '<div id= svg' + currentId + ' style="position: absolute; width:' + (currentBubble.w + 5) + 'px; ' + 'height:' + (currentBubble.h + 5) + 'px; left:' +
+                                        (currentBubble.x + currentBubble.w / 2 - (Math.min(currentBubble.w, currentBubble.h) - 30) / 2 - 10) + ' px; top:' +
+                                        (currentBubble.y + currentBubble.h / 2 - (Math.min(currentBubble.w, currentBubble.h) - 30) / 2 + 50 - 15) + 'px; "> </div>';
+                                    $("#bubble").append($(tmp));
 
-                        $("#information").dialog("open");
-                        $("#information").on("contextmenu", function(e){
-                            return false;
-                        });
+                                    var defaultRadius = currentBubble.treeRing.defaultRadius;
+                                    var name = currentBubble.treeRing.name;
+                                    var file = currentBubble.treeRing.file;
+                                    var customOrtholog = currentBubble.treeRing.customOrtholog;
+                                    var selectedData = currentBubble.treeRing.selectedData;
+                                    var showCrossTalkLevel = currentBubble.treeRing.showCrossTalkLevel;
+                                    var ChangeLevel = currentBubble.treeRing.ChangeLevel;
+                                    var customExpression = currentBubble.treeRing.customExpression;
+                                    var expressionScaleMax = currentBubble.treeRing.expressionScaleMax;
+                                    var highLightPathways = currentBubble.treeRing.highLightPathways;
+                                    var _crossTalkSymbols = currentBubble.treeRing._crossTalkSymbols;
+                                    var _rateLimitSymbols = currentBubble.treeRing._rateLimitSymbols;
+                                    var experiment_Type = currentBubble.experiment_Type;
+                                    highLightPathways = highLightPathways.concat(pathways);
+                                    currentBubble.treeRing = null;
+                                    currentBubble.treeRing = new PATHBUBBLES.D3Ring(currentBubble, Math.min(currentBubble.w, currentBubble.h) - 30, currentBubble.dataType, currentBubble.dataName);
+                                    currentBubble.treeRing.defaultRadius = defaultRadius;
+                                    currentBubble.treeRing.name = name;
+                                    currentBubble.treeRing.file = file;
+                                    currentBubble.treeRing.customOrtholog = customOrtholog;
+                                    currentBubble.treeRing.customExpression = customExpression;
+                                    currentBubble.treeRing.selectedData = selectedData;
+                                    currentBubble.treeRing.showCrossTalkLevel = showCrossTalkLevel;
+                                    currentBubble.treeRing.ChangeLevel = ChangeLevel;
+                                    currentBubble.treeRing.expressionScaleMax = expressionScaleMax;
+                                    currentBubble.treeRing._crossTalkSymbols = _crossTalkSymbols;
+                                    currentBubble.treeRing._rateLimitSymbols = _rateLimitSymbols;
+                                    currentBubble.treeRing.experiment_Type = experiment_Type;
+
+                                    currentBubble.treeRing.highLightPathways = highLightPathways;
+                                    currentBubble.treeRing.init();
+                                }
+                            }
+                        }
                     })
                     .on("contextmenu", function (d, i) {
                         if (_this.keepQuery && d.key == "symbol")

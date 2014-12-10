@@ -18,7 +18,7 @@ PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
     this.maxLevel = 6;
     this._crossTalkSymbols = {};
     this._rateLimitSymbols = {};
-//    this._symbols2Pathways = {};
+    this.highLightPathways = [];
 };
 PATHBUBBLES.D3Ring.prototype = {
     constructor: PATHBUBBLES.D3Ring,
@@ -39,7 +39,7 @@ PATHBUBBLES.D3Ring.prototype = {
             .attr("height", _this.parent.h - 40);
         var colors = ["#fdae6b", "#a1d99b", "#bcbddc"];
         var gGroup;
-        var mainSvg = svg.append("g")
+        var mainSvg = svg.append("g").attr("class","mainSVG")
             .attr("transform", "translate(" + width / 2 + "," + (height / 2+20 ) + ")");
         svg.append("text")
             .style("font-size", 15)
@@ -151,24 +151,15 @@ PATHBUBBLES.D3Ring.prototype = {
                                                 }
                                             }
                                         }
-//                                        nodeData[i].uniques = {};
-//                                        nodeData[i].uniques.sharedSymbols = d3.set(nodeData[i].gallusOrth.map(
-//                                            function(d){
-//                                                return d;
-//                                            }
-//                                        )).values().sort(function(a,b){ return ( a<b? -1 : a>b ? 1 : 0);});
 
                                         if (count === nodeData[i].symbols.length) {
                                             nodeData[i].gallusOrth.type = "Complete";
-//                            nodeData[i].gallusOrth.count = count;
                                         }
                                         else if (count === 0) {
                                             nodeData[i].gallusOrth.type = "Empty";
-//                            nodeData[i].gallusOrth.count = count;
                                         }
                                         else {
                                             nodeData[i].gallusOrth.type = "Part";
-//                            nodeData[i].gallusOrth.count = count;
                                         }
                                     }
                                     _this.maxLevel = d3.max(nodeData, function (d) {
@@ -182,7 +173,6 @@ PATHBUBBLES.D3Ring.prototype = {
                                             tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
                                         }
                                         $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
-//                                        _this.parent.name = root.name + " " + _this.parent.name;
                                     }
 
                                     operation(nodeData);
@@ -375,6 +365,8 @@ PATHBUBBLES.D3Ring.prototype = {
 //                var bundleGroup = svg.append("g").attr("class", "bundleGroup");
                                 var link = gGroup.append("g").selectAll(".link");
                                 var node = gGroup.append("g").selectAll(".node");
+
+                                var highlightNode = gGroup.append("g").selectAll(".highLightNode");
                                 var textG = gGroup.append("g").selectAll(".text");
 //                var expressionColors = d3.scale.category10();
                                 var expressionColors = [
@@ -400,7 +392,11 @@ PATHBUBBLES.D3Ring.prototype = {
                                     "#a63603"
                                 ];
                                 processTextLinks(nodeData);
-
+//                                _this.highLightPathways.push("Apoptosis");
+                                if(_this.highLightPathways.length)
+                                {
+                                    processHighlightNode(nodeData);
+                                }
                                 if (_this.parent.HIDE) {
                                     var max;
                                     if (!_this.expressionScaleMax) {
@@ -426,6 +422,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                                     }
                                                 }
                                             }
+
                                         }
                                         max = d3.max(nodeData, function (d) {
                                             if (d.name == "homo sapiens" || d.expression == undefined || d.gallusOrth == undefined)
@@ -805,6 +802,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                 }
 
                                 function barClick() {
+                                    console.log(d3.event.x +","+d3.event.y);
                                     var symbols = d3.select(this).datum().gallusOrth.sharedSymbols;
                                     var _symbols = [];
                                     for (var i = 0; i < symbols.length; ++i) {
@@ -853,7 +851,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                             _this.parent.y + _this.parent.offsetY, 374, 400, d3.select(this).datum().dbId, _symbols,null, thisName);
 
 //                                    bubble.name = "(Shared protein) " + d3.select(this).datum().name;
-
+                                    bubble.experiment_Type = _this.parent.experiment_Type;
                                     bubble.crosstalking = _this._crossTalkSymbols;
                                     bubble.addHtml();
                                     bubble.table.keepQuery = true;
@@ -876,6 +874,13 @@ PATHBUBBLES.D3Ring.prototype = {
                                             scene.addObject(_this.parent.parent);
                                         }
                                     }
+                                    var id = _this.parent.id + "_" + bubble.id;
+                                    var svgPos = $("#svg"+_this.parent.id).position();
+                                    var transformString = d3.transform($("#svg"+_this.parent.id).find(".graphGroup").attr("transform"));
+                                    var transformCenter = d3.transform($("#svg"+_this.parent.id).find(".mainSVG").attr("transform"));
+                                    bubble.addBubbleLink(id, d3.event.pageX,d3.event.pageY-50+32,bubble.x,bubble.y,
+                                            (d3.event.pageX-svgPos.left-transformCenter.translate[0]-transformString.translate[0])/transformString.scale[0],
+                                            (d3.event.pageY-50+32-svgPos.top-transformCenter.translate[1]-transformString.translate[1])/transformString.scale[1]);
                                     d3.event.preventDefault();
                                 }
 
@@ -953,6 +958,7 @@ PATHBUBBLES.D3Ring.prototype = {
 //                                    bubble.name = "(Expression) " + d3.select(this).datum().name;
                                     bubble.crosstalking = _this._crossTalkSymbols;
                                     bubble.addHtml();
+                                    bubble.experiment_Type = _this.parent.experiment_Type;
                                     bubble.table.keepQuery = true;
                                     bubble.menuOperation();
                                     if (viewpoint) {
@@ -973,6 +979,13 @@ PATHBUBBLES.D3Ring.prototype = {
                                             scene.addObject(_this.parent.parent);
                                         }
                                     }
+                                    var id = _this.parent.id + "_" + bubble.id;
+                                    var svgPos = $("#svg"+_this.parent.id).position();
+                                    var transformString = d3.transform($("#svg"+_this.parent.id).find(".graphGroup").attr("transform"));
+                                    var transformCenter = d3.transform($("#svg"+_this.parent.id).find(".mainSVG").attr("transform"));
+                                    bubble.addBubbleLink(id, d3.event.pageX,d3.event.pageY-50+32,bubble.x,bubble.y,
+                                            (d3.event.pageX-svgPos.left-transformCenter.translate[0]-transformString.translate[0])/transformString.scale[0],
+                                            (d3.event.pageY-50+32-svgPos.top-transformCenter.translate[1]-transformString.translate[1])/transformString.scale[1]);
                                     d3.event.preventDefault();
                                 }
 
@@ -980,7 +993,67 @@ PATHBUBBLES.D3Ring.prototype = {
                                     var angle = x(d.dx + d.d_dx / 2) - Math.PI / 2;
                                     return angle / Math.PI * 180;
                                 }
+                                function processHighlightNode(nodeData)
+                                {
+                                     var highLights = [];
+                                    nodeData.forEach(function(d){
+                                        if(d.name!==undefined)
+                                        {
+                                            var index = _this.highLightPathways.indexOf(d.name);
+                                            if(index !== -1)
+                                            {
+                                                var index1 = highLights.indexOf(d);
+                                                if(index1 ==-1)
+                                                {
+                                                    highLights.push(d);
+                                                }
+                                            }
+                                        }
+                                    });
 
+
+                                    var nodeCircle = highlightNode.data(highLights).enter().append("g")
+                                        .attr("class", "inner_node");
+                                    nodeCircle =nodeCircle.append("circle")
+                                    .attr('cx', function (d) {
+                                            return Math.sin(
+                                                    Math.PI - (Math.max(0, Math.min(2 * Math.PI, x(d.x)))
+                                                    + Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)))) / 2
+                                            )
+                                                * Math.max(0, y(d.y+ d.dy/2));
+                                        })
+                                        .attr("cy", function (d) {
+
+                                            return Math.cos(
+                                                    Math.PI - (Math.max(0, Math.min(2 * Math.PI, x(d.x)))
+                                                    + Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)))) / 2
+                                            )
+                                                * Math.max(0, y(d.y+ d.dy/2));
+                                        })
+                                        .attr('r',5)
+                                        .style('fill',"steelblue")
+                                        .on("mouseover", function (d, i) {
+                                            if (d.name == "homo sapiens")
+                                                return;
+                                            tooltip.html(function () {
+                                                return format_name(d);
+                                            });
+                                            return tooltip.transition()
+                                                .duration(50)
+                                                .style("opacity", 0.9);
+                                        })
+                                        .on("mousemove", function (d, i) {
+                                            if (d.name == "homo sapiens")
+                                                return;
+                                            return tooltip
+                                                .style("top", (d3.event.pageY - 10 - _this.parent.y - _this.parent.offsetY - 70 ) + "px")
+                                                .style("left", (d3.event.pageX + 10 - _this.parent.x - _this.parent.offsetX) + "px");
+                                        })
+                                        .on("mouseout", function () {
+                                            return tooltip.style("opacity", 0);
+                                        })
+                                        .style("opacity", 0.6);
+                                }
                                 function processTextLinks(nodes) {
                                     var importLinks = [];
                                     var data = [];
@@ -1217,6 +1290,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                     var bubble = new PATHBUBBLES.Table(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40,
                                             _this.parent.y + _this.parent.offsetY, 500, 500, dbId,null,null,thisName);
 //                                    bubble.name = d3.select(this).datum().name;
+                                    bubble.experiment_Type = _this.parent.experiment_Type;
                                     bubble.addHtml();
                                     bubble.table.keepQuery = false;
                                     bubble.menuOperation();
@@ -1238,6 +1312,14 @@ PATHBUBBLES.D3Ring.prototype = {
                                             scene.addObject(_this.parent.parent);
                                         }
                                     }
+
+                                    var id = _this.parent.id + "_" + bubble.id;
+                                    var svgPos = $("#svg"+_this.parent.id).position();
+                                    var transformString = d3.transform($("#svg"+_this.parent.id).find(".graphGroup").attr("transform"));
+                                    var transformCenter = d3.transform($("#svg"+_this.parent.id).find(".mainSVG").attr("transform"));
+                                    bubble.addBubbleLink(id, d3.event.pageX,d3.event.pageY-50+32,bubble.x,bubble.y,
+                                            (d3.event.pageX-svgPos.left-transformCenter.translate[0]-transformString.translate[0])/transformString.scale[0],
+                                            (d3.event.pageY-50+32-svgPos.top-transformCenter.translate[1]-transformString.translate[1])/transformString.scale[1]);
                                     d3.event.preventDefault();
                                 }
 
@@ -1306,6 +1388,14 @@ PATHBUBBLES.D3Ring.prototype = {
                                             scene.addObject(_this.parent.parent);
                                         }
                                     }
+                                    var id = _this.parent.id + "_" + bubble5.id;
+                                    var svgPos = $("#svg"+_this.parent.id).position();
+                                    var transformString = d3.transform($("#svg"+_this.parent.id).find(".graphGroup").attr("transform"));
+                                    var transformCenter = d3.transform($("#svg"+_this.parent.id).find(".mainSVG").attr("transform"));
+                                    bubble5.addBubbleLink(id, d3.event.pageX,d3.event.pageY-50+32,bubble5.x,bubble5.y,
+                                            (d3.event.pageX-svgPos.left-transformCenter.translate[0]-transformString.translate[0])/transformString.scale[0],
+                                        (d3.event.pageY-50+32-svgPos.top-transformCenter.translate[1]-transformString.translate[1])/transformString.scale[1]);
+                                    d3.event.preventDefault();
                                 }
 
                                 if ($('#menuView' + _this.parent.id).find('#operateText').val() == "showTitle") {

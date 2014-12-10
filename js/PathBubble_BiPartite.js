@@ -115,7 +115,9 @@ PATHBUBBLES.BiPartite.prototype = {
                         }
                     }
                 }
-                download(saveString, "geneSymbol.txt", "text/plain");
+                var blob = new Blob([saveString],{type:"text/plain;chartset=utf-8"});
+                download(blob, "geneSymbol.txt", "text/plain");
+//                download(saveString, "geneSymbol.txt", "text/plain");
             }
 
         });

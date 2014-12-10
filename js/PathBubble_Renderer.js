@@ -72,5 +72,42 @@ PATHBUBBLES.Renderer.prototype = {
                 }
             }
         }
+        {   //Render bubbleLinks
+            $("#bgsvg").children(".bubbleLinks").remove();
+            for(var i=0; i<PATHBUBBLES.bubbleLinks.length; ++i)
+            {
+                var id=PATHBUBBLES.bubbleLinks[i].startId + "_" + PATHBUBBLES.bubbleLinks[i].endId;
+                var transformString = d3.transform($("#svg"+PATHBUBBLES.bubbleLinks[i].startId).find(".graphGroup").attr("transform"));
+                var transformCenter = d3.transform($("#svg"+PATHBUBBLES.bubbleLinks[i].startId).find(".mainSVG").attr("transform"));
+                if( $("#svg"+PATHBUBBLES.bubbleLinks[i].startId).length==0||$("#svg"+PATHBUBBLES.bubbleLinks[i].endId).length ==0 )
+                    continue;
+                var startPos=$("#svg"+PATHBUBBLES.bubbleLinks[i].startId).position();
+                var endPos=$("#svg"+PATHBUBBLES.bubbleLinks[i].endId).position();
+                var bgsvg = d3.select("#bgsvg").append("g").attr("class", "bubbleLinks");
+                var poly = [
+                    {"x": startPos.left + PATHBUBBLES.bubbleLinks[i].absolute.x*transformString.scale[0]+transformString.translate[0]+transformCenter.translate[0],
+                        "y": startPos.top+ PATHBUBBLES.bubbleLinks[i].absolute.y*transformString.scale[1]+transformString.translate[1]+transformCenter.translate[1]-32},
+                    {"x": startPos.left + PATHBUBBLES.bubbleLinks[i].absolute.x*transformString.scale[0]+transformString.translate[0]+transformCenter.translate[0],
+                        "y": startPos.top+ PATHBUBBLES.bubbleLinks[i].absolute.y*transformString.scale[1]+5+transformString.translate[1]+transformCenter.translate[1]-32},
+                    {"x": endPos.left, "y": endPos.top-50}
+                ];
+//                console.log(PATHBUBBLES.bubbleLinks[i].absolute.x+"+"+PATHBUBBLES.bubbleLinks[i].absolute.y);
+//                console.log(startPos.left+"_"+startPos.top);
+//                console.log(poly[0].x+"_"+poly[0].y+","+poly[1].x+"_"+poly[1].y+","+poly[2].x+"_"+poly[2].y);
+
+                bgsvg.selectAll("polygon")
+                    .data([poly])
+                    .enter().append("polygon").attr("class", id)
+                    .attr("points", function (d) {
+                        return d.map(function (d) {
+                            return [d.x, d.y].join(",");
+                        }).join(" ");
+                    })
+                    .attr("stroke", "yellow")
+                    .attr("fill", "yellow")
+                    .attr("stroke-width", 2)
+                    .style("opacity", 0.5);
+            }
+        }
     }
 };

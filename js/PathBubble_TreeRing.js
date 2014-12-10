@@ -110,7 +110,13 @@ PATHBUBBLES.TreeRing.prototype = {
         }
         this.treeRing.init();
     },
-
+    addBubbleLink: function(id, x1,y1,x2,y2,x,y) {
+        var object={};
+        object.startId = id.split("_")[0];
+        object.endId = id.split("_")[1];
+        object.absolute = {x:x, y:y};
+        PATHBUBBLES.bubbleLinks.push(object);
+    },
     addObject: function (object) {
         var index = this.children.indexOf(object);
         if (index > -1) {
@@ -124,6 +130,7 @@ PATHBUBBLES.TreeRing.prototype = {
             $('#svg' + object.id).remove();
         if ($('#menuView' + object.id).length)
             $('#menuView' + object.id).remove();
+
         var index = PATHBUBBLES.objects.indexOf(object);
         if (index !== -1) {
             PATHBUBBLES.objects.splice(index, 1);
@@ -132,6 +139,7 @@ PATHBUBBLES.TreeRing.prototype = {
         if (index !== -1) {
             scene.children.splice(index, 1);
         }
+
     },
     menuOperation: function () {
         var _this = this;
@@ -334,7 +342,7 @@ PATHBUBBLES.TreeRing.prototype = {
 //                    _this.name = "(Expression) " + _this.selected_file.name;
                     _this.treeRing.init();
                 });
-                _this.experiment_Type = "Gene Expression";
+                _this.experiment_Type = "Expression";
             }
         });
     },
@@ -365,6 +373,18 @@ PATHBUBBLES.TreeRing.prototype = {
             $('#svg' + this.id).remove();
         if ($('#menuView' + this.id).length)
             $('#menuView' + this.id).remove();
+        for(var i=PATHBUBBLES.bubbleLinks.length-1;i>=0; i--)
+        {
+            if(PATHBUBBLES.bubbleLinks[i].startId ==this.id)
+            {
+                PATHBUBBLES.bubbleLinks.splice(i, 1);
+                continue;
+            }
+            if(PATHBUBBLES.bubbleLinks[i].endId ==this.id)
+            {
+                PATHBUBBLES.bubbleLinks.splice(i, 1);
+            }
+        }
         scene.removeObject(this);
     },
     updateMenu: function () {
@@ -508,12 +528,16 @@ PATHBUBBLES.TreeRing.prototype = {
         ctx.save();
         this.shape.draw(ctx, scale);
         var space = 6;
-        $('#svg' + this.id).css({
-            width: this.w - 10 - space,      //leve 6 space for tree ring
-            height: this.h - 10 - space,
-            left: this.x + this.w / 2 - this.treeRing.defaultRadius / 2 - 10 + space / 2,
-            top: this.y + this.h / 2 - this.treeRing.defaultRadius / 2 + 50 - 20 + space / 2
-        });
+        if(this.treeRing!==undefined||this.treeRing!==null)
+        {
+            $('#svg' + this.id).css({
+                width: this.w - 10 - space,      //leve 6 space for tree ring
+                height: this.h - 10 - space,
+                left: this.x + this.w / 2 - this.treeRing.defaultRadius / 2 - 10 + space / 2,
+                top: this.y + this.h / 2 - this.treeRing.defaultRadius / 2 + 50 - 20 + space / 2
+            });
+        }
+
         //
         this.shape.drawStrokeAgain(ctx, scale);
         ctx.restore();

@@ -8,7 +8,8 @@ var PATHBUBBLES = {
     // public
     REVISION: '0.0',
     selectionBoxSize: 6,
-    objects: []
+    objects: [],
+    bubbleLinks:[]
 };
 
 

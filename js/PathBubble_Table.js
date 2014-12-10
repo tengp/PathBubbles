@@ -74,6 +74,34 @@ PATHBUBBLES.Table.prototype = {
             this.table.init(this.dbId);
         }
     },
+    addBubbleLink: function(id, x1,y1,x2,y2,x,y) {
+        var object={};
+        object.startId = id.split("_")[0];
+        object.endId = id.split("_")[1];
+        object.absolute = {x:x, y:y};
+
+        PATHBUBBLES.bubbleLinks.push(object);
+        var bgsvg = d3.select("#bgsvg").append("g").attr("class", "bubbleLinks");
+        var poly = [
+            {"x": x1, "y": y1},
+            {"x": x1, "y": y1 + 5},
+            {"x": x2, "y": y2}
+        ];
+
+        bgsvg.selectAll("polygon")
+            .data([poly])
+            .enter().append("polygon").attr("class", id)
+            .attr("points", function (d) {
+                return d.map(function (d) {
+                    return [d.x, d.y].join(",");
+                }).join(" ");
+            })
+            .attr("absolute", x+"_"+y)
+            .attr("stroke", "yellow")
+            .attr("fill", "yellow")
+            .attr("stroke-width", 2)
+            .style("opacity", 0.5);
+    },
     addObject: function (object) {
         var index = this.children.indexOf(object);
         if (index > -1) {
@@ -236,6 +264,18 @@ PATHBUBBLES.Table.prototype = {
             $('#svg' + this.id).remove();
         if ($('#menuView' + this.id).length)
             $('#menuView' + this.id).remove();
+        for(var i=PATHBUBBLES.bubbleLinks.length-1;i>=0; i--)
+        {
+            if(PATHBUBBLES.bubbleLinks[i].startId ==this.id)
+            {
+                PATHBUBBLES.bubbleLinks.splice(i, 1);
+                continue;
+            }
+            if(PATHBUBBLES.bubbleLinks[i].endId ==this.id)
+            {
+                PATHBUBBLES.bubbleLinks.splice(i, 1);
+            }
+        }
         scene.removeObject(this);
     },
     updateMenu: function () {
