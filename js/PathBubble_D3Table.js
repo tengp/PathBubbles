@@ -446,7 +446,11 @@ PATHBUBBLES.D3Table.prototype = {
                                 .attr("width",
                                 function(d) {
                                     if(d.key == "ratio")
-                                        return (parseFloat(d.value) -minRatio) /( maxRatio-minRatio) * 20;
+                                    {
+                                        if((maxRatio-minRatio)==0)
+                                            return 0;
+                                        return (parseFloat(d.value) -minRatio) /(maxRatio-minRatio ) * 20;
+                                    }
                                     else
                                         return 0;
                                 })
@@ -456,7 +460,11 @@ PATHBUBBLES.D3Table.prototype = {
                                 .attr("width",
                                 function(d) {
                                     if(d.key == "ratio")
-                                        return (parseFloat(d.value) -minRatio) /( maxRatio-minRatio) * 20;
+                                    {
+                                        if((maxRatio-minRatio)==0)
+                                            return 0;
+                                        return (parseFloat(d.value) -minRatio) /(maxRatio-minRatio ) * 20;
+                                    }
                                     else
                                         return 0;
                                 });

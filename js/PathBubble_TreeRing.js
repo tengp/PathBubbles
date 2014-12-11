@@ -24,6 +24,8 @@ PATHBUBBLES.TreeRing = function (x, y, w, h, dataName, dataType, selectedData) {
     this.closeMenuText = new PATHBUBBLES.Text(this, "X");
     this.ungroupMenu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2 - 2*(this.cornerRadius +5), this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1);
     this.ungroupMenuText = new PATHBUBBLES.Text(this, "U");
+    this.resetMenu = new PATHBUBBLES.Shape.Circle(this.x + this.w - this.cornerRadius / 2 - 3*(this.cornerRadius +5), this.y + this.cornerRadius / 2, this.lineWidth, "#ff0000", this.strokeColor, 1);
+    this.resetMenuText = new PATHBUBBLES.Text(this, "R");
 
     this.processingStatus = new PATHBUBBLES.Text(this, "Processing");
 
@@ -161,11 +163,12 @@ PATHBUBBLES.TreeRing.prototype = {
             if (_this.treeRing.customExpression) {
                 customExpression = _this.treeRing.customExpression;
             }
-
+            var highLightPathways = _this.treeRing.highLightPathways;
             _this.treeRing = null;
             _this.treeRing = new PATHBUBBLES.D3Ring(_this, Math.min(_this.w, _this.h) - 30, val, _this.dataName);
             _this.treeRing.file = "./data/Ortholog/" + val + "/" + _this.dataName + ".json";
             _this.treeRing.showCrossTalkLevel = parseInt($menuBarbubble.find('#crossTalkLevel').val());
+            _this.treeRing.highLightPathways = highLightPathways;
             if( operateText=="showTitle")
             {
                 _this.treeRing.showTitle();
@@ -211,12 +214,12 @@ PATHBUBBLES.TreeRing.prototype = {
             if (_this.treeRing.customExpression) {
                 expressionData = _this.treeRing.customExpression;
             }
-
+            var highLightPathways = _this.treeRing.highLightPathways;
             _this.treeRing = null;
 
             var fileVal = $('#menuView' + _this.id).find('#file').val();
             _this.treeRing = new PATHBUBBLES.D3Ring(_this, Math.min(_this.w, _this.h) - 30, fileVal, _this.dataName);
-
+            _this.treeRing.highLightPathways = highLightPathways;
             _this.treeRing.ChangeLevel = true;
             _this.treeRing.showCrossTalkLevel = val;
             _this.treeRing.file = "./data/Ortholog/" + fileVal + "/" + _this.dataName + ".json";
@@ -250,6 +253,7 @@ PATHBUBBLES.TreeRing.prototype = {
                 alert("Please select your Ortholog data file!");
             }
             else {
+
                 var localFileLoader = new PATHBUBBLES.FileLoader("Ortholog");
                 localFileLoader.load(_this.selected_file, function (orthlogData) {
 
@@ -263,7 +267,7 @@ PATHBUBBLES.TreeRing.prototype = {
                     if (_this.treeRing.customExpression) {
                         customExpression = _this.treeRing.customExpression;
                     }
-
+                    var highLightPathways = _this.treeRing.highLightPathways;
                     _this.treeRing = null;
                     var val = $menuBarbubble.find('#file').val();
                     _this.treeRing = new PATHBUBBLES.D3Ring(_this, Math.min(_this.w, _this.h) - 30, val, _this.dataName);
@@ -284,10 +288,12 @@ PATHBUBBLES.TreeRing.prototype = {
                     if (customExpression) {
                         _this.treeRing.customExpression = customExpression;
                     }
+                    _this.treeRing.highLightPathways = highLightPathways;
 //                    _this.treeRing.renderType = "Ortholog";
 //                    _this.name = _this.pre + "custom";
 //                    _this.name = _this.id+val;
                     $menuBarbubble.find('#file').val("Default");
+                    _this.experiment_Type = "Ortholog";
                     _this.treeRing.init();
                 });
             }
@@ -298,6 +304,7 @@ PATHBUBBLES.TreeRing.prototype = {
                 alert("Please select your Expression data file!");
             }
             else {
+
                 _this.HIDE=true;
                 var minRatio = $menuBarbubble.find('#minRatio').val();
                 var maxRatio = $menuBarbubble.find('#maxRatio').val();
@@ -318,7 +325,7 @@ PATHBUBBLES.TreeRing.prototype = {
                     if (_this.treeRing.customOrtholog) {
                         customOrtholog = _this.treeRing.customOrtholog;
                     }
-
+                    var highLightPathways = _this.treeRing.highLightPathways;
                     _this.treeRing = null;
                     var orthologyFile = $menuBarbubble.find('#file').val();     //
                     _this.treeRing = new PATHBUBBLES.D3Ring(_this, Math.min(_this.w, _this.h) - 30, orthologyFile, _this.dataName);
@@ -339,10 +346,12 @@ PATHBUBBLES.TreeRing.prototype = {
                     if (customOrtholog) {
                         _this.treeRing.customOrtholog = customOrtholog;
                     }
+                    _this.treeRing.highLightPathways = highLightPathways;
 //                    _this.name = "(Expression) " + _this.selected_file.name;
+                    _this.experiment_Type = "Expression";
                     _this.treeRing.init();
                 });
-                _this.experiment_Type = "Expression";
+
             }
         });
     },
@@ -582,6 +591,11 @@ PATHBUBBLES.TreeRing.prototype = {
         {
             this.ungroupMenuText.text = "U";
         }
+        if(this.resetMenu.HighLight_State)
+        {
+            $("#svg"+this.id).find(".graphGroup").attr("transform","translate(0,0)scale(1)");
+            this.resetMenu.HighLight_State = false;
+        }
         if(this.ungroupMenu && scale == 1)
         {
             this.ungroupMenu.draw(ctx, scale);
@@ -589,7 +603,13 @@ PATHBUBBLES.TreeRing.prototype = {
             this.ungroupMenuText.font = '15pt Calibri';
             this.ungroupMenuText.draw(ctx, this.ungroupMenu.x, this.ungroupMenu.y);
         }
-
+        if(this.resetMenu && scale == 1)
+        {
+            this.resetMenu.draw(ctx, scale);
+            this.resetMenuText.fillColor = "#f00";
+            this.resetMenuText.font = '15pt Calibri';
+            this.resetMenuText.draw(ctx, this.resetMenu.x, this.resetMenu.y);
+        }
         if (this.menu.HighLight_State) {
             this.updateMenu();
             this.button.show();
@@ -626,6 +646,9 @@ PATHBUBBLES.TreeRing.prototype = {
         this.ungroupMenu.y = this.y + this.cornerRadius / 2;
         this.closeMenu.x = this.x + this.w - this.cornerRadius / 2 - this.cornerRadius -5;
         this.closeMenu.y = this.y + this.cornerRadius / 2;
+
+        this.resetMenu.x = this.x + this.w - this.cornerRadius / 2 - (this.cornerRadius +5)*3;
+        this.resetMenu.y = this.y + this.cornerRadius / 2;
         this.shape.w = this.w;
         this.shape.h = this.h;
     },
@@ -722,6 +745,11 @@ PATHBUBBLES.TreeRing.prototype = {
         var w = this.shape.w - 10;
         var h = this.shape.h - 10;
         return this.insideRect(mx, my, x, y, w, h);
+    },
+    containsInResetMenu: function (mx, my) {
+        var x = this.resetMenu.x;
+        var y = this.resetMenu.y;
+        return  (x - mx ) * (x - mx) + (y - my ) * (y - my) <= this.resetMenu.r * this.resetMenu.r;
     },
     clone: function () {
         var bubble = new PATHBUBBLES.Bubble();

@@ -370,14 +370,14 @@ PATHBUBBLES.D3Ring.prototype = {
 //                var bundleGroup = svg.append("g").attr("class", "bundleGroup");
                                 var link = gGroup.append("g").selectAll(".link");
                                 var node = gGroup.append("g").selectAll(".node");
-                                var downNode= gGroup.append("g").selectAll(".node");
+                                var downNode= gGroup.append("g").selectAll(".downNode");
                                 var highlightNode = gGroup.append("g").selectAll(".highLightNode");
                                 var textG = gGroup.append("g").selectAll(".text");
 //                var expressionColors = d3.scale.category10();
                                 var expressionColors = [
 ////blue
 //
-//
+
 //
 //
 //                                    "#006d2c",
@@ -914,7 +914,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                 }
 
                                 function barClick() {
-                                    console.log(d3.event.x +","+d3.event.y);
+//                                    console.log(d3.event.x +","+d3.event.y);
                                     var symbols = d3.select(this).datum().gallusOrth.sharedSymbols;
                                     var _symbols = [];
                                     for (var i = 0; i < symbols.length; ++i) {
@@ -1134,7 +1134,7 @@ PATHBUBBLES.D3Ring.prototype = {
 
 
                                     var nodeCircle = highlightNode.data(highLights).enter().append("g")
-                                        .attr("class", "inner_node");
+                                        .attr("class", "highLightNode");
                                     nodeCircle =nodeCircle.append("circle")
                                     .attr('cx', function (d) {
                                             return Math.sin(

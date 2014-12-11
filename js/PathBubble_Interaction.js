@@ -101,6 +101,18 @@ PATHBUBBLES.Interaction = function (renderer) {
                 renderer.valid = false;
                 return;
             }
+            else if (PATHBUBBLES.objects[i] instanceof PATHBUBBLES.TreeRing
+                && PATHBUBBLES.objects[i].containsInResetMenu(mx, my)) {
+                oldMouseX = mx;
+                oldMouseY = my;
+
+                _this.selection[0] = PATHBUBBLES.objects[i];
+                _this.selection[0].resetMenu.HighLight_State = true;
+                _this.dragging = true;
+                scene.moveObjectToFront(_this.selection[0]);
+                renderer.valid = false;
+                return;
+            }
             else if ((PATHBUBBLES.objects[i] instanceof PATHBUBBLES.Bubble ) && PATHBUBBLES.objects[i].containsInsideBubble(mx, my)) {
                 var flag = false;
                 for (var ii = 0; ii < PATHBUBBLES.objects[i].children.length; ii++) {

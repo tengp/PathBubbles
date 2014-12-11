@@ -345,6 +345,7 @@ PATHBUBBLES.BiPartite.prototype = {
         var y = this.ungroupMenu.y;
         return  (x - mx ) * (x - mx) + (y - my ) * (y - my) <= this.ungroupMenu.r * this.ungroupMenu.r;
     },
+
     containsInHalo: function (mx, my) {
         if(this.title.contains(mx,my))
             return true;
