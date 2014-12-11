@@ -370,7 +370,7 @@ PATHBUBBLES.D3Ring.prototype = {
 //                var bundleGroup = svg.append("g").attr("class", "bundleGroup");
                                 var link = gGroup.append("g").selectAll(".link");
                                 var node = gGroup.append("g").selectAll(".node");
-
+                                var downNode= gGroup.append("g").selectAll(".node");
                                 var highlightNode = gGroup.append("g").selectAll(".highLightNode");
                                 var textG = gGroup.append("g").selectAll(".text");
 //                var expressionColors = d3.scale.category10();
@@ -623,9 +623,18 @@ PATHBUBBLES.D3Ring.prototype = {
                                         });
                                     }
                                     else if (_this.customExpression) {
-                                        var upDownMax = d3.max(objects.nodes, function (d) {
+                                        var DownMax = d3.max(objects.nodes, function (d) {
                                             if (d.expression !== undefined) {
-                                                return d.expression.ups.length + d.expression.downs.length;
+                                                return d.expression.downs.length;
+                                            }
+                                            else {
+                                                return 0;
+                                            }
+
+                                        });
+                                        var upMax = d3.max(objects.nodes, function (d) {
+                                            if (d.expression !== undefined) {
+                                                return d.expression.ups.length;
                                             }
                                             else {
                                                 return 0;
@@ -688,7 +697,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                                 return "nodeUp" + d.dbId;
                                             })
                                             .enter().append("rect")
-                                            .attr("class", "node")
+                                            .attr("class", "node").attr("class","upExpressed")
                                             .attr("x", function (d) {
                                                 return y(d.dy);
                                             })
@@ -702,15 +711,48 @@ PATHBUBBLES.D3Ring.prototype = {
                                                 var r = Math.max(0, y(d.dy));
                                                 return -(Math.min(r * thea, Math.floor(_this.maxLevel))) / 2;
                                             })
+                                            .style("fill", "#f00")
                                             .attr("width", function (d) {
-                                                if (d.expression == undefined || d.gallusOrth == undefined || upDownMax == 0)
+                                                if (d.expression == undefined || d.gallusOrth == undefined || upMax == 0)
                                                     return 0;
-                                                return 2/3*Math.floor((d.expression.downs.length + d.expression.ups.length) / upDownMax * ( Math.max(0, y(d.dy + d.d_dy)) - Math.max(0, y(d.dy)) ));
+                                                return 1/2*Math.floor((d.expression.ups.length) / upMax * ( Math.max(0, y(d.dy + d.d_dy)) - Math.max(0, y(d.dy)) ));
                                             })
                                             .attr("transform", function (d, i) {
                                                 return "rotate(" + computeRotation(d, i) + ")";
                                             })
-                                            .style("fill", "#f00")
+                                            .on("contextmenu", expressionBarClick)
+                                            .on("mouseover", mouseovered)
+                                            .on("mouseout", mouseouted);
+                                        downNode = downNode
+                                            .data(_nodes)
+                                            .attr("id", function (d, i) {
+                                                return "nodeDown" + d.dbId;
+                                            })
+                                            .enter()
+                                            .append("rect")
+                                            .attr("class", "node").attr("class","downExpressed")
+                                            .attr("x", function (d) {
+                                                return y(d.dy+ d.d_dy/2);
+                                            })
+                                            .attr("height", function (d) {
+                                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
+                                                var r = Math.max(0, y(d.dy));
+                                                return Math.min(r * thea, Math.floor(_this.maxLevel));
+                                            })
+                                            .attr("y", function (d) {
+                                                var thea = Math.max(0, Math.min(2 * Math.PI, x(d.dx + d.d_dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.dx)));
+                                                var r = Math.max(0, y(d.dy));
+                                                return -(Math.min(r * thea, Math.floor(_this.maxLevel))) / 2;
+                                            })
+                                            .attr("width", function (d) {
+                                                if (d.expression == undefined || d.gallusOrth == undefined || DownMax == 0)
+                                                    return 0;
+                                                return 1/2*Math.floor((d.expression.downs.length) / DownMax * ( Math.max(0, y(d.dy + d.d_dy)) - Math.max(0, y(d.dy)) ));
+                                            })
+                                            .attr("transform", function (d, i) {
+                                                return "rotate(" + computeRotation(d, i) + ")";
+                                            })
+                                            .style("fill", "#0f0")
                                             .on("contextmenu", expressionBarClick)
                                             .on("mouseover", mouseovered)
                                             .on("mouseout", mouseouted);
