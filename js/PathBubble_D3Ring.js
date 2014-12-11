@@ -494,6 +494,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                         });
                                 }
 
+
                                 function getExpressionColor(ratio) {
                                     if (max == 0)
                                         return expressionColors[0];
@@ -1520,6 +1521,59 @@ PATHBUBBLES.D3Ring.prototype = {
                                 })
                                 .attr("height", sectionHeight)
                                 .attr("width", scaleWidth)
+
+                                .attr('fill', function (d) {
+                                    return d.color;
+                                });
+                            colorScaleBar.selectAll('text')
+                                .data(newData)
+                                .enter().append("text")
+                                .style("font-size", 10)
+                                .attr("transform", "translate(" + (scaleWidth / 2 + 10) + "," + (sectionHeight) + ")")
+                                .attr("y", function (d, i) {
+                                    return d.data - 5;
+                                })
+                                .attr("dy", ".1em")
+                                .style("text-anchor", "start")
+                                .text(function (d, i) {
+                                    return d.text;
+                                });
+                        }
+                        else
+                        {
+                            var scaleMargin = {top: 5, right: 5, bottom: 5, left: 5},
+                                scaleWidth = 30 - scaleMargin.left - scaleMargin.right,
+                                scaleHeight = 170 - scaleMargin.top - scaleMargin.bottom;
+                            var BarWidth = scaleWidth + scaleMargin.left + scaleMargin.right;
+                            var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
+
+                            var sectionHeight = 20;
+                            var texts = ["Up expressed", "Down expressed"];
+                            var expressedColors=["#f00","#0f0"];
+                            var newData = [];
+                            for (var i = 0; i < 2; i++) {
+                                var obj = {};
+                                obj.data = i * 20;
+                                obj.text = texts[i];
+                                obj.color = expressedColors[i];
+                                newData.push(obj);
+                            }
+                            var colorScaleBar = svg.append("g")
+                                .attr("class", "colorScaleBar")
+                                .attr("transform", "translate(" + (width - 30 - 80) + "," + (  0  ) + ")")
+                                .attr("width", BarWidth)
+                                .attr("height", BarHeight);
+
+                            colorScaleBar.selectAll('rect')
+                                .data(newData)
+                                .enter()
+                                .append('rect')
+                                .attr("x", 0)
+                                .attr("y", function (d) {
+                                    return d.data;
+                                })
+                                .attr("height", 20)
+                                .attr("width", 10)
 
                                 .attr('fill', function (d) {
                                     return d.color;

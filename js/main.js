@@ -10,6 +10,7 @@ var navCanvas=null;
 var viewpoint = null;
 var navInterection = null;
 var interection = null;
+var showLinks = true;
 $(document).ready(function () {
     canvas = $("#bgCanvas")[0];
     navCanvas = $("#navCanvas")[0];
@@ -103,6 +104,10 @@ $(document).ready(function () {
             else if (key === 'Open_Help') {       //modify a bug by changing for loop from i=0, ... to i= array length to 0
                 $("#infoBox").dialog("open");
             }
+            else if (key === 'Toggle_Links') {       //modify a bug by changing for loop from i=0, ... to i= array length to 0
+
+                showLinks =!showLinks;
+            }
         },
         items: {
             "Open_Bubble": {name: "Open Pathway Graph"},
@@ -110,7 +115,8 @@ $(document).ready(function () {
             "Open_Tree": {name: "Open Pathway"},
             "Delete_All": {name: "Delete All"},
             "sep1": "---------",
-            "Open_Help": {name: "Open Simple Tutorial"}
+            "Open_Help": {name: "Open Simple Tutorial"},
+            "Toggle_Links": {name: "Toggle show Links"}
         }
     });
 });

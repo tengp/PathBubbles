@@ -79,6 +79,14 @@ PATHBUBBLES.Renderer.prototype = {
                 $("body").append(string);
             }
             $("#bgsvg").children(".bubbleLinks").remove();
+            if(showLinks)
+            {
+                $("#bgsvg").show();
+            }
+            else
+            {
+                $("#bgsvg").hide();
+            }
             for(var i=0; i<PATHBUBBLES.bubbleLinks.length; ++i)
             {
                 var id=PATHBUBBLES.bubbleLinks[i].startId + "_" + PATHBUBBLES.bubbleLinks[i].endId;
@@ -89,11 +97,13 @@ PATHBUBBLES.Renderer.prototype = {
                 var startPos=$("#svg"+PATHBUBBLES.bubbleLinks[i].startId).position();
                 var endPos=$("#svg"+PATHBUBBLES.bubbleLinks[i].endId).position();
                 var bgsvg = d3.select("#bgsvg").append("g").attr("class", "bubbleLinks");
+                var beginX = startPos.left + PATHBUBBLES.bubbleLinks[i].absolute.x*transformString.scale[0]+transformString.translate[0]+transformCenter.translate[0];
+                var beginY = startPos.top-50+ PATHBUBBLES.bubbleLinks[i].absolute.y*transformString.scale[1]+transformString.translate[1]+transformCenter.translate[1];
                 var poly = [
-                    {"x": startPos.left + PATHBUBBLES.bubbleLinks[i].absolute.x*transformString.scale[0]+transformString.translate[0]+transformCenter.translate[0],
-                        "y": startPos.top-50+ PATHBUBBLES.bubbleLinks[i].absolute.y*transformString.scale[1]+transformString.translate[1]+transformCenter.translate[1]},
-                    {"x": startPos.left + PATHBUBBLES.bubbleLinks[i].absolute.x*transformString.scale[0]+transformString.translate[0]+transformCenter.translate[0],
-                        "y": startPos.top-50+ PATHBUBBLES.bubbleLinks[i].absolute.y*transformString.scale[1]+5+transformString.translate[1]+transformCenter.translate[1]},
+                    {"x": beginX,
+                        "y": beginY},
+                    {"x": beginX,
+                        "y": beginY+5},
                     {"x": endPos.left, "y": endPos.top-50}
                 ];
 //                console.log(PATHBUBBLES.bubbleLinks[i].absolute.x+"+"+PATHBUBBLES.bubbleLinks[i].absolute.y);
