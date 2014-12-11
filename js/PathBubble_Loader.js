@@ -40,8 +40,14 @@ PATHBUBBLES.FileLoader.prototype = {
                         if (orthology[j] == ""||orthology[j] == " ") {
                             continue;
                         }
+
                         var obj = {};
                         var temps = orthology[j].split("\t");
+                        if(temps.length!==2)
+                        {
+                            alert("Please check your ortholog data format.!");
+                            return;
+                        }
                         if (temps[0] == "symbol" && temps[1] == "dbId") {
                             continue;
                         }
@@ -63,6 +69,11 @@ PATHBUBBLES.FileLoader.prototype = {
                             continue;
                         }
                         var temps = expression[j].split("\t");
+                        if(temps.length!==3)
+                        {
+                            alert("Please check your gene expression data format.!");
+                            return;
+                        }
                         if (temps[0] == "gene_id" ||typeof temps[1] !=="string"|| temps[2] == "Infinity" || temps[2]=="NaN" || isNaN(parseFloat(temps[2]))|| temps[2] == "0"||temps[1]==undefined) {
                             continue;
                         }

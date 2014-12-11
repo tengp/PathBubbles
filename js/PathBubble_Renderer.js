@@ -106,9 +106,6 @@ PATHBUBBLES.Renderer.prototype = {
                         "y": beginY+5},
                     {"x": endPos.left, "y": endPos.top-50}
                 ];
-//                console.log(PATHBUBBLES.bubbleLinks[i].absolute.x+"+"+PATHBUBBLES.bubbleLinks[i].absolute.y);
-//                console.log(startPos.left+"_"+startPos.top);
-//                console.log(poly[0].x+"_"+poly[0].y+","+poly[1].x+"_"+poly[1].y+","+poly[2].x+"_"+poly[2].y);
 
                 bgsvg.selectAll("polygon")
                     .data([poly])
