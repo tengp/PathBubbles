@@ -130,6 +130,10 @@ PATHBUBBLES.D3Table.prototype = {
                 var maxCrossTalks = d3.max(jsonData,function(d){ return d.crossTalk});
                 var maxRatio = d3.max(jsonData,function(d){ return parseFloat(d.ratio)});
                 // create cells
+                tr.on("click", function(d) {
+                    d3.selectAll("tr").classed("highlight", false);
+                    d3.select(this).classed("highlight", true);
+                });
                 var td = tr.selectAll("td").data(function (d) {
                       if(_this.keepQuery)
                       {
@@ -196,6 +200,7 @@ PATHBUBBLES.D3Table.prototype = {
                                 alert("It does not have cross-talking pathways!");
                             }
                             else {
+
                                 var index = _this._symbols2Pathways.symbols.indexOf(d.symbol);
                                 if (index !== -1) {
                                     var pathways = _this._symbols2Pathways.pathwayNames[index];
@@ -231,11 +236,12 @@ PATHBUBBLES.D3Table.prototype = {
                                     var ChangeLevel = currentBubble.treeRing.ChangeLevel;
                                     var customExpression = currentBubble.treeRing.customExpression;
                                     var expressionScaleMax = currentBubble.treeRing.expressionScaleMax;
-                                    var highLightPathways = currentBubble.treeRing.highLightPathways;
+//                                    var highLightPathways = currentBubble.treeRing.highLightPathways;
+                                    var highLightPathways = pathways;
                                     var _crossTalkSymbols = currentBubble.treeRing._crossTalkSymbols;
                                     var _rateLimitSymbols = currentBubble.treeRing._rateLimitSymbols;
                                     var experiment_Type = currentBubble.experiment_Type;
-                                    highLightPathways = highLightPathways.concat(pathways);
+//                                    highLightPathways = highLightPathways.concat(pathways);
                                     currentBubble.treeRing = null;
                                     currentBubble.treeRing = new PATHBUBBLES.D3Ring(currentBubble, Math.min(currentBubble.w, currentBubble.h) - 30, currentBubble.dataType, currentBubble.dataName);
                                     currentBubble.treeRing.defaultRadius = defaultRadius;
@@ -294,7 +300,6 @@ PATHBUBBLES.D3Table.prototype = {
                             if(d.value == 0)
                             {
                                 alert("It does not have cross-talking pathways!");
-
                             }
                             else
                             {

@@ -9,6 +9,7 @@ PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
     this.defaultRadius = defaultRadius;
     this.name = name || null;
     this.file = "./data/Ortholog/" + dataType + "/" + name + ".json";
+    this.dataType = dataType;
     this.customOrtholog = null;
     this.selectedData = null;
     this.showCrossTalkLevel = 1;
@@ -126,7 +127,7 @@ PATHBUBBLES.D3Ring.prototype = {
                     {   //main
                         var minRatio;
                         var maxRatio;
-                        if (_this.selectedData == null) {
+//                        if (_this.selectedData == null) {  //12/10/2014
                             d3.json(_this.file, function (error, root) {
                                 if (_this.customOrtholog && !_this.customExpression) {
                                     nodeData = partition.nodes(root);
@@ -336,22 +337,26 @@ PATHBUBBLES.D3Ring.prototype = {
                                     operation(nodeData);
                                 }
                             });
-                        }
-                        else {
-                            nodeData = partition.nodes(_this.selectedData);
-                            _this.maxLevel = d3.max(nodeData, function (d) {
-                                return d.depth;
-                            });
-                            if (!_this.ChangeLevel) {
-                                var tmpString = "";
-                                for (var i = 1; i <= _this.maxLevel; ++i) {
-                                    tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
-                                }
-                                $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
-//                                _this.parent.name = _this.selectedData.name + " " + _this.parent.name;
-                            }
-                            operation(nodeData);
-                        }
+//                        }//12/10/2014
+
+//                        else {
+////                            d3.json("./data/homo sapiens.json", function (error, root) {
+//
+//                                nodeData = partition.nodes(_this.selectedData);
+//                                _this.maxLevel = d3.max(nodeData, function (d) {
+//                                    return d.depth;
+//                                });
+//                                if (!_this.ChangeLevel) {
+//                                    var tmpString = "";
+//                                    for (var i = 1; i <= _this.maxLevel; ++i) {
+//                                        tmpString += '<option value=' + i + '>' + "crossTalkLevel " + i + '</option>';
+//                                    }
+//                                    $('#menuView' + _this.parent.id).find("#crossTalkLevel").html(tmpString);
+////                                _this.parent.name = _this.selectedData.name + " " + _this.parent.name;
+//                                }
+//                                operation(nodeData);
+////                            });
+//                        }
                         function operation(nodeData) {
 
                             var crossTalkFileName = "./data/crossTalkLevel/" + nodeData[0].name + ".json";
@@ -370,22 +375,22 @@ PATHBUBBLES.D3Ring.prototype = {
                                 var textG = gGroup.append("g").selectAll(".text");
 //                var expressionColors = d3.scale.category10();
                                 var expressionColors = [
-//                                    "#a6cee3",
-//                                    "#1f78b4",
-//                                    "#b2df8a",
-//                                    "#33a02c",
-//                                    "#fb9a99",
-//                                    "#e31a1c",
-//                                    "#fdbf6f",
-//                                    "#ff7f00",
-//                                    "#cab2d6",
-//                                    "#6a3d9a"
-                                    "#006d2c",
-                                    "#31a354",
-                                    "#74c476",
-                                    "#a1d99b",
-                                    "#c7e9c0",
-                                    "#fdd0a2",
+////blue
+//
+//
+//
+//
+//                                    "#006d2c",
+//                                    "#31a354",
+//                                    "#74c476",
+//                                    "#a1d99b",
+//                                    "#c7e9c0",
+                                    "#08519c",
+                                    "#3182bd",
+                                    "#6baed6",
+                                    "#bdd7e7",
+                                    "#eff3ff",
+                                    "#fdd0a2",//red
                                     "#fdae6b",
                                     "#fd8d3c",
                                     "#e6550d",
@@ -399,7 +404,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                 }
                                 if (_this.parent.HIDE) {
                                     var max;
-                                    if (!_this.expressionScaleMax) {
+//                                    if (!_this.expressionScaleMax) {  //12/10/2014
                                         for (var i = 0; i < nodeData.length; ++i) {
                                             if (nodeData[i].name !== "homo sapiens" && nodeData[i].expression !== undefined && nodeData[i].gallusOrth !== undefined) {
                                                 nodeData[i].unique = {};
@@ -424,16 +429,17 @@ PATHBUBBLES.D3Ring.prototype = {
                                             }
 
                                         }
+
                                         max = d3.max(nodeData, function (d) {
                                             if (d.name == "homo sapiens" || d.expression == undefined || d.gallusOrth == undefined)
                                                 return 0;
 //                            return (d.expression.downs.length + d.expression.ups.length) / d.gallusOrth.sharedSymbols.length;
                                             return (d.unique.downs.length + d.unique.ups.length) / d.unique.sharedSymbols.length;
                                         });
-                                    }
-                                    else {
-                                        max = _this.expressionScaleMax;
-                                    }
+//                                    }
+//                                    else {
+//                                        max = _this.expressionScaleMax;
+//                                    }
 
                                     var divisions = 10;
 
@@ -878,9 +884,14 @@ PATHBUBBLES.D3Ring.prototype = {
                                     var svgPos = $("#svg"+_this.parent.id).position();
                                     var transformString = d3.transform($("#svg"+_this.parent.id).find(".graphGroup").attr("transform"));
                                     var transformCenter = d3.transform($("#svg"+_this.parent.id).find(".mainSVG").attr("transform"));
-                                    bubble.addBubbleLink(id, d3.event.pageX,d3.event.pageY-50+32,bubble.x,bubble.y,
-                                            (d3.event.pageX-svgPos.left-transformCenter.translate[0]-transformString.translate[0])/transformString.scale[0],
-                                            (d3.event.pageY-50+32-svgPos.top-transformCenter.translate[1]-transformString.translate[1])/transformString.scale[1]);
+                                    //relate to the center
+                                    var relateData = d3.select(this).datum();
+
+                                    var relatedX = relateData.x;
+                                    var relatedY = relateData.y;
+                                    bubble.addBubbleLink(_this.parent.id, bubble.id,
+                                            (relatedX-transformString.translate[0])/transformString.scale[0],
+                                            (relatedY-transformString.translate[1])/transformString.scale[1]);
                                     d3.event.preventDefault();
                                 }
 
@@ -983,9 +994,13 @@ PATHBUBBLES.D3Ring.prototype = {
                                     var svgPos = $("#svg"+_this.parent.id).position();
                                     var transformString = d3.transform($("#svg"+_this.parent.id).find(".graphGroup").attr("transform"));
                                     var transformCenter = d3.transform($("#svg"+_this.parent.id).find(".mainSVG").attr("transform"));
-                                    bubble.addBubbleLink(id, d3.event.pageX,d3.event.pageY-50+32,bubble.x,bubble.y,
-                                            (d3.event.pageX-svgPos.left-transformCenter.translate[0]-transformString.translate[0])/transformString.scale[0],
-                                            (d3.event.pageY-50+32-svgPos.top-transformCenter.translate[1]-transformString.translate[1])/transformString.scale[1]);
+                                    var relateData = d3.select(this).datum();
+
+                                    var relatedX = relateData.x;
+                                    var relatedY = relateData.y;
+                                    bubble.addBubbleLink(_this.parent.id, bubble.id,
+                                            (relatedX-transformString.translate[0])/transformString.scale[0],
+                                            (relatedY-transformString.translate[1])/transformString.scale[1]);
                                     d3.event.preventDefault();
                                 }
 
@@ -1031,7 +1046,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                                 * Math.max(0, y(d.y+ d.dy/2));
                                         })
                                         .attr('r',5)
-                                        .style('fill',"steelblue")
+                                        .style('fill',"yellow")
                                         .on("mouseover", function (d, i) {
                                             if (d.name == "homo sapiens")
                                                 return;
@@ -1040,7 +1055,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                             });
                                             return tooltip.transition()
                                                 .duration(50)
-                                                .style("opacity", 0.9);
+                                                .style("opacity", 0.5);
                                         })
                                         .on("mousemove", function (d, i) {
                                             if (d.name == "homo sapiens")
@@ -1317,9 +1332,14 @@ PATHBUBBLES.D3Ring.prototype = {
                                     var svgPos = $("#svg"+_this.parent.id).position();
                                     var transformString = d3.transform($("#svg"+_this.parent.id).find(".graphGroup").attr("transform"));
                                     var transformCenter = d3.transform($("#svg"+_this.parent.id).find(".mainSVG").attr("transform"));
-                                    bubble.addBubbleLink(id, d3.event.pageX,d3.event.pageY-50+32,bubble.x,bubble.y,
-                                            (d3.event.pageX-svgPos.left-transformCenter.translate[0]-transformString.translate[0])/transformString.scale[0],
-                                            (d3.event.pageY-50+32-svgPos.top-transformCenter.translate[1]-transformString.translate[1])/transformString.scale[1]);
+                                    var relateData = d3.select(this).datum();
+                                    var relatedX = Math.sin( Math.PI - (Math.max(0, Math.min(2 * Math.PI, x(relateData.x)))
+                                        + Math.max(0, Math.min(2 * Math.PI, x(relateData.x + relateData.dx)))) / 2 ) * Math.max(0, y(relateData.y));
+                                    var relatedY = Math.cos( Math.PI - (Math.max(0, Math.min(2 * Math.PI, x(relateData.x)))
+                                        + Math.max(0, Math.min(2 * Math.PI, x(relateData.x + relateData.dx)))) / 2 ) * Math.max(0, y(relateData.y));
+                                    bubble.addBubbleLink(_this.parent.id, bubble.id,
+                                            (relatedX-transformString.translate[0])/transformString.scale[0],
+                                            (relatedY-transformString.translate[1])/transformString.scale[1]);
                                     d3.event.preventDefault();
                                 }
 
@@ -1328,7 +1348,7 @@ PATHBUBBLES.D3Ring.prototype = {
                                         return;
                                     if (d.children.length == 0)
                                         return;
-                                    var selectedData = d3.select(this).datum();
+                                    var selectedData = d3.select(this).datum();//Clone Select data
                                     var name = selectedData.name;
                                     var dataType = $('#menuView' + _this.parent.id).find('#file').val();
 
@@ -1392,9 +1412,19 @@ PATHBUBBLES.D3Ring.prototype = {
                                     var svgPos = $("#svg"+_this.parent.id).position();
                                     var transformString = d3.transform($("#svg"+_this.parent.id).find(".graphGroup").attr("transform"));
                                     var transformCenter = d3.transform($("#svg"+_this.parent.id).find(".mainSVG").attr("transform"));
-                                    bubble5.addBubbleLink(id, d3.event.pageX,d3.event.pageY-50+32,bubble5.x,bubble5.y,
-                                            (d3.event.pageX-svgPos.left-transformCenter.translate[0]-transformString.translate[0])/transformString.scale[0],
-                                        (d3.event.pageY-50+32-svgPos.top-transformCenter.translate[1]-transformString.translate[1])/transformString.scale[1]);
+                                    //relate to the center
+                                    var relateData = d3.select(this).datum();
+
+                                    var relatedX = Math.sin( Math.PI - Math.max(0, Math.min(2 * Math.PI, x(relateData.x))
+                                            )) * Math.max(0, y(relateData.y+ relateData.dy));
+                                    var relatedY = Math.cos( Math.PI - Math.max(0, Math.min(2 * Math.PI, x(relateData.x))
+                                    ) ) * Math.max(0, y(relateData.y+ relateData.dy));
+                                    bubble5.addBubbleLink(_this.parent.id, bubble5.id,
+                                            (relatedX-transformString.translate[0])/transformString.scale[0],
+                                        (relatedY-transformString.translate[1])/transformString.scale[1]);
+//                                    bubble5.addBubbleLink(_this.parent.id, bubble5.id,
+//                                            (d3.event.pageX-svgPos.left-transformCenter.translate[0]-transformString.translate[0])/transformString.scale[0],
+//                                            (d3.event.pageY-50-svgPos.top-transformCenter.translate[1]-transformString.translate[1])/transformString.scale[1]);
                                     d3.event.preventDefault();
                                 }
 

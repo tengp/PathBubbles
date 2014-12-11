@@ -73,6 +73,11 @@ PATHBUBBLES.Renderer.prototype = {
             }
         }
         {   //Render bubbleLinks
+            if($("#bgsvg").length==0)
+            {
+                var string='<div><svg id="bgsvg" width = "4000" height = "4000" style="position: absolute; margin: 0px; left: 0px; right: 0px; top: 50px; bottom: 0px; height: auto; width: auto; z-index: 0; display: block; visibility: visible;"></svg></div>';
+                $("body").append(string);
+            }
             $("#bgsvg").children(".bubbleLinks").remove();
             for(var i=0; i<PATHBUBBLES.bubbleLinks.length; ++i)
             {
@@ -86,9 +91,9 @@ PATHBUBBLES.Renderer.prototype = {
                 var bgsvg = d3.select("#bgsvg").append("g").attr("class", "bubbleLinks");
                 var poly = [
                     {"x": startPos.left + PATHBUBBLES.bubbleLinks[i].absolute.x*transformString.scale[0]+transformString.translate[0]+transformCenter.translate[0],
-                        "y": startPos.top+ PATHBUBBLES.bubbleLinks[i].absolute.y*transformString.scale[1]+transformString.translate[1]+transformCenter.translate[1]-32},
+                        "y": startPos.top-50+ PATHBUBBLES.bubbleLinks[i].absolute.y*transformString.scale[1]+transformString.translate[1]+transformCenter.translate[1]},
                     {"x": startPos.left + PATHBUBBLES.bubbleLinks[i].absolute.x*transformString.scale[0]+transformString.translate[0]+transformCenter.translate[0],
-                        "y": startPos.top+ PATHBUBBLES.bubbleLinks[i].absolute.y*transformString.scale[1]+5+transformString.translate[1]+transformCenter.translate[1]-32},
+                        "y": startPos.top-50+ PATHBUBBLES.bubbleLinks[i].absolute.y*transformString.scale[1]+5+transformString.translate[1]+transformCenter.translate[1]},
                     {"x": endPos.left, "y": endPos.top-50}
                 ];
 //                console.log(PATHBUBBLES.bubbleLinks[i].absolute.x+"+"+PATHBUBBLES.bubbleLinks[i].absolute.y);
@@ -103,8 +108,8 @@ PATHBUBBLES.Renderer.prototype = {
                             return [d.x, d.y].join(",");
                         }).join(" ");
                     })
-                    .attr("stroke", "yellow")
-                    .attr("fill", "yellow")
+                    .attr("stroke", "grey")
+                    .attr("fill", "grey")
                     .attr("stroke-width", 2)
                     .style("opacity", 0.5);
             }

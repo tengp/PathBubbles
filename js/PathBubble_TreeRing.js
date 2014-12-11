@@ -110,10 +110,10 @@ PATHBUBBLES.TreeRing.prototype = {
         }
         this.treeRing.init();
     },
-    addBubbleLink: function(id, x1,y1,x2,y2,x,y) {
+    addBubbleLink: function(startId,endId, x,y) {
         var object={};
-        object.startId = id.split("_")[0];
-        object.endId = id.split("_")[1];
+        object.startId = startId;
+        object.endId = endId;
         object.absolute = {x:x, y:y};
         PATHBUBBLES.bubbleLinks.push(object);
     },
