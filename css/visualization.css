@@ -33,6 +33,9 @@ body { font-family: sans-serif; background:#111; margin: 0;
 #minMaxRatio{
     font-size: 11px;
 }
+#updownLabel{
+    font-size: 10px;
+}
 .inlineinput div {
     display: inline;
 }

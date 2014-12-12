@@ -20,6 +20,7 @@ PATHBUBBLES.D3Ring = function (parent, defaultRadius, dataType, name) {
     this._crossTalkSymbols = {};
     this._rateLimitSymbols = {};
     this.highLightPathways = [];
+
 };
 PATHBUBBLES.D3Ring.prototype = {
     constructor: PATHBUBBLES.D3Ring,
@@ -53,6 +54,21 @@ PATHBUBBLES.D3Ring.prototype = {
             .style("text-anchor", "start")
             .style("fill", "#f0f")
             .text(_this.parent.preHierarchical);
+
+        svg.append("text").attr("class","ortholog")
+            .style("font-size", 12)
+            .attr("transform", "translate(" + (0) + "," + 27 + ")")
+            .style("text-anchor", "start")
+            .style("fill", "#666")
+            .text(_this.parent.orthologLabel);
+
+        svg.append("text").attr("class","expression")
+            .style("font-size", 12)
+            .attr("transform", "translate(" + (0) + "," + 43 + ")")
+            .style("text-anchor", "start")
+            .style("fill", "#666")
+            .text(_this.parent.expressionLabel);
+
         function zoom() {
             gGroup.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
         }
@@ -1472,6 +1488,8 @@ PATHBUBBLES.D3Ring.prototype = {
                                     {
                                         bubble5.preHierarchical +=  _this.parent.id;
                                     }
+                                    bubble5.orthologLabel=_this.parent.orthologLabel;
+                                    bubble5.expressionLabel=_this.parent.expressionLabel;
                                     bubble5.HIDE = _this.parent.HIDE;
                                     bubble5.addHtml();
 
@@ -1482,6 +1500,8 @@ PATHBUBBLES.D3Ring.prototype = {
                                         $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
                                         $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
                                         $('#menuView' + bubble5.id).find("#operateText").val($('#menuView' + _this.parent.id).find("#operateText").val());
+                                        $('#menuView' + bubble5.id).find('#upLabel').val($('#menuView' + _this.parent.id).find("#upLabel").val());
+                                        $('#menuView' + bubble5.id).find('#downLabel').val($('#menuView' + _this.parent.id).find("#downLabel").val());
                                     }
                                     if (_this.customExpression) {
                                         d3.select("#svg" + bubble5.id).selectAll(".symbol").remove();
@@ -1492,6 +1512,8 @@ PATHBUBBLES.D3Ring.prototype = {
                                         $('#menuView' + bubble5.id).find("#crossTalkLevel").val($('#menuView' + _this.parent.id).find("#crossTalkLevel").val());
                                         $('#menuView' + bubble5.id).find("#file").val($('#menuView' + _this.parent.id).find("#file").val());
                                         $('#menuView' + bubble5.id).find("#operateText").val($('#menuView' + _this.parent.id).find("#operateText").val());
+                                        $('#menuView' + bubble5.id).find('#upLabel').val($('#menuView' + _this.parent.id).find("#upLabel").val());
+                                        $('#menuView' + bubble5.id).find('#downLabel').val($('#menuView' + _this.parent.id).find("#downLabel").val());
                                         bubble5.operateText = $('#menuView' + _this.parent.id).find("#operateText").val();
                                     }
 
@@ -1611,7 +1633,14 @@ PATHBUBBLES.D3Ring.prototype = {
                             var BarHeight = scaleHeight + scaleMargin.top + scaleMargin.bottom;
 
                             var sectionHeight = 20;
-                            var texts = ["Down expressed", "Up expressed"];
+                            var $menuBarbubble = $('#menuView' + _this.parent.id);
+                            var uplabel = $menuBarbubble.find('#upLabel').val();
+                            var downlabel = $menuBarbubble.find('#downLabel').val();
+                            if (uplabel == "")
+                                uplabel = "Up expressed";
+                            if (downlabel == "")
+                                downlabel = "Down expressed";
+                            var texts = [downlabel, uplabel];     //"Down expressed", "Up expressed"
                             var expressedColors=["#0f0","#f00"];
                             var newData = [];
                             for (var i = 0; i < 2; i++) {

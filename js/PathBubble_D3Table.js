@@ -296,62 +296,62 @@ PATHBUBBLES.D3Table.prototype = {
                             }
                             d3.event.preventDefault();
                         }
-                        else if (_this.keepQuery && d.key == "crossTalk") {
-                            if(d.value == 0)
-                            {
-                                alert("It does not have cross-talking pathways!");
-                            }
-                            else
-                            {
-                                var index = _this._symbols2Pathways.symbols.indexOf(d.symbol);
-                                if(index!==-1)
-                                {
-                                    var pathways = _this._symbols2Pathways.pathwayNames[index];
-                                    var biPartiteData = [];
-                                    for(var i=0; i<pathways.length; ++i)
-                                    {
-                                        var da = [];
-                                        da.push(d.symbol);
-                                        da.push(pathways[i]);
-                                        biPartiteData.push(da);
-                                    }
-                                    if(biPartiteData.length>0)
-                                    {
-                                        var thisName = _this.parent.name + "-"+d.symbol + "-Crosstalking";
-                                        var bubble = new PATHBUBBLES.BiPartite(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 600,510,biPartiteData,thisName);
-                                        bubble.addHtml(["Symbol", "Pathway"]);
-
-//                                        if(_this.parent.name.indexOf(")"))
+//                        else if (_this.keepQuery && d.key == "crossTalk") {
+//                            if(d.value == 0)
+//                            {
+//                                alert("It does not have cross-talking pathways!");
+//                            }
+//                            else
+//                            {
+//                                var index = _this._symbols2Pathways.symbols.indexOf(d.symbol);
+//                                if(index!==-1)
+//                                {
+//                                    var pathways = _this._symbols2Pathways.pathwayNames[index];
+//                                    var biPartiteData = [];
+//                                    for(var i=0; i<pathways.length; ++i)
+//                                    {
+//                                        var da = [];
+//                                        da.push(d.symbol);
+//                                        da.push(pathways[i]);
+//                                        biPartiteData.push(da);
+//                                    }
+//                                    if(biPartiteData.length>0)
+//                                    {
+//                                        var thisName = _this.parent.name + "-"+d.symbol + "-Crosstalking";
+//                                        var bubble = new PATHBUBBLES.BiPartite(_this.parent.x + _this.parent.offsetX + _this.parent.w - 40, _this.parent.y + _this.parent.offsetY, 600,510,biPartiteData,thisName);
+//                                        bubble.addHtml(["Symbol", "Pathway"]);
+//
+////                                        if(_this.parent.name.indexOf(")"))
+////                                        {
+////                                            bubble.name ="(Symbol crosstalking)"+_this.parent.name.split(")")[1];
+////                                        }
+//                                        bubble.menuOperation();
+//                                        if(viewpoint)
 //                                        {
-//                                            bubble.name ="(Symbol crosstalking)"+_this.parent.name.split(")")[1];
+//                                            bubble.offsetX = viewpoint.x;
+//                                            bubble.offsetY = viewpoint.y;
 //                                        }
-                                        bubble.menuOperation();
-                                        if(viewpoint)
-                                        {
-                                            bubble.offsetX = viewpoint.x;
-                                            bubble.offsetY = viewpoint.y;
-                                        }
-                                        scene.addObject(bubble);
-
-                                        if (!_this.parent.GROUP) {
-                                            var group = new PATHBUBBLES.Groups();
-                                            group.objectAddToGroup(_this.parent);
-                                            group.objectAddToGroup(bubble);
-                                            scene.addObject(group);
-                                        }
-                                        else {
-                                            if (_this.parent.parent instanceof  PATHBUBBLES.Groups) {
-                                                _this.parent.parent.objectAddToGroup(_this.parent);
-                                                _this.parent.parent.objectAddToGroup(bubble);
-                                                scene.addObject(_this.parent.parent);
-                                            }
-                                        }
-
-                                    }
-                                }
-                            }
-                            d3.event.preventDefault();
-                        }
+//                                        scene.addObject(bubble);
+//
+//                                        if (!_this.parent.GROUP) {
+//                                            var group = new PATHBUBBLES.Groups();
+//                                            group.objectAddToGroup(_this.parent);
+//                                            group.objectAddToGroup(bubble);
+//                                            scene.addObject(group);
+//                                        }
+//                                        else {
+//                                            if (_this.parent.parent instanceof  PATHBUBBLES.Groups) {
+//                                                _this.parent.parent.objectAddToGroup(_this.parent);
+//                                                _this.parent.parent.objectAddToGroup(bubble);
+//                                                scene.addObject(_this.parent.parent);
+//                                            }
+//                                        }
+//
+//                                    }
+//                                }
+//                            }
+//                            d3.event.preventDefault();
+//                        }
                         else
                         {
                             d3.event.preventDefault();

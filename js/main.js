@@ -71,17 +71,17 @@ $(document).ready(function () {
                 }
                 scene.addObject(bubble5);
             }
-            else if (key === 'Open_Tree') {
-                var bubble6 = new PATHBUBBLES.BiPartite(mousePosX, mousePosY,600,510);
-                bubble6.addHtml();
-                bubble6.menuOperation();
-                if(viewpoint)
-                {
-                    bubble6.offsetX = viewpoint.x;
-                    bubble6.offsetY = viewpoint.y;
-                }
-                scene.addObject(bubble6);
-            }
+//            else if (key === 'Open_Tree') {
+//                var bubble6 = new PATHBUBBLES.BiPartite(mousePosX, mousePosY,600,510);
+//                bubble6.addHtml();
+//                bubble6.menuOperation();
+//                if(viewpoint)
+//                {
+//                    bubble6.offsetX = viewpoint.x;
+//                    bubble6.offsetY = viewpoint.y;
+//                }
+//                scene.addObject(bubble6);
+//            }
             else if (key === 'Delete_All') {       //modify a bug by changing for loop from i=0, ... to i= array length to 0
                 for (var l = scene.children.length-1; l >=0; l--) {
                     if (scene.children[l] instanceof PATHBUBBLES.Bubble
@@ -112,7 +112,7 @@ $(document).ready(function () {
         items: {
             "Open_Bubble": {name: "Open Pathway Graph"},
             "Open_TreeRing": {name: "Open Pathway TreeRing"},
-            "Open_Tree": {name: "Open Pathway"},
+//            "Open_Tree": {name: "Open Pathway"},
             "Delete_All": {name: "Delete All"},
             "sep1": "---------",
             "Open_Help": {name: "Open Simple Tutorial"},
